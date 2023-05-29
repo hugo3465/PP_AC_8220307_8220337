@@ -1,3 +1,9 @@
+package pp_ac_8220307_8220337.Api;
+
+import cbl.participants.Contact;
+import cbl.participants.Instituition;
+import cbl.participants.Participant;
+
 /**
  * Nome: Pedro Marcelo Santos Pinho
  * Número: 8220307
@@ -7,24 +13,12 @@
  * Número: 8220337
  * Turma: LEIT2
  */
-
-package pp_ac_8220307_8220337.Api;
-
-import cbl.participants.Contact;
-import cbl.participants.Instituition;
-import cbl.participants.Participant;
-
-/**
- *
- * @author User
- */
-public class AbstractParticipant implements Participant {
+public abstract class AbstractParticipant implements Participant {
     
     private int idParicipant;
     private String name;
     private String email;
-    private Contacto contact;
-    private Institution institution;
+    private BaseContact contact;
 
     @Override
     public String getName() {

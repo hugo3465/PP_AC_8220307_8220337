@@ -8,7 +8,7 @@
  * Turma: LEIT2
  */
 
-package pp_ac_8220307_8220337;
+package pp_ac_8220307_8220337.Application;
 
 public class PP_AC_8220307_8220337 {
 

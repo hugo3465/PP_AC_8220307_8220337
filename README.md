@@ -31,3 +31,6 @@ suportar a gestão de participantes (Participant), sejam facilitadores (Facilita
  * Hugo Guimarães
 
  * Pedro Pinho
+
+## Diagrama de Classe:
+<img title="ClassDiagram" alt="ClassDiagram" src="ClassDiagram.png">

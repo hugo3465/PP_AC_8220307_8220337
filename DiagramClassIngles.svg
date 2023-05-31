@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentStyleType="text/css" height="1487px" preserveAspectRatio="none" style="width:3530px;height:1487px;background:#FFFFFF;" version="1.1" viewBox="0 0 3530 1487" width="3530px" zoomAndPan="magnify"><defs/><g><!--MD5=[7058f338f099d236033fc5161613b206]
+cluster Api--><g id="cluster_Api"><path d="M8.5,6 L31.5,6 A3.75,3.75 0 0 1 34,8.5 L41,29.6094 L3520.5,29.6094 A2.5,2.5 0 0 1 3523,32.1094 L3523,1477.5 A2.5,2.5 0 0 1 3520.5,1480 L8.5,1480 A2.5,2.5 0 0 1 6,1477.5 L6,8.5 A2.5,2.5 0 0 1 8.5,6 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="6" x2="41" y1="29.6094" y2="29.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="22" x="10" y="22.5332">Api</text></g><!--MD5=[9b81e3e5604a30350f42ce17b644a959]
+cluster BibliotecaProfessor--><g id="cluster_BibliotecaProfessor"><path d="M32.5,667 L172.5,667 A3.75,3.75 0 0 1 175,669.5 L182,690.6094 L3496.5,690.6094 A2.5,2.5 0 0 1 3499,693.1094 L3499,1453.5 A2.5,2.5 0 0 1 3496.5,1456 L32.5,1456 A2.5,2.5 0 0 1 30,1453.5 L30,669.5 A2.5,2.5 0 0 1 32.5,667 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="30" x2="182" y1="690.6094" y2="690.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="139" x="34" y="683.5332">BibliotecaProfessor</text></g><!--MD5=[b5f941ab5284223f132ea1283ad341fd]
+cluster Perticipants--><g id="cluster_Perticipants"><path d="M2172.5,807.5 L2257.5,807.5 A3.75,3.75 0 0 1 2260,810 L2267,831.1094 L3472.5,831.1094 A2.5,2.5 0 0 1 3475,833.6094 L3475,1429.5 A2.5,2.5 0 0 1 3472.5,1432 L2172.5,1432 A2.5,2.5 0 0 1 2170,1429.5 L2170,810 A2.5,2.5 0 0 1 2172.5,807.5 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="2170" x2="2267" y1="831.1094" y2="831.1094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="84" x="2174" y="824.0332">Perticipants</text></g><!--MD5=[0f05b381ce972810648735ab0813e8dd]
+cluster Project--><g id="cluster_Project"><path d="M56.5,711 L107.5,711 A3.75,3.75 0 0 1 110,713.5 L117,734.6094 L2143.5,734.6094 A2.5,2.5 0 0 1 2146,737.1094 L2146,1195.5 A2.5,2.5 0 0 1 2143.5,1198 L56.5,1198 A2.5,2.5 0 0 1 54,1195.5 L54,713.5 A2.5,2.5 0 0 1 56.5,711 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><line style="stroke:#000000;stroke-width:1.5;" x1="54" x2="117" y1="734.6094" y2="734.6094"/><text fill="#000000" font-family="sans-serif" font-size="14" font-weight="bold" lengthAdjust="spacing" textLength="50" x="58" y="727.5332">Project</text></g><!--MD5=[19f37a33b21af72cc23f73fffeadf4ef]
+class BaseContact--><g id="elem_BaseContact"><rect codeLine="218" fill="#F1F1F1" height="153.6563" id="BaseContact" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="122" x="2576" y="370"/><ellipse cx="2595.05" cy="386" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M2597.8156,381.875 Q2597.9719,381.6563 2598.1594,381.5469 Q2598.3469,381.4375 2598.5656,381.4375 Q2598.9406,381.4375 2599.175,381.7031 Q2599.4094,381.9531 2599.4094,382.5625 L2599.4094,384.0156 Q2599.4094,384.625 2599.175,384.8906 Q2598.9406,385.1563 2598.5656,385.1563 Q2598.2219,385.1563 2598.0188,384.9531 Q2597.8156,384.7656 2597.7063,384.25 Q2597.6594,383.8906 2597.4719,383.7031 Q2597.1438,383.3281 2596.5344,383.1094 Q2595.925,382.8906 2595.3,382.8906 Q2594.5344,382.8906 2593.8938,383.2188 Q2593.2688,383.5469 2592.7688,384.2969 Q2592.2844,385.0469 2592.2844,386.0781 L2592.2844,387.1719 Q2592.2844,388.4063 2593.175,389.2344 Q2594.0656,390.0469 2595.6594,390.0469 Q2596.5969,390.0469 2597.2531,389.7969 Q2597.6438,389.6406 2598.0656,389.2031 Q2598.3313,388.9375 2598.4719,388.8594 Q2598.6281,388.7813 2598.8313,388.7813 Q2599.1594,388.7813 2599.4094,389.0469 Q2599.675,389.2969 2599.675,389.6406 Q2599.675,389.9844 2599.3313,390.3906 Q2598.8313,390.9688 2598.0344,391.2969 Q2596.9563,391.75 2595.6594,391.75 Q2594.1438,391.75 2592.9406,391.125 Q2591.9563,390.625 2591.2688,389.5625 Q2590.5813,388.4844 2590.5813,387.2031 L2590.5813,386.0469 Q2590.5813,384.7188 2591.1906,383.5781 Q2591.8156,382.4219 2592.9094,381.8125 Q2594.0031,381.1875 2595.2375,381.1875 Q2595.9719,381.1875 2596.6125,381.3594 Q2597.2688,381.5156 2597.8156,381.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="2609.95" y="391.7285">BaseContact</text><line style="stroke:#181818;stroke-width:0.5;" x1="2577" x2="2697" y1="402" y2="402"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2584" y="413.3047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="2596" y="420.5332">street: String</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2584" y="430.9141"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="2596" y="438.1426">city: String</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2584" y="448.5234"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76" x="2596" y="455.752">state: String</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2584" y="466.1328"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="2596" y="473.3613">zipCode: String</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2584" y="483.7422"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="2596" y="490.9707">country: String</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2584" y="501.3516"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="85" x="2596" y="508.5801">phone: String</text><line style="stroke:#181818;stroke-width:0.5;" x1="2577" x2="2697" y1="515.6563" y2="515.6563"/></g><!--MD5=[04ff49272230627318d67f7e0a9e3bca]
+class BaseInstitution--><g id="elem_BaseInstitution"><rect codeLine="227" fill="#F1F1F1" height="153.6563" id="BaseInstitution" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="156" x="2891" y="370"/><ellipse cx="2920.4" cy="386" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M2923.1656,381.875 Q2923.3219,381.6563 2923.5094,381.5469 Q2923.6969,381.4375 2923.9156,381.4375 Q2924.2906,381.4375 2924.525,381.7031 Q2924.7594,381.9531 2924.7594,382.5625 L2924.7594,384.0156 Q2924.7594,384.625 2924.525,384.8906 Q2924.2906,385.1563 2923.9156,385.1563 Q2923.5719,385.1563 2923.3688,384.9531 Q2923.1656,384.7656 2923.0563,384.25 Q2923.0094,383.8906 2922.8219,383.7031 Q2922.4938,383.3281 2921.8844,383.1094 Q2921.275,382.8906 2920.65,382.8906 Q2919.8844,382.8906 2919.2438,383.2188 Q2918.6188,383.5469 2918.1188,384.2969 Q2917.6344,385.0469 2917.6344,386.0781 L2917.6344,387.1719 Q2917.6344,388.4063 2918.525,389.2344 Q2919.4156,390.0469 2921.0094,390.0469 Q2921.9469,390.0469 2922.6031,389.7969 Q2922.9938,389.6406 2923.4156,389.2031 Q2923.6813,388.9375 2923.8219,388.8594 Q2923.9781,388.7813 2924.1813,388.7813 Q2924.5094,388.7813 2924.7594,389.0469 Q2925.025,389.2969 2925.025,389.6406 Q2925.025,389.9844 2924.6813,390.3906 Q2924.1813,390.9688 2923.3844,391.2969 Q2922.3063,391.75 2921.0094,391.75 Q2919.4938,391.75 2918.2906,391.125 Q2917.3063,390.625 2916.6188,389.5625 Q2915.9313,388.4844 2915.9313,387.2031 L2915.9313,386.0469 Q2915.9313,384.7188 2916.5406,383.5781 Q2917.1656,382.4219 2918.2594,381.8125 Q2919.3531,381.1875 2920.5875,381.1875 Q2921.3219,381.1875 2921.9625,381.3594 Q2922.6188,381.5156 2923.1656,381.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="2937.6" y="391.7285">BaseInstitution</text><line style="stroke:#181818;stroke-width:0.5;" x1="2892" x2="3046" y1="402" y2="402"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2899" y="413.3047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="2911" y="420.5332">name: String</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2899" y="430.9141"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="2911" y="438.1426">email: String</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2899" y="448.5234"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="130" x="2911" y="455.752">type: InstituitionType</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2899" y="466.1328"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103" x="2911" y="473.3613">contact: Contact</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2899" y="483.7422"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="2911" y="490.9707">website: String</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2899" y="501.3516"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="2911" y="508.5801">description: String</text><line style="stroke:#181818;stroke-width:0.5;" x1="2892" x2="3046" y1="515.6563" y2="515.6563"/></g><!--MD5=[351fcc8ee7b5d6d67b8ac65a75d012a6]
+class BaseStudent--><g id="elem_BaseStudent"><rect codeLine="324" fill="#F1F1F1" height="153.6563" id="BaseStudent" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="154" x="2940" y="50.5"/><ellipse cx="2973.45" cy="66.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M2976.2156,62.375 Q2976.3719,62.1563 2976.5594,62.0469 Q2976.7469,61.9375 2976.9656,61.9375 Q2977.3406,61.9375 2977.575,62.2031 Q2977.8094,62.4531 2977.8094,63.0625 L2977.8094,64.5156 Q2977.8094,65.125 2977.575,65.3906 Q2977.3406,65.6563 2976.9656,65.6563 Q2976.6219,65.6563 2976.4188,65.4531 Q2976.2156,65.2656 2976.1063,64.75 Q2976.0594,64.3906 2975.8719,64.2031 Q2975.5438,63.8281 2974.9344,63.6094 Q2974.325,63.3906 2973.7,63.3906 Q2972.9344,63.3906 2972.2938,63.7188 Q2971.6688,64.0469 2971.1688,64.7969 Q2970.6844,65.5469 2970.6844,66.5781 L2970.6844,67.6719 Q2970.6844,68.9063 2971.575,69.7344 Q2972.4656,70.5469 2974.0594,70.5469 Q2974.9969,70.5469 2975.6531,70.2969 Q2976.0438,70.1406 2976.4656,69.7031 Q2976.7313,69.4375 2976.8719,69.3594 Q2977.0281,69.2813 2977.2313,69.2813 Q2977.5594,69.2813 2977.8094,69.5469 Q2978.075,69.7969 2978.075,70.1406 Q2978.075,70.4844 2977.7313,70.8906 Q2977.2313,71.4688 2976.4344,71.7969 Q2975.3563,72.25 2974.0594,72.25 Q2972.5438,72.25 2971.3406,71.625 Q2970.3563,71.125 2969.6688,70.0625 Q2968.9813,68.9844 2968.9813,67.7031 L2968.9813,66.5469 Q2968.9813,65.2188 2969.5906,64.0781 Q2970.2156,62.9219 2971.3094,62.3125 Q2972.4031,61.6875 2973.6375,61.6875 Q2974.3719,61.6875 2975.0125,61.8594 Q2975.6688,62.0156 2976.2156,62.375 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="81" x="2991.55" y="72.2285">BaseStudent</text><line style="stroke:#181818;stroke-width:0.5;" x1="2941" x2="3093" y1="82.5" y2="82.5"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2948" y="93.8047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="2960" y="101.0332">name: String</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2948" y="111.4141"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="2960" y="118.6426">email: String</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2948" y="129.0234"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103" x="2960" y="136.252">contact: Contact</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2948" y="146.6328"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="128" x="2960" y="153.8613">institution: Institution</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="2960" y="171.4707"> </text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2948" y="181.8516"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="71" x="2960" y="189.0801">number: int</text><line style="stroke:#181818;stroke-width:0.5;" x1="2941" x2="3093" y1="196.1563" y2="196.1563"/></g><!--MD5=[9df24d34bad8792688a329c271eb9375]
+class BasePartners--><g id="elem_BasePartners"><rect codeLine="314" fill="#F1F1F1" height="171.2656" id="BasePartners" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="154" x="2711" y="42"/><ellipse cx="2742.2" cy="58" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M2744.9656,53.875 Q2745.1219,53.6563 2745.3094,53.5469 Q2745.4969,53.4375 2745.7156,53.4375 Q2746.0906,53.4375 2746.325,53.7031 Q2746.5594,53.9531 2746.5594,54.5625 L2746.5594,56.0156 Q2746.5594,56.625 2746.325,56.8906 Q2746.0906,57.1563 2745.7156,57.1563 Q2745.3719,57.1563 2745.1688,56.9531 Q2744.9656,56.7656 2744.8563,56.25 Q2744.8094,55.8906 2744.6219,55.7031 Q2744.2938,55.3281 2743.6844,55.1094 Q2743.075,54.8906 2742.45,54.8906 Q2741.6844,54.8906 2741.0438,55.2188 Q2740.4188,55.5469 2739.9188,56.2969 Q2739.4344,57.0469 2739.4344,58.0781 L2739.4344,59.1719 Q2739.4344,60.4063 2740.325,61.2344 Q2741.2156,62.0469 2742.8094,62.0469 Q2743.7469,62.0469 2744.4031,61.7969 Q2744.7938,61.6406 2745.2156,61.2031 Q2745.4813,60.9375 2745.6219,60.8594 Q2745.7781,60.7813 2745.9813,60.7813 Q2746.3094,60.7813 2746.5594,61.0469 Q2746.825,61.2969 2746.825,61.6406 Q2746.825,61.9844 2746.4813,62.3906 Q2745.9813,62.9688 2745.1844,63.2969 Q2744.1063,63.75 2742.8094,63.75 Q2741.2938,63.75 2740.0906,63.125 Q2739.1063,62.625 2738.4188,61.5625 Q2737.7313,60.4844 2737.7313,59.2031 L2737.7313,58.0469 Q2737.7313,56.7188 2738.3406,55.5781 Q2738.9656,54.4219 2740.0594,53.8125 Q2741.1531,53.1875 2742.3875,53.1875 Q2743.1219,53.1875 2743.7625,53.3594 Q2744.4188,53.5156 2744.9656,53.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="86" x="2759.8" y="63.7285">BasePartners</text><line style="stroke:#181818;stroke-width:0.5;" x1="2712" x2="2864" y1="74" y2="74"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2719" y="85.3047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="2731" y="92.5332">name: String</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2719" y="102.9141"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="2731" y="110.1426">email: String</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2719" y="120.5234"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103" x="2731" y="127.752">contact: Contact</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2719" y="138.1328"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="128" x="2731" y="145.3613">institution: Institution</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="2731" y="162.9707"> </text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2719" y="173.3516"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="64" x="2731" y="180.5801">vat: String</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2719" y="190.9609"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="94" x="2731" y="198.1895">webSite: String</text><line style="stroke:#181818;stroke-width:0.5;" x1="2712" x2="2864" y1="205.2656" y2="205.2656"/></g><!--MD5=[fe8f3d209f6ffb592d6127b63395255f]
+class BaseProject--><g id="elem_BaseProject"><rect codeLine="247" fill="#F1F1F1" height="312.1406" id="BaseProject" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="311" x="904.5" y="291"/><ellipse cx="1017.75" cy="307" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M1020.5156,302.875 Q1020.6719,302.6563 1020.8594,302.5469 Q1021.0469,302.4375 1021.2656,302.4375 Q1021.6406,302.4375 1021.875,302.7031 Q1022.1094,302.9531 1022.1094,303.5625 L1022.1094,305.0156 Q1022.1094,305.625 1021.875,305.8906 Q1021.6406,306.1563 1021.2656,306.1563 Q1020.9219,306.1563 1020.7188,305.9531 Q1020.5156,305.7656 1020.4063,305.25 Q1020.3594,304.8906 1020.1719,304.7031 Q1019.8438,304.3281 1019.2344,304.1094 Q1018.625,303.8906 1018,303.8906 Q1017.2344,303.8906 1016.5938,304.2188 Q1015.9688,304.5469 1015.4688,305.2969 Q1014.9844,306.0469 1014.9844,307.0781 L1014.9844,308.1719 Q1014.9844,309.4063 1015.875,310.2344 Q1016.7656,311.0469 1018.3594,311.0469 Q1019.2969,311.0469 1019.9531,310.7969 Q1020.3438,310.6406 1020.7656,310.2031 Q1021.0313,309.9375 1021.1719,309.8594 Q1021.3281,309.7813 1021.5313,309.7813 Q1021.8594,309.7813 1022.1094,310.0469 Q1022.375,310.2969 1022.375,310.6406 Q1022.375,310.9844 1022.0313,311.3906 Q1021.5313,311.9688 1020.7344,312.2969 Q1019.6563,312.75 1018.3594,312.75 Q1016.8438,312.75 1015.6406,312.125 Q1014.6563,311.625 1013.9688,310.5625 Q1013.2813,309.4844 1013.2813,308.2031 L1013.2813,307.0469 Q1013.2813,305.7188 1013.8906,304.5781 Q1014.5156,303.4219 1015.6094,302.8125 Q1016.7031,302.1875 1017.9375,302.1875 Q1018.6719,302.1875 1019.3125,302.3594 Q1019.9688,302.5156 1020.5156,302.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="76" x="1038.25" y="312.7285">BaseProject</text><line style="stroke:#181818;stroke-width:0.5;" x1="905.5" x2="1214.5" y1="323" y2="323"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="912.5" y="334.3047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="924.5" y="341.5332">name: String</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="912.5" y="351.9141"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="924.5" y="359.1426">description: String</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="912.5" y="369.5234"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="160" x="924.5" y="376.752">numberOfParticipants: int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="912.5" y="387.1328"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="140" x="924.5" y="394.3613">numberOfPartners: int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="912.5" y="404.7422"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="155" x="924.5" y="411.9707">numberOfFacilitators: int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="912.5" y="422.3516"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="124" x="924.5" y="429.5801">numberOfTasks: int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="912.5" y="439.9609"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="231" x="924.5" y="447.1895">MAXIMUM_NUMBER_OF_TASKS: int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="912.5" y="457.5703"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="284" x="924.5" y="464.7988">MAXIMUM_NUMBER_OF_PARTICIPANTS: int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="912.5" y="475.1797"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="259" x="924.5" y="482.4082">MAXIMUM_NUMBER_OF_STUDENTS: int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="912.5" y="492.7891"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="260" x="924.5" y="500.0176">MAXIMUM_NUMBER_OF_PARTNERS: int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="912.5" y="510.3984"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="285" x="924.5" y="517.627">MAXIMUM_NUMBER_OF_FACILITATORS: int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="912.5" y="528.0078"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="924.5" y="535.2363">hasTags: boolean</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="912.5" y="545.6172"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="924.5" y="552.8457">tags: String[]</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="912.5" y="563.2266"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="87" x="924.5" y="570.4551">tasks: Tasks[]</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="912.5" y="580.8359"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132" x="924.5" y="588.0645">isCompleted: bollean</text><line style="stroke:#181818;stroke-width:0.5;" x1="905.5" x2="1214.5" y1="595.1406" y2="595.1406"/></g><!--MD5=[39bd0ac90f9970b9ca5c1ec8f6997e50]
+class BaseTask--><g id="elem_BaseTask"><rect codeLine="267" fill="#F1F1F1" height="171.2656" id="BaseTask" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="192" x="1661" y="361.5"/><ellipse cx="1721.25" cy="377.5" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M1724.0156,373.375 Q1724.1719,373.1563 1724.3594,373.0469 Q1724.5469,372.9375 1724.7656,372.9375 Q1725.1406,372.9375 1725.375,373.2031 Q1725.6094,373.4531 1725.6094,374.0625 L1725.6094,375.5156 Q1725.6094,376.125 1725.375,376.3906 Q1725.1406,376.6563 1724.7656,376.6563 Q1724.4219,376.6563 1724.2188,376.4531 Q1724.0156,376.2656 1723.9063,375.75 Q1723.8594,375.3906 1723.6719,375.2031 Q1723.3438,374.8281 1722.7344,374.6094 Q1722.125,374.3906 1721.5,374.3906 Q1720.7344,374.3906 1720.0938,374.7188 Q1719.4688,375.0469 1718.9688,375.7969 Q1718.4844,376.5469 1718.4844,377.5781 L1718.4844,378.6719 Q1718.4844,379.9063 1719.375,380.7344 Q1720.2656,381.5469 1721.8594,381.5469 Q1722.7969,381.5469 1723.4531,381.2969 Q1723.8438,381.1406 1724.2656,380.7031 Q1724.5313,380.4375 1724.6719,380.3594 Q1724.8281,380.2813 1725.0313,380.2813 Q1725.3594,380.2813 1725.6094,380.5469 Q1725.875,380.7969 1725.875,381.1406 Q1725.875,381.4844 1725.5313,381.8906 Q1725.0313,382.4688 1724.2344,382.7969 Q1723.1563,383.25 1721.8594,383.25 Q1720.3438,383.25 1719.1406,382.625 Q1718.1563,382.125 1717.4688,381.0625 Q1716.7813,379.9844 1716.7813,378.7031 L1716.7813,377.5469 Q1716.7813,376.2188 1717.3906,375.0781 Q1718.0156,373.9219 1719.1094,373.3125 Q1720.2031,372.6875 1721.4375,372.6875 Q1722.1719,372.6875 1722.8125,372.8594 Q1723.4688,373.0156 1724.0156,373.375 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="63" x="1741.75" y="383.2285">BaseTask</text><line style="stroke:#181818;stroke-width:0.5;" x1="1662" x2="1852" y1="393.5" y2="393.5"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1669" y="404.8047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="1681" y="412.0332">start: LocalDate</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1669" y="422.4141"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="1681" y="429.6426">end: LocalDate</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1669" y="440.0234"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="75" x="1681" y="447.252">duration: int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1669" y="457.6328"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67" x="1681" y="464.8613">title: String</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1669" y="475.2422"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="114" x="1681" y="482.4707">description: String</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1669" y="492.8516"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="165" x="1681" y="500.0801">submissions: Submission[]</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1669" y="510.4609"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="166" x="1681" y="517.6895">NumberOfSubmissions: int</text><line style="stroke:#181818;stroke-width:0.5;" x1="1662" x2="1852" y1="524.7656" y2="524.7656"/></g><!--MD5=[fba0fd74546b24777ef73e250c9c5102]
+class BaseSubmission--><g id="elem_BaseSubmission"><rect codeLine="279" fill="#F1F1F1" height="100.8281" id="BaseSubmission" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="136" x="1819" y="77"/><ellipse cx="1834" cy="93" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M1836.7656,88.875 Q1836.9219,88.6563 1837.1094,88.5469 Q1837.2969,88.4375 1837.5156,88.4375 Q1837.8906,88.4375 1838.125,88.7031 Q1838.3594,88.9531 1838.3594,89.5625 L1838.3594,91.0156 Q1838.3594,91.625 1838.125,91.8906 Q1837.8906,92.1563 1837.5156,92.1563 Q1837.1719,92.1563 1836.9688,91.9531 Q1836.7656,91.7656 1836.6563,91.25 Q1836.6094,90.8906 1836.4219,90.7031 Q1836.0938,90.3281 1835.4844,90.1094 Q1834.875,89.8906 1834.25,89.8906 Q1833.4844,89.8906 1832.8438,90.2188 Q1832.2188,90.5469 1831.7188,91.2969 Q1831.2344,92.0469 1831.2344,93.0781 L1831.2344,94.1719 Q1831.2344,95.4063 1832.125,96.2344 Q1833.0156,97.0469 1834.6094,97.0469 Q1835.5469,97.0469 1836.2031,96.7969 Q1836.5938,96.6406 1837.0156,96.2031 Q1837.2813,95.9375 1837.4219,95.8594 Q1837.5781,95.7813 1837.7813,95.7813 Q1838.1094,95.7813 1838.3594,96.0469 Q1838.625,96.2969 1838.625,96.6406 Q1838.625,96.9844 1838.2813,97.3906 Q1837.7813,97.9688 1836.9844,98.2969 Q1835.9063,98.75 1834.6094,98.75 Q1833.0938,98.75 1831.8906,98.125 Q1830.9063,97.625 1830.2188,96.5625 Q1829.5313,95.4844 1829.5313,94.2031 L1829.5313,93.0469 Q1829.5313,91.7188 1830.1406,90.5781 Q1830.7656,89.4219 1831.8594,88.8125 Q1832.9531,88.1875 1834.1875,88.1875 Q1834.9219,88.1875 1835.5625,88.3594 Q1836.2188,88.5156 1836.7656,88.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="104" x="1848" y="98.7285">BaseSubmission</text><line style="stroke:#181818;stroke-width:0.5;" x1="1820" x2="1954" y1="109" y2="109"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1827" y="120.3047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="1839" y="127.5332">sutend: Student</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1827" y="137.9141"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="66" x="1839" y="145.1426">date: Date</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="1827" y="155.5234"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="67" x="1839" y="162.752">text: String</text><line style="stroke:#181818;stroke-width:0.5;" x1="1820" x2="1954" y1="169.8281" y2="169.8281"/></g><!--MD5=[eeb7a65d2e385df3fcc0443327792a59]
+class BaseEdition--><g id="elem_BaseEdition"><rect codeLine="236" fill="#F1F1F1" height="171.2656" id="BaseEdition" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="173" x="699.5" y="42"/><ellipse cx="744.25" cy="58" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M747.0156,53.875 Q747.1719,53.6563 747.3594,53.5469 Q747.5469,53.4375 747.7656,53.4375 Q748.1406,53.4375 748.375,53.7031 Q748.6094,53.9531 748.6094,54.5625 L748.6094,56.0156 Q748.6094,56.625 748.375,56.8906 Q748.1406,57.1563 747.7656,57.1563 Q747.4219,57.1563 747.2188,56.9531 Q747.0156,56.7656 746.9063,56.25 Q746.8594,55.8906 746.6719,55.7031 Q746.3438,55.3281 745.7344,55.1094 Q745.125,54.8906 744.5,54.8906 Q743.7344,54.8906 743.0938,55.2188 Q742.4688,55.5469 741.9688,56.2969 Q741.4844,57.0469 741.4844,58.0781 L741.4844,59.1719 Q741.4844,60.4063 742.375,61.2344 Q743.2656,62.0469 744.8594,62.0469 Q745.7969,62.0469 746.4531,61.7969 Q746.8438,61.6406 747.2656,61.2031 Q747.5313,60.9375 747.6719,60.8594 Q747.8281,60.7813 748.0313,60.7813 Q748.3594,60.7813 748.6094,61.0469 Q748.875,61.2969 748.875,61.6406 Q748.875,61.9844 748.5313,62.3906 Q748.0313,62.9688 747.2344,63.2969 Q746.1563,63.75 744.8594,63.75 Q743.3438,63.75 742.1406,63.125 Q741.1563,62.625 740.4688,61.5625 Q739.7813,60.4844 739.7813,59.2031 L739.7813,58.0469 Q739.7813,56.7188 740.3906,55.5781 Q741.0156,54.4219 742.1094,53.8125 Q743.2031,53.1875 744.4375,53.1875 Q745.1719,53.1875 745.8125,53.3594 Q746.4688,53.5156 747.0156,53.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="75" x="764.75" y="63.7285">BaseEdition</text><line style="stroke:#181818;stroke-width:0.5;" x1="700.5" x2="871.5" y1="74" y2="74"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="707.5" y="85.3047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="719.5" y="92.5332">name: String</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="707.5" y="102.9141"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="719.5" y="110.1426">projectTemplate: String</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="707.5" y="120.5234"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="82" x="719.5" y="127.752">staus: Status</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="707.5" y="138.1328"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="110" x="719.5" y="145.3613">projects: Project[]</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="707.5" y="155.7422"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="137" x="719.5" y="162.9707">numberOfProjects: int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="707.5" y="173.3516"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="100" x="719.5" y="180.5801">start: LocalDate</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="707.5" y="190.9609"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="719.5" y="198.1895">end: LocalDate</text><line style="stroke:#181818;stroke-width:0.5;" x1="700.5" x2="871.5" y1="205.2656" y2="205.2656"/></g><!--MD5=[449f683adebe2fa39a7302cc61072fb6]
+class BaseFacilitators--><g id="elem_BaseFacilitators"><rect codeLine="304" fill="#F1F1F1" height="171.2656" id="BaseFacilitators" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="173" x="2502.5" y="42"/><ellipse cx="2535.5" cy="58" fill="#ADD1B2" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M2538.2656,53.875 Q2538.4219,53.6563 2538.6094,53.5469 Q2538.7969,53.4375 2539.0156,53.4375 Q2539.3906,53.4375 2539.625,53.7031 Q2539.8594,53.9531 2539.8594,54.5625 L2539.8594,56.0156 Q2539.8594,56.625 2539.625,56.8906 Q2539.3906,57.1563 2539.0156,57.1563 Q2538.6719,57.1563 2538.4688,56.9531 Q2538.2656,56.7656 2538.1563,56.25 Q2538.1094,55.8906 2537.9219,55.7031 Q2537.5938,55.3281 2536.9844,55.1094 Q2536.375,54.8906 2535.75,54.8906 Q2534.9844,54.8906 2534.3438,55.2188 Q2533.7188,55.5469 2533.2188,56.2969 Q2532.7344,57.0469 2532.7344,58.0781 L2532.7344,59.1719 Q2532.7344,60.4063 2533.625,61.2344 Q2534.5156,62.0469 2536.1094,62.0469 Q2537.0469,62.0469 2537.7031,61.7969 Q2538.0938,61.6406 2538.5156,61.2031 Q2538.7813,60.9375 2538.9219,60.8594 Q2539.0781,60.7813 2539.2813,60.7813 Q2539.6094,60.7813 2539.8594,61.0469 Q2540.125,61.2969 2540.125,61.6406 Q2540.125,61.9844 2539.7813,62.3906 Q2539.2813,62.9688 2538.4844,63.2969 Q2537.4063,63.75 2536.1094,63.75 Q2534.5938,63.75 2533.3906,63.125 Q2532.4063,62.625 2531.7188,61.5625 Q2531.0313,60.4844 2531.0313,59.2031 L2531.0313,58.0469 Q2531.0313,56.7188 2531.6406,55.5781 Q2532.2656,54.4219 2533.3594,53.8125 Q2534.4531,53.1875 2535.6875,53.1875 Q2536.4219,53.1875 2537.0625,53.3594 Q2537.7188,53.5156 2538.2656,53.875 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101" x="2553.5" y="63.7285">BaseFacilitators</text><line style="stroke:#181818;stroke-width:0.5;" x1="2503.5" x2="2674.5" y1="74" y2="74"/><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2510.5" y="85.3047"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="101" x="2522.5" y="92.5332">idParticipant: int</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2510.5" y="102.9141"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="80" x="2522.5" y="110.1426">name: String</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2510.5" y="120.5234"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="2522.5" y="127.752">email: String</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2510.5" y="138.1328"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="103" x="2522.5" y="145.3613">contact: Contact</text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2510.5" y="155.7422"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="128" x="2522.5" y="162.9707">institution: Institution</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="4" x="2522.5" y="180.5801"> </text><rect fill="none" height="6" style="stroke:#C82930;stroke-width:1.0;" width="6" x="2510.5" y="190.9609"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="2522.5" y="198.1895">areaOfExpertise: String</text><line style="stroke:#181818;stroke-width:0.5;" x1="2503.5" x2="2674.5" y1="205.2656" y2="205.2656"/></g><!--MD5=[72ce1314beffbcf60a64ee91fbbc10dc]
+class Contact--><g id="elem_Contact"><rect codeLine="73" fill="#F1F1F1" height="171.2656" id="Contact" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="190" x="2489" y="879"/><ellipse cx="2555.25" cy="895" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M2556.2031,891.6406 L2556.2031,898.2969 L2557.9219,898.2969 Q2558.5313,898.2969 2558.7969,898.5313 Q2559.0625,898.7656 2559.0625,899.1563 Q2559.0625,899.5313 2558.7969,899.7656 Q2558.5313,900 2557.9219,900 L2552.7813,900 Q2552.1719,900 2551.9063,899.7656 Q2551.6406,899.5313 2551.6406,899.1406 Q2551.6406,898.7656 2551.9063,898.5313 Q2552.1719,898.2969 2552.7813,898.2969 L2554.5,898.2969 L2554.5,891.6406 L2552.7813,891.6406 Q2552.1719,891.6406 2551.9063,891.4063 Q2551.6406,891.1719 2551.6406,890.7813 Q2551.6406,890.4063 2551.9063,890.1719 Q2552.1719,889.9375 2552.7813,889.9375 L2557.9219,889.9375 Q2558.5313,889.9375 2558.7969,890.1719 Q2559.0625,890.4063 2559.0625,890.7813 Q2559.0625,891.1719 2558.7969,891.4063 Q2558.5313,891.6406 2557.9219,891.6406 L2556.2031,891.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="49" x="2575.75" y="900.7285">Contact</text><line style="stroke:#181818;stroke-width:0.5;" x1="2490" x2="2678" y1="911" y2="911"/><line style="stroke:#181818;stroke-width:0.5;" x1="2490" x2="2678" y1="919" y2="919"/><ellipse cx="2500" cy="933.3047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="113" x="2509" y="937.5332">getStreet(): String</text><ellipse cx="2500" cy="950.9141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="2509" y="955.1426">getCity(): String</text><ellipse cx="2500" cy="968.5234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="108" x="2509" y="972.752">getState(): String</text><ellipse cx="2500" cy="986.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="128" x="2509" y="990.3613">getZipCode(): String</text><ellipse cx="2500" cy="1003.7422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="125" x="2509" y="1007.9707">getCountry(): String</text><ellipse cx="2500" cy="1021.3516" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="116" x="2509" y="1025.5801">getPhone(): String</text><ellipse cx="2500" cy="1038.9609" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="164" x="2509" y="1043.1895">equals(Object o): boolean</text></g><!--MD5=[de8f1132c66c65ebf8301b3bb1356cb9]
+class Instituition--><g id="elem_Instituition"><rect codeLine="83" fill="#F1F1F1" height="241.7031" id="Instituition" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="236" x="3060" y="843.5"/><ellipse cx="3141.75" cy="859.5" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M3142.7031,856.1406 L3142.7031,862.7969 L3144.4219,862.7969 Q3145.0313,862.7969 3145.2969,863.0313 Q3145.5625,863.2656 3145.5625,863.6563 Q3145.5625,864.0313 3145.2969,864.2656 Q3145.0313,864.5 3144.4219,864.5 L3139.2813,864.5 Q3138.6719,864.5 3138.4063,864.2656 Q3138.1406,864.0313 3138.1406,863.6406 Q3138.1406,863.2656 3138.4063,863.0313 Q3138.6719,862.7969 3139.2813,862.7969 L3141,862.7969 L3141,856.1406 L3139.2813,856.1406 Q3138.6719,856.1406 3138.4063,855.9063 Q3138.1406,855.6719 3138.1406,855.2813 Q3138.1406,854.9063 3138.4063,854.6719 Q3138.6719,854.4375 3139.2813,854.4375 L3144.4219,854.4375 Q3145.0313,854.4375 3145.2969,854.6719 Q3145.5625,854.9063 3145.5625,855.2813 Q3145.5625,855.6719 3145.2969,855.9063 Q3145.0313,856.1406 3144.4219,856.1406 L3142.7031,856.1406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="64" x="3162.25" y="865.2285">Instituition</text><line style="stroke:#181818;stroke-width:0.5;" x1="3061" x2="3295" y1="875.5" y2="875.5"/><line style="stroke:#181818;stroke-width:0.5;" x1="3061" x2="3295" y1="883.5" y2="883.5"/><ellipse cx="3071" cy="897.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="3080" y="902.0332">getName(): String</text><ellipse cx="3071" cy="915.4141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109" x="3080" y="919.6426">getEmail(): String</text><ellipse cx="3071" cy="933.0234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="165" x="3080" y="937.252">getType(): InstituitionType</text><ellipse cx="3071" cy="950.6328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="136" x="3080" y="954.8613">getContact(): Contact</text><ellipse cx="3071" cy="968.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126" x="3080" y="972.4707">getWebsite(): String</text><ellipse cx="3071" cy="985.8516" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="3080" y="990.0801">getDescription(): String</text><ellipse cx="3071" cy="1003.4609" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="190" x="3080" y="1007.6895">setWebsite(String string): void</text><ellipse cx="3071" cy="1021.0703" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="210" x="3080" y="1025.2988">setDescription(String string): void</text><ellipse cx="3071" cy="1038.6797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="195" x="3080" y="1042.9082">setContact(Contact cntct): void</text><ellipse cx="3071" cy="1056.2891" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="201" x="3080" y="1060.5176">setType(InstituitionType it): void</text><ellipse cx="3071" cy="1073.8984" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="164" x="3080" y="1078.127">equals(Object o): boolean</text></g><!--MD5=[ead2ee2544877a187d90790862b157c2]
+class Partner--><g id="elem_Partner"><rect codeLine="97" fill="#F1F1F1" height="83.2188" id="Partner" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="152" x="2714" y="923"/><ellipse cx="2762.25" cy="939" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M2763.2031,935.6406 L2763.2031,942.2969 L2764.9219,942.2969 Q2765.5313,942.2969 2765.7969,942.5313 Q2766.0625,942.7656 2766.0625,943.1563 Q2766.0625,943.5313 2765.7969,943.7656 Q2765.5313,944 2764.9219,944 L2759.7813,944 Q2759.1719,944 2758.9063,943.7656 Q2758.6406,943.5313 2758.6406,943.1406 Q2758.6406,942.7656 2758.9063,942.5313 Q2759.1719,942.2969 2759.7813,942.2969 L2761.5,942.2969 L2761.5,935.6406 L2759.7813,935.6406 Q2759.1719,935.6406 2758.9063,935.4063 Q2758.6406,935.1719 2758.6406,934.7813 Q2758.6406,934.4063 2758.9063,934.1719 Q2759.1719,933.9375 2759.7813,933.9375 L2764.9219,933.9375 Q2765.5313,933.9375 2765.7969,934.1719 Q2766.0625,934.4063 2766.0625,934.7813 Q2766.0625,935.1719 2765.7969,935.4063 Q2765.5313,935.6406 2764.9219,935.6406 L2763.2031,935.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="47" x="2782.75" y="944.7285">Partner</text><line style="stroke:#181818;stroke-width:0.5;" x1="2715" x2="2865" y1="955" y2="955"/><line style="stroke:#181818;stroke-width:0.5;" x1="2715" x2="2865" y1="963" y2="963"/><ellipse cx="2725" cy="977.3047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="2734" y="981.5332">getVat(): String</text><ellipse cx="2725" cy="994.9141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="126" x="2734" y="999.1426">getWebsite(): String</text></g><!--MD5=[d6181cb537bdc20c0a3007a98a56832d]
+class Student--><g id="elem_Student"><rect codeLine="102" fill="#F1F1F1" height="65.6094" id="Student" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="128" x="3331" y="931.5"/><ellipse cx="3367.15" cy="947.5" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M3368.1031,944.1406 L3368.1031,950.7969 L3369.8219,950.7969 Q3370.4313,950.7969 3370.6969,951.0313 Q3370.9625,951.2656 3370.9625,951.6563 Q3370.9625,952.0313 3370.6969,952.2656 Q3370.4313,952.5 3369.8219,952.5 L3364.6813,952.5 Q3364.0719,952.5 3363.8063,952.2656 Q3363.5406,952.0313 3363.5406,951.6406 Q3363.5406,951.2656 3363.8063,951.0313 Q3364.0719,950.7969 3364.6813,950.7969 L3366.4,950.7969 L3366.4,944.1406 L3364.6813,944.1406 Q3364.0719,944.1406 3363.8063,943.9063 Q3363.5406,943.6719 3363.5406,943.2813 Q3363.5406,942.9063 3363.8063,942.6719 Q3364.0719,942.4375 3364.6813,942.4375 L3369.8219,942.4375 Q3370.4313,942.4375 3370.6969,942.6719 Q3370.9625,942.9063 3370.9625,943.2813 Q3370.9625,943.6719 3370.6969,943.9063 Q3370.4313,944.1406 3369.8219,944.1406 L3368.1031,944.1406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="49" x="3385.85" y="953.2285">Student</text><line style="stroke:#181818;stroke-width:0.5;" x1="3332" x2="3458" y1="963.5" y2="963.5"/><line style="stroke:#181818;stroke-width:0.5;" x1="3332" x2="3458" y1="971.5" y2="971.5"/><ellipse cx="3342" cy="985.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="102" x="3351" y="990.0332">getNumber(): int</text></g><!--MD5=[b1b35833dc86dffc6b5d0c34dd643d10]
+class Participant--><g id="elem_Participant"><rect codeLine="106" fill="#F1F1F1" height="171.2656" id="Participant" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="249" x="2665.5" y="1245"/><ellipse cx="2752.25" cy="1261" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M2753.2031,1257.6406 L2753.2031,1264.2969 L2754.9219,1264.2969 Q2755.5313,1264.2969 2755.7969,1264.5313 Q2756.0625,1264.7656 2756.0625,1265.1563 Q2756.0625,1265.5313 2755.7969,1265.7656 Q2755.5313,1266 2754.9219,1266 L2749.7813,1266 Q2749.1719,1266 2748.9063,1265.7656 Q2748.6406,1265.5313 2748.6406,1265.1406 Q2748.6406,1264.7656 2748.9063,1264.5313 Q2749.1719,1264.2969 2749.7813,1264.2969 L2751.5,1264.2969 L2751.5,1257.6406 L2749.7813,1257.6406 Q2749.1719,1257.6406 2748.9063,1257.4063 Q2748.6406,1257.1719 2748.6406,1256.7813 Q2748.6406,1256.4063 2748.9063,1256.1719 Q2749.1719,1255.9375 2749.7813,1255.9375 L2754.9219,1255.9375 Q2755.5313,1255.9375 2755.7969,1256.1719 Q2756.0625,1256.4063 2756.0625,1256.7813 Q2756.0625,1257.1719 2755.7969,1257.4063 Q2755.5313,1257.6406 2754.9219,1257.6406 L2753.2031,1257.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="67" x="2772.75" y="1266.7285">Participant</text><line style="stroke:#181818;stroke-width:0.5;" x1="2666.5" x2="2913.5" y1="1277" y2="1277"/><line style="stroke:#181818;stroke-width:0.5;" x1="2666.5" x2="2913.5" y1="1285" y2="1285"/><ellipse cx="2676.5" cy="1299.3047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="2685.5" y="1303.5332">getName(): String</text><ellipse cx="2676.5" cy="1316.9141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="109" x="2685.5" y="1321.1426">getEmail(): String</text><ellipse cx="2676.5" cy="1334.5234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="136" x="2685.5" y="1338.752">getContact(): Contact</text><ellipse cx="2676.5" cy="1352.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="164" x="2685.5" y="1356.3613">getInstituition(): Instituition</text><ellipse cx="2676.5" cy="1369.7422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="223" x="2685.5" y="1373.9707">setInstituition(Instituition instn): void</text><ellipse cx="2676.5" cy="1387.3516" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="195" x="2685.5" y="1391.5801">setContact(Contact cntct): void</text><ellipse cx="2676.5" cy="1404.9609" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="164" x="2685.5" y="1409.1895">equals(Object o): boolean</text></g><!--MD5=[219a0dc6cfc6529e8ff008b9cfb31e0d]
+class Facilitator--><g id="elem_Facilitator"><rect codeLine="116" fill="#F1F1F1" height="83.2188" id="Facilitator" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="268" x="2186" y="923"/><ellipse cx="2284.75" cy="939" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M2285.7031,935.6406 L2285.7031,942.2969 L2287.4219,942.2969 Q2288.0313,942.2969 2288.2969,942.5313 Q2288.5625,942.7656 2288.5625,943.1563 Q2288.5625,943.5313 2288.2969,943.7656 Q2288.0313,944 2287.4219,944 L2282.2813,944 Q2281.6719,944 2281.4063,943.7656 Q2281.1406,943.5313 2281.1406,943.1406 Q2281.1406,942.7656 2281.4063,942.5313 Q2281.6719,942.2969 2282.2813,942.2969 L2284,942.2969 L2284,935.6406 L2282.2813,935.6406 Q2281.6719,935.6406 2281.4063,935.4063 Q2281.1406,935.1719 2281.1406,934.7813 Q2281.1406,934.4063 2281.4063,934.1719 Q2281.6719,933.9375 2282.2813,933.9375 L2287.4219,933.9375 Q2288.0313,933.9375 2288.2969,934.1719 Q2288.5625,934.4063 2288.5625,934.7813 Q2288.5625,935.1719 2288.2969,935.4063 Q2288.0313,935.6406 2287.4219,935.6406 L2285.7031,935.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="62" x="2305.25" y="944.7285">Facilitator</text><line style="stroke:#181818;stroke-width:0.5;" x1="2187" x2="2453" y1="955" y2="955"/><line style="stroke:#181818;stroke-width:0.5;" x1="2187" x2="2453" y1="963" y2="963"/><ellipse cx="2197" cy="977.3047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="178" x="2206" y="981.5332">getAreaOfExpertise(): String</text><ellipse cx="2197" cy="994.9141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="242" x="2206" y="999.1426">setAreaOfExpertise(String string): void</text></g><!--MD5=[11fba09e6f670971decafbfafbb6a319]
+class InstitutionType--><g id="elem_InstitutionType"><rect codeLine="121" fill="#F1F1F1" height="118.4375" id="InstitutionType" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="124" x="2901" y="905.5"/><ellipse cx="2916" cy="921.5" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M2914.8594,922.2969 L2914.8594,924.7969 L2919.1875,924.7969 L2919.1875,923.875 Q2919.1875,923.2656 2919.4219,923 Q2919.6719,922.7344 2920.0469,922.7344 Q2920.4219,922.7344 2920.6563,923 Q2920.8906,923.2656 2920.8906,923.875 L2920.8906,926.5 L2912.8906,926.5 Q2912.2656,926.5 2912,926.2656 Q2911.75,926.0313 2911.75,925.6406 Q2911.75,925.2656 2912.0156,925.0313 Q2912.2813,924.7969 2912.8906,924.7969 L2913.1563,924.7969 L2913.1563,918.1406 L2912.8906,918.1406 Q2912.2656,918.1406 2912,917.9063 Q2911.75,917.6719 2911.75,917.2813 Q2911.75,916.9063 2912,916.6719 Q2912.2656,916.4375 2912.8906,916.4375 L2920.5156,916.4375 L2920.5156,919.0313 Q2920.5156,919.6406 2920.2813,919.9063 Q2920.0625,920.1563 2919.6719,920.1563 Q2919.2969,920.1563 2919.0625,919.9063 Q2918.8281,919.6406 2918.8281,919.0313 L2918.8281,918.1406 L2914.8594,918.1406 L2914.8594,920.5938 L2916.3438,920.5938 Q2916.3438,919.9375 2916.4688,919.75 Q2916.7344,919.3438 2917.2031,919.3438 Q2917.5781,919.3438 2917.8125,919.6094 Q2918.0469,919.8594 2918.0469,920.4688 L2918.0469,922.4375 Q2918.0469,922.9844 2917.9219,923.1719 Q2917.6563,923.5625 2917.2031,923.5625 Q2916.7344,923.5625 2916.4688,923.1563 Q2916.3438,922.9688 2916.3438,922.2969 L2914.8594,922.2969 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="92" x="2930" y="927.2285">InstitutionType</text><line style="stroke:#181818;stroke-width:0.5;" x1="2902" x2="3024" y1="937.5" y2="937.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="2907" y="956.0332">UNIVERSITY,</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="72" x="2907" y="973.6426">COMPANY,</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="35" x="2907" y="991.252">NGO,</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="48" x="2907" y="1008.8613">OTHER</text><line style="stroke:#181818;stroke-width:0.5;" x1="2902" x2="3024" y1="1015.9375" y2="1015.9375"/></g><!--MD5=[a37707a5a7e4fa9ccccea367e3a415b8]
+class Edition--><g id="elem_Edition"><rect codeLine="130" fill="#F1F1F1" height="294.5313" id="Edition" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="635" x="70.5" y="817"/><ellipse cx="362.25" cy="833" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M363.2031,829.6406 L363.2031,836.2969 L364.9219,836.2969 Q365.5313,836.2969 365.7969,836.5313 Q366.0625,836.7656 366.0625,837.1563 Q366.0625,837.5313 365.7969,837.7656 Q365.5313,838 364.9219,838 L359.7813,838 Q359.1719,838 358.9063,837.7656 Q358.6406,837.5313 358.6406,837.1406 Q358.6406,836.7656 358.9063,836.5313 Q359.1719,836.2969 359.7813,836.2969 L361.5,836.2969 L361.5,829.6406 L359.7813,829.6406 Q359.1719,829.6406 358.9063,829.4063 Q358.6406,829.1719 358.6406,828.7813 Q358.6406,828.4063 358.9063,828.1719 Q359.1719,827.9375 359.7813,827.9375 L364.9219,827.9375 Q365.5313,827.9375 365.7969,828.1719 Q366.0625,828.4063 366.0625,828.7813 Q366.0625,829.1719 365.7969,829.4063 Q365.5313,829.6406 364.9219,829.6406 L363.2031,829.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="43" x="382.75" y="838.7285">Edition</text><line style="stroke:#181818;stroke-width:0.5;" x1="71.5" x2="704.5" y1="849" y2="849"/><line style="stroke:#181818;stroke-width:0.5;" x1="71.5" x2="704.5" y1="857" y2="857"/><ellipse cx="81.5" cy="871.3047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="90.5" y="875.5332">getName(): String</text><ellipse cx="81.5" cy="888.9141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132" x="90.5" y="893.1426">getStart(): LocalDate</text><ellipse cx="81.5" cy="906.5234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="178" x="90.5" y="910.752">getProjectTemplate(): String</text><ellipse cx="81.5" cy="924.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="118" x="90.5" y="928.3613">getStatus(): Status</text><ellipse cx="81.5" cy="941.7422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="185" x="90.5" y="945.9707">setStatus(Status status): void</text><ellipse cx="81.5" cy="959.3516" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="609" x="90.5" y="963.5801">addProject(String string, String string1, String[] strings) throws IOException, ParseException: void</text><ellipse cx="81.5" cy="976.9609" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="211" x="90.5" y="981.1895">removeProject(String string): void</text><ellipse cx="81.5" cy="994.5703" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="202" x="90.5" y="998.7988">getProject(String string): Project</text><ellipse cx="81.5" cy="1012.1797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="141" x="90.5" y="1016.4082">getProjects(): Project[]</text><ellipse cx="81.5" cy="1029.7891" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="258" x="90.5" y="1034.0176">getProjectsByTag(String string): Project[]</text><ellipse cx="81.5" cy="1047.3984" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="232" x="90.5" y="1051.627">getProjectsOf(String string): Project[]</text><ellipse cx="81.5" cy="1065.0078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="168" x="90.5" y="1069.2363">getNumberOfProjects(): int</text><ellipse cx="81.5" cy="1082.6172" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="127" x="90.5" y="1086.8457">getEnd(): LocalDate</text><ellipse cx="81.5" cy="1100.2266" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="164" x="90.5" y="1104.4551">equals(Object o): boolean</text></g><!--MD5=[79d378210367c0c6ec62ef762ddfbd1b]
+class Project--><g id="elem_Project"><rect codeLine="147" fill="#F1F1F1" height="435.4063" id="Project" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="666" x="866" y="747"/><ellipse cx="1172.75" cy="763" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M1173.7031,759.6406 L1173.7031,766.2969 L1175.4219,766.2969 Q1176.0313,766.2969 1176.2969,766.5313 Q1176.5625,766.7656 1176.5625,767.1563 Q1176.5625,767.5313 1176.2969,767.7656 Q1176.0313,768 1175.4219,768 L1170.2813,768 Q1169.6719,768 1169.4063,767.7656 Q1169.1406,767.5313 1169.1406,767.1406 Q1169.1406,766.7656 1169.4063,766.5313 Q1169.6719,766.2969 1170.2813,766.2969 L1172,766.2969 L1172,759.6406 L1170.2813,759.6406 Q1169.6719,759.6406 1169.4063,759.4063 Q1169.1406,759.1719 1169.1406,758.7813 Q1169.1406,758.4063 1169.4063,758.1719 Q1169.6719,757.9375 1170.2813,757.9375 L1175.4219,757.9375 Q1176.0313,757.9375 1176.2969,758.1719 Q1176.5625,758.4063 1176.5625,758.7813 Q1176.5625,759.1719 1176.2969,759.4063 Q1176.0313,759.6406 1175.4219,759.6406 L1173.7031,759.6406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="44" x="1193.25" y="768.7285">Project</text><line style="stroke:#181818;stroke-width:0.5;" x1="867" x2="1531" y1="779" y2="779"/><line style="stroke:#181818;stroke-width:0.5;" x1="867" x2="1531" y1="787" y2="787"/><ellipse cx="877" cy="801.3047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="886" y="805.5332">getName(): String</text><ellipse cx="877" cy="818.9141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="886" y="823.1426">getDescription(): String</text><ellipse cx="877" cy="836.5234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="191" x="886" y="840.752">getNumberOfParticipants(): int</text><ellipse cx="877" cy="854.1328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="173" x="886" y="858.3613">getNumberOfStudents(): int</text><ellipse cx="877" cy="871.7422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="171" x="886" y="875.9707">getNumberOfPartners(): int</text><ellipse cx="877" cy="889.3516" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="186" x="886" y="893.5801">getNumberOfFacilitators(): int</text><ellipse cx="877" cy="906.9609" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="155" x="886" y="911.1895">getNumberOfTasks(): int</text><ellipse cx="877" cy="924.5703" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="213" x="886" y="928.7988">getMaximumNumberOfTasks(): int</text><ellipse cx="877" cy="942.1797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="261" x="886" y="946.4082">getMaximumNumberOfParticipants(): long</text><ellipse cx="877" cy="959.7891" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="231" x="886" y="964.0176">getMaximumNumberOfStudents(): int</text><ellipse cx="877" cy="977.3984" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="229" x="886" y="981.627">getMaximumNumberOfPartners(): int</text><ellipse cx="877" cy="995.0078" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="244" x="886" y="999.2363">getMaximumNumberOfFacilitators(): int</text><ellipse cx="877" cy="1012.6172" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="640" x="886" y="1016.8457">addParticipant(Participant p) throws IllegalNumberOfParticipantType, ParticipantAlreadyInProject: void</text><ellipse cx="877" cy="1030.2266" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="275" x="886" y="1034.4551">removeParticipant(String string): Participant</text><ellipse cx="877" cy="1047.8359" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="248" x="886" y="1052.0645">getParticipant(String string): Participant</text><ellipse cx="877" cy="1065.4453" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="886" y="1069.6738">getTags(): String[]</text><ellipse cx="877" cy="1083.0547" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="193" x="886" y="1087.2832">hasTag(String string): boolean</text><ellipse cx="877" cy="1100.6641" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="489" x="886" y="1104.8926">addTask(Task task) throws IllegalNumberOfTasks, TaskAlreadyInProject: void</text><ellipse cx="877" cy="1118.2734" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="176" x="886" y="1122.502">getTask(String string): Task</text><ellipse cx="877" cy="1135.8828" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="115" x="886" y="1140.1113">getTasks(): Task[]</text><ellipse cx="877" cy="1153.4922" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="147" x="886" y="1157.7207">isCompleted(): boolean</text><ellipse cx="877" cy="1171.1016" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="164" x="886" y="1175.3301">equals(Object o): boolean</text></g><!--MD5=[e3d83ec5fd90ea9f3f2bfe265cb53458]
+class Status--><g id="elem_Status"><rect codeLine="172" fill="#F1F1F1" height="118.4375" id="Status" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="90" x="741" y="905.5"/><ellipse cx="764.1" cy="921.5" fill="#EB937F" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M762.9594,922.2969 L762.9594,924.7969 L767.2875,924.7969 L767.2875,923.875 Q767.2875,923.2656 767.5219,923 Q767.7719,922.7344 768.1469,922.7344 Q768.5219,922.7344 768.7563,923 Q768.9906,923.2656 768.9906,923.875 L768.9906,926.5 L760.9906,926.5 Q760.3656,926.5 760.1,926.2656 Q759.85,926.0313 759.85,925.6406 Q759.85,925.2656 760.1156,925.0313 Q760.3813,924.7969 760.9906,924.7969 L761.2563,924.7969 L761.2563,918.1406 L760.9906,918.1406 Q760.3656,918.1406 760.1,917.9063 Q759.85,917.6719 759.85,917.2813 Q759.85,916.9063 760.1,916.6719 Q760.3656,916.4375 760.9906,916.4375 L768.6156,916.4375 L768.6156,919.0313 Q768.6156,919.6406 768.3813,919.9063 Q768.1625,920.1563 767.7719,920.1563 Q767.3969,920.1563 767.1625,919.9063 Q766.9281,919.6406 766.9281,919.0313 L766.9281,918.1406 L762.9594,918.1406 L762.9594,920.5938 L764.4438,920.5938 Q764.4438,919.9375 764.5688,919.75 Q764.8344,919.3438 765.3031,919.3438 Q765.6781,919.3438 765.9125,919.6094 Q766.1469,919.8594 766.1469,920.4688 L766.1469,922.4375 Q766.1469,922.9844 766.0219,923.1719 Q765.7563,923.5625 765.3031,923.5625 Q764.8344,923.5625 764.5688,923.1563 Q764.4438,922.9688 764.4438,922.2969 L762.9594,922.2969 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="40" x="779.9" y="927.2285">Status</text><line style="stroke:#181818;stroke-width:0.5;" x1="742" x2="830" y1="937.5" y2="937.5"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="53" x="747" y="956.0332">ACTIVE,</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="65" x="747" y="973.6426">INACTIVE,</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="78" x="747" y="991.252">CANCELED,</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="57" x="747" y="1008.8613">CLOSED</text><line style="stroke:#181818;stroke-width:0.5;" x1="742" x2="830" y1="1015.9375" y2="1015.9375"/></g><!--MD5=[dc08e57b8afea6c01313f010ef7536b5]
+class Submission--><g id="elem_Submission"><rect codeLine="179" fill="#F1F1F1" height="118.4375" id="Submission" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="248" x="1882" y="905.5"/><ellipse cx="1965.75" cy="921.5" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M1966.7031,918.1406 L1966.7031,924.7969 L1968.4219,924.7969 Q1969.0313,924.7969 1969.2969,925.0313 Q1969.5625,925.2656 1969.5625,925.6563 Q1969.5625,926.0313 1969.2969,926.2656 Q1969.0313,926.5 1968.4219,926.5 L1963.2813,926.5 Q1962.6719,926.5 1962.4063,926.2656 Q1962.1406,926.0313 1962.1406,925.6406 Q1962.1406,925.2656 1962.4063,925.0313 Q1962.6719,924.7969 1963.2813,924.7969 L1965,924.7969 L1965,918.1406 L1963.2813,918.1406 Q1962.6719,918.1406 1962.4063,917.9063 Q1962.1406,917.6719 1962.1406,917.2813 Q1962.1406,916.9063 1962.4063,916.6719 Q1962.6719,916.4375 1963.2813,916.4375 L1968.4219,916.4375 Q1969.0313,916.4375 1969.2969,916.6719 Q1969.5625,916.9063 1969.5625,917.2813 Q1969.5625,917.6719 1969.2969,917.9063 Q1969.0313,918.1406 1968.4219,918.1406 L1966.7031,918.1406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="72" x="1986.25" y="927.2285">Submission</text><line style="stroke:#181818;stroke-width:0.5;" x1="1883" x2="2129" y1="937.5" y2="937.5"/><line style="stroke:#181818;stroke-width:0.5;" x1="1883" x2="2129" y1="945.5" y2="945.5"/><ellipse cx="1893" cy="959.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="163" x="1902" y="964.0332">getDate(): LocalDateTime</text><ellipse cx="1893" cy="977.4141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="136" x="1902" y="981.6426">getStudent(): Student</text><ellipse cx="1893" cy="995.0234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="102" x="1902" y="999.252">getText(): String</text><ellipse cx="1893" cy="1012.6328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="222" x="1902" y="1016.8613">compareTo(Submission sbmsn): int</text></g><!--MD5=[b34797a66dc35cbf1d65f7e3ca75530e]
+class Task--><g id="elem_Task"><rect codeLine="186" fill="#F1F1F1" height="241.7031" id="Task" rx="2.5" ry="2.5" style="stroke:#181818;stroke-width:0.5;" width="279" x="1567.5" y="843.5"/><ellipse cx="1686.75" cy="859.5" fill="#B4A7E5" rx="11" ry="11" style="stroke:#181818;stroke-width:1.0;"/><path d="M1687.7031,856.1406 L1687.7031,862.7969 L1689.4219,862.7969 Q1690.0313,862.7969 1690.2969,863.0313 Q1690.5625,863.2656 1690.5625,863.6563 Q1690.5625,864.0313 1690.2969,864.2656 Q1690.0313,864.5 1689.4219,864.5 L1684.2813,864.5 Q1683.6719,864.5 1683.4063,864.2656 Q1683.1406,864.0313 1683.1406,863.6406 Q1683.1406,863.2656 1683.4063,863.0313 Q1683.6719,862.7969 1684.2813,862.7969 L1686,862.7969 L1686,856.1406 L1684.2813,856.1406 Q1683.6719,856.1406 1683.4063,855.9063 Q1683.1406,855.6719 1683.1406,855.2813 Q1683.1406,854.9063 1683.4063,854.6719 Q1683.6719,854.4375 1684.2813,854.4375 L1689.4219,854.4375 Q1690.0313,854.4375 1690.2969,854.6719 Q1690.5625,854.9063 1690.5625,855.2813 Q1690.5625,855.6719 1690.2969,855.9063 Q1690.0313,856.1406 1689.4219,856.1406 L1687.7031,856.1406 Z " fill="#000000"/><text fill="#000000" font-family="sans-serif" font-size="14" font-style="italic" lengthAdjust="spacing" textLength="32" x="1707.25" y="865.2285">Task</text><line style="stroke:#181818;stroke-width:0.5;" x1="1568.5" x2="1845.5" y1="875.5" y2="875.5"/><line style="stroke:#181818;stroke-width:0.5;" x1="1568.5" x2="1845.5" y1="883.5" y2="883.5"/><ellipse cx="1578.5" cy="897.8047" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="132" x="1587.5" y="902.0332">getStart(): LocalDate</text><ellipse cx="1578.5" cy="915.4141" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="127" x="1587.5" y="919.6426">getEnd(): LocalDate</text><ellipse cx="1578.5" cy="933.0234" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="107" x="1587.5" y="937.252">getDuration(): int</text><ellipse cx="1578.5" cy="950.6328" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="102" x="1587.5" y="954.8613">getTitle(): String</text><ellipse cx="1578.5" cy="968.2422" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="146" x="1587.5" y="972.4707">getDescription(): String</text><ellipse cx="1578.5" cy="985.8516" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="197" x="1587.5" y="990.0801">getSubmissions(): Submission[]</text><ellipse cx="1578.5" cy="1003.4609" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="196" x="1587.5" y="1007.6895">getNumberOfSubmissions(): int</text><ellipse cx="1578.5" cy="1021.0703" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="253" x="1587.5" y="1025.2988">addSubmission(Submission sbmsn):void</text><ellipse cx="1578.5" cy="1038.6797" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="164" x="1587.5" y="1042.9082">extendDeadline(int i): void</text><ellipse cx="1578.5" cy="1056.2891" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="164" x="1587.5" y="1060.5176">equals(Object o): boolean</text><ellipse cx="1578.5" cy="1073.8984" fill="#84BE84" rx="3" ry="3" style="stroke:#038048;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="166" x="1587.5" y="1078.127">compareTo(Task task): int</text></g><!--MD5=[fe191232d21af42b6a122362259aa648]
+link Student to Participant--><g id="link_Student_Participant"><path codeLine="201" d="M3393.7,997.65 C3389.81,1049.41 3374.43,1150.97 3314,1206 C3259.02,1256.07 3069.93,1291.61 2934.69,1311.34 " fill="none" id="Student-to-Participant" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="2935.53,1318.29,2914.74,1314.19,2933.54,1304.43,2935.53,1318.29" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[afefeefb14780f9627358ac6ab572277]
+link Facilitator to Participant--><g id="link_Facilitator_Participant"><path codeLine="202" d="M2336.18,1006.45 C2359.01,1059.37 2405.46,1151.22 2472,1206 C2522.12,1247.27 2587.63,1275.84 2646.15,1295.02 " fill="none" id="Facilitator-to-Participant" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="2648.32,1288.36,2665.29,1301.04,2644.11,1301.71,2648.32,1288.36" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[542d1da2df816084551c8f8a1dfa94a6]
+link Partner to Participant--><g id="link_Partner_Participant"><path codeLine="203" d="M2790,1006.2 C2790,1058.57 2790,1151.47 2790,1224.29 " fill="none" id="Partner-to-Participant" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="none" points="2797,1224.73,2790,1244.73,2783,1224.73,2797,1224.73" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[b69da43bdbdac00a8ec475cf59a89486]
+link BaseContact to Contact--><g id="link_BaseContact_Contact"><path codeLine="208" d="M2629.18,524.06 C2619.6,617.2 2603.41,774.73 2593.23,873.72 " fill="none" id="BaseContact-to-Contact" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="2592.69,878.98,2597.5949,870.4394,2593.2045,874.0065,2589.6373,869.6162,2592.69,878.98" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="67" x="2618" y="647.4951">implements</text></g><!--MD5=[20b5439f917695dfb48ead6559e47ec2]
+link BaseInstitution to Instituition--><g id="link_BaseInstitution_Instituition"><path codeLine="209" d="M2999.84,524.06 C3033.37,606.77 3087.49,740.26 3127.3,838.44 " fill="none" id="BaseInstitution-to-Instituition" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="3129.18,843.09,3129.4887,833.246,3127.2935,838.4595,3122.08,836.2644,3129.18,843.09" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="67" x="3049" y="647.4951">implementa</text></g><!--MD5=[235a80a9f1f6068503c8f1411a96c75f]
+link BaseInstitution to InstitutionType--><g id="link_BaseInstitution_InstitutionType"><path codeLine="210" d="M2968.11,524.06 C2966.93,626.01 2964.84,805.09 2963.74,900.12 " fill="none" id="BaseInstitution-to-InstitutionType" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="2963.68,905.14,2967.7826,896.1863,2963.7371,900.1403,2959.7831,896.0949,2963.68,905.14" style="stroke:#181818;stroke-width:1.0;"/></g><!--MD5=[86617cafcd47088ca8791de1ae34fa86]
+link BaseStudent to Student--><g id="link_BaseStudent_Student"><path codeLine="211" d="M3067.66,204.53 C3132.59,304.89 3244.99,488.8 3314,659 C3351.61,751.76 3376.84,867.48 3388.17,925.95 " fill="none" id="BaseStudent-to-Student" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="3389.16,931.09,3391.3656,921.4913,3388.2041,926.1822,3383.5132,923.0207,3389.16,931.09" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="67" x="3289" y="452.4951">implementa</text></g><!--MD5=[05472870906a4e32f51e1f2fe8514461]
+link BasePartners to Partner--><g id="link_BasePartners_Partner"><path codeLine="212" d="M2788.2,213.16 C2788.62,387.95 2789.57,783.61 2789.89,917.91 " fill="none" id="BasePartners-to-Partner" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="2789.9,922.96,2793.8743,913.9486,2789.8857,917.96,2785.8743,913.9715,2789.9,922.96" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="67" x="2790" y="452.4951">implementa</text></g><!--MD5=[9716937b02e20c68987337cfec1405c9]
+link BaseProject to Project--><g id="link_BaseProject_Project"><path codeLine="213" d="M1101.8,603.02 C1113.56,646.64 1126.59,694.97 1139.19,741.69 " fill="none" id="BaseProject-to-Project" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="1140.57,746.79,1142.0927,737.0596,1139.2701,741.9619,1134.3678,739.1394,1140.57,746.79" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="67" x="1113" y="647.4951">implementa</text></g><!--MD5=[7c3d2c9424656be74fb9e8969157328c]
+link BaseTask to Task--><g id="link_BaseTask_Task"><path codeLine="214" d="M1748.8,532.55 C1740.74,615.61 1728.35,743.34 1719.15,838.2 " fill="none" id="BaseTask-to-Task" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="1718.66,843.26,1723.5138,834.6903,1719.1448,838.2836,1715.5515,833.9146,1718.66,843.26" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="67" x="1739" y="647.4951">implementa</text></g><!--MD5=[656dd94969665526ebf04633699fbcaf]
+link BaseSubmission to Submission--><g id="link_BaseSubmission_Submission"><path codeLine="215" d="M1894.09,178.23 C1914.63,322.37 1974.18,740.24 1996.98,900.19 " fill="none" id="BaseSubmission-to-Submission" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="1997.71,905.31,2000.4085,895.838,1997.0089,900.3594,1992.4875,896.9598,1997.71,905.31" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="67" x="1955" y="452.4951">implementa</text></g><!--MD5=[0d9168fdfddb3144081549f5fffc29fa]
+reverse link BaseSubmission to BaseTask--><g id="link_BaseSubmission_BaseTask"><path codeLine="288" d="M1864.78,182.77 C1844.73,231.75 1814.9,304.58 1791.71,361.23 " fill="none" id="BaseSubmission-backto-BaseTask" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="1866.69,178.11,1859.5719,184.9168,1864.7913,182.7355,1866.9727,187.9548,1866.69,178.11" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="21" x="1838" y="257.4951">usa</text></g><!--MD5=[3f888fdcc8a0c8c84786ddd355fd6a94]
+link BaseFacilitators to Facilitator--><g id="link_BaseFacilitators_Facilitator"><path codeLine="290" d="M2530.81,213.23 C2515.95,237.56 2501.06,264.65 2490,291 C2395.49,516.17 2344.04,806.58 2326.73,917.59 " fill="none" id="BaseFacilitators-to-Facilitator" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="2325.93,922.74,2331.2466,914.4494,2326.6871,917.7976,2323.3388,913.2381,2325.93,922.74" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="67" x="2491" y="452.4951">implementa</text></g><!--MD5=[62fbd517ec27a2f8019f1817658fc0ae]
+link BaseEdition to BaseProject--><g id="link_BaseEdition_BaseProject"><path codeLine="291" d="M859.07,213.17 C878.7,235.92 900.6,261.3 922.52,286.69 " fill="none" id="BaseEdition-to-BaseProject" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="926.03,290.76,923.1923,281.3288,922.769,286.9698,917.128,286.5464,926.03,290.76" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="21" x="899" y="257.4951">usa</text></g><!--MD5=[9649243eb81885b7ff8f353b3e44edbc]
+link BaseEdition to Status--><g id="link_BaseEdition_Status"><path codeLine="292" d="M786,213.16 C786,380.85 786,751.83 786,900.29 " fill="none" id="BaseEdition-to-Status" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="786,905.47,790,896.47,786,900.47,782,896.47,786,905.47" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="21" x="787" y="452.4951">usa</text></g><!--MD5=[ce9273e8649ca82f58fd71c0891d6017]
+link BaseEdition to Edition--><g id="link_BaseEdition_Edition"><path codeLine="293" d="M745.65,213.16 C678.7,353.61 543.79,636.66 460.15,812.14 " fill="none" id="BaseEdition-to-Edition" style="stroke:#181818;stroke-width:1.0;stroke-dasharray:7.0,7.0;"/><polygon fill="#181818" points="457.93,816.78,465.403,810.3648,460.0741,812.2631,458.1759,806.9342,457.93,816.78" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="67" x="706" y="452.4951">implementa</text></g><!--MD5=[f1756171d66220c89fc6c1c7b394d612]
+link BasePartners to BaseInstitution--><g id="link_BasePartners_BaseInstitution"><path codeLine="295" d="M2836.27,213.17 C2863.2,260.42 2896.57,318.95 2923.11,365.51 " fill="none" id="BasePartners-to-BaseInstitution" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="2925.66,369.98,2924.6851,360.1795,2923.187,365.6344,2917.7321,364.1363,2925.66,369.98" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="21" x="2863" y="257.4951">usa</text></g><!--MD5=[0b9a519a8e6306a131d6d0ab45b7fe68]
+link BaseStudent to BaseInstitution--><g id="link_BaseStudent_BaseInstitution"><path codeLine="296" d="M3005.5,204.55 C2998.2,252.88 2988.74,315.4 2981.29,364.71 " fill="none" id="BaseStudent-to-BaseInstitution" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="2980.53,369.75,2985.8232,361.4444,2981.2731,364.8055,2977.912,360.2555,2980.53,369.75" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="21" x="2999" y="257.4951">usa</text></g><!--MD5=[e8e79858cbdf73e317a2fa8b81a2803d]
+link BaseFacilitators to BaseInstitution--><g id="link_BaseFacilitators_BaseInstitution"><path codeLine="297" d="M2675.72,201.01 C2681.79,205.24 2687.91,209.27 2694,213 C2764.9,256.4 2800.73,237.08 2864,291 C2888.2,311.63 2909.24,339.13 2926,365.23 " fill="none" id="BaseFacilitators-to-BaseInstitution" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="2928.87,369.75,2927.4213,360.0083,2926.1893,365.5293,2920.6682,364.2974,2928.87,369.75" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="21" x="2816" y="257.4951">usa</text></g><!--MD5=[95f982d870e24fa553af07f94860afc3]
+link BasePartners to BaseContact--><g id="link_BasePartners_BaseContact"><path codeLine="299" d="M2747.73,213.17 C2725.31,260.32 2697.54,318.71 2675.42,365.23 " fill="none" id="BasePartners-to-BaseContact" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="2673.16,369.98,2680.633,363.5648,2675.3041,365.4631,2673.4059,360.1342,2673.16,369.98" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="21" x="2731" y="257.4951">usa</text></g><!--MD5=[568845bfd9c256d453fea1548bd04d93]
+link BaseStudent to BaseContact--><g id="link_BaseStudent_BaseContact"><path codeLine="300" d="M2960.7,204.58 C2941.45,225.8 2918.32,246.89 2893,261 C2834,293.89 2800.41,253.83 2744,291 C2716.01,309.44 2693.28,337.97 2676.08,365.55 " fill="none" id="BaseStudent-to-BaseContact" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="2673.37,369.97,2681.4883,364.3939,2675.9865,365.7093,2674.6711,360.2075,2673.37,369.97" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="21" x="2918" y="257.4951">usa</text></g><!--MD5=[1d9ef6d1287909382e19dccd48f0d893]
+link BaseFacilitators to BaseContact--><g id="link_BaseFacilitators_BaseContact"><path codeLine="301" d="M2585.8,213.17 C2586.11,229.11 2587.03,245.6 2589,261 C2593.41,295.52 2602.26,332.81 2611.18,364.81 " fill="none" id="BaseFacilitators-to-BaseContact" style="stroke:#181818;stroke-width:1.0;"/><polygon fill="#181818" points="2612.61,369.9,2614.018,360.1523,2611.2534,365.0876,2606.3181,362.3229,2612.61,369.9" style="stroke:#181818;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="21" x="2590" y="257.4951">usa</text></g><!--MD5=[c89de75d70e7f6bc9ee5b8b2bbc91bbd]
+@startuml
+package Api {
+    ' Não sei onde deve estar ligado o BaseContact, mas colocou-se em BaseStudent e Instituição
+    ' package Managements {
+        '     class CblEditionManagement {
+            '         -BaseCbl: BaseCbl[]
+            '         -cdlCount: int
+            '         -activeEdition: BaseCbl
+
+            '         +BaseCbl()
+            '         +addCbl(BaseCbl: cbl): void
+            '         +removeCbl(int: index): void
+            '         +modifyCbl(int: index, BaseCbl: cbl) void
+            '
+        '}
+
+        '     class ProjectManagement {
+            '         -projects: Project[]
+            '         -numProjects: int
+
+            '         +ProjectManagement()
+            '         +addProject(Project: project): void
+            '         +removeProject(int: index): void
+            '         +modifyProject(int: index, Project: project) void
+            '
+        '}
+
+        '     class TasksManagement {
+            '         -tasks: Task[]
+            '         -numTasks: int
+
+            '         +TasksManagement()
+            '         +addTask(Task: task): void
+            '         +removeTask(int: index): void
+            '         +modifyTask(int: index, Task: task) void
+            '
+        '}
+
+        '     class SubmissionsManagement {
+            '         -submissions: Submission[]
+            '         -numSubmission: int
+
+            '         +TasksSubmission()
+            '         +submitTask(Submit: submission): void
+            '         +removeSubmission(int: index): void
+            '         +modifySubmission(int: index, Submission: submission) void
+            '
+        '}
+
+        '     class ParticipantsManagement {
+            '         -participants: AbstractParticipant[]
+            '         -numParticipants: int
+
+            '         +ProjectManagement()
+            '         +addParticipant(AbstractParticipant: participant): void
+            '         +removeParticipant(int: index): void
+            '         +modifyParticipant(int: index, AbstractParticipant: participant) void
+            '
+        '}
+        '
+    ' }
+
+    ' CblEditionManagement - -> BaseCbl: usa
+    ' ParticipantsManagement - -> AbstractParticipant: usa
+    ' BaseProject - -> TasksManagement: usa
+    ' BaseCbl "1" - -> "1..*" ProjectManagement: usa
+    ' BaseSubmission - -> SubmissionsManagement: usa
+    ' BaseTask - -> TasksManagement: usa
+    ' BaseProject - -> ParticipantsManagement: usa
+    ' BaseProject - -> SubmissionsManagement: usa
+
+    package BibliotecaProfessor {
+        package Perticipants {
+            interface Contact {
+                +getStreet(): String
+                +getCity(): String
+                +getState(): String
+                +getZipCode(): String
+                +getCountry(): String
+                +getPhone(): String
+                +equals(Object o): boolean
+            }
+
+            interface Instituition {
+                +getName(): String
+                +getEmail(): String
+                +getType(): InstituitionType
+                +getContact(): Contact
+                +getWebsite(): String
+                +getDescription(): String
+                +setWebsite(String string): void
+                +setDescription(String string): void
+                +setContact(Contact cntct): void
+                +setType(InstituitionType it): void
+                +equals(Object o): boolean
+            }
+
+            interface Partner {
+                +getVat(): String
+                +getWebsite(): String
+            }
+
+            interface Student {
+                +getNumber(): int
+            }
+
+            interface Participant {
+                +getName(): String
+                +getEmail(): String
+                +getContact(): Contact
+                +getInstituition(): Instituition
+                +setInstituition(Instituition instn): void
+                +setContact(Contact cntct): void
+                +equals(Object o): boolean
+            }
+
+            interface Facilitator {
+                +getAreaOfExpertise(): String
+                +setAreaOfExpertise(String string): void
+            }
+
+            enum InstitutionType {
+                UNIVERSITY,
+                COMPANY,
+                NGO,
+                OTHER
+            }
+        }
+
+        package Project {
+            interface Edition {
+                +getName(): String
+                +getStart(): LocalDate
+                +getProjectTemplate(): String
+                +getStatus(): Status
+                +setStatus(Status status): void
+                +addProject(String string, String string1, String[] strings) throws IOException, ParseException: void
+                +removeProject(String string): void
+                +getProject(String string): Project
+                +getProjects(): Project[]
+                +getProjectsByTag(String string): Project[]
+                +getProjectsOf(String string): Project[]
+                +getNumberOfProjects(): int
+                +getEnd(): LocalDate
+                +equals(Object o): boolean
+            }
+
+            interface Project {
+                +getName(): String
+                +getDescription(): String
+                +getNumberOfParticipants(): int
+                +getNumberOfStudents(): int
+                +getNumberOfPartners(): int
+                +getNumberOfFacilitators(): int
+                +getNumberOfTasks(): int
+                +getMaximumNumberOfTasks(): int
+                +getMaximumNumberOfParticipants(): long
+                +getMaximumNumberOfStudents(): int
+                +getMaximumNumberOfPartners(): int
+                +getMaximumNumberOfFacilitators(): int
+                +addParticipant(Participant p) throws IllegalNumberOfParticipantType, ParticipantAlreadyInProject: void
+                +removeParticipant(String string): Participant
+                +getParticipant(String string): Participant
+                +getTags(): String[]
+                +hasTag(String string): boolean
+                +addTask(Task task) throws IllegalNumberOfTasks, TaskAlreadyInProject: void
+                +getTask(String string): Task
+                +getTasks(): Task[]
+                +isCompleted(): boolean
+                +equals(Object o): boolean
+            }
+
+            enum Status {
+                ACTIVE,
+                INACTIVE,
+                CANCELED,
+                CLOSED
+            }
+
+            interface Submission {
+                +getDate(): LocalDateTime
+                +getStudent(): Student
+                +getText(): String
+                +compareTo(Submission sbmsn): int
+            }
+
+            interface Task {
+                +getStart(): LocalDate
+                +getEnd(): LocalDate
+                +getDuration(): int
+                +getTitle(): String
+                +getDescription(): String
+                +getSubmissions(): Submission[]
+                +getNumberOfSubmissions(): int
+                +addSubmission(Submission sbmsn):void
+                +extendDeadline(int i): void
+                +equals(Object o): boolean
+                +compareTo(Task task): int
+            }
+        }
+
+        Student -down-|> Participant
+        Facilitator -down-|> Participant
+        Partner -down-|> Participant
+
+    }
+
+
+    BaseContact -[dashed]-> Contact: implements
+    BaseInstitution -[dashed]-> Instituition: implementa
+    BaseInstitution -[dashed]-> InstitutionType
+    BaseStudent -[dashed]-> Student: implementa
+    BasePartners -[dashed]-> Partner: implementa
+    BaseProject -[dashed]-> Project: implementa
+    BaseTask -[dashed]-> Task: implementa
+            BaseSubmission -[dashed]-> Submission: implementa
+
+
+    class BaseContact {
+        -street: String
+        -city: String
+        -state: String
+        -zipCode: String
+        -country: String
+        -phone: String
+    }
+
+    class BaseInstitution {
+        -name: String
+        -email: String
+        -type: InstituitionType
+        -contact: Contact
+        -website: String
+        -description: String
+    }
+
+    class BaseEdition {
+        ' -idEdition: int
+        -name: String
+        -projectTemplate: String
+        -staus: Status
+        -projects: Project[]
+        -numberOfProjects: int
+        -start: LocalDate
+        -end: LocalDate
+    }
+
+    class BaseProject {
+        ' -idProject: int
+        ' -idEdition: int
+        -name: String
+        -description: String
+        -numberOfParticipants: int
+        -numberOfPartners: int
+        -numberOfFacilitators: int
+        -numberOfTasks: int
+        -MAXIMUM_NUMBER_OF_TASKS: int
+        -MAXIMUM_NUMBER_OF_PARTICIPANTS: int
+        -MAXIMUM_NUMBER_OF_STUDENTS: int
+        -MAXIMUM_NUMBER_OF_PARTNERS: int
+        -MAXIMUM_NUMBER_OF_FACILITATORS: int
+        -hasTags: boolean
+        -tags: String[]
+        -tasks: Tasks[]
+        -isCompleted: bollean
+    }
+
+    class BaseTask {
+        ' -idTask: int
+        ' -idProject: int
+        -start: LocalDate
+        -end: LocalDate
+        -duration: int
+        -title: String
+        -description: String
+        -submissions: Submission[]
+        -NumberOfSubmissions: int
+    }
+
+    class BaseSubmission {
+        ' -idSubmission: int
+        ' -idTask: int
+        ' -idParticipant: int não concordo com a remoção disto, mas professor quer assim
+        -sutend: Student
+        -date: Date
+        -text: String
+    }
+
+    BaseSubmission <- - BaseTask: usa
+
+    BaseFacilitators -[dashed]-> Facilitator: implementa
+    BaseEdition - -> BaseProject: usa
+    BaseEdition-[dashed]-> Status: usa
+    BaseEdition -[dashed]-> Edition: implementa
+
+    BasePartners - -> BaseInstitution: usa
+    BaseStudent - -> BaseInstitution: usa
+    BaseFacilitators - -> BaseInstitution: usa
+
+    BasePartners - -> BaseContact: usa
+    BaseStudent - -> BaseContact: usa
+    BaseFacilitators - -> BaseContact: usa
+
+
+    class BaseFacilitators {
+        -idParticipant: int
+        -name: String
+        -email: String
+        -contact: Contact
+        -institution: Institution
+
+        -areaOfExpertise: String
+    }
+
+    class BasePartners {
+        -name: String
+        -email: String
+        -contact: Contact
+        -institution: Institution
+
+        -vat: String
+        -webSite: String
+    }
+
+    class BaseStudent {
+        ' -idParticipant: int
+        -name: String
+        -email: String
+        -contact: Contact
+        -institution: Institution
+
+        -number: int
+    }
+
+    
+    ' AbstractParticipant <|- - BaseFacilitators
+    ' AbstractParticipant <|- - BasePartners
+    ' AbstractParticipant <|-right- BaseStudent
+}
+
+@enduml
+
+@startuml
+package Api {
+
+
+
+
+
+
+
+
+
+
+
+    package BibliotecaProfessor {
+        package Perticipants {
+            interface Contact {
+                +getStreet(): String
+                +getCity(): String
+                +getState(): String
+                +getZipCode(): String
+                +getCountry(): String
+                +getPhone(): String
+                +equals(Object o): boolean
+            }
+
+            interface Instituition {
+                +getName(): String
+                +getEmail(): String
+                +getType(): InstituitionType
+                +getContact(): Contact
+                +getWebsite(): String
+                +getDescription(): String
+                +setWebsite(String string): void
+                +setDescription(String string): void
+                +setContact(Contact cntct): void
+                +setType(InstituitionType it): void
+                +equals(Object o): boolean
+            }
+
+            interface Partner {
+                +getVat(): String
+                +getWebsite(): String
+            }
+
+            interface Student {
+                +getNumber(): int
+            }
+
+            interface Participant {
+                +getName(): String
+                +getEmail(): String
+                +getContact(): Contact
+                +getInstituition(): Instituition
+                +setInstituition(Instituition instn): void
+                +setContact(Contact cntct): void
+                +equals(Object o): boolean
+            }
+
+            interface Facilitator {
+                +getAreaOfExpertise(): String
+                +setAreaOfExpertise(String string): void
+            }
+
+            enum InstitutionType {
+                UNIVERSITY,
+                COMPANY,
+                NGO,
+                OTHER
+            }
+        }
+
+        package Project {
+            interface Edition {
+                +getName(): String
+                +getStart(): LocalDate
+                +getProjectTemplate(): String
+                +getStatus(): Status
+                +setStatus(Status status): void
+                +addProject(String string, String string1, String[] strings) throws IOException, ParseException: void
+                +removeProject(String string): void
+                +getProject(String string): Project
+                +getProjects(): Project[]
+                +getProjectsByTag(String string): Project[]
+                +getProjectsOf(String string): Project[]
+                +getNumberOfProjects(): int
+                +getEnd(): LocalDate
+                +equals(Object o): boolean
+            }
+
+            interface Project {
+                +getName(): String
+                +getDescription(): String
+                +getNumberOfParticipants(): int
+                +getNumberOfStudents(): int
+                +getNumberOfPartners(): int
+                +getNumberOfFacilitators(): int
+                +getNumberOfTasks(): int
+                +getMaximumNumberOfTasks(): int
+                +getMaximumNumberOfParticipants(): long
+                +getMaximumNumberOfStudents(): int
+                +getMaximumNumberOfPartners(): int
+                +getMaximumNumberOfFacilitators(): int
+                +addParticipant(Participant p) throws IllegalNumberOfParticipantType, ParticipantAlreadyInProject: void
+                +removeParticipant(String string): Participant
+                +getParticipant(String string): Participant
+                +getTags(): String[]
+                +hasTag(String string): boolean
+                +addTask(Task task) throws IllegalNumberOfTasks, TaskAlreadyInProject: void
+                +getTask(String string): Task
+                +getTasks(): Task[]
+                +isCompleted(): boolean
+                +equals(Object o): boolean
+            }
+
+            enum Status {
+                ACTIVE,
+                INACTIVE,
+                CANCELED,
+                CLOSED
+            }
+
+            interface Submission {
+                +getDate(): LocalDateTime
+                +getStudent(): Student
+                +getText(): String
+                +compareTo(Submission sbmsn): int
+            }
+
+            interface Task {
+                +getStart(): LocalDate
+                +getEnd(): LocalDate
+                +getDuration(): int
+                +getTitle(): String
+                +getDescription(): String
+                +getSubmissions(): Submission[]
+                +getNumberOfSubmissions(): int
+                +addSubmission(Submission sbmsn):void
+                +extendDeadline(int i): void
+                +equals(Object o): boolean
+                +compareTo(Task task): int
+            }
+        }
+
+        Student -down-|> Participant
+        Facilitator -down-|> Participant
+        Partner -down-|> Participant
+
+    }
+
+
+    BaseContact -[dashed]-> Contact: implements
+    BaseInstitution -[dashed]-> Instituition: implementa
+    BaseInstitution -[dashed]-> InstitutionType
+    BaseStudent -[dashed]-> Student: implementa
+    BasePartners -[dashed]-> Partner: implementa
+    BaseProject -[dashed]-> Project: implementa
+    BaseTask -[dashed]-> Task: implementa
+            BaseSubmission -[dashed]-> Submission: implementa
+
+
+    class BaseContact {
+        -street: String
+        -city: String
+        -state: String
+        -zipCode: String
+        -country: String
+        -phone: String
+    }
+
+    class BaseInstitution {
+        -name: String
+        -email: String
+        -type: InstituitionType
+        -contact: Contact
+        -website: String
+        -description: String
+    }
+
+    class BaseEdition {
+        -name: String
+        -projectTemplate: String
+        -staus: Status
+        -projects: Project[]
+        -numberOfProjects: int
+        -start: LocalDate
+        -end: LocalDate
+    }
+
+    class BaseProject {
+        -name: String
+        -description: String
+        -numberOfParticipants: int
+        -numberOfPartners: int
+        -numberOfFacilitators: int
+        -numberOfTasks: int
+        -MAXIMUM_NUMBER_OF_TASKS: int
+        -MAXIMUM_NUMBER_OF_PARTICIPANTS: int
+        -MAXIMUM_NUMBER_OF_STUDENTS: int
+        -MAXIMUM_NUMBER_OF_PARTNERS: int
+        -MAXIMUM_NUMBER_OF_FACILITATORS: int
+        -hasTags: boolean
+        -tags: String[]
+        -tasks: Tasks[]
+        -isCompleted: bollean
+    }
+
+    class BaseTask {
+        -start: LocalDate
+        -end: LocalDate
+        -duration: int
+        -title: String
+        -description: String
+        -submissions: Submission[]
+        -NumberOfSubmissions: int
+    }
+
+    class BaseSubmission {
+        -sutend: Student
+        -date: Date
+        -text: String
+    }
+
+    BaseSubmission <- - BaseTask: usa
+
+    BaseFacilitators -[dashed]-> Facilitator: implementa
+    BaseEdition - -> BaseProject: usa
+    BaseEdition-[dashed]-> Status: usa
+    BaseEdition -[dashed]-> Edition: implementa
+
+    BasePartners - -> BaseInstitution: usa
+    BaseStudent - -> BaseInstitution: usa
+    BaseFacilitators - -> BaseInstitution: usa
+
+    BasePartners - -> BaseContact: usa
+    BaseStudent - -> BaseContact: usa
+    BaseFacilitators - -> BaseContact: usa
+
+
+    class BaseFacilitators {
+        -idParticipant: int
+        -name: String
+        -email: String
+        -contact: Contact
+        -institution: Institution
+
+        -areaOfExpertise: String
+    }
+
+    class BasePartners {
+        -name: String
+        -email: String
+        -contact: Contact
+        -institution: Institution
+
+        -vat: String
+        -webSite: String
+    }
+
+    class BaseStudent {
+        -name: String
+        -email: String
+        -contact: Contact
+        -institution: Institution
+
+        -number: int
+    }
+
+    
+}
+
+@enduml
+
+PlantUML version 1.2022.7(Mon Aug 22 18:01:30 WEST 2022)
+(GPL source distribution)
+Java Runtime: Java(TM) SE Runtime Environment
+JVM: Java HotSpot(TM) 64-Bit Server VM
+Default Encoding: UTF-8
+Language: pt
+Country: PT
+--></g></svg>

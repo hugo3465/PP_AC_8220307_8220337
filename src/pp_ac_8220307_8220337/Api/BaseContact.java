@@ -1,6 +1,7 @@
 package pp_ac_8220307_8220337.Api;
 
-import cbl.participants.Contact;
+
+import ma02_resources.participants.Contact;
 
 /**
  * Nome: Pedro Marcelo Santos Pinho

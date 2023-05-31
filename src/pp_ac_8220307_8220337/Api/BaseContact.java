@@ -15,7 +15,7 @@ import ma02_resources.participants.Contact;
 public class BaseContact implements Contact{
     /**
      * <ul>
-     *      <li>The BaseContact class represents a basic contact information template.</li>
+     *      <li>The BaseContact class that represents a basic contact information template.</li>
      * 
      *      <li>It contains fields for street, city, state, zip code, country, and phone number.</li>
      * 
@@ -60,15 +60,6 @@ public class BaseContact implements Contact{
     }
 
     /**
-     * Set the {@code street} of the Contact
-     * 
-     * @param street the street to set
-     */
-    public void setStreet(String street) {
-        this.street = street;
-    }
-
-    /**
      * returns the {@code city} of the Contact
      * 
      * @return String return the city
@@ -76,15 +67,6 @@ public class BaseContact implements Contact{
     @Override
     public String getCity() {
         return city;
-    }
-
-    /**
-     * set the {@code city} of the Contact
-     * 
-     * @param city the city to set
-     */
-    public void setCity(String city) {
-        this.city = city;
     }
 
     /**
@@ -98,15 +80,6 @@ public class BaseContact implements Contact{
     }
 
     /**
-     * set the {@code state} of the Contact
-     * 
-     * @param state the state to set
-     */
-    public void setState(String state) {
-        this.state = state;
-    }
-
-    /**
      * returns the {@code zipCode} of the Contact
      * 
      * @return String return the zipCode
@@ -114,15 +87,6 @@ public class BaseContact implements Contact{
     @Override
     public String getZipCode() {
         return zipCode;
-    }
-
-    /**
-     * set the {@code zipCode} of the Contact
-     * 
-     * @param zipCode the zipCode to set
-     */
-    public void setZipCode(String zipCode) {
-        this.zipCode = zipCode;
     }
 
     /**
@@ -136,15 +100,6 @@ public class BaseContact implements Contact{
     }
 
     /**
-     * set the {@code country} of the Contact
-     * 
-     * @param country the country to set
-     */
-    public void setCountry(String country) {
-        this.country = country;
-    }
-
-    /**
      * return the {@code phone} of the Contact
      * 
      * @return String return the phone
@@ -154,13 +109,5 @@ public class BaseContact implements Contact{
         return phone;
     }
 
-    /**
-     * set the {@code phone} of the Contact
-     * 
-     * @param phone the phone to set
-     */
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
-
+    
 }

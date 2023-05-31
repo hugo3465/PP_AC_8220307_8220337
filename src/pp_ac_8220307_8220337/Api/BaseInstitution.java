@@ -24,7 +24,8 @@ public class BaseInstitution implements Instituition {
      * It contains fields for name, email, institution type, contact information,
      * website, and description.
      * 
-     * This class provides methods to access and modify these institution details.
+     * This class provides methods to access and modify these institution details, 
+     * but only has methods to modify Type, Contact, Website and Description Details.
      */
     private String name;
     private String email;
@@ -66,16 +67,6 @@ public class BaseInstitution implements Instituition {
 
     /**
      * 
-     * Sets the name of the institution.
-     * 
-     * @param name the name of the institution to set
-     */
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    /**
-     * 
      * Returns the email address of the institution.
      * 
      * @return the email address of the institution
@@ -83,16 +74,6 @@ public class BaseInstitution implements Instituition {
     @Override
     public String getEmail() {
         return email;
-    }
-
-    /**
-     * 
-     * Sets the email address of the institution.
-     * 
-     * @param email the email address of the institution to set
-     */
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     /**
@@ -112,6 +93,7 @@ public class BaseInstitution implements Instituition {
      * 
      * @param type the type of the institution to set
      */
+    @Override
     public void setType(InstituitionType type) {
         this.type = type;
     }
@@ -133,6 +115,7 @@ public class BaseInstitution implements Instituition {
      * 
      * @param contact the contact information of the institution to set
      */
+    @Override
     public void setContact(Contact contact) {
         this.contact = contact;
     }
@@ -154,6 +137,7 @@ public class BaseInstitution implements Instituition {
      * 
      * @param website the website URL of the institution to set
      */
+    @Override
     public void setWebsite(String website) {
         this.website = website;
     }
@@ -173,6 +157,7 @@ public class BaseInstitution implements Instituition {
      *
      * @param description the description of the institution to set
      */
+    @Override
     public void setDescription(String description) {
         this.description = description;
     }

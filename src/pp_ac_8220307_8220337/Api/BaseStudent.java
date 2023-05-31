@@ -4,8 +4,6 @@ import ma02_resources.participants.Contact;
 import ma02_resources.participants.Instituition;
 import ma02_resources.participants.Student;
 
-
-
 /**
  * Nome: Pedro Marcelo Santos Pinho
  * Número: 8220307
@@ -24,25 +22,14 @@ public class BaseStudent implements Student {
      *
      * It contains fields for vatNumber, name, email, contact, institution.
      *
-     * This class provides methods to access and modify these Student details.
+     * This class provides methods to access these Student details, but only has
+     * methods to modify Institution and Contact details.
      */
-    private int vatNumber;
+    private int number;
     private String name;
     private String email;
     private Contact contact;
     private Instituition instituition;
-
-    /**
-     * Constructs a BaseStudent that initializes all the instance variables to
-     * null or 0.
-     */
-    public BaseStudent() {
-        this.vatNumber = 0;
-        this.name = null;
-        this.email = null;
-        this.contact = null;
-        this.instituition = null;
-    }
 
     /**
      * Constructs a BaseStudent object with the specified Student details.
@@ -53,8 +40,8 @@ public class BaseStudent implements Student {
      * @param contact
      * @param instituition
      */
-    public BaseStudent(int vatNumber, String name, String email, Contact contact, Instituition instituition) {
-        this.vatNumber = vatNumber;
+    public BaseStudent(int number, String name, String email, Contact contact, Instituition instituition) {
+        this.number = number;
         this.name = name;
         this.email = email;
         this.contact = contact;
@@ -62,17 +49,19 @@ public class BaseStudent implements Student {
     }
 
     /**
-     * Returns the "vatNumber"
-     * @return
+     * Access method to the number of the student
+     * 
+     * @return {@code number}
      */
     @Override
     public int getNumber() {
-        return this.vatNumber;
+        return this.number;
     }
 
     /**
-     * Returns the "name"
-     * @return
+     * Access method to the name of the student
+     * 
+     * @return {@code name}
      */
     @Override
     public String getName() {
@@ -80,7 +69,8 @@ public class BaseStudent implements Student {
     }
 
     /**
-     * Returns the "email"
+     * Access method to the email of the student
+     * 
      * @return
      */
     @Override
@@ -89,8 +79,9 @@ public class BaseStudent implements Student {
     }
 
     /**
-     * Returns the "contact"
-     * @return
+     * Access method to the contact of the student
+     * 
+     * @return {@code contact}
      */
     @Override
     public Contact getContact() {
@@ -98,8 +89,9 @@ public class BaseStudent implements Student {
     }
 
     /**
-     * Returns the "instituition"
-     * @return
+     * Access method to the institution of the student
+     * 
+     * @return {@code instituition}
      */
     @Override
     public Instituition getInstituition() {
@@ -107,7 +99,8 @@ public class BaseStudent implements Student {
     }
 
     /**
-     * Sets the instituition to the provided "instn"
+     * Sets the instituition to the provided {@code instn}
+     * 
      * @param instn
      */
     @Override
@@ -116,7 +109,8 @@ public class BaseStudent implements Student {
     }
 
     /**
-     * Sets the contact to the provided "cntct"
+     * Sets the contact to the provided {@code cntct}
+     * 
      * @param cntct
      */
     @Override

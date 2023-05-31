@@ -15,7 +15,7 @@ import ma02_resources.participants.Partner;
  * Turma: LEIT2
  */
 
-public class BasePartners implements Partner {
+public class BasePartner implements Partner {
 
     /**
      *
@@ -24,7 +24,8 @@ public class BasePartners implements Partner {
      *
      * It contains fields for vat, website, name, email, contact, institution.
      *
-     * This class provides methods to access and modify these Partner details.
+     * This class provides methods to access these Partner details, but only 
+     * has method to modify Contact and Institution details.
      */
     private String vat;
     private String website;
@@ -32,19 +33,6 @@ public class BasePartners implements Partner {
     private String email;
     private Contact contact;
     private Instituition instituition;
-
-    /**
-     * Constructs a BasePartners that initializes all the instance variables to
-     * null.
-     */
-    public BasePartners() {
-        this.vat = null;
-        this.website = null;
-        this.name = null;
-        this.email = null;
-        this.contact = null;
-        this.instituition = null;
-    }
 
     /**
      * Constructs a BaseFacilitators object with the specified Partner details.
@@ -56,7 +44,7 @@ public class BasePartners implements Partner {
      * @param contact
      * @param instituition
      */
-    public BasePartners(String vat, String website, String name, String email, Contact contact, Instituition instituition) {
+    public BasePartner(String vat, String website, String name, String email, Contact contact, Instituition instituition) {
         this.vat = vat;
         this.website = website;
         this.name = name;

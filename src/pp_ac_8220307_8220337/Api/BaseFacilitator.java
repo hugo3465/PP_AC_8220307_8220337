@@ -15,7 +15,7 @@ import ma02_resources.participants.Instituition;
  * Turma: LEIT2
  */
 
-public class BaseFacilitators implements Facilitator {
+public class BaseFacilitator implements Facilitator {
 
     /**
      *
@@ -28,23 +28,12 @@ public class BaseFacilitators implements Facilitator {
      * This class provides methods to access and modify these Facilitator
      * details.
      */
-    private String areaOfExpertise;
+    
     private String name;
     private String email;
     private Contact contact;
     private Instituition instituition;
-
-    /**
-     * Constructs a BaseFacilitators that initializes all the instance variables
-     * to null.
-     */
-    public BaseFacilitators() {
-        this.areaOfExpertise = null;
-        this.name = null;
-        this.email = null;
-        this.contact = null;
-        this.instituition = null;
-    }
+    private String areaOfExpertise;
 
     /**
      * Constructs a BaseFacilitators object with the specified Facilitator
@@ -56,7 +45,7 @@ public class BaseFacilitators implements Facilitator {
      * @param contact
      * @param instituition
      */
-    public BaseFacilitators(String areaOfExpertise, String name, String email, Contact contact, Instituition instituition) {
+    public BaseFacilitator(String areaOfExpertise, String name, String email, Contact contact, Instituition instituition) {
         this.areaOfExpertise = areaOfExpertise;
         this.name = name;
         this.email = email;
@@ -65,7 +54,7 @@ public class BaseFacilitators implements Facilitator {
     }
 
     /**
-     * Returns the "areaOfExpertise"
+     * Returns the {@code areaOfExpertise}
      *
      * @return the "areaOfExpertise"
      */
@@ -85,7 +74,7 @@ public class BaseFacilitators implements Facilitator {
     }
 
     /**
-     * Returns the "name"
+     * Returns the {@code name}
      *
      * @return
      */
@@ -95,7 +84,7 @@ public class BaseFacilitators implements Facilitator {
     }
 
     /**
-     * Returns the "email"
+     * Returns the {@code email}
      *
      * @return
      */
@@ -105,7 +94,7 @@ public class BaseFacilitators implements Facilitator {
     }
 
     /**
-     * Returns the "contact"
+     * Returns the {@code contact}
      *
      * @return
      */
@@ -115,7 +104,7 @@ public class BaseFacilitators implements Facilitator {
     }
 
     /**
-     * Returns the "instituition"
+     * Returns the {@code institution}
      *
      * @return
      */
@@ -125,7 +114,7 @@ public class BaseFacilitators implements Facilitator {
     }
 
     /**
-     * Sets the instituition to the provided "instn"
+     * Sets the instituition to the provided {@code instn}
      *
      * @param instn
      */
@@ -135,7 +124,7 @@ public class BaseFacilitators implements Facilitator {
     }
 
     /**
-     * Sets the contact to the provided "cntct"
+     * Sets the contact to the provided {@code cntct}
      *
      * @param cntct
      */

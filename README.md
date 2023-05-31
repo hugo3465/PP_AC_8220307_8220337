@@ -33,4 +33,4 @@ suportar a gestão de participantes (Participant), sejam facilitadores (Facilita
  * Pedro Pinho
 
 ## Diagrama de Classe:
-<img title="ClassDiagram" alt="ClassDiagram" src="ClassDiagram.png">
+<img title="ClassDiagram" alt="ClassDiagram" src="DiagramClassIngles.svg">

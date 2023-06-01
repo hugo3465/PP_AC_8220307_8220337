@@ -1,12 +1,16 @@
 package pp_ac_8220307_8220337.Api;
 
+import ma02_resources.participants.Facilitator;
 import ma02_resources.participants.Participant;
+import ma02_resources.participants.Partner;
+import ma02_resources.participants.Student;
 import ma02_resources.project.Project;
 import ma02_resources.project.Task;
 import ma02_resources.project.exceptions.IllegalNumberOfParticipantType;
 import ma02_resources.project.exceptions.IllegalNumberOfTasks;
 import ma02_resources.project.exceptions.ParticipantAlreadyInProject;
 import ma02_resources.project.exceptions.TaskAlreadyInProject;
+import pp_ac_8220307_8220337.Api.Exceptions.ParticipantDoesntExistException;
 
 /**
  * Nome: Pedro Marcelo Santos Pinho
@@ -69,6 +73,11 @@ public class BaseProject implements Project {
     private int numberOfFacilitators;
 
     /**
+     * the current number of students in the project
+     */
+    private int numberOfStudents;
+
+    /**
      * the current number of tasks in the project
      */
     private int numberOfTasks;
@@ -119,6 +128,8 @@ public class BaseProject implements Project {
      *                                       project
      * @param numberOfFacilitators           the current number of facilitators in
      *                                       the project
+     * @param numberOfStudents               the current number of students in the
+     *                                       project
      * @param numberOfTasks                  the current number of tasks in the
      *                                       project
      * @param hasTags                        indicates if the project has tags
@@ -129,8 +140,8 @@ public class BaseProject implements Project {
      */
     public BaseProject(int mAXIMUM_NUMBER_OF_TASKS, int mAXIMUM_NUMBER_OF_PARTICIPANTS, int mAXIMUM_NUMBER_OF_STUDENTS,
             int mAXIMUM_NUMBER_OF_PARTNERS, int mAXIMUM_NUMBER_OF_FACILITATORS, String name, String desciption,
-            int numberOfParticipants, int numberOfPartners, int numberOfFacilitators, int numberOfTasks,
-            boolean hasTags, String[] tags, Task[] tasks, boolean isCompleted) {
+            int numberOfParticipants, int numberOfPartners, int numberOfFacilitators, int numberOfStudents,
+            int numberOfTasks, boolean hasTags, String[] tags, Task[] tasks, boolean isCompleted) {
         MAXIMUM_NUMBER_OF_TASKS = mAXIMUM_NUMBER_OF_TASKS;
         MAXIMUM_NUMBER_OF_PARTICIPANTS = mAXIMUM_NUMBER_OF_PARTICIPANTS;
         MAXIMUM_NUMBER_OF_STUDENTS = mAXIMUM_NUMBER_OF_STUDENTS;
@@ -142,6 +153,7 @@ public class BaseProject implements Project {
         this.numberOfParticipants = numberOfParticipants;
         this.numberOfPartners = numberOfPartners;
         this.numberOfFacilitators = numberOfFacilitators;
+        this.numberOfStudents = numberOfStudents;
         this.numberOfTasks = numberOfTasks;
         this.tasks = tasks;
         this.isCompleted = isCompleted;
@@ -182,6 +194,7 @@ public class BaseProject implements Project {
         this.numberOfPartners = 0;
         this.numberOfFacilitators = 0;
         this.numberOfParticipants = 0;
+        this.numberOfStudents = 0;
         this.numberOfTasks = 0;
         this.name = name;
         this.desciption = desciption;
@@ -189,8 +202,10 @@ public class BaseProject implements Project {
 
     // vai ser usado para o baseEdition
     /**
-     * Constructs a BaseProject object with only with name, description and the tags array.
-     * This Constructor is mostly used in the {@code addProject()} method int the {@code BaseEdition} class
+     * Constructs a BaseProject object with only with name, description and the tags
+     * array.
+     * This Constructor is mostly used in the {@code addProject()} method int the
+     * {@code BaseEdition} class
      * All MAXIMUM_NUMBERS are constants, so all of them are required.
      * 
      * @param MAXIMUM_NUMBER_OF_TASKS        the maximum number of tasks allowed in
@@ -250,7 +265,7 @@ public class BaseProject implements Project {
 
     @Override
     public int getNumberOfStudents() {
-        return numberOfParticipants - numberOfPartners - numberOfFacilitators;
+        return numberOfStudents;
     }
 
     @Override
@@ -293,49 +308,121 @@ public class BaseProject implements Project {
         return MAXIMUM_NUMBER_OF_FACILITATORS;
     }
 
+    /**
+     * Add a participant to the project
+     * @param p participant that will be added
+     */
     @Override
     public void addParticipant(Participant p) throws IllegalNumberOfParticipantType, ParticipantAlreadyInProject {
         // Logic to add a participant to the project
         // Check if the maximum number of participants has been reached
-        // Check if the participant is already in the project
-        // Increment the counters based on the participant type (student, partner,
-        // facilitator)
-        // Add the participant to the project
+
 
         try {
-            if (numberOfParticipants == MAXIMUM_NUMBER_OF_PARTICIPANTS) {
-                throw new IllegalNumberOfParticipantType(
-                        "This Project has reached the maximum number of participants!");
-            }
-
+            // Check if the participant is already in the project
             if (getParticipant(p.getName()) != null) {
                 throw new ParticipantAlreadyInProject("That participant already exists in this project!");
             }
 
+            // Increment the counters based on the participant type (student, partner, facilitator)
+            if (p instanceof Facilitator) {
+                if (numberOfFacilitators == MAXIMUM_NUMBER_OF_FACILITATORS) {
+                    throw new IllegalNumberOfParticipantType("Number of facilitators has reached its maximum!");
+                }
+                numberOfFacilitators++;
+            } else if (p instanceof Student) {
+                if (numberOfStudents == MAXIMUM_NUMBER_OF_STUDENTS) {
+                    throw new IllegalNumberOfParticipantType("Number of students has reached its maximum!");
+                }
+                numberOfStudents++;
+            } else if (p instanceof Partner) {
+                if (numberOfPartners == MAXIMUM_NUMBER_OF_PARTNERS) {
+                    throw new IllegalNumberOfParticipantType("Number of partners has reached its maximum!");
+                }
+                numberOfPartners++;
+            }
+
+            // Add the participant to the project
             this.participants[numberOfParticipants] = p;
 
-            /*
-             * switch(p.getClass().toString()) {
-             * 
-             * }
-             */
             numberOfParticipants++;
 
         } catch (ArrayIndexOutOfBoundsException aiofbe) {
             throw new ArrayIndexOutOfBoundsException(aiofbe + " in addParticipant method");
         } catch (NullPointerException npe) {
             throw new NullPointerException(npe + " in addParticipant method");
+        } catch (ParticipantAlreadyInProject paip) {
+            paip.printStackTrace();
+        } catch (IllegalNumberOfParticipantType inopt) {
+            inopt.printStackTrace();
         }
     }
 
+    /**
+     * Remove a participant from the project
+     * @param string name of the participant to be removed
+     * @return removed participant
+     */
     @Override
     public Participant removeParticipant(String string) {
-        // Logic to remove a participant from the project
-        // Find the participant by their identifier (string)
-        // Decrement the counters based on the participant type
-        // Remove the participant from the project
-        // Return the removed participant
-        throw new UnsupportedOperationException("Not supported yet.");
+        try {
+            if (this.numberOfParticipants < 0) {
+                throw new ArrayIndexOutOfBoundsException();
+            }
+
+            // Verifi the existance of the participant
+            int index = searchByName(string);
+            if (index < 0) {
+                throw new ParticipantDoesntExistException();
+            }
+
+            // save the participant that will be removed
+            Participant removedParticipant = participants[index];
+
+            // Remove the participant from the project
+            for (int i = index; i < this.participants.length - 1; i++) {
+                this.participants[i] = this.participants[i + 1];
+            }
+
+            /*
+             * verify the instace of the {@code p} and decrement the number of that
+             * instance.
+             */
+            if (participants[numberOfParticipants] instanceof Facilitator) {
+                numberOfFacilitators--;
+            } else if (participants[numberOfParticipants] instanceof Student) {
+                numberOfStudents--;
+            } else if (participants[numberOfParticipants] instanceof Partner) {
+                numberOfPartners--;
+            }
+
+            this.numberOfParticipants--;
+            this.participants[numberOfParticipants] = null;
+
+            return removedParticipant;
+
+        } catch (ArrayIndexOutOfBoundsException aioobe) {
+            throw new ArrayIndexOutOfBoundsException(aioobe + " in addParticipant method");
+        } catch (ParticipantDoesntExistException e) {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
+    /**
+     * Searches for a Participant in the participant array by name.
+     *
+     * @param name the name of the participant to search for
+     * @return the index of the participant if found, -1 otherwise
+     */
+    private int searchByName(String string) {
+        for(int i = 0; i < participants.length; i++) {
+            if(this.participants[i].getName().equals(string) == true) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     @Override

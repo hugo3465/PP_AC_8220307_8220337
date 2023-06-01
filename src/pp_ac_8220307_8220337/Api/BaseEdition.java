@@ -258,7 +258,7 @@ public class BaseEdition implements Edition {
     }
 
     /**
-     * Searches for a project in the projects array by its name.
+     * Searches for a project in the projects array by name.
      *
      * @param name the name of the project to search for
      * @return the index of the project if found, -1 otherwise

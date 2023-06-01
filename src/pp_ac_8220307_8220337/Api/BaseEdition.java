@@ -164,23 +164,46 @@ public class BaseEdition implements Edition {
     }
 
     /**
-     * 
-     * @param string
-     * @return
+     * Retrieves an array of projects associated with a specific tag.
+     *
+     * @param tag the tag to filter projects
+     * @return an array of projects associated with the specified tag
      */
     @Override
     public Project[] getProjectsByTag(String string) {
 
-        Project[] returnArray = new Project[this.numberOfProjects];
-        int i = 0;
-        for (Project i1 : this.projects) {
-            if (i1.getTags().contains(string)) {
-                returnArray[i] = i1;
-                i++;
+        Project[] matchingProjects = new Project[this.numberOfProjects];
+        int matchingCount = 0;
+
+        for (Project project : this.projects) {
+            if (verifyTag(string, project.getTags())) {
+                matchingProjects[matchingCount] = project;
+                matchingCount++;
             }
         }
-        return returnArray;
 
+        // Create a new array to hold only the matching projects
+        Project[] onlyMatchingProjects = new Project[matchingCount];
+        System.arraycopy(matchingProjects, 0, onlyMatchingProjects, 0, matchingCount);
+
+        return onlyMatchingProjects;
+
+    }
+
+    /**
+     * Verifies if a given tag is present in an array of tags.
+     *
+     * @param tag  the tag to search for
+     * @param tags the array of tags to check
+     * @return true if the tag is found, false otherwise
+     */
+    private boolean verifyTag(String tag, String[] tags) {
+        for (String i : tags) {
+            if (i == tag) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**
@@ -195,8 +218,9 @@ public class BaseEdition implements Edition {
     }
 
     /**
-     * 
-     * @return
+     * Retrieves the number of projects in the edition.
+     *
+     * @return the number of projects
      */
     @Override
     public int getNumberOfProjects() {
@@ -204,8 +228,9 @@ public class BaseEdition implements Edition {
     }
 
     /**
-     * 
-     * @return
+     * Retrieves the end date of the edition.
+     *
+     * @return the end date of the edition
      */
     @Override
     public LocalDate getEnd() {
@@ -213,7 +238,9 @@ public class BaseEdition implements Edition {
     }
 
     /**
-     * 
+     * Resizes the projects array to accommodate more projects.
+     * This method doubles the size of the projects array when it reaches its
+     * maximum capacity.
      */
     private void resizeProjects() {
         Project[] newProjects = new Project[this.projects.length * 2];
@@ -224,9 +251,10 @@ public class BaseEdition implements Edition {
     }
 
     /**
-     * 
-     * @param string
-     * @return
+     * Searches for a project in the projects array by its name.
+     *
+     * @param name the name of the project to search for
+     * @return the index of the project if found, -1 otherwise
      */
     private int searchByName(String string) {
         int i = 0;

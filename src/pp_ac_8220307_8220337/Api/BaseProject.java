@@ -18,25 +18,115 @@ import ma02_resources.project.exceptions.TaskAlreadyInProject;
  * Turma: LEIT2
  */
 public class BaseProject implements Project {
+    /**
+     * the maximum number of tasks allowed in the project
+     */
     private final int MAXIMUM_NUMBER_OF_TASKS;
+
+    /**
+     * the maximum number of participants allowed in the project
+     */
     private final int MAXIMUM_NUMBER_OF_PARTICIPANTS;
+
+    /**
+     * the maximum number of students allowed in the project
+     */
     private final int MAXIMUM_NUMBER_OF_STUDENTS;
+
+    /**
+     * the maximum number of partners allowed in the project
+     */
     private final int MAXIMUM_NUMBER_OF_PARTNERS;
+
+    /**
+     * the maximum number of facilitators allowed in the project
+     */
     private final int MAXIMUM_NUMBER_OF_FACILITATORS;
 
+    /**
+     * the name of the projects
+     */
     private String name;
+
+    /**
+     * the description of the project
+     */
     private String desciption;
+
+    /**
+     * the current number of participants in the project
+     */
     private int numberOfParticipants;
+
+    /**
+     * the current number of partners in the project
+     */
     private int numberOfPartners;
+
+    /**
+     * the current number of facilitators in the project
+     */
     private int numberOfFacilitators;
+
+    /**
+     * the current number of tasks in the project
+     */
     private int numberOfTasks;
+
+    /**
+     * the array of participants in the project
+     */
     private Participant[] participants;
+
+    /**
+     * indicates if the project has tags
+     */
     private boolean hasTags;
+
+    /**
+     * the array of tags associated with the project
+     */
     private String[] tags;
+
+    /**
+     * the array of tasks in the project
+     */
     private Task[] tasks;
+
+    /**
+     * indicates if the project is completed
+     */
     private boolean isCompleted;
 
-    // com array
+    /**
+     * Constructs a BaseProject object with the specified parameters.
+     *
+     * @param MAXIMUM_NUMBER_OF_TASKS        the maximum number of tasks allowed in
+     *                                       the project
+     * @param MAXIMUM_NUMBER_OF_PARTICIPANTS the maximum number of participants
+     *                                       allowed in the project
+     * @param MAXIMUM_NUMBER_OF_STUDENTS     the maximum number of students allowed
+     *                                       in the project
+     * @param MAXIMUM_NUMBER_OF_PARTNERS     the maximum number of partners allowed
+     *                                       in the project
+     * @param MAXIMUM_NUMBER_OF_FACILITATORS the maximum number of facilitators
+     *                                       allowed in the project
+     * @param name                           the name of the project
+     * @param description                    the description of the project
+     * @param numberOfParticipants           the current number of participants in
+     *                                       the project
+     * @param numberOfPartners               the current number of partners in the
+     *                                       project
+     * @param numberOfFacilitators           the current number of facilitators in
+     *                                       the project
+     * @param numberOfTasks                  the current number of tasks in the
+     *                                       project
+     * @param hasTags                        indicates if the project has tags
+     * @param tags                           the array of tags associated with the
+     *                                       project
+     * @param tasks                          the array of tasks in the project
+     * @param isCompleted                    indicates if the project is completed
+     */
     public BaseProject(int mAXIMUM_NUMBER_OF_TASKS, int mAXIMUM_NUMBER_OF_PARTICIPANTS, int mAXIMUM_NUMBER_OF_STUDENTS,
             int mAXIMUM_NUMBER_OF_PARTNERS, int mAXIMUM_NUMBER_OF_FACILITATORS, String name, String desciption,
             int numberOfParticipants, int numberOfPartners, int numberOfFacilitators, int numberOfTasks,
@@ -57,12 +147,29 @@ public class BaseProject implements Project {
         this.isCompleted = isCompleted;
 
         this.hasTags = hasTags;
+        //
         if (this.hasTags) {
             this.tags = tags;
         }
     }
 
-    // sem array
+    /**
+     * Constructs a BaseProject only with name and description.
+     * All MAXIMUM_NUMBERS are constants, so all of them are required.
+     * 
+     * @param MAXIMUM_NUMBER_OF_TASKS        the maximum number of tasks allowed in
+     *                                       the project
+     * @param MAXIMUM_NUMBER_OF_PARTICIPANTS the maximum number of participants
+     *                                       allowed in the project
+     * @param MAXIMUM_NUMBER_OF_STUDENTS     the maximum number of students allowed
+     *                                       in the project
+     * @param MAXIMUM_NUMBER_OF_PARTNERS     the maximum number of partners allowed
+     *                                       in the project
+     * @param MAXIMUM_NUMBER_OF_FACILITATORS the maximum number of facilitators
+     *                                       allowed in the project
+     * @param name                           the name of the project
+     * @param description                    the description of the project
+     */
     public BaseProject(int mAXIMUM_NUMBER_OF_TASKS, int mAXIMUM_NUMBER_OF_PARTICIPANTS, int mAXIMUM_NUMBER_OF_STUDENTS,
             int mAXIMUM_NUMBER_OF_PARTNERS, int mAXIMUM_NUMBER_OF_FACILITATORS, String name, String desciption) {
         MAXIMUM_NUMBER_OF_TASKS = mAXIMUM_NUMBER_OF_TASKS;
@@ -80,15 +187,44 @@ public class BaseProject implements Project {
         this.desciption = desciption;
     }
 
-    
     // vai ser usado para o baseEdition
-    public BaseProject(String name, String desciption, String[] tags) {
+    /**
+     * Constructs a BaseProject object with only with name, description and the tags array.
+     * This Constructor is mostly used in the {@code addProject()} method int the {@code BaseEdition} class
+     * All MAXIMUM_NUMBERS are constants, so all of them are required.
+     * 
+     * @param MAXIMUM_NUMBER_OF_TASKS        the maximum number of tasks allowed in
+     *                                       the project
+     * @param MAXIMUM_NUMBER_OF_PARTICIPANTS the maximum number of participants
+     *                                       allowed in the project
+     * @param MAXIMUM_NUMBER_OF_STUDENTS     the maximum number of students allowed
+     *                                       in the project
+     * @param MAXIMUM_NUMBER_OF_PARTNERS     the maximum number of partners allowed
+     *                                       in the project
+     * @param MAXIMUM_NUMBER_OF_FACILITATORS the maximum number of facilitators
+     *                                       allowed in the project
+     * @param name                           the name of the project
+     * @param description                    the description of the project
+     * @param tags                           the array of tags associated with the
+     *                                       project
+     */
+    public BaseProject(int mAXIMUM_NUMBER_OF_TASKS, int mAXIMUM_NUMBER_OF_PARTICIPANTS, int mAXIMUM_NUMBER_OF_STUDENTS,
+            int mAXIMUM_NUMBER_OF_PARTNERS, int mAXIMUM_NUMBER_OF_FACILITATORS, String name, String desciption,
+            String[] tags) {
+        MAXIMUM_NUMBER_OF_TASKS = mAXIMUM_NUMBER_OF_TASKS;
+        MAXIMUM_NUMBER_OF_PARTICIPANTS = mAXIMUM_NUMBER_OF_PARTICIPANTS;
+        MAXIMUM_NUMBER_OF_STUDENTS = mAXIMUM_NUMBER_OF_STUDENTS;
+        MAXIMUM_NUMBER_OF_PARTNERS = mAXIMUM_NUMBER_OF_PARTNERS;
+        MAXIMUM_NUMBER_OF_FACILITATORS = mAXIMUM_NUMBER_OF_FACILITATORS;
+
         this.name = name;
         this.desciption = desciption;
         this.tags = tags;
 
+        /**
+         * If the tags array is null, the hasTas atribute will be false
+         */
         hasTags = (tags == null) ? false : true;
-
 
         this.numberOfParticipants = 0;
         this.numberOfPartners = 0;
@@ -167,24 +303,27 @@ public class BaseProject implements Project {
         // Add the participant to the project
 
         try {
-            if(numberOfParticipants == MAXIMUM_NUMBER_OF_PARTICIPANTS) {
-                throw new IllegalNumberOfParticipantType("This Project has reached the maximum number of participants!");
+            if (numberOfParticipants == MAXIMUM_NUMBER_OF_PARTICIPANTS) {
+                throw new IllegalNumberOfParticipantType(
+                        "This Project has reached the maximum number of participants!");
             }
 
-            if(getParticipant(p.getName()) != null) {
+            if (getParticipant(p.getName()) != null) {
                 throw new ParticipantAlreadyInProject("That participant already exists in this project!");
             }
 
             this.participants[numberOfParticipants] = p;
 
-            /*switch(p.getClass().toString()) {
-                
-            }*/
+            /*
+             * switch(p.getClass().toString()) {
+             * 
+             * }
+             */
             numberOfParticipants++;
 
-        } catch(ArrayIndexOutOfBoundsException aiofbe) {
+        } catch (ArrayIndexOutOfBoundsException aiofbe) {
             throw new ArrayIndexOutOfBoundsException(aiofbe + " in addParticipant method");
-        } catch(NullPointerException npe) {
+        } catch (NullPointerException npe) {
             throw new NullPointerException(npe + " in addParticipant method");
         }
     }
@@ -201,8 +340,8 @@ public class BaseProject implements Project {
 
     @Override
     public Participant getParticipant(String string) {
-        for(Participant i: participants) {
-            if(i.getName().equals(string)) {
+        for (Participant i : participants) {
+            if (i.getName().equals(string)) {
                 return i;
             }
         }
@@ -223,7 +362,7 @@ public class BaseProject implements Project {
             // Return true if a match is found
         }
         return false;
-        
+
     }
 
     @Override

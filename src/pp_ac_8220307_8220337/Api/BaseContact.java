@@ -1,6 +1,5 @@
 package pp_ac_8220307_8220337.Api;
 
-
 import ma02_resources.participants.Contact;
 
 /**
@@ -12,14 +11,17 @@ import ma02_resources.participants.Contact;
  * Número: 8220337
  * Turma: LEIT2
  */
-public class BaseContact implements Contact{
+public class BaseContact implements Contact {
     /**
      * <ul>
-     *      <li>The BaseContact class that represents a basic contact information template.</li>
+     * <li>The BaseContact class that represents a basic contact information
+     * template.</li>
      * 
-     *      <li>It contains fields for street, city, state, zip code, country, and phone number.</li>
+     * <li>It contains fields for street, city, state, zip code, country, and phone
+     * number.</li>
      * 
-     *      <li>This class provides methods to access and modify these contact details.</li>
+     * <li>This class provides methods to access and modify these contact
+     * details.</li>
      * </ul>
      */
 
@@ -109,5 +111,4 @@ public class BaseContact implements Contact{
         return phone;
     }
 
-    
 }

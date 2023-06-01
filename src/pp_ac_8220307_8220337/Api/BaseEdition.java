@@ -8,12 +8,12 @@ import ma02_resources.project.Project;
 import ma02_resources.project.Status;
 
 /**
- * Nome: Pedro Marcelo Santos Pinho 
- * Número: 8220307 
+ * Nome: Pedro Marcelo Santos Pinho
+ * Número: 8220307
  * Turma: LEIT2
  *
- * Nome: Hugo Ricardo Almeida Guimarães 
- * Número: 8220337 
+ * Nome: Hugo Ricardo Almeida Guimarães
+ * Número: 8220337
  * Turma: LEIT2
  */
 public class BaseEdition implements Edition {
@@ -23,7 +23,7 @@ public class BaseEdition implements Edition {
     private String projectTemplate;
     private Status status;
     private Project[] projects;
-    private int numberofProjects;
+    private int numberOfProjects;
     private LocalDate start;
     private LocalDate end;
 
@@ -33,17 +33,17 @@ public class BaseEdition implements Edition {
      * @param projectTemplate
      * @param status
      * @param projects
-     * @param numberofProjects
+     * @param numberOfProjects
      * @param start
      * @param end
      */
-    public BaseEdition(String name, String projectTemplate, Status status, Project[] projects, int numberofProjects,
+    public BaseEdition(String name, String projectTemplate, Status status, Project[] projects, int numberOfProjects,
             LocalDate start, LocalDate end) {
         this.name = name;
         this.projectTemplate = projectTemplate;
         this.status = status;
         this.projects = new Project[MAX_PROJECTS];
-        this.numberofProjects = numberofProjects;
+        this.numberOfProjects = numberOfProjects;
         this.start = start;
         this.end = end;
     }
@@ -95,7 +95,7 @@ public class BaseEdition implements Edition {
 
     /**
      * 
-     * @param string --> nome
+     * @param string  --> nome
      * @param string1 --> Descrição
      * @param strings --> tasks
      * @throws IOException
@@ -104,15 +104,15 @@ public class BaseEdition implements Edition {
     @Override
     public void addProject(String string, String string1, String[] strings) throws IOException, ParseException {
         try {
-            
+
+            if (this.numberOfProjects >= this.projects.length) {
+                resizeProjects();
+            }
+            this.projects[this.numberOfProjects] = null;
+            this.numberOfProjects++;
+
         } catch (Exception e) {
         }
-        if (this.numberofProjects >= this.projects.length) {
-            resizeProjects();
-        }
-
-        this.projects[this.numberofProjects] = null;
-        this.numberofProjects++;
 
     }
 
@@ -122,8 +122,21 @@ public class BaseEdition implements Edition {
      */
     @Override
     public void removeProject(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
-                                                                       // Tools | Templates.
+        if (this.numberOfProjects < 0) {
+            return;
+        }
+
+        int index = searchByName(string);
+        if (index < 0) {
+            return;
+        }
+
+        for (int i = index; i < this.projects.length - 1; i++) {
+            this.projects[i] = this.projects[i + 1];
+        }
+
+        this.numberOfProjects--;
+        this.projects[this.numberOfProjects] = null;
     }
 
     /**
@@ -133,8 +146,12 @@ public class BaseEdition implements Edition {
      */
     @Override
     public Project getProject(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
-                                                                       // Tools | Templates.
+        for (Project i : projects) {
+            if (i.getName().equals(string)) {
+                return i;
+            }
+        }
+        return null;
     }
 
     /**
@@ -143,8 +160,7 @@ public class BaseEdition implements Edition {
      */
     @Override
     public Project[] getProjects() {
-        throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
-                                                                       // Tools | Templates.
+        return this.projects;
     }
 
     /**
@@ -154,8 +170,17 @@ public class BaseEdition implements Edition {
      */
     @Override
     public Project[] getProjectsByTag(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
-                                                                       // Tools | Templates.
+
+        Project[] returnArray = new Project[this.numberOfProjects];
+        int i = 0;
+        for (Project i1 : this.projects) {
+            if (i1.getTags().contains(string)) {
+                returnArray[i] = i1;
+                i++;
+            }
+        }
+        return returnArray;
+
     }
 
     /**
@@ -175,7 +200,7 @@ public class BaseEdition implements Edition {
      */
     @Override
     public int getNumberOfProjects() {
-        return this.numberofProjects;
+        return this.numberOfProjects;
     }
 
     /**
@@ -196,6 +221,25 @@ public class BaseEdition implements Edition {
             newProjects[i] = this.projects[i];
         }
         this.projects = newProjects;
+    }
+
+    /**
+     * 
+     * @param string
+     * @return
+     */
+    private int searchByName(String string) {
+        int i = 0;
+
+        while (i < this.numberOfProjects && this.projects[i].getName().compareTo(string) != 0) {
+            i++;
+        }
+        if (i > this.numberOfProjects) {
+            return -1;
+        }
+
+        return i;
+
     }
 
 }

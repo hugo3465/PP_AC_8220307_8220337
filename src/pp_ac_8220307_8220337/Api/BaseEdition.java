@@ -18,7 +18,7 @@ import ma02_resources.project.Status;
  */
 public class BaseEdition implements Edition {
 
-    private static int MAX_PROJECTS = 5;
+    private final int MAX_PROJECTS = 5;
     private String name;
     private String projectTemplate;
     private Status status;

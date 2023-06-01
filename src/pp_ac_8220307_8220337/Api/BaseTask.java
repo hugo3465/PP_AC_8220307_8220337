@@ -52,14 +52,6 @@ public class BaseTask implements Task {
     @Override
     public void addSubmission(Submission arg0) {
         try {
-            /*
-             * if (!(arg0 instanceof BaseSubmission)) {
-             * throw new IllegalArgumentException("Invalid submission");
-             * }
-             * 
-             * BaseSubmission newSubmission = (BaseSubmission) arg0;
-             */
-            // caso a varável fosse to tipoBaseSubmission
 
             this.submissions[numberOfSubmissions] = arg0;
 
@@ -68,13 +60,9 @@ public class BaseTask implements Task {
             throw new ArrayIndexOutOfBoundsException(aiobe + " in addSubmission");
         } catch (NullPointerException npe) {
             throw new NullPointerException(npe + " in addSubmission");
+        } catch(Exception e) {
+            throw new Exception(e + " in addSubmission");
         }
-
-        // ou
-
-        // BaseSubmission newSubmission = new BaseSubmission(arg0.getStudent(),
-        // arg0.getDate(), arg0.getText());
-        // this.submissions[numberOfSubmissions] = newSubmission;
     }
 
     @Override
@@ -158,4 +146,6 @@ public class BaseTask implements Task {
     public int getNumberOfSubmissions() {
         return numberOfSubmissions;
     }
+
+    // falta o compare to que serve para sorts
 }

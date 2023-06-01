@@ -71,7 +71,7 @@ public class BaseStudent implements Student {
     /**
      * Access method to the email of the student
      * 
-     * @return
+     * @return {@coode email}
      */
     @Override
     public String getEmail() {
@@ -116,6 +116,20 @@ public class BaseStudent implements Student {
     @Override
     public void setContact(Contact cntct) {
         this.contact = cntct;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        BaseStudent other = (BaseStudent) obj;
+        if (number != other.number)
+            return false;
+        return true;
     }
 
 }

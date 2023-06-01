@@ -35,6 +35,7 @@ public class BaseSubmission implements Submission {
      * 
      * @return The date of the submission.
      */
+    @Override
     public LocalDateTime getDate() {
         return date;
     }
@@ -44,6 +45,7 @@ public class BaseSubmission implements Submission {
      * 
      * @return The student who made the submission.
      */
+    @Override
     public Student getStudent() {
         return student;
     }
@@ -53,6 +55,7 @@ public class BaseSubmission implements Submission {
      * 
      * @return The text content of the submission.
      */
+    @Override
     public String getText() {
         return text;
     }

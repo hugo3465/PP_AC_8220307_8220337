@@ -90,9 +90,9 @@ public class BaseEdition implements Edition {
 
     /**
      * 
-     * @param string
-     * @param string1
-     * @param strings
+     * @param string --> nome
+     * @param string1 --> Descrição
+     * @param strings --> tasks
      * @throws IOException
      * @throws ParseException 
      */

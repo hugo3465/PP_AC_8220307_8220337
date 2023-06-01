@@ -103,6 +103,10 @@ public class BaseEdition implements Edition {
      */
     @Override
     public void addProject(String string, String string1, String[] strings) throws IOException, ParseException {
+        try {
+            
+        } catch (Exception e) {
+        }
         if (this.numberofProjects >= this.projects.length) {
             resizeProjects();
         }

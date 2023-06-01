@@ -6,6 +6,7 @@ import java.time.LocalDate;
 import ma02_resources.project.Edition;
 import ma02_resources.project.Project;
 import ma02_resources.project.Status;
+import pp_ac_8220307_8220337.Api.Exceptions.ProjectDoesntExistException;
 
 /**
  * Nome: Pedro Marcelo Santos Pinho
@@ -95,8 +96,8 @@ public class BaseEdition implements Edition {
 
     /**
      * 
-     * @param string  --> nome
-     * @param string1 --> Descrição
+     * @param string  --> name
+     * @param string1 --> description
      * @param strings --> tasks
      * @throws IOException
      * @throws ParseException
@@ -104,14 +105,14 @@ public class BaseEdition implements Edition {
     @Override
     public void addProject(String string, String string1, String[] strings) throws IOException, ParseException {
         try {
-
             if (this.numberOfProjects >= this.projects.length) {
                 resizeProjects();
             }
             this.projects[this.numberOfProjects] = null;
             this.numberOfProjects++;
 
-        } catch (Exception e) {
+        } catch (NullPointerException npe) {
+            throw new NullPointerException(npe + " in addProject");
         }
 
     }
@@ -122,21 +123,27 @@ public class BaseEdition implements Edition {
      */
     @Override
     public void removeProject(String string) {
-        if (this.numberOfProjects < 0) {
-            return;
-        }
-
-        int index = searchByName(string);
-        if (index < 0) {
-            return;
-        }
-
-        for (int i = index; i < this.projects.length - 1; i++) {
-            this.projects[i] = this.projects[i + 1];
-        }
-
-        this.numberOfProjects--;
-        this.projects[this.numberOfProjects] = null;
+        try {
+            if (this.numberOfProjects < 0) {
+                throw new ArrayIndexOutOfBoundsException();
+            }
+    
+            int index = searchByName(string);
+            if (index < 0) {
+                throw new ProjectDoesntExistException();
+            }
+    
+            for (int i = index; i < this.projects.length - 1; i++) {
+                this.projects[i] = this.projects[i + 1];
+            }
+    
+            this.numberOfProjects--;
+            this.projects[numberOfProjects] = null;
+        } catch(ArrayIndexOutOfBoundsException aioobe) {
+            aioobe.printStackTrace();
+        } catch (ProjectDoesntExistException pdee) {
+            pdee.printStackTrace();
+        } 
     }
 
     /**

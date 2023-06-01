@@ -52,16 +52,13 @@ public class BaseTask implements Task {
     @Override
     public void addSubmission(Submission arg0) {
         try {
-
             this.submissions[numberOfSubmissions] = arg0;
 
             this.numberOfSubmissions++;
-        } catch (ArrayIndexOutOfBoundsException aiobe) {
-            throw new ArrayIndexOutOfBoundsException(aiobe + " in addSubmission");
+        } catch (ArrayIndexOutOfBoundsException aioobe) {
+            throw new ArrayIndexOutOfBoundsException(aioobe + " in addSubmission");
         } catch (NullPointerException npe) {
             throw new NullPointerException(npe + " in addSubmission");
-        } catch(Exception e) {
-            throw new Exception(e + " in addSubmission");
         }
     }
 

@@ -8,9 +8,13 @@ import ma02_resources.project.Project;
 import ma02_resources.project.Status;
 
 /**
- * Nome: Pedro Marcelo Santos Pinho Número: 8220307 Turma: LEIT2
+ * Nome: Pedro Marcelo Santos Pinho 
+ * Número: 8220307 
+ * Turma: LEIT2
  *
- * Nome: Hugo Ricardo Almeida Guimarães Número: 8220337 Turma: LEIT2
+ * Nome: Hugo Ricardo Almeida Guimarães 
+ * Número: 8220337 
+ * Turma: LEIT2
  */
 public class BaseEdition implements Edition {
 
@@ -33,7 +37,8 @@ public class BaseEdition implements Edition {
      * @param start
      * @param end
      */
-    public BaseEdition(String name, String projectTemplate, Status status, Project[] projects, int numberofProjects, LocalDate start, LocalDate end) {
+    public BaseEdition(String name, String projectTemplate, Status status, Project[] projects, int numberofProjects,
+            LocalDate start, LocalDate end) {
         this.name = name;
         this.projectTemplate = projectTemplate;
         this.status = status;
@@ -54,7 +59,7 @@ public class BaseEdition implements Edition {
 
     /**
      * 
-     * @return 
+     * @return
      */
     @Override
     public LocalDate getStart() {
@@ -63,7 +68,7 @@ public class BaseEdition implements Edition {
 
     /**
      * 
-     * @return 
+     * @return
      */
     @Override
     public String getProjectTemplate() {
@@ -72,7 +77,7 @@ public class BaseEdition implements Edition {
 
     /**
      * 
-     * @return 
+     * @return
      */
     @Override
     public Status getStatus() {
@@ -81,7 +86,7 @@ public class BaseEdition implements Edition {
 
     /**
      * 
-     * @param status 
+     * @param status
      */
     @Override
     public void setStatus(Status status) {
@@ -94,7 +99,7 @@ public class BaseEdition implements Edition {
      * @param string1 --> Descrição
      * @param strings --> tasks
      * @throws IOException
-     * @throws ParseException 
+     * @throws ParseException
      */
     @Override
     public void addProject(String string, String string1, String[] strings) throws IOException, ParseException {
@@ -113,55 +118,60 @@ public class BaseEdition implements Edition {
 
     /**
      * 
-     * @param string 
+     * @param string
      */
     @Override
     public void removeProject(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
+                                                                       // Tools | Templates.
     }
 
     /**
      * 
      * @param string
-     * @return 
+     * @return
      */
     @Override
     public Project getProject(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
+                                                                       // Tools | Templates.
     }
 
     /**
      * 
-     * @return 
+     * @return
      */
     @Override
     public Project[] getProjects() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
+                                                                       // Tools | Templates.
     }
 
     /**
      * 
      * @param string
-     * @return 
+     * @return
      */
     @Override
     public Project[] getProjectsByTag(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
+                                                                       // Tools | Templates.
     }
 
     /**
      * 
      * @param string
-     * @return 
+     * @return
      */
     @Override
     public Project[] getProjectsOf(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
+                                                                       // Tools | Templates.
     }
 
     /**
      * 
-     * @return 
+     * @return
      */
     @Override
     public int getNumberOfProjects() {
@@ -170,7 +180,7 @@ public class BaseEdition implements Edition {
 
     /**
      * 
-     * @return 
+     * @return
      */
     @Override
     public LocalDate getEnd() {

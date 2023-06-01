@@ -54,9 +54,9 @@ public class BasePartner implements Partner {
     }
 
     /**
-     * Returns the "vat"
+     * Retrieves the vat number of the Partner.
      *
-     * @return
+     * @return vatNumber of thePartner
      */
     @Override
     public String getVat() {
@@ -64,9 +64,9 @@ public class BasePartner implements Partner {
     }
 
     /**
-     * Returns the "website"
+     * Retrieves the website of the Partner.
      *
-     * @return
+     * @return the website of the Partner
      */
     @Override
     public String getWebsite() {
@@ -74,9 +74,9 @@ public class BasePartner implements Partner {
     }
 
     /**
-     * Returns the "name"
+     * Retrieves the name of the Partner.
      *
-     * @return
+     * @return the name of the Partner
      */
     @Override
     public String getName() {
@@ -84,9 +84,9 @@ public class BasePartner implements Partner {
     }
 
     /**
-     * Returns the "email"
+     * Retrieves the email of the Partner.
      *
-     * @return
+     * @return the email of the Partner
      */
     @Override
     public String getEmail() {
@@ -94,9 +94,9 @@ public class BasePartner implements Partner {
     }
 
     /**
-     * Returns the "contact"
+     * Retrieves the contact of the Partner.
      *
-     * @return
+     * @return the contact of the Partner
      */
     @Override
     public Contact getContact() {
@@ -104,9 +104,9 @@ public class BasePartner implements Partner {
     }
 
     /**
-     * Returns the "instituition"
+     * Retrieves the institution of the Partner.
      *
-     * @return
+     * @return the institution of the Partner
      */
     @Override
     public Instituition getInstituition() {
@@ -120,7 +120,7 @@ public class BasePartner implements Partner {
      */
     @Override
     public void setInstituition(Instituition instn) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.instituition = instn;
     }
 
     /**
@@ -130,7 +130,27 @@ public class BasePartner implements Partner {
      */
     @Override
     public void setContact(Contact cntct) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        this.contact = cntct;
     }
 
+    
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        BasePartner other = (BasePartner) obj;
+        if (vat == null) {
+            if (other.vat != null)
+                return false;
+        } else if (!vat.equals(other.vat))
+            return false;
+        return true;
+    }
+
+
+    
 }

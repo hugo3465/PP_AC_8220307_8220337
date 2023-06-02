@@ -315,17 +315,13 @@ public class BaseProject implements Project {
      */
     @Override
     public void addParticipant(Participant p) throws IllegalNumberOfParticipantType, ParticipantAlreadyInProject {
-        // Logic to add a participant to the project
-        // Check if the maximum number of participants has been reached
-
         try {
             // Check if the participant is already in the project
             if (getParticipant(p.getName()) != null) {
                 throw new ParticipantAlreadyInProject("That participant already exists in this project!");
             }
 
-            // Increment the counters based on the participant type (student, partner,
-            // facilitator)
+            // Increment the counters based on the participant type (student, partner, facilitator)
             if (p instanceof Facilitator) {
                 if (numberOfFacilitators == MAXIMUM_NUMBER_OF_FACILITATORS) {
                     throw new IllegalNumberOfParticipantType("Number of facilitators has reached its maximum!");

@@ -1,13 +1,18 @@
 package pp_ac_8220307_8220337.Api;
 
+import java.io.FileReader;
 import java.io.IOException;
 import java.text.ParseException;
 import java.time.LocalDate;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import ma02_resources.participants.Participant;
 import ma02_resources.project.Edition;
 import ma02_resources.project.Project;
 import ma02_resources.project.Status;
+import ma02_resources.project.Task;
 import pp_ac_8220307_8220337.Api.Exceptions.ProjectDoesntExistException;
 
 /**
@@ -106,19 +111,58 @@ public class BaseEdition implements Edition {
      */
     @Override
     public void addProject(String string, String string1, String[] strings) throws IOException, ParseException {
-        /*
-         * try {
-         * if (this.numberOfProjects >= this.projects.length) {
-         * resizeProjects();
-         * }
-         * this.projects[this.numberOfProjects] = null;
-         * this.numberOfProjects++;
-         * 
-         * } catch (NullPointerException npe) {
-         * throw new NullPointerException(npe + " in addProject");
-         * }
-         */
-        return istoEstaMAl;
+        String jsonTemplate = "{\n" +
+                " \"number_of_facilitors\": 2,\n" +
+                " \"number_of_students\": 4,\n" +
+                " \"number_of_partners\": 16,\n" +
+                " \"tasks\": [\n" +
+                " {\n" +
+                " \"title\": \"Long list of Stakeholder \",\n" +
+                " \"description\": \"The team's initial goal is to identify up to 15 stakeholder/user groups\\nrelevant to the project topic.\",\n"
+                +
+                " \"start_at\": 0,\n" +
+                " \"duration\": 14\n" +
+                " },\n" +
+                " {\n" +
+                " \"title\": \"Short list of target groups\",\n" +
+                " \"description\": \"Your team should discuss and select four target groups from the long\\nlist of previously identified stakeholder/user groups.\",\n"
+                +
+                " \"start_at\": 0,\n" +
+                " \"duration\": 14\n" +
+                " }\n" +
+                " ]\n" +
+                "}";
+
+        String taskTitle;
+        String taskDesciption;
+        int taskStartAt;
+        int taskDuration;
+
+        // Parse the JSON template
+        JSONObject jsonObject = new JSONObject(jsonTemplate);
+
+        // Create a Project object
+        int numberOfStudents = jsonObject.getInt("number_of_students");
+        int numberOfFacilitators = jsonObject.getInt("number_of_facilitors");
+        int numberOfPartners = jsonObject.getInt("number_of_partners");
+
+        Project project = new Project();
+
+        JSONArray tasksArray = jsonObject.getJSONArray("tasks");
+        Task[] tasks = new Task[tasksArray.length()];
+
+        for (int i = 0; i < tasksArray.length(); i++) {
+            JSONObject taskObject = tasksArray.getJSONObject(i);
+            Task task = new Task();
+            taskTitle = taskObject.getString("title");
+            taskDesciption = taskObject.getString("description");
+            taskStartAt = taskObject.getInt("start_at");
+            taskDuration= taskObject.getInt("duration");
+            tasks[i] = task;
+        }
+
+        project
+        project.setTasks(tasks);
 
     }
 
@@ -248,7 +292,7 @@ public class BaseEdition implements Edition {
      * Verifies if a given participant name is present in a especific project.
      * 
      * @param participantName the participant name to search for
-     * @param project the project to chack the participants name
+     * @param project         the project to chack the participants name
      * @return true if the participant name was found, false otherwise
      */
     private boolean verifyParticipantByName(String participantName, Project project) {

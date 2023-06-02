@@ -19,7 +19,7 @@ public class MenuAdminManagement implements MenuDisplay {
     }
 
     public static void hadleAdminmenu(MenuManager menuManager) {
-        MenuAdminManagement menuAdminManagement = new MenuAdminManagement();
+        // MenuAdminManagement menuAdminManagement = new MenuAdminManagement();
         Boolean isAdminMenuRunning = true;
 
         while (isAdminMenuRunning) {

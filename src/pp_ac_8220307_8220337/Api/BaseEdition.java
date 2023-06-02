@@ -3,6 +3,8 @@ package pp_ac_8220307_8220337.Api;
 import java.io.IOException;
 import java.text.ParseException;
 import java.time.LocalDate;
+
+import ma02_resources.participants.Participant;
 import ma02_resources.project.Edition;
 import ma02_resources.project.Project;
 import ma02_resources.project.Status;
@@ -104,16 +106,19 @@ public class BaseEdition implements Edition {
      */
     @Override
     public void addProject(String string, String string1, String[] strings) throws IOException, ParseException {
-        try {
-            if (this.numberOfProjects >= this.projects.length) {
-                resizeProjects();
-            }
-            this.projects[this.numberOfProjects] = null;
-            this.numberOfProjects++;
-
-        } catch (NullPointerException npe) {
-            throw new NullPointerException(npe + " in addProject");
-        }
+        /*
+         * try {
+         * if (this.numberOfProjects >= this.projects.length) {
+         * resizeProjects();
+         * }
+         * this.projects[this.numberOfProjects] = null;
+         * this.numberOfProjects++;
+         * 
+         * } catch (NullPointerException npe) {
+         * throw new NullPointerException(npe + " in addProject");
+         * }
+         */
+        return istoEstaMAl;
 
     }
 
@@ -127,23 +132,23 @@ public class BaseEdition implements Edition {
             if (this.numberOfProjects < 0) {
                 throw new ArrayIndexOutOfBoundsException();
             }
-    
+
             int index = searchByName(string);
             if (index < 0) {
                 throw new ProjectDoesntExistException();
             }
-    
+
             for (int i = index; i < this.projects.length - 1; i++) {
                 this.projects[i] = this.projects[i + 1];
             }
-    
+
             this.numberOfProjects--;
             this.projects[numberOfProjects] = null;
-        } catch(ArrayIndexOutOfBoundsException aioobe) {
+        } catch (ArrayIndexOutOfBoundsException aioobe) {
             aioobe.printStackTrace();
         } catch (ProjectDoesntExistException pdee) {
             pdee.printStackTrace();
-        } 
+        }
     }
 
     /**
@@ -214,14 +219,45 @@ public class BaseEdition implements Edition {
     }
 
     /**
+     * Retrieves an array of projects associated with a specific participant name.
      * 
-     * @param string
-     * @return
+     * @param string the name of the participant to filter projects
+     * @return an array of projects associated with the specified participant name
      */
     @Override
     public Project[] getProjectsOf(String string) {
-        throw new UnsupportedOperationException("Not supported yet."); // To change body of generated methods, choose
-                                                                       // Tools | Templates.
+        // provavlemente é os projetos que um determinado participante está
+        Project[] matchingProjects = new Project[numberOfProjects];
+        int matchingCount = 0;
+
+        for (Project project : this.projects) {
+            if (verifyParticipantByName(string, project)) {
+                matchingProjects[matchingCount] = project;
+                matchingCount++;
+            }
+        }
+
+        // Create a new array to hold only the matching projects
+        Project[] onlyMatchingProjects = new Project[matchingCount];
+        System.arraycopy(matchingProjects, 0, onlyMatchingProjects, 0, matchingCount);
+
+        return onlyMatchingProjects;
+    }
+
+    /**
+     * Verifies if a given participant name is present in a especific project.
+     * 
+     * @param participantName the participant name to search for
+     * @param project the project to chack the participants name
+     * @return true if the participant name was found, false otherwise
+     */
+    private boolean verifyParticipantByName(String participantName, Project project) {
+        for (Participant i : project.getParticipants()) {
+            if (i.getName() == participantName) {
+                return true;
+            }
+        }
+        return false;
     }
 
     /**

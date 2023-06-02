@@ -310,6 +310,7 @@ public class BaseProject implements Project {
 
     /**
      * Add a participant to the project
+     * 
      * @param p participant that will be added
      */
     @Override
@@ -317,14 +318,14 @@ public class BaseProject implements Project {
         // Logic to add a participant to the project
         // Check if the maximum number of participants has been reached
 
-
         try {
             // Check if the participant is already in the project
             if (getParticipant(p.getName()) != null) {
                 throw new ParticipantAlreadyInProject("That participant already exists in this project!");
             }
 
-            // Increment the counters based on the participant type (student, partner, facilitator)
+            // Increment the counters based on the participant type (student, partner,
+            // facilitator)
             if (p instanceof Facilitator) {
                 if (numberOfFacilitators == MAXIMUM_NUMBER_OF_FACILITATORS) {
                     throw new IllegalNumberOfParticipantType("Number of facilitators has reached its maximum!");
@@ -360,6 +361,7 @@ public class BaseProject implements Project {
 
     /**
      * Remove a participant from the project
+     * 
      * @param string name of the participant to be removed
      * @return removed participant
      */
@@ -417,8 +419,8 @@ public class BaseProject implements Project {
      * @return the index of the participant if found, -1 otherwise
      */
     private int searchByName(String string) {
-        for(int i = 0; i < participants.length; i++) {
-            if(this.participants[i].getName().equals(string) == true) {
+        for (int i = 0; i < participants.length; i++) {
+            if (this.participants[i].getName().equals(string) == true) {
                 return i;
             }
         }
@@ -436,17 +438,35 @@ public class BaseProject implements Project {
         return null;
     }
 
+    /**
+     * Retrieves the participants of the project
+     * 
+     * @return all participants in the current project
+     */
+    public Participant[] getParticipants() {
+        return this.participants;
+    }
+
     @Override
     public String[] getTags() {
         return hasTags ? tags : null;
     }
 
+    /**
+     * Check if the project has the specified tag
+     * 
+     * @param string name of the tag that is looking for
+     * @return true if a match is found, false otherwise
+     */
     @Override
     public boolean hasTag(String string) {
         if (hasTags) {
-            // Logic to check if the project has the specified tag
             // Iterate through the tags array and check for a match with the given string
-            // Return true if a match is found
+            for (String i : tags) {
+                if (i == string) {
+                    return true; // if a match is found
+                }
+            }
         }
         return false;
 

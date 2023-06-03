@@ -70,6 +70,9 @@ public class BaseTask implements Task {
         } catch (NullPointerException npe) {
             throw new NullPointerException(npe + " in addSubmission");
         }
+
+        // TODO Adicionar submissões a projetos de uma edição ativa apenas por
+        // estudantes pertencentes aos projetos respetivos.
     }
 
     @Override
@@ -160,8 +163,7 @@ public class BaseTask implements Task {
                 + "\tEnd: " + end + "\n"
                 + "\tDuration: " + duration + "\n";
 
-        // It was chosen that the description will not be shown because it is extensive.
+        // It was chosen that the description will not be shown because it takes up a
+        // lot of space on the console.
     }
-
-    // falta o compare to que serve para sorts
 }

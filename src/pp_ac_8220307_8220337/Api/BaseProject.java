@@ -505,15 +505,36 @@ public class BaseProject implements Project {
 
     }
 
+    /**
+     * Adds a task to the project.
+     *
+     * @param task The task to be added.
+     * @throws IllegalNumberOfTasks If the maximum number of tasks has been reached.
+     * @throws TaskAlreadyInProject If the task already exists in the project.
+     */
     @Override
     public void addTask(Task task) throws IllegalNumberOfTasks, TaskAlreadyInProject {
-        // Logic to add a task to the project
-        // Check if the maximum number of tasks has been reached
-        // Check if the task is already in the project
-        // Increment the task counter
-        // Add the task to the project
+        try {
+            // Check if the maximum number of tasks has been reached
+            if (numberOfTasks == MAXIMUM_NUMBER_OF_TASKS) {
+                throw new IllegalNumberOfTasks("Maximum number of taks reached!");
+            }
 
-        throw new UnsupportedOperationException("Not supported yet.");
+            // Check if the task is already in the project
+            if (getTask(task.getTitle()) == null) {
+                throw new TaskAlreadyInProject("This task already exist!");
+            }
+
+            // Add the task to the project
+            this.tasks[numberOfTasks] = task;
+
+            // Increment the task counter
+            this.numberOfTasks++;
+        } catch (IllegalNumberOfTasks inot) {
+            inot.printStackTrace();
+        } catch (TaskAlreadyInProject taip) {
+            taip.printStackTrace();
+        }
     }
 
     /**

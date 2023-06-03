@@ -30,7 +30,7 @@ public class PP_AC_8220307_8220337 {
      * @throws IOException
      */
     public static void main(String[] args) throws IOException, ParseException {
-        // ISTO SÃO APENAS TESTES
+        // ISTO SÃO APENAS TESTES, PODES APAGAR À VONTADE
         Edition edition = new BaseEdition("Teste", "não sei se isto é um caminho", Status.ACTIVE, LocalDate.now(), LocalDate.now().plusDays(46));
         
         String[] tags = {

@@ -58,7 +58,6 @@ public class BaseEdition implements Edition {
         this.end = end;
     }
 
-    
     /**
      * 
      * @param name
@@ -77,8 +76,6 @@ public class BaseEdition implements Edition {
         this.projects = new Project[DEFAULT_NUMBER_PROJECTS];
         this.numberOfProjects = 0;
     }
-
-
 
     /**
      * Retrieves the name of the Edition.
@@ -189,6 +186,14 @@ public class BaseEdition implements Edition {
             // Set the number of tasks
             int numberOfTasks = tasksArray.size();
 
+            /**
+             * Checks if the number of projects has reached the maximum capacity and resizes
+             * the projects array if necessary.
+             */
+            if (numberOfProjects == projects.length) {
+                resizeProjects();
+            }
+
             this.projects[numberOfProjects] = new BaseProject(string, string1, numberOfParticipants, numberOfPartners,
                     numberOfFacilitators, numberOfStudents, numberOfTasks, strings, tasks);
 
@@ -248,8 +253,8 @@ public class BaseEdition implements Edition {
      */
     @Override
     public Project getProject(String string) {
-        for(int i = 0; i < numberOfProjects; i++) {
-            if(getProjects()[i].getName().equals(string)) {
+        for (int i = 0; i < numberOfProjects; i++) {
+            if (getProjects()[i].getName().equals(string)) {
                 return getProjects()[i];
             }
         }

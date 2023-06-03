@@ -5,8 +5,9 @@ import java.io.IOException;
 import java.text.ParseException;
 import java.time.LocalDate;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
 
 import ma02_resources.participants.Participant;
 import ma02_resources.project.Edition;
@@ -57,8 +58,9 @@ public class BaseEdition implements Edition {
     }
 
     /**
-     *
-     * @return
+     * Retrieves the name of the Edition.
+     * 
+     * @return the name of the Edition
      */
     @Override
     public String getName() {
@@ -66,8 +68,9 @@ public class BaseEdition implements Edition {
     }
 
     /**
+     * Retrieves the start date of the Edition.
      * 
-     * @return
+     * @return the start date of the Edition
      */
     @Override
     public LocalDate getStart() {
@@ -75,8 +78,9 @@ public class BaseEdition implements Edition {
     }
 
     /**
+     * Retrieves the project template of the Edition.
      * 
-     * @return
+     * @return the project template of the Edition
      */
     @Override
     public String getProjectTemplate() {
@@ -84,8 +88,9 @@ public class BaseEdition implements Edition {
     }
 
     /**
+     * Retrieves the status of the Edition.
      * 
-     * @return
+     * @return the status of the Edition
      */
     @Override
     public Status getStatus() {
@@ -93,8 +98,9 @@ public class BaseEdition implements Edition {
     }
 
     /**
+     * Sets the status of the Edition.
      * 
-     * @param status
+     * @param status the status to set for the Edition
      */
     @Override
     public void setStatus(Status status) {
@@ -102,73 +108,83 @@ public class BaseEdition implements Edition {
     }
 
     /**
+     * Adds a project based on the information provided in a JSON file.
      * 
-     * @param string  --> name
-     * @param string1 --> description
-     * @param strings --> tasks
-     * @throws IOException
-     * @throws ParseException
+     * The JSON file should contain details such as the number of facilitators,
+     * students, partners, and tasks for the project.
+     * 
+     * @param name        the name of the project
+     * 
+     * @param description the description of the project
+     * 
+     * @param tags        an array of strings representing tags associated with the
+     *                    project
+     * 
+     * @throws IOException    if an I/O error occurs while reading the JSON file
+     * 
+     * @throws ParseException if there is an error while parsing the JSON file
      */
     @Override
     public void addProject(String string, String string1, String[] strings) throws IOException, ParseException {
-        String jsonTemplate = "{\n" +
-                " \"number_of_facilitors\": 2,\n" +
-                " \"number_of_students\": 4,\n" +
-                " \"number_of_partners\": 16,\n" +
-                " \"tasks\": [\n" +
-                " {\n" +
-                " \"title\": \"Long list of Stakeholder \",\n" +
-                " \"description\": \"The team's initial goal is to identify up to 15 stakeholder/user groups\\nrelevant to the project topic.\",\n"
-                +
-                " \"start_at\": 0,\n" +
-                " \"duration\": 14\n" +
-                " },\n" +
-                " {\n" +
-                " \"title\": \"Short list of target groups\",\n" +
-                " \"description\": \"Your team should discuss and select four target groups from the long\\nlist of previously identified stakeholder/user groups.\",\n"
-                +
-                " \"start_at\": 0,\n" +
-                " \"duration\": 14\n" +
-                " }\n" +
-                " ]\n" +
-                "}";
 
-        String taskTitle;
-        String taskDesciption;
-        int taskStartAt;
-        int taskDuration;
+        JSONParser jsonParser = new JSONParser();
 
-        // Parse the JSON template
-        JSONObject jsonObject = new JSONObject(jsonTemplate);
+        try (FileReader reader = new FileReader("./project_template.json")) {
+            // Parse the JSON file
+            JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
 
-        // Create a Project object
-        int numberOfStudents = jsonObject.getInt("number_of_students");
-        int numberOfFacilitators = jsonObject.getInt("number_of_facilitors");
-        int numberOfPartners = jsonObject.getInt("number_of_partners");
+            // Extract the number_of_facilitators, number_of_students, and
+            // number_of_partners from the JSON object
+            int numberOfFacilitators = ((Long) jsonObject.get("number_of_facilitors")).intValue();
+            int numberOfStudents = ((Long) jsonObject.get("number_of_students")).intValue();
+            int numberOfPartners = ((Long) jsonObject.get("number_of_partners")).intValue();
+            int numberOfParticipants = numberOfFacilitators + numberOfStudents + numberOfPartners;
 
-        Project project = new Project();
+            // Extract the tasks array from the JSON object
+            JSONArray tasksArray = (JSONArray) jsonObject.get("tasks");
 
-        JSONArray tasksArray = jsonObject.getJSONArray("tasks");
-        Task[] tasks = new Task[tasksArray.length()];
+            // Create an array to store the tasks
+            Task[] tasks = new Task[tasksArray.size()];
 
-        for (int i = 0; i < tasksArray.length(); i++) {
-            JSONObject taskObject = tasksArray.getJSONObject(i);
-            Task task = new Task();
-            taskTitle = taskObject.getString("title");
-            taskDesciption = taskObject.getString("description");
-            taskStartAt = taskObject.getInt("start_at");
-            taskDuration= taskObject.getInt("duration");
-            tasks[i] = task;
+            // Iterate over each task and create a Task object
+            for (int i = 0; i < tasksArray.size(); i++) {
+                JSONObject taskObject = (JSONObject) tasksArray.get(i);
+
+                // Extract the attributes from the task object
+                String title = (String) taskObject.get("title");
+                String description = (String) taskObject.get("description");
+                int startAt = ((Long) taskObject.get("start_at")).intValue();
+                int duration = ((Long) taskObject.get("duration")).intValue();
+
+                // Create a new Task object with the extracted attributes
+                Task taskTemplate = new BaseTask(title, description, startAt, duration);
+
+                // Add the task to the tasks array
+                tasks[i] = taskTemplate;
+            }
+
+            // Set the number of tasks
+            int numberOfTasks = tasksArray.size();
+
+            this.projects[numberOfProjects] = new BaseProject(string, string1, numberOfParticipants, numberOfPartners,
+                    numberOfFacilitators, numberOfStudents, numberOfTasks, strings, tasks);
+
+            this.numberOfProjects++;
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch(org.json.simple.parser.ParseException e) {
+            e.printStackTrace();
+        } catch (NullPointerException | ArrayIndexOutOfBoundsException eAgain) {
+            eAgain.printStackTrace();
         }
-
-        project
-        project.setTasks(tasks);
 
     }
 
     /**
+     * Removes a project with the specified name from the projects array.
      * 
-     * @param string
+     * @param name the name of the project to be removed
      */
     @Override
     public void removeProject(String string) {
@@ -177,15 +193,19 @@ public class BaseEdition implements Edition {
                 throw new ArrayIndexOutOfBoundsException();
             }
 
+            // Search for the project index by name
             int index = searchByName(string);
+            // Check if the project exists
             if (index < 0) {
                 throw new ProjectDoesntExistException();
             }
 
+            // Shift the remaining projects in the array
             for (int i = index; i < this.projects.length - 1; i++) {
                 this.projects[i] = this.projects[i + 1];
             }
 
+            // Update the number of projects and set the last element to null
             this.numberOfProjects--;
             this.projects[numberOfProjects] = null;
         } catch (ArrayIndexOutOfBoundsException aioobe) {
@@ -196,9 +216,10 @@ public class BaseEdition implements Edition {
     }
 
     /**
+     * Retrieves a project with the specified name from the projects array.
      * 
-     * @param string
-     * @return
+     * @param name the name of the project to retrieve
+     * @return the Project object matching the specified name, or null if not found
      */
     @Override
     public Project getProject(String string) {
@@ -211,8 +232,10 @@ public class BaseEdition implements Edition {
     }
 
     /**
+     * Retrieves all projects stored in the Edition.
      * 
-     * @return
+     * @return an array of Project objects representing all the projects in the
+     *         Edition
      */
     @Override
     public Project[] getProjects() {
@@ -275,7 +298,7 @@ public class BaseEdition implements Edition {
         int matchingCount = 0;
 
         for (Project project : this.projects) {
-            if (verifyParticipantByName(string, project)) {
+            if (project.getParticipant(string) != null) {
                 matchingProjects[matchingCount] = project;
                 matchingCount++;
             }
@@ -286,22 +309,6 @@ public class BaseEdition implements Edition {
         System.arraycopy(matchingProjects, 0, onlyMatchingProjects, 0, matchingCount);
 
         return onlyMatchingProjects;
-    }
-
-    /**
-     * Verifies if a given participant name is present in a especific project.
-     * 
-     * @param participantName the participant name to search for
-     * @param project         the project to chack the participants name
-     * @return true if the participant name was found, false otherwise
-     */
-    private boolean verifyParticipantByName(String participantName, Project project) {
-        for (Participant i : project.getParticipants()) {
-            if (i.getName() == participantName) {
-                return true;
-            }
-        }
-        return false;
     }
 
     /**

@@ -35,6 +35,16 @@ public class BaseTask implements Task {
         this.numberOfSubmissions = 0;
     }
 
+    public BaseTask(String title, String description, int startAt, int duration) {
+        this.start = LocalDate.of(startAt, 1, 1);
+        this.end = LocalDate.of(startAt, 1, 1).plusDays(duration);
+        this.duration = duration;
+        this.title = title;
+        this.description = description;
+        this.submissions = new BaseSubmission[0];
+        this.numberOfSubmissions = 0;
+    }
+
     /**
      * 
      * Adds a submission to the task.
@@ -64,8 +74,7 @@ public class BaseTask implements Task {
 
     @Override
     public void extendDeadline(int arg0) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'extendDeadline'");
+        this.end = end.plusDays(arg0);
     }
 
     @Override

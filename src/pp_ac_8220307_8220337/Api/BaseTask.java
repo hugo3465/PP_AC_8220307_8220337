@@ -15,7 +15,7 @@ import ma02_resources.project.Task;
  * Turma: LEIT2
  */
 public class BaseTask implements Task {
-
+    private final int DEFAULT_NUMBER_SUBMISSIONS = 1;
     private LocalDate start;
     private LocalDate end;
     private int duration;
@@ -32,7 +32,7 @@ public class BaseTask implements Task {
         this.title = title;
         this.description = description;
         this.submissions = submissions;
-        this.numberOfSubmissions = 0;
+        this.numberOfSubmissions = submissions.length;
     }
 
     public BaseTask(String title, String description, int startAt, int duration) {
@@ -41,7 +41,7 @@ public class BaseTask implements Task {
         this.duration = duration;
         this.title = title;
         this.description = description;
-        this.submissions = new BaseSubmission[0];
+        this.submissions = new BaseSubmission[DEFAULT_NUMBER_SUBMISSIONS];
         this.numberOfSubmissions = 0;
     }
 
@@ -151,6 +151,16 @@ public class BaseTask implements Task {
     @Override
     public int getNumberOfSubmissions() {
         return numberOfSubmissions;
+    }
+
+    @Override
+    public String toString() {
+        return "\tTitle: " + title + "\n"
+                + "\tStart: " + start + "\n"
+                + "\tEnd: " + end + "\n"
+                + "\tDuration: " + duration + "\n";
+
+        // It was chosen that the description will not be shown because it is extensive.
     }
 
     // falta o compare to que serve para sorts

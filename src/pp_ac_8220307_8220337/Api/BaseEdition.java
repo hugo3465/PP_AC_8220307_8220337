@@ -14,6 +14,7 @@ import ma02_resources.project.Edition;
 import ma02_resources.project.Project;
 import ma02_resources.project.Status;
 import ma02_resources.project.Task;
+import ma02_resources.project.exceptions.IllegalNumberOfParticipantType;
 import pp_ac_8220307_8220337.Api.Exceptions.ProjectDoesntExistException;
 
 /**
@@ -27,7 +28,7 @@ import pp_ac_8220307_8220337.Api.Exceptions.ProjectDoesntExistException;
  */
 public class BaseEdition implements Edition {
 
-    private final int MAX_PROJECTS = 5;
+    private final int DEFAULT_NUMBER_PROJECTS = 5;
     private String name;
     private String projectTemplate;
     private Status status;
@@ -51,11 +52,33 @@ public class BaseEdition implements Edition {
         this.name = name;
         this.projectTemplate = projectTemplate;
         this.status = status;
-        this.projects = new Project[MAX_PROJECTS];
+        this.projects = new Project[numberOfProjects];
         this.numberOfProjects = numberOfProjects;
         this.start = start;
         this.end = end;
     }
+
+    
+    /**
+     * 
+     * @param name
+     * @param projectTemplate
+     * @param status
+     * @param start
+     * @param end
+     */
+    public BaseEdition(String name, String projectTemplate, Status status, LocalDate start, LocalDate end) {
+        this.name = name;
+        this.projectTemplate = projectTemplate;
+        this.status = status;
+        this.start = start;
+        this.end = end;
+
+        this.projects = new Project[DEFAULT_NUMBER_PROJECTS];
+        this.numberOfProjects = 0;
+    }
+
+
 
     /**
      * Retrieves the name of the Edition.
@@ -113,12 +136,12 @@ public class BaseEdition implements Edition {
      * The JSON file should contain details such as the number of facilitators,
      * students, partners, and tasks for the project.
      * 
-     * @param name        the name of the project
+     * @param string  the name of the project
      * 
-     * @param description the description of the project
+     * @param string1 the description of the project
      * 
-     * @param tags        an array of strings representing tags associated with the
-     *                    project
+     * @param strings an array of strings representing tags associated with the
+     *                project
      * 
      * @throws IOException    if an I/O error occurs while reading the JSON file
      * 
@@ -173,10 +196,12 @@ public class BaseEdition implements Edition {
 
         } catch (IOException e) {
             e.printStackTrace();
-        } catch(org.json.simple.parser.ParseException e) {
+        } catch (org.json.simple.parser.ParseException e) {
             e.printStackTrace();
         } catch (NullPointerException | ArrayIndexOutOfBoundsException eAgain) {
             eAgain.printStackTrace();
+        } catch (IllegalNumberOfParticipantType e) {
+            e.printStackTrace();
         }
 
     }
@@ -223,9 +248,9 @@ public class BaseEdition implements Edition {
      */
     @Override
     public Project getProject(String string) {
-        for (Project i : projects) {
-            if (i.getName().equals(string)) {
-                return i;
+        for(int i = 0; i < numberOfProjects; i++) {
+            if(getProjects()[i].getName().equals(string)) {
+                return getProjects()[i];
             }
         }
         return null;

@@ -132,4 +132,13 @@ public class BaseStudent implements Student {
         return true;
     }
 
+    @Override
+    public String toString() {
+        return "\tnumber:" + number + "\n"
+                + "\tname:" + name + "\n"
+                + "\temail:" + email + "\n"
+                + "\tcontact:" + contact + "\n"
+                + "\tinstituition=" + instituition + "\n";
+    }
+
 }

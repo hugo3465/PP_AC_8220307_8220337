@@ -1,5 +1,12 @@
 package pp_ac_8220307_8220337.Api;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.Arrays;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
 import ma02_resources.participants.Facilitator;
 import ma02_resources.participants.Participant;
 import ma02_resources.participants.Partner;
@@ -25,12 +32,12 @@ public class BaseProject implements Project {
     /**
      * the maximum number of tasks allowed in the project
      */
-    private final int MAXIMUM_NUMBER_OF_TASKS = 10;
+    private final int MAXIMUM_NUMBER_OF_TASKS = 30;
 
     /**
      * the maximum number of participants allowed in the project
      */
-    private final int MAXIMUM_NUMBER_OF_PARTICIPANTS = 15;
+    private final int MAXIMUM_NUMBER_OF_PARTICIPANTS = 32;
 
     /**
      * the maximum number of students allowed in the project
@@ -40,12 +47,12 @@ public class BaseProject implements Project {
     /**
      * the maximum number of partners allowed in the project
      */
-    private final int MAXIMUM_NUMBER_OF_PARTNERS = 5;
+    private final int MAXIMUM_NUMBER_OF_PARTNERS = 20;
 
     /**
      * the maximum number of facilitators allowed in the project
      */
-    private final int MAXIMUM_NUMBER_OF_FACILITATORS = 3;
+    private final int MAXIMUM_NUMBER_OF_FACILITATORS = 5;
 
     /**
      * the name of the projects
@@ -55,7 +62,7 @@ public class BaseProject implements Project {
     /**
      * the description of the project
      */
-    private String desciption;
+    private String description;
 
     /**
      * the current number of participants in the project
@@ -110,35 +117,60 @@ public class BaseProject implements Project {
     /**
      * Constructs a BaseProject object with the specified parameters.
      * 
-     * @param name                           the name of the project
-     * @param description                    the description of the project
-     * @param numberOfParticipants           the current number of participants in
-     *                                       the project
-     * @param numberOfPartners               the current number of partners in the
-     *                                       project
-     * @param numberOfFacilitators           the current number of facilitators in
-     *                                       the project
-     * @param numberOfStudents               the current number of students in the
-     *                                       project
-     * @param numberOfTasks                  the current number of tasks in the
-     *                                       project
-     * @param hasTags                        indicates if the project has tags
-     * @param tags                           the array of tags associated with the
-     *                                       project
-     * @param tasks                          the array of tasks in the project
-     * @param isCompleted                    indicates if the project is completed
+     * @param name                 the name of the project
+     * @param description          the description of the project
+     * @param numberOfParticipants the current number of participants in
+     *                             the project
+     * @param numberOfPartners     the current number of partners in the
+     *                             project
+     * @param numberOfFacilitators the current number of facilitators in
+     *                             the project
+     * @param numberOfStudents     the current number of students in the
+     *                             project
+     * @param numberOfTasks        the current number of tasks in the
+     *                             project
+     * @param hasTags              indicates if the project has tags
+     * @param tags                 the array of tags associated with the
+     *                             project
+     * @param tasks                the array of tasks in the project
+     * @param isCompleted          indicates if the project is completed
+     * @throws IllegalNumberOfParticipantType
      */
-    public BaseProject(String name, String desciption,
+    public BaseProject(String name, String description,
             int numberOfParticipants, int numberOfPartners, int numberOfFacilitators, int numberOfStudents,
-            int numberOfTasks, boolean hasTags, String[] tags, Task[] tasks, boolean isCompleted) {
+            int numberOfTasks, boolean hasTags, String[] tags, Task[] tasks, boolean isCompleted)
+            throws IllegalNumberOfParticipantType {
 
         this.name = name;
-        this.desciption = desciption;
+        this.description = description;
+        // Check if the number of participants exceeds the maximum limit
+        if (numberOfParticipants > MAXIMUM_NUMBER_OF_PARTICIPANTS) {
+            throw new IllegalNumberOfParticipantType("Illegal Number Of Participants");
+        }
         this.numberOfParticipants = numberOfParticipants;
+
+        // Check if the number of partners exceeds the maximum limit
+        if (numberOfPartners > MAXIMUM_NUMBER_OF_PARTNERS) {
+            throw new IllegalNumberOfParticipantType("Illegal Number Of Partners");
+        }
         this.numberOfPartners = numberOfPartners;
+
+        // Check if the number of facilitators exceeds the maximum limit
+        if (numberOfFacilitators > MAXIMUM_NUMBER_OF_FACILITATORS) {
+            throw new IllegalNumberOfParticipantType("Illegal Number Of Facilitators");
+        }
         this.numberOfFacilitators = numberOfFacilitators;
+
+        // Check if the number of students exceeds the maximum limit
+        if (numberOfStudents > MAXIMUM_NUMBER_OF_STUDENTS) {
+            throw new IllegalNumberOfParticipantType("Illegal Number Of Students");
+        }
         this.numberOfStudents = numberOfStudents;
-        this.numberOfTasks = numberOfTasks;
+
+        // Check if the number of tasks exceeds the maximum limit
+        if (numberOfTasks > MAXIMUM_NUMBER_OF_TASKS) {
+            throw new IllegalNumberOfParticipantType("Illegal Number Of Tasks");
+        }
         this.tasks = tasks;
         this.isCompleted = isCompleted;
 
@@ -152,18 +184,17 @@ public class BaseProject implements Project {
     /**
      * Constructs a BaseProject object with only with name, description and the tags
      * array.
-     * allowed in the project
      * 
      * @param name        the name of the project
      * @param description the description of the project
      * @param tags        the array of tags associated with the
      *                    project
      */
-    public BaseProject(String name, String desciption,
+    public BaseProject(String name, String description,
             String[] tags) {
 
         this.name = name;
-        this.desciption = desciption;
+        this.description = description;
         this.tags = tags;
 
         /**
@@ -179,11 +210,11 @@ public class BaseProject implements Project {
     }
 
     /**
-     * This Constructor is mostly used in the {@code addProject()} method int the
+     * This Constructor is mostly used in the {@code addProject()} method in the
      * {@code BaseEdition} class
      * 
      * @param name
-     * @param desciption
+     * @param description
      * @param numberOfParticipants
      * @param numberOfPartners
      * @param numberOfFacilitators
@@ -191,16 +222,44 @@ public class BaseProject implements Project {
      * @param numberOfTasks
      * @param tags
      * @param tasks
+     * @throws IllegalNumberOfParticipantType
      */
-    public BaseProject(String name, String desciption, int numberOfParticipants, int numberOfPartners,
-            int numberOfFacilitators, int numberOfStudents, int numberOfTasks, String[] tags, Task[] tasks) {
+    public BaseProject(String name, String description, int numberOfParticipants, int numberOfPartners,
+            int numberOfFacilitators, int numberOfStudents, int numberOfTasks, String[] tags, Task[] tasks)
+            throws IllegalNumberOfParticipantType {
         this.name = name;
-        this.desciption = desciption;
+        this.description = description;
+
+        // Check if the number of participants exceeds the maximum limit
+        if (numberOfParticipants > MAXIMUM_NUMBER_OF_PARTICIPANTS) {
+            throw new IllegalNumberOfParticipantType("Illegal Number Of Participants");
+        }
         this.numberOfParticipants = numberOfParticipants;
+
+        // Check if the number of partners exceeds the maximum limit
+        if (numberOfPartners > MAXIMUM_NUMBER_OF_PARTNERS) {
+            throw new IllegalNumberOfParticipantType("Illegal Number Of Partners");
+        }
         this.numberOfPartners = numberOfPartners;
+
+        // Check if the number of facilitators exceeds the maximum limit
+        if (numberOfFacilitators > MAXIMUM_NUMBER_OF_FACILITATORS) {
+            throw new IllegalNumberOfParticipantType("Illegal Number Of Facilitators");
+        }
         this.numberOfFacilitators = numberOfFacilitators;
+
+        // Check if the number of students exceeds the maximum limit
+        if (numberOfStudents > MAXIMUM_NUMBER_OF_STUDENTS) {
+            throw new IllegalNumberOfParticipantType("Illegal Number Of Students");
+        }
         this.numberOfStudents = numberOfStudents;
+
+        // Check if the number of tasks exceeds the maximum limit
+        if (numberOfTasks > MAXIMUM_NUMBER_OF_TASKS) {
+            throw new IllegalNumberOfParticipantType("Illegal Number Of Tasks");
+        }
         this.numberOfTasks = numberOfTasks;
+
         this.tags = tags;
 
         /**
@@ -209,6 +268,11 @@ public class BaseProject implements Project {
         this.hasTags = (tags == null) ? false : true;
 
         this.tasks = tasks;
+
+        // mudar isto quando tiver os participantes no template
+        this.participants = new Participant[numberOfParticipants];
+
+        this.isCompleted = false;
     }
 
     @Override
@@ -218,7 +282,7 @@ public class BaseProject implements Project {
 
     @Override
     public String getDescription() {
-        return desciption;
+        return description;
     }
 
     @Override
@@ -388,14 +452,16 @@ public class BaseProject implements Project {
     }
 
     /**
-     * searches for a participant in the {@code participants} array based on their name. 
+     * searches for a participant in the {@code participants} array based on their
+     * name.
+     * 
      * @param string he name of the participant to search for
      * @return the participant if found, -1 otherwise
      */
     @Override
     public Participant getParticipant(String string) {
         for (Participant i : participants) {
-             // Check if the participant's name matches the given name
+            // Check if the participant's name matches the given name
             if (i.getName().equals(string)) {
                 return i;
             }
@@ -450,9 +516,22 @@ public class BaseProject implements Project {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    /**
+     * Retrieves a Task object based on its title.
+     * 
+     * @param string the title of the task to retrieve
+     * @return the Task object with the specified title, or null if no such task
+     *         exists
+     */
     @Override
     public Task getTask(String string) {
-        throw new UnsupportedOperationException("Not supported yet.");
+        for (int i = 0; i < numberOfTasks; i++) {
+            if (this.tasks[i].getTitle().equals(string)) {
+                return this.tasks[i];
+            }
+        }
+
+        return null;
     }
 
     @Override
@@ -463,6 +542,92 @@ public class BaseProject implements Project {
     @Override
     public boolean isCompleted() {
         return isCompleted;
+    }
+
+    // melhor tirar isto
+    public void exportToJSON(String path) throws IOException {
+        // Logic to export the project to a json file
+        // Write the project to the json file
+        // Write the tags to the json file
+        // Write the tasks to the json file
+
+        JSONObject jsonObject = new JSONObject();
+
+        // Set the project details
+        jsonObject.put("name", name);
+        jsonObject.put("description", description);
+
+        // Create a JSON array for participants
+        JSONArray participantsArray = new JSONArray();
+        for (Participant participant : participants) {
+            JSONObject participantObject = new JSONObject();
+            participantObject.put("name", participant.getName());
+            // Add other participant properties as needed
+            participantsArray.add(participantObject);
+        }
+        jsonObject.put("participants", participantsArray);
+
+        // Create a JSON array for tags
+        JSONArray tagsArray = new JSONArray();
+        for (String tag : tags) {
+            tagsArray.add(tag);
+        }
+        jsonObject.put("tags", tagsArray);
+
+        // Create a JSON array for tasks
+        JSONArray tasksArray = new JSONArray();
+        for (Task task : tasks) {
+            JSONObject taskObject = new JSONObject();
+            taskObject.put("title", task.getTitle());
+            taskObject.put("description", task.getDescription());
+            // Add other task properties as needed
+            tasksArray.add(taskObject);
+        }
+        jsonObject.put("tasks", tasksArray);
+
+        // Set the completion status
+        jsonObject.put("isCompleted", isCompleted);
+
+        // Write the JSON object to a file
+        try (FileWriter writer = new FileWriter("./project.json")) {
+            writer.write(jsonObject.toJSONString());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    @Override
+    public String toString() {
+        String string = "Name: " + name + "\n"
+                + "Description: " + description + "\n"
+                + "Participants: " + "\n";
+
+        for (Participant i : getParticipants()) {
+            if (i != null) {
+                string += i.toString() + "\n";
+            }
+
+        }
+
+        string += "Tags: " + "\n";
+
+        for (String i : tags) {
+            string += "\t" + i + "\n";
+        }
+
+        string += "Tasks: " + "\n";
+
+        for (Task i : tasks) {
+            if (i != null) {
+                string += i.toString() + "\n";
+            }
+
+        }
+
+        string += "Is Completed: " + isCompleted;
+
+        return string;
     }
 
 }

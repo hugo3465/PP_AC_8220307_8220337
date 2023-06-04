@@ -38,20 +38,20 @@ public class BaseEdition implements Edition {
     private LocalDate end;
 
     /**
-     *
+     * By default the atribute {@code status} is set as INACTIVE
+     * 
      * @param name
      * @param projectTemplate
-     * @param status
      * @param projects
      * @param numberOfProjects
      * @param start
      * @param end
      */
-    public BaseEdition(String name, String projectTemplate, Status status, Project[] projects, int numberOfProjects,
+    public BaseEdition(String name, String projectTemplate, Project[] projects, int numberOfProjects,
             LocalDate start, LocalDate end) {
         this.name = name;
         this.projectTemplate = projectTemplate;
-        this.status = status;
+        this.status = Status.INACTIVE;
         this.projects = new Project[numberOfProjects];
         this.numberOfProjects = numberOfProjects;
         this.start = start;
@@ -59,17 +59,17 @@ public class BaseEdition implements Edition {
     }
 
     /**
+     * By default the atribute {@code status} is set as INACTIVE
      * 
      * @param name
      * @param projectTemplate
-     * @param status
      * @param start
      * @param end
      */
-    public BaseEdition(String name, String projectTemplate, Status status, LocalDate start, LocalDate end) {
+    public BaseEdition(String name, String projectTemplate, LocalDate start, LocalDate end) {
         this.name = name;
         this.projectTemplate = projectTemplate;
-        this.status = status;
+        this.status = Status.INACTIVE;
         this.start = start;
         this.end = end;
 

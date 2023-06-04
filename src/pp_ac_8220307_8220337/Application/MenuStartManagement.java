@@ -1,25 +1,27 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package pp_ac_8220307_8220337.Application;
 
 /**
- *
- * @author pedro
+ * Nome: Pedro Marcelo Santos Pinho
+ * Número: 8220307
+ * Turma: LEIT2
+ * 
+ * Nome: Hugo Ricardo Almeida Guimarães
+ * Número: 8220337
+ * Turma: LEIT2
  */
 public class MenuStartManagement implements MenuDisplay {
 
     @Override
     public void display() {
-        System.out.println("Welcome to CBL ");
-        System.out.println("Chosse the option correct");
-        System.out.println("1 - Admin");
-        System.out.println("2 - Sair");
+        System.out.println("\nWelcome to CBL ");
+        System.out.println("\t1 - Admin");
+        System.out.println("\t2 - Student");
+        System.out.println("\t0 - Sair");
+        System.out.print("Choose an option: ");
     }
 
     public static void handleStartMenu(MenuManager menuManager) {
-        MenuStartManagement menuStartManagement = new MenuStartManagement();
+        MenuDisplay menuStartManagement = new MenuStartManagement();
         boolean isRunning = true;
 
         while (isRunning) {
@@ -28,9 +30,9 @@ public class MenuStartManagement implements MenuDisplay {
 
             switch (option) {
                 case 1:
-                    MenuAdminManagement.hadleAdminmenu(menuManager);
+                    MenuAdminManagement.adminMenu(menuManager);
                     break;
-                case 2:
+                case 0:
                     isRunning = false;
                     return;
                 default:

@@ -1,12 +1,13 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Interface.java to edit this template
- */
 package pp_ac_8220307_8220337.Application;
 
 /**
- *
- * @author pedro
+ * Nome: Pedro Marcelo Santos Pinho
+ * Número: 8220307
+ * Turma: LEIT2
+ * 
+ * Nome: Hugo Ricardo Almeida Guimarães
+ * Número: 8220337
+ * Turma: LEIT2
  */
 public interface MenuDisplay {
 

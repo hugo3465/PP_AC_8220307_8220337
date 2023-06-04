@@ -1,14 +1,15 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package pp_ac_8220307_8220337.Application;
 
 import java.util.Scanner;
 
 /**
- *
- * @author pedro
+ * Nome: Pedro Marcelo Santos Pinho
+ * Número: 8220307
+ * Turma: LEIT2
+ * 
+ * Nome: Hugo Ricardo Almeida Guimarães
+ * Número: 8220337
+ * Turma: LEIT2
  */
 public class MenuManager {
 
@@ -33,15 +34,22 @@ public class MenuManager {
     public int getInput() {
         int option;
         Scanner scn = new Scanner(System.in);
+
         option = scn.nextInt();
         this.currentOption++;
+
+        // clear buffer
+        scn.nextLine();
+        
+        scn.close();
+
         return option;
     }
 
-    public void displayMenu(MenuDisplay md) {
+    public void displayMenu(MenuDisplay menu) {
         if (this.lastOption < this.MAX_SIZE - 1) {
-            this.menuDisplays[++this.currentOption] = md;
-            md.display();
+            this.menuDisplays[++this.currentOption] = menu;
+            menu.display();
         } else {
             System.out.println("Menu is full. Can´t push new Menu");
         }

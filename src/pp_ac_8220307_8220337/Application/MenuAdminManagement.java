@@ -1,34 +1,39 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package pp_ac_8220307_8220337.Application;
 
 /**
- *
- * @author pedro
+ * Nome: Pedro Marcelo Santos Pinho
+ * Número: 8220307
+ * Turma: LEIT2
+ * 
+ * Nome: Hugo Ricardo Almeida Guimarães
+ * Número: 8220337
+ * Turma: LEIT2
  */
 public class MenuAdminManagement implements MenuDisplay {
 
     @Override
     public void display() {
-        System.out.println("Bem-Vindo ao Menu do Administrador ");
-        System.out.println("Escolha a opção que deseja");
-        System.out.println("1 - Editar");
-        System.out.println("2 - Sair");
+        System.out.println("\nWelcom to the Admin menu");
+        System.out.println("\t1 - Edition Management");
+        System.out.println("\t0 - Sair");
+        System.out.print("Choose an option: ");
     }
 
-    public static void hadleAdminmenu(MenuManager menuManager) {
-        MenuAdminManagement menuAdminManagement = new MenuAdminManagement();
-        Boolean isAdminMenuRunning = true;
+    public static void adminMenu(MenuManager menuManager) {
+        MenuDisplay menuAdminManagement = new MenuAdminManagement();
+        boolean isAdminMenuRunning = true;
 
         while (isAdminMenuRunning) {
+            menuManager.displayMenu(menuAdminManagement);
             int option = menuManager.getInput();
 
             switch (option) {
                 case 1:
+                    MenuEditionAdmin.editionMenu(menuManager);
                     break;
                 case 2:
+                    break;
+                case 0:
                     isAdminMenuRunning = false;
                     return;
                 default:

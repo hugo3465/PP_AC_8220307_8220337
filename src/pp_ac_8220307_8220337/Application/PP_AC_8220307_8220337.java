@@ -30,23 +30,29 @@ public class PP_AC_8220307_8220337 {
      * @throws IOException
      */
     public static void main(String[] args) throws IOException, ParseException {
-        // ISTO SÃO APENAS TESTES, PODES APAGAR À VONTADE
-        Edition edition = new BaseEdition("Teste", "não sei se isto é um caminho", Status.ACTIVE, LocalDate.now(), LocalDate.now().plusDays(46));
         
-        String[] tags = {
-            "teste",
-            "teste2",
-            "teste3"
-        };
+        MenuManager menu = new MenuManager();
 
-        edition.addProject("Jesus Quisto", "O que era aqui mesmo", tags);
+        MenuStartManagement.handleStartMenu(menu);
+        
+        // // ISTO SÃO APENAS TESTES, PODES APAGAR À VONTADE
+        
+        // Edition edition = new BaseEdition("Teste", "não sei se isto é um caminho", Status.ACTIVE, LocalDate.now(), LocalDate.now().plusDays(46));
+        
+        // String[] tags = {
+        //     "teste",
+        //     "teste2",
+        //     "teste3"
+        // };
+
+        // edition.addProject("Jesus Quisto", "O que era aqui mesmo", tags);
 
 
-        for(int i = 0; i < edition.getNumberOfProjects(); i++) {
-            System.out.println(edition.getProjects()[i].toString());
-        }
+        // for(int i = 0; i < edition.getNumberOfProjects(); i++) {
+        //     System.out.println(edition.getProjects()[i].toString());
+        // }
 
-        //System.out.println(edition.getProject("Jesus Quisto").toString());
+        // //System.out.println(edition.getProject("Jesus Quisto").toString());
 
             
     }

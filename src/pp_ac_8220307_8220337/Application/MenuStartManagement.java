@@ -12,10 +12,10 @@ public class MenuStartManagement implements MenuDisplay {
 
     @Override
     public void display() {
-        System.out.println("Bem-Vindo ao CBL ");
-        System.out.println("Escolha a opção que deseja");
+        System.out.println("Welcome to CBL ");
+        System.out.println("Chosse the option correct");
         System.out.println("1 - Admin");
-        System.out.println("10 - Sair");
+        System.out.println("2 - Sair");
     }
 
     public static void handleStartMenu(MenuManager menuManager) {
@@ -29,6 +29,13 @@ public class MenuStartManagement implements MenuDisplay {
             switch (option) {
                 case 1:
                     MenuAdminManagement.hadleAdminmenu(menuManager);
+                    break;
+                case 2:
+                    isRunning = false;
+                    return;
+                default:
+                    System.out.println("Invalid option");
+
             }
         }
     }

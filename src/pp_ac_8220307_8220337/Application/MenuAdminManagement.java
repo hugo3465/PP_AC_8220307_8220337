@@ -15,11 +15,11 @@ public class MenuAdminManagement implements MenuDisplay {
         System.out.println("Bem-Vindo ao Menu do Administrador ");
         System.out.println("Escolha a opção que deseja");
         System.out.println("1 - Editar");
-        System.out.println("10 - Sair");
+        System.out.println("2 - Sair");
     }
 
     public static void hadleAdminmenu(MenuManager menuManager) {
-        // MenuAdminManagement menuAdminManagement = new MenuAdminManagement();
+        MenuAdminManagement menuAdminManagement = new MenuAdminManagement();
         Boolean isAdminMenuRunning = true;
 
         while (isAdminMenuRunning) {
@@ -28,7 +28,7 @@ public class MenuAdminManagement implements MenuDisplay {
             switch (option) {
                 case 1:
                     break;
-                case 10:
+                case 2:
                     isAdminMenuRunning = false;
                     return;
                 default:

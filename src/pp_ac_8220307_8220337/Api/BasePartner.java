@@ -4,7 +4,6 @@ import ma02_resources.participants.Contact;
 import ma02_resources.participants.Instituition;
 import ma02_resources.participants.Partner;
 
-
 /**
  * Nome: Pedro Marcelo Santos Pinho
  * Número: 8220307
@@ -24,7 +23,7 @@ public class BasePartner implements Partner {
      *
      * It contains fields for vat, website, name, email, contact, institution.
      *
-     * This class provides methods to access these Partner details, but only 
+     * This class provides methods to access these Partner details, but only
      * has method to modify Contact and Institution details.
      */
     private String vat;
@@ -44,7 +43,8 @@ public class BasePartner implements Partner {
      * @param contact
      * @param instituition
      */
-    public BasePartner(String vat, String website, String name, String email, Contact contact, Instituition instituition) {
+    public BasePartner(String vat, String website, String name, String email, Contact contact,
+            Instituition instituition) {
         this.vat = vat;
         this.website = website;
         this.name = name;
@@ -133,7 +133,6 @@ public class BasePartner implements Partner {
         this.contact = cntct;
     }
 
-    
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -151,6 +150,13 @@ public class BasePartner implements Partner {
         return true;
     }
 
-
-    
+    @Override
+    public String toString() {
+        return "\tVAT: " + vat + "\n"
+                + "\tWebsite: " + website + "\n"
+                + "\tName: " + name + "\n"
+                + "\tEmail: " + email + "\n"
+                + "\tContact: " + contact + "\n"
+                + "\tInstitution: " + instituition + "\n";
+    }
 }

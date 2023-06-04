@@ -4,7 +4,6 @@ import ma02_resources.participants.Contact;
 import ma02_resources.participants.Facilitator;
 import ma02_resources.participants.Instituition;
 
-
 /**
  * Nome: Pedro Marcelo Santos Pinho
  * Número: 8220307
@@ -28,7 +27,7 @@ public class BaseFacilitator implements Facilitator {
      * This class provides methods to access and modify these Facilitator
      * details.
      */
-    
+
     private String name;
     private String email;
     private Contact contact;
@@ -45,7 +44,8 @@ public class BaseFacilitator implements Facilitator {
      * @param contact
      * @param instituition
      */
-    public BaseFacilitator(String areaOfExpertise, String name, String email, Contact contact, Instituition instituition) {
+    public BaseFacilitator(String areaOfExpertise, String name, String email, Contact contact,
+            Instituition instituition) {
         this.areaOfExpertise = areaOfExpertise;
         this.name = name;
         this.email = email;
@@ -150,5 +150,13 @@ public class BaseFacilitator implements Facilitator {
         return true;
     }
 
-    
+    @Override
+    public String toString() {
+        return "\tName: " + name + "\n"
+                + "\tEmail: " + email + "\n"
+                + "\tContact: " + contact + "\n"
+                + "\tInstitution: " + instituition + "\n"
+                + "\tArea of Expertise: " + areaOfExpertise + "\n";
+    }
+
 }

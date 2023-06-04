@@ -15,7 +15,7 @@ import ma02_resources.project.Task;
  * Turma: LEIT2
  */
 public class BaseTask implements Task {
-
+    private final int DEFAULT_NUMBER_SUBMISSIONS = 1;
     private LocalDate start;
     private LocalDate end;
     private int duration;
@@ -32,6 +32,16 @@ public class BaseTask implements Task {
         this.title = title;
         this.description = description;
         this.submissions = submissions;
+        this.numberOfSubmissions = submissions.length;
+    }
+
+    public BaseTask(String title, String description, int startAt, int duration) {
+        this.start = LocalDate.of(startAt, 1, 1);
+        this.end = LocalDate.of(startAt, 1, 1).plusDays(duration);
+        this.duration = duration;
+        this.title = title;
+        this.description = description;
+        this.submissions = new BaseSubmission[DEFAULT_NUMBER_SUBMISSIONS];
         this.numberOfSubmissions = 0;
     }
 
@@ -60,12 +70,14 @@ public class BaseTask implements Task {
         } catch (NullPointerException npe) {
             throw new NullPointerException(npe + " in addSubmission");
         }
+
+        // TODO Adicionar submissões a projetos de uma edição ativa apenas por
+        // estudantes pertencentes aos projetos respetivos.
     }
 
     @Override
     public void extendDeadline(int arg0) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'extendDeadline'");
+        this.end = end.plusDays(arg0);
     }
 
     @Override
@@ -144,5 +156,14 @@ public class BaseTask implements Task {
         return numberOfSubmissions;
     }
 
-    // falta o compare to que serve para sorts
+    @Override
+    public String toString() {
+        return "\tTitle: " + title + "\n"
+                + "\tStart: " + start + "\n"
+                + "\tEnd: " + end + "\n"
+                + "\tDuration: " + duration + "\n";
+
+        // It was chosen that the description will not be shown because it takes up a
+        // lot of space on the console.
+    }
 }

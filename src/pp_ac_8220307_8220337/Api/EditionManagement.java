@@ -1,6 +1,7 @@
 package pp_ac_8220307_8220337.Api;
 
 import ma02_resources.project.Edition;
+import ma02_resources.project.Project;
 import ma02_resources.project.Status;
 import pp_ac_8220307_8220337.Api.interfaces.IEditionManagement;
 
@@ -17,7 +18,7 @@ public class EditionManagement implements IEditionManagement {
 
     private static int DEFALUT_NUMBER_EDITION;
     private Edition[] editions;
-    private int numEdtion;
+    private int numEditions;
 
     /**
      * Default constructor for EditionManagement class.
@@ -25,7 +26,7 @@ public class EditionManagement implements IEditionManagement {
      */
     public EditionManagement() {
         this.DEFALUT_NUMBER_EDITION = 5;
-        this.numEdtion = 0;
+        this.numEditions = 0;
         this.editions = new Edition[DEFALUT_NUMBER_EDITION];
     }
 
@@ -50,11 +51,11 @@ public class EditionManagement implements IEditionManagement {
      */
     private int getEditionIndex(String name) {
         int i = 0;
-        while (i < this.numEdtion && this.editions[i].getName().compareTo(name) != 0) {
+        while (i < this.numEditions && this.editions[i].getName().compareTo(name) != 0) {
             i++;
         }
 
-        if (i >= this.numEdtion) {
+        if (i >= this.numEditions) {
             return -1;
         }
 
@@ -70,12 +71,12 @@ public class EditionManagement implements IEditionManagement {
     public void addEdition(Edition edition) {
 
         try {
-            if (this.numEdtion >= this.editions.length) {
+            if (this.numEditions >= this.editions.length) {
                 resizeEdition();
             }
-            this.editions[this.numEdtion] = edition;
+            this.editions[this.numEditions] = edition;
 
-            this.numEdtion++;
+            this.numEditions++;
         } catch (NullPointerException e) {
             e.printStackTrace();
         }
@@ -92,12 +93,12 @@ public class EditionManagement implements IEditionManagement {
         try {
             int index = getEditionIndex(editionName);
 
-            for (int i = index; i < this.numEdtion - 1; i++) {
+            for (int i = index; i < this.numEditions - 1; i++) {
                 this.editions[i] = this.editions[i + 1];
             }
 
-            this.numEdtion--;
-            this.editions[this.numEdtion] = null;
+            this.numEditions--;
+            this.editions[this.numEditions] = null;
         } catch (NullPointerException e) {
             e.printStackTrace();
         } catch (ArrayIndexOutOfBoundsException e) {
@@ -124,7 +125,7 @@ public class EditionManagement implements IEditionManagement {
      */
     @Override
     public Edition getEdition(String editionName) {
-        for (int i = 0; i < this.numEdtion; i++) {
+        for (int i = 0; i < this.numEditions; i++) {
             if (editions[i].getName().equals(editionName)) {
                 return editions[i];
             }
@@ -142,16 +143,27 @@ public class EditionManagement implements IEditionManagement {
      */
     @Override
     public void defineAsActive(String editionName) {
-        for (int i = 0; i < this.numEdtion; i++) {
-
+        for (int i = 0; i < this.numEditions; i++) {
+            // Sets the status of other active editions as Inactive
             if (editions[i].getStatus().equals(Status.ACTIVE)) {
                 editions[i].setStatus(Status.INACTIVE);
             }
 
+            // Defines the edition with the specifided name as active.
             if (editions[i].getName().equals(editionName)) {
                 editions[i].setStatus(Status.ACTIVE);
             }
         }
+    }
+
+    /**
+     * Retrieves the number of CBL Editions
+     * 
+     * @return number of CBL Editions
+     */
+    @Override
+    public int getNumberOfCBLEditions() {
+        return this.numEditions;
     }
 
     /**
@@ -207,6 +219,32 @@ public class EditionManagement implements IEditionManagement {
         } catch (ArrayIndexOutOfBoundsException e) {
             e.printStackTrace();
         }
+    }
+
+    /**
+     * Retrieves an array of editions with the unfinished projects in all editions.
+     * 
+     * @return array of projects with the unfinished projects in all editions
+     */
+    public Edition[] getunfinishedEditions() {
+        Edition[] unfinishedEditions = new BaseEdition[numEditions];
+        int countUnfinishedEditions = 0;
+
+        for (int i = 0; i < numEditions; i++) {
+            for (Project project : this.editions[i].getProjects()) {
+                if (project.isCompleted()) {
+                    unfinishedEditions[countUnfinishedEditions] = editions[i];
+                    countUnfinishedEditions++;
+                }
+
+            }
+        }
+
+        // Create a new array to hold only the unfinished Projects in all editions
+        Edition[] onlyunfinishedEditions = new BaseEdition[countUnfinishedEditions];
+        System.arraycopy(unfinishedEditions, 0, onlyunfinishedEditions, 0, countUnfinishedEditions);
+
+        return onlyunfinishedEditions;
     }
 
 }

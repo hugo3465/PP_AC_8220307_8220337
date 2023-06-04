@@ -110,11 +110,6 @@ public class BaseProject implements Project {
     private Task[] tasks;
 
     /**
-     * indicates if the project is completed
-     */
-    private boolean isCompleted;
-
-    /**
      * Constructs a BaseProject object with the specified parameters.
      * 
      * @param name                 the name of the project
@@ -133,12 +128,11 @@ public class BaseProject implements Project {
      * @param tags                 the array of tags associated with the
      *                             project
      * @param tasks                the array of tasks in the project
-     * @param isCompleted          indicates if the project is completed
      * @throws IllegalNumberOfParticipantType
      */
     public BaseProject(String name, String description,
             int numberOfParticipants, int numberOfPartners, int numberOfFacilitators, int numberOfStudents,
-            int numberOfTasks, boolean hasTags, String[] tags, Task[] tasks, boolean isCompleted)
+            int numberOfTasks, boolean hasTags, String[] tags, Task[] tasks)
             throws IllegalNumberOfParticipantType {
 
         this.name = name;
@@ -172,7 +166,6 @@ public class BaseProject implements Project {
             throw new IllegalNumberOfParticipantType("Illegal Number Of Tasks");
         }
         this.tasks = tasks;
-        this.isCompleted = isCompleted;
 
         this.hasTags = hasTags;
 
@@ -269,10 +262,7 @@ public class BaseProject implements Project {
 
         this.tasks = tasks;
 
-        // mudar isto quando tiver os participantes no template
         this.participants = new Participant[numberOfParticipants];
-
-        this.isCompleted = false;
     }
 
     @Override
@@ -538,6 +528,42 @@ public class BaseProject implements Project {
     }
 
     /**
+     * 
+     * Retrieves the progress of the project as a percentage.
+     * 
+     * The method calculates the progress of the project by counting the number of
+     * completed tasks
+     * 
+     * and expressing it as a percentage of the total number of tasks in the
+     * project. The progress
+     * 
+     * A task is marked as completed, if it has 1 or more submissions
+     * 
+     * @return a string representation of the project progress in percentage
+     */
+    public String projectProgress() {
+        int completedTasks = 0;
+        int totalTasks = getTasks().length;
+
+        // Iterate through each task in the project
+        for (Task task : getTasks()) {
+            // The Task is marked as completed, if it has 1 or more submissions
+            if (task.getNumberOfSubmissions() > 0) {
+                completedTasks++;
+            }
+        }
+
+        // Calculate the progress percentage by dividing the completed tasks by the
+        // total tasks
+        double progressPercentage = (double) completedTasks / totalTasks * 100;
+
+        // Format the progress percentage as a string with two decimal places
+        String progress = String.format("%.2f", progressPercentage) + "%";
+
+        return progress;
+    }
+
+    /**
      * Retrieves a Task object based on its title.
      * 
      * @param string the title of the task to retrieve
@@ -555,69 +581,34 @@ public class BaseProject implements Project {
         return null;
     }
 
+    /**
+     * Retrieves an array of tasks associated with the edition.
+     *
+     * @return An array of tasks.
+     */
     @Override
     public Task[] getTasks() {
         return tasks;
     }
 
+    /**
+     * Checks if all the tasks in the edition have at least one submission.
+     *
+     * @return {@code true} if all tasks have at least one submission, {@code false}
+     *         otherwise.
+     */
     @Override
     public boolean isCompleted() {
-        return isCompleted;
-    }
-
-    // melhor tirar isto
-    public void exportToJSON(String path) throws IOException {
-        // Logic to export the project to a json file
-        // Write the project to the json file
-        // Write the tags to the json file
-        // Write the tasks to the json file
-
-        JSONObject jsonObject = new JSONObject();
-
-        // Set the project details
-        jsonObject.put("name", name);
-        jsonObject.put("description", description);
-
-        // Create a JSON array for participants
-        JSONArray participantsArray = new JSONArray();
-        for (Participant participant : participants) {
-            JSONObject participantObject = new JSONObject();
-            participantObject.put("name", participant.getName());
-            // Add other participant properties as needed
-            participantsArray.add(participantObject);
-        }
-        jsonObject.put("participants", participantsArray);
-
-        // Create a JSON array for tags
-        JSONArray tagsArray = new JSONArray();
-        for (String tag : tags) {
-            tagsArray.add(tag);
-        }
-        jsonObject.put("tags", tagsArray);
-
-        // Create a JSON array for tasks
-        JSONArray tasksArray = new JSONArray();
         for (Task task : tasks) {
-            JSONObject taskObject = new JSONObject();
-            taskObject.put("title", task.getTitle());
-            taskObject.put("description", task.getDescription());
-            // Add other task properties as needed
-            tasksArray.add(taskObject);
-        }
-        jsonObject.put("tasks", tasksArray);
-
-        // Set the completion status
-        jsonObject.put("isCompleted", isCompleted);
-
-        // Write the JSON object to a file
-        try (FileWriter writer = new FileWriter("./project.json")) {
-            writer.write(jsonObject.toJSONString());
-        } catch (IOException e) {
-            e.printStackTrace();
+            if (task.getNumberOfSubmissions() == 0) {
+                return false;
+            }
         }
 
+        return true;
     }
 
+    
     @Override
     public String toString() {
         String string = "Name: " + name + "\n"
@@ -646,9 +637,14 @@ public class BaseProject implements Project {
 
         }
 
-        string += "Is Completed: " + isCompleted;
+        string += "Is Completed: " + isCompleted();
 
         return string;
     }
 
+    // TODO: isCompleted nunca está a ser colocada como true, o que fazia mais
+    // sentido era sempre que se ia fazer
+    // TODO: assumimos que quando existe uma submissão a task está feita mas acho
+    // que devia ser pelo end, é melhor mudar. Ao vriar um metodo is completed nas
+    // tasks
 }

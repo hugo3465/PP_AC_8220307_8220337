@@ -24,6 +24,16 @@ public class BaseTask implements Task {
     private Submission[] submissions;
     private int numberOfSubmissions;
 
+    /**
+     * Constructs a BaseTask.
+     * 
+     * @param start
+     * @param end
+     * @param duration
+     * @param title
+     * @param description
+     * @param submissions
+     */
     public BaseTask(LocalDate start, LocalDate end, int duration, String title, String description,
             BaseSubmission[] submissions) {
         this.start = start;
@@ -35,9 +45,19 @@ public class BaseTask implements Task {
         this.numberOfSubmissions = submissions.length;
     }
 
+    /**
+     * Constructs a BaseTask.
+     * 
+     * This constructor is mostly used in the addTask in the BaseProject Class
+     * 
+     * @param title
+     * @param description
+     * @param startAt
+     * @param duration
+     */
     public BaseTask(String title, String description, int startAt, int duration) {
-        this.start = LocalDate.of(startAt, 1, 1);
-        this.end = LocalDate.of(startAt, 1, 1).plusDays(duration);
+        this.start = LocalDate.of(startAt, LocalDate.now().getMonth(), LocalDate.now().getYear());
+        this.end = start.plusDays(duration);
         this.duration = duration;
         this.title = title;
         this.description = description;

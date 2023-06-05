@@ -74,6 +74,7 @@ public class EditionManagement implements IEditionManagement {
             if (this.numEditions >= this.editions.length) {
                 resizeEdition();
             }
+            
             this.editions[this.numEditions] = edition;
 
             this.numEditions++;

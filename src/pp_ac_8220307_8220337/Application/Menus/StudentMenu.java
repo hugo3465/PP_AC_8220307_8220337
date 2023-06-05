@@ -55,7 +55,7 @@ public class StudentMenu implements IMenu {
                 default:
                     System.out.println("Invalid Option");
             }
-        } while (isRunning == true);
+        } while (isRunning);
     }
     
 }

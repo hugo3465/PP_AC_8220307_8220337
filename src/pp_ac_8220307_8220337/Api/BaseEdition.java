@@ -129,14 +129,14 @@ public class BaseEdition implements Edition {
      * The JSON file should contain details such as the number of facilitators,
      * students, partners, and tasks for the project.
      *
-     * @param string the name of the project
+     * @param string  the name of the project
      *
      * @param string1 the description of the project
      *
      * @param strings an array of strings representing tags associated with the
-     * project
+     *                project
      *
-     * @throws IOException if an I/O error occurs while reading the JSON file
+     * @throws IOException    if an I/O error occurs while reading the JSON file
      *
      * @throws ParseException if there is an error while parsing the JSON file
      */
@@ -145,7 +145,7 @@ public class BaseEdition implements Edition {
 
         JSONParser jsonParser = new JSONParser();
 
-        try ( FileReader reader = new FileReader("./project_template.json")) {
+        try (FileReader reader = new FileReader("./project_template.json")) {
             // Parse the JSON file
             JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
 
@@ -246,7 +246,7 @@ public class BaseEdition implements Edition {
      *
      * @param name the name of the project to retrieve
      * @return the Project object matching the specified name, or null if not
-     * found
+     *         found
      */
     @Override
     public Project getProject(String string) {
@@ -262,7 +262,7 @@ public class BaseEdition implements Edition {
      * Retrieves all projects stored in the Edition.
      *
      * @return an array of Project objects representing all the projects in the
-     * Edition
+     *         Edition
      */
     @Override
     public Project[] getProjects() {
@@ -299,7 +299,7 @@ public class BaseEdition implements Edition {
     /**
      * Verifies if a given tag is present in an array of tags.
      *
-     * @param tag the tag to search for
+     * @param tag  the tag to search for
      * @param tags the array of tags to check
      * @return true if the tag is found, false otherwise
      */
@@ -318,7 +318,7 @@ public class BaseEdition implements Edition {
      *
      * @param string the name of the participant to filter projects
      * @return an array of projects associated with the specified participant
-     * name
+     *         name
      */
     @Override
     public Project[] getProjectsOf(String string) {
@@ -456,5 +456,21 @@ public class BaseEdition implements Edition {
         }
 
         return null;
+    }
+
+    @Override
+    public String toString() {
+        String string = "Name: " + name + "\n";
+        string += "Project Template: " + projectTemplate + "\n";
+        string += "Status: " + status + "\n";
+        string += "Start Date: " + start + "\n";
+        string += "End Date: " + end + "\n";
+
+        string += "Projects:\n";
+        for (int i = 0; i < numberOfProjects; i++) {
+            string += "\t" + projects[i] + "\n";
+        }
+
+        return string;
     }
 }

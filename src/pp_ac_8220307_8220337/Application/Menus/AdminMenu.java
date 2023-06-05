@@ -44,7 +44,7 @@ public class AdminMenu implements IMenu {
                 default:
                     System.out.println("Invalid Option");
             }
-        } while (isRunning == true);
+        } while (isRunning);
     }
 
 }

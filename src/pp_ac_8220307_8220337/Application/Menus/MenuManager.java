@@ -1,6 +1,10 @@
 package pp_ac_8220307_8220337.Application.Menus;
 
+import java.time.LocalDate;
 import java.util.Scanner;
+
+import pp_ac_8220307_8220337.Api.EditionManagement;
+import pp_ac_8220307_8220337.Api.interfaces.IEditionManagement;
 
 /**
  * Nome: Pedro Marcelo Santos Pinho Número: 8220307 Turma: LEIT2
@@ -18,10 +22,14 @@ public class MenuManager {
     private int menuCount;
     private Scanner scanner;
 
+    private IEditionManagement Editions;
+
     public MenuManager(int maxMenus) {
         menus = new IMenu[maxMenus];
         menuCount = 0;
         scanner = new Scanner(System.in);
+
+        Editions = new EditionManagement();
     }
 
     public void addMenu(IMenu menu) {
@@ -46,12 +54,40 @@ public class MenuManager {
         return choice;
     }
 
+    public String getUserInputString(String msg) {
+        System.out.print(msg);
+
+        String input = scanner.nextLine();
+
+        return input;
+    }
+
+    public LocalDate getUserInputLocalDate(String msg) {
+        System.out.print(msg + " in the format (YYYY-MM-DD) :");
+
+        String input = scanner.nextLine();
+
+        LocalDate date = LocalDate.parse(input);
+
+        return date;
+    }
+
     private int getUserChoice() {
         System.out.print("Enter your choice: ");
-        return scanner.nextInt();
+
+        int choice = scanner.nextInt();
+
+        // clear the buffer
+        scanner.nextLine();
+
+        return choice;
     }
 
     public IMenu getCurrentMenu() {
         return this.menus[menuCount];
+    }
+
+    public IEditionManagement getEditions() {
+        return Editions;
     }
 }

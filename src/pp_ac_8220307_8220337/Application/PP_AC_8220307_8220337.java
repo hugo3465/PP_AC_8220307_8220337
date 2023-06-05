@@ -21,6 +21,8 @@ import ma02_resources.project.Status;
 import pp_ac_8220307_8220337.Api.BaseEdition;
 import pp_ac_8220307_8220337.Api.BaseProject;
 import pp_ac_8220307_8220337.Api.BaseStudent;
+import pp_ac_8220307_8220337.Api.EditionManagement;
+import pp_ac_8220307_8220337.Api.interfaces.IEditionManagement;
 import pp_ac_8220307_8220337.Application.Menus.MenuManager;
 import pp_ac_8220307_8220337.Application.Menus.StartMenu;
 
@@ -32,6 +34,7 @@ public class PP_AC_8220307_8220337 {
      * @throws IOException
      */
     public static void main(String[] args) throws IOException, ParseException {
+        IEditionManagement Editions = new EditionManagement();
         
         MenuManager menu = new MenuManager(5);
 

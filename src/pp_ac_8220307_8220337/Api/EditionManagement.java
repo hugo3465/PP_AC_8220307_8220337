@@ -16,7 +16,7 @@ import pp_ac_8220307_8220337.Api.interfaces.IEditionManagement;
  */
 public class EditionManagement implements IEditionManagement {
 
-    private static int DEFALUT_NUMBER_EDITION;
+    private final int DEFALUT_NUMBER_EDITION;
     private Edition[] editions;
     private int numEditions;
 

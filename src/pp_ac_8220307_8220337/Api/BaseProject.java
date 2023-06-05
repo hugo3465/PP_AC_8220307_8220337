@@ -548,7 +548,7 @@ public class BaseProject implements Project {
         // Iterate through each task in the project
         for (Task task : getTasks()) {
             // The Task is marked as completed, if it has 1 or more submissions
-            if (task.getNumberOfSubmissions() > 0) {
+            if (task.getNumberOfSubmissions() == task.getSubmissions().length) {
                 completedTasks++;
             }
         }
@@ -600,7 +600,7 @@ public class BaseProject implements Project {
     @Override
     public boolean isCompleted() {
         for (Task task : tasks) {
-            if (task.getNumberOfSubmissions() == 0) {
+            if (task.getNumberOfSubmissions() == task.getSubmissions().length) {
                 return false;
             }
         }

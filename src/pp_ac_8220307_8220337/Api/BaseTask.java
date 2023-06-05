@@ -42,7 +42,7 @@ public class BaseTask implements Task {
         this.title = title;
         this.description = description;
         this.submissions = submissions;
-        this.numberOfSubmissions = submissions.length;
+        this.numberOfSubmissions = 0;
     }
 
     /**

@@ -18,13 +18,9 @@ import ma02_resources.project.exceptions.IllegalNumberOfParticipantType;
 import pp_ac_8220307_8220337.Api.Exceptions.ProjectDoesntExistException;
 
 /**
- * Nome: Pedro Marcelo Santos Pinho
- * Número: 8220307
- * Turma: LEIT2
+ * Nome: Pedro Marcelo Santos Pinho Número: 8220307 Turma: LEIT2
  *
- * Nome: Hugo Ricardo Almeida Guimarães
- * Número: 8220337
- * Turma: LEIT2
+ * Nome: Hugo Ricardo Almeida Guimarães Número: 8220337 Turma: LEIT2
  */
 public class BaseEdition implements Edition {
 
@@ -39,7 +35,7 @@ public class BaseEdition implements Edition {
 
     /**
      * By default the atribute {@code status} is set as INACTIVE
-     * 
+     *
      * @param name
      * @param projectTemplate
      * @param projects
@@ -60,7 +56,7 @@ public class BaseEdition implements Edition {
 
     /**
      * By default the atribute {@code status} is set as INACTIVE
-     * 
+     *
      * @param name
      * @param projectTemplate
      * @param start
@@ -79,7 +75,7 @@ public class BaseEdition implements Edition {
 
     /**
      * Retrieves the name of the Edition.
-     * 
+     *
      * @return the name of the Edition
      */
     @Override
@@ -89,7 +85,7 @@ public class BaseEdition implements Edition {
 
     /**
      * Retrieves the start date of the Edition.
-     * 
+     *
      * @return the start date of the Edition
      */
     @Override
@@ -99,7 +95,7 @@ public class BaseEdition implements Edition {
 
     /**
      * Retrieves the project template of the Edition.
-     * 
+     *
      * @return the project template of the Edition
      */
     @Override
@@ -109,7 +105,7 @@ public class BaseEdition implements Edition {
 
     /**
      * Retrieves the status of the Edition.
-     * 
+     *
      * @return the status of the Edition
      */
     @Override
@@ -119,7 +115,7 @@ public class BaseEdition implements Edition {
 
     /**
      * Sets the status of the Edition.
-     * 
+     *
      * @param status the status to set for the Edition
      */
     @Override
@@ -129,19 +125,19 @@ public class BaseEdition implements Edition {
 
     /**
      * Adds a project based on the information provided in a JSON file.
-     * 
+     *
      * The JSON file should contain details such as the number of facilitators,
      * students, partners, and tasks for the project.
-     * 
-     * @param string  the name of the project
-     * 
+     *
+     * @param string the name of the project
+     *
      * @param string1 the description of the project
-     * 
+     *
      * @param strings an array of strings representing tags associated with the
-     *                project
-     * 
-     * @throws IOException    if an I/O error occurs while reading the JSON file
-     * 
+     * project
+     *
+     * @throws IOException if an I/O error occurs while reading the JSON file
+     *
      * @throws ParseException if there is an error while parsing the JSON file
      */
     @Override
@@ -149,7 +145,7 @@ public class BaseEdition implements Edition {
 
         JSONParser jsonParser = new JSONParser();
 
-        try (FileReader reader = new FileReader("./project_template.json")) {
+        try ( FileReader reader = new FileReader("./project_template.json")) {
             // Parse the JSON file
             JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
 
@@ -187,8 +183,8 @@ public class BaseEdition implements Edition {
             int numberOfTasks = tasksArray.size();
 
             /**
-             * Checks if the number of projects has reached the maximum capacity and resizes
-             * the projects array if necessary.
+             * Checks if the number of projects has reached the maximum capacity
+             * and resizes the projects array if necessary.
              */
             if (numberOfProjects == projects.length) {
                 resizeProjects();
@@ -213,7 +209,7 @@ public class BaseEdition implements Edition {
 
     /**
      * Removes a project with the specified name from the projects array.
-     * 
+     *
      * @param name the name of the project to be removed
      */
     @Override
@@ -247,9 +243,10 @@ public class BaseEdition implements Edition {
 
     /**
      * Retrieves a project with the specified name from the projects array.
-     * 
+     *
      * @param name the name of the project to retrieve
-     * @return the Project object matching the specified name, or null if not found
+     * @return the Project object matching the specified name, or null if not
+     * found
      */
     @Override
     public Project getProject(String string) {
@@ -263,9 +260,9 @@ public class BaseEdition implements Edition {
 
     /**
      * Retrieves all projects stored in the Edition.
-     * 
+     *
      * @return an array of Project objects representing all the projects in the
-     *         Edition
+     * Edition
      */
     @Override
     public Project[] getProjects() {
@@ -302,7 +299,7 @@ public class BaseEdition implements Edition {
     /**
      * Verifies if a given tag is present in an array of tags.
      *
-     * @param tag  the tag to search for
+     * @param tag the tag to search for
      * @param tags the array of tags to check
      * @return true if the tag is found, false otherwise
      */
@@ -316,10 +313,12 @@ public class BaseEdition implements Edition {
     }
 
     /**
-     * Retrieves an array of projects associated with a specific participant name.
-     * 
+     * Retrieves an array of projects associated with a specific participant
+     * name.
+     *
      * @param string the name of the participant to filter projects
-     * @return an array of projects associated with the specified participant name
+     * @return an array of projects associated with the specified participant
+     * name
      */
     @Override
     public Project[] getProjectsOf(String string) {
@@ -341,8 +340,9 @@ public class BaseEdition implements Edition {
     }
 
     /**
-     * Retrieves an array of projects with the unfinished projects of an edition.
-     * 
+     * Retrieves an array of projects with the unfinished projects of an
+     * edition.
+     *
      * @return array of projects with the unfinished projects of an edition
      */
     public Project[] getUnfinishedProjects() {
@@ -387,9 +387,9 @@ public class BaseEdition implements Edition {
     }
 
     /**
-     * Resizes the projects array to accommodate more projects.
-     * This method doubles the size of the projects array when it reaches its
-     * maximum capacity.
+     * Resizes the projects array to accommodate more projects. This method
+     * doubles the size of the projects array when it reaches its maximum
+     * capacity.
      */
     private void resizeProjects() {
         Project[] newProjects = new Project[this.projects.length * 2];
@@ -420,15 +420,15 @@ public class BaseEdition implements Edition {
     }
 
     /**
-     * 
+     *
      * Retrieves the progress of the edition as a percentage.
-     * 
+     *
      * The progress is calculated based on the completion status of the projects
-     * 
+     *
      * in the edition. The completed projects are counted, and the progress is
-     * 
+     *
      * expressed as a percentage of the total number of projects.
-     * 
+     *
      * @return a string representation of the edition progress in percentage
      */
     public String editionProgress() {
@@ -445,5 +445,16 @@ public class BaseEdition implements Edition {
         String progress = String.format("%.2f", progressPercentage) + "%";
 
         return progress;
+    }
+
+    public Project getProjectByTags(String TagString) {
+
+        for (Project project : this.projects) {
+            if (project.getTags().equals(TagString)) {
+                return project;
+            }
+        }
+
+        return null;
     }
 }

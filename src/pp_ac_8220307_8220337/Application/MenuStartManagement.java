@@ -20,7 +20,7 @@ public class MenuStartManagement implements MenuDisplay {
         System.out.print("Choose an option: ");
     }
 
-    public static void handleStartMenu(MenuManager menuManager) {
+    public static void handleStartMenu(MenuManagerUseless menuManager) {
         MenuDisplay menuStartManagement = new MenuStartManagement();
         boolean isRunning = true;
 

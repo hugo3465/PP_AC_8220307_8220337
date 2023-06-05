@@ -19,7 +19,7 @@ public class MenuAdminManagement implements MenuDisplay {
         System.out.print("Choose an option: ");
     }
 
-    public static void adminMenu(MenuManager menuManager) {
+    public static void adminMenu(MenuManagerUseless menuManager) {
         MenuDisplay menuAdminManagement = new MenuAdminManagement();
         boolean isAdminMenuRunning = true;
 

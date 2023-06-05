@@ -21,6 +21,8 @@ import ma02_resources.project.Status;
 import pp_ac_8220307_8220337.Api.BaseEdition;
 import pp_ac_8220307_8220337.Api.BaseProject;
 import pp_ac_8220307_8220337.Api.BaseStudent;
+import pp_ac_8220307_8220337.Application.Menus.MenuManager;
+import pp_ac_8220307_8220337.Application.Menus.StartMenu;
 
 public class PP_AC_8220307_8220337 {
 
@@ -31,9 +33,11 @@ public class PP_AC_8220307_8220337 {
      */
     public static void main(String[] args) throws IOException, ParseException {
         
-        MenuManager menu = new MenuManager();
+        MenuManager menu = new MenuManager(5);
 
-        MenuStartManagement.handleStartMenu(menu);
+        StartMenu.display(menu);
+        
+        
         
         // // ISTO SÃO APENAS TESTES, PODES APAGAR À VONTADE
         

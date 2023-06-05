@@ -641,10 +641,4 @@ public class BaseProject implements Project {
 
         return string;
     }
-
-    // TODO: isCompleted nunca está a ser colocada como true, o que fazia mais
-    // sentido era sempre que se ia fazer
-    // TODO: assumimos que quando existe uma submissão a task está feita mas acho
-    // que devia ser pelo end, é melhor mudar. Ao vriar um metodo is completed nas
-    // tasks
 }

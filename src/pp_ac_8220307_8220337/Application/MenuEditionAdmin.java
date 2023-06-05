@@ -15,7 +15,7 @@ public class MenuEditionAdmin implements MenuDisplay {
         System.out.print("Choose an Option");
     }
 
-    public static void editionMenu(MenuManager menuManager) {
+    public static void editionMenu(MenuManagerUseless menuManager) {
         MenuDisplay menuEdition = new MenuEditionAdmin();
         boolean isRunning = true;
 

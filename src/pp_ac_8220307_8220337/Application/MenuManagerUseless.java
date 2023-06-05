@@ -11,7 +11,7 @@ import java.util.Scanner;
  * Número: 8220337
  * Turma: LEIT2
  */
-public class MenuManager {
+public class MenuManagerUseless {
 
     private static final int MAX_SIZE = 300; //Array Size
 
@@ -21,7 +21,7 @@ public class MenuManager {
 
     private int lastOption;
 
-    public MenuManager() {
+    public MenuManagerUseless() {
         this.currentOption = 0;
         this.lastOption = currentOption--;
         menuDisplays = new MenuDisplay[MAX_SIZE];

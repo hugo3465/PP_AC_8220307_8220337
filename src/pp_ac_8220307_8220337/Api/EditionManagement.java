@@ -1,5 +1,7 @@
 package pp_ac_8220307_8220337.Api;
 
+import java.util.Arrays;
+
 import ma02_resources.project.Edition;
 import ma02_resources.project.Project;
 import ma02_resources.project.Status;
@@ -247,5 +249,18 @@ public class EditionManagement implements IEditionManagement {
 
         return onlyunfinishedEditions;
     }
+
+    @Override
+    public String toString() {
+        String string = "";
+
+        for (int i = 0; i < numEditions; i++) {
+            string += "\n" + editions[i].toString();
+        }
+
+        return string;
+    }
+
+    
 
 }

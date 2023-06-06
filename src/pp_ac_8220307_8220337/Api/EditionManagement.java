@@ -2,6 +2,10 @@ package pp_ac_8220307_8220337.Api;
 
 import java.util.Arrays;
 
+import ma02_resources.participants.Facilitator;
+import ma02_resources.participants.Participant;
+import ma02_resources.participants.Partner;
+import ma02_resources.participants.Student;
 import ma02_resources.project.Edition;
 import ma02_resources.project.Project;
 import ma02_resources.project.Status;
@@ -76,7 +80,7 @@ public class EditionManagement implements IEditionManagement {
             if (this.numEditions >= this.editions.length) {
                 resizeEdition();
             }
-            
+
             this.editions[this.numEditions] = edition;
 
             this.numEditions++;
@@ -261,6 +265,47 @@ public class EditionManagement implements IEditionManagement {
         return string;
     }
 
-    
+    @Override
+    public Participant[] getAllStudents() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getAllStudents'");
+    }
+
+    @Override
+    public Participant[] getAllFacilitators() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getAllFacilitators'");
+    }
+
+    @Override
+    public Participant[] getAllPartners() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getAllPartners'");
+    }
+
+    @Override
+    public Participant getStudent(String name) {
+        for(int i = 0; i < numEditions; i++) {
+            for(int j = 0; j < editions[i].getNumberOfProjects(); i++) {
+                if(editions[i].getProjects()[j].getParticipant(name) != null) {
+                    return editions[i].getProjects()[j].getParticipant(name);
+                }
+            }
+        }
+
+        return null;
+    }
+
+    @Override
+    public Participant getFacilitator(String name) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getFacilitator'");
+    }
+
+    @Override
+    public Participant getPartner(String name) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getPartner'");
+    }
 
 }

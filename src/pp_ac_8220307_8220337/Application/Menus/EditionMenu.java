@@ -5,9 +5,13 @@ import java.time.LocalDate;
 import pp_ac_8220307_8220337.Api.BaseEdition;
 
 /**
- * Nome: Pedro Marcelo Santos Pinho Número: 8220307 Turma: LEIT2
+ * Nome: Pedro Marcelo Santos Pinho
+ * Número: 8220307
+ * Turma: LEIT2
  *
- * Nome: Hugo Ricardo Almeida Guimarães Número: 8220337 Turma: LEIT2
+ * Nome: Hugo Ricardo Almeida Guimarães
+ * Número: 8220337
+ * Turma: LEIT2
  */
 public class EditionMenu implements IMenu {
 
@@ -67,9 +71,11 @@ public class EditionMenu implements IMenu {
                     menuManager.getEditions().defineAsClosed(name);
                     break;
                 case 6:
-                    name = menuManager.getUserInputString("Inser the name of the edition you want to set as Canceled: ");
+                    name = menuManager
+                            .getUserInputString("Inser the name of the edition you want to set as Canceled: ");
 
-                    menuManager.getEditions().defineAsCanceled(name);;
+                    menuManager.getEditions().defineAsCanceled(name);
+                    ;
                     break;
                 case 7:
                     System.out.println(menuManager.getEditions().toString());

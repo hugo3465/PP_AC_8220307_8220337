@@ -1,5 +1,6 @@
 package pp_ac_8220307_8220337.Application.Menus;
 
+import ma02_resources.participants.Participant;
 import ma02_resources.participants.Student;
 
 /**
@@ -8,10 +9,10 @@ import ma02_resources.participants.Student;
  * Nome: Hugo Ricardo Almeida Guimarães Número: 8220337 Turma: LEIT2
  */
 public class StudentMenu implements IMenu {
-    private Student student;
+    private Participant student;
 
-    public StudentMenu(Student student) {
-        this.student = student;
+    public StudentMenu(Participant participant) {
+        this.student = participant;
     }
 
     @Override

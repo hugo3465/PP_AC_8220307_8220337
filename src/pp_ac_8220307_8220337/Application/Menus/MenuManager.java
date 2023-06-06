@@ -75,10 +75,17 @@ public class MenuManager {
     private int getUserChoice() {
         System.out.print("Enter your choice: ");
 
-        int choice = scanner.nextInt();
+        int choice = -1;
 
-        // clear the buffer
-        scanner.nextLine();
+        try {
+            choice = scanner.nextInt();
+            
+        } catch (Exception e) {
+            System.out.println("Invalid Option");
+        } finally {
+            // clear the buffer
+            scanner.nextLine();
+        }
 
         return choice;
     }

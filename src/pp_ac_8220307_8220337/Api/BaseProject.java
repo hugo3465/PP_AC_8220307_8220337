@@ -128,43 +128,26 @@ public class BaseProject implements Project {
      * @param tags                 the array of tags associated with the
      *                             project
      * @param tasks                the array of tasks in the project
-     * @throws IllegalNumberOfParticipantType
      */
     public BaseProject(String name, String description,
             int numberOfParticipants, int numberOfPartners, int numberOfFacilitators, int numberOfStudents,
-            int numberOfTasks, boolean hasTags, String[] tags, Task[] tasks)
-            throws IllegalNumberOfParticipantType {
+            int numberOfTasks, boolean hasTags, String[] tags, Task[] tasks) {
 
         this.name = name;
         this.description = description;
-        // Check if the number of participants exceeds the maximum limit
-        if (numberOfParticipants > MAXIMUM_NUMBER_OF_PARTICIPANTS) {
-            throw new IllegalNumberOfParticipantType("Illegal Number Of Participants");
-        }
-        this.numberOfParticipants = numberOfParticipants;
 
-        // Check if the number of partners exceeds the maximum limit
-        if (numberOfPartners > MAXIMUM_NUMBER_OF_PARTNERS) {
-            throw new IllegalNumberOfParticipantType("Illegal Number Of Partners");
-        }
-        this.numberOfPartners = numberOfPartners;
+        // Set the number of participants, ensuring it doesn't exceed the maximum limit
+        this.numberOfParticipants = Math.min(numberOfParticipants, MAXIMUM_NUMBER_OF_PARTICIPANTS);
 
-        // Check if the number of facilitators exceeds the maximum limit
-        if (numberOfFacilitators > MAXIMUM_NUMBER_OF_FACILITATORS) {
-            throw new IllegalNumberOfParticipantType("Illegal Number Of Facilitators");
-        }
-        this.numberOfFacilitators = numberOfFacilitators;
+        // Set the number of partners, ensuring it doesn't exceed the maximum limit
+        this.numberOfPartners = Math.min(numberOfPartners, MAXIMUM_NUMBER_OF_PARTNERS);
 
-        // Check if the number of students exceeds the maximum limit
-        if (numberOfStudents > MAXIMUM_NUMBER_OF_STUDENTS) {
-            throw new IllegalNumberOfParticipantType("Illegal Number Of Students");
-        }
-        this.numberOfStudents = numberOfStudents;
+        // Set the number of facilitators, ensuring it doesn't exceed the maximum limit
+        this.numberOfFacilitators = Math.min(numberOfFacilitators, MAXIMUM_NUMBER_OF_FACILITATORS);
 
-        // Check if the number of tasks exceeds the maximum limit
-        if (numberOfTasks > MAXIMUM_NUMBER_OF_TASKS) {
-            throw new IllegalNumberOfParticipantType("Illegal Number Of Tasks");
-        }
+        // Set the number of students, ensuring it doesn't exceed the maximum limit
+        this.numberOfStudents = Math.min(numberOfStudents, MAXIMUM_NUMBER_OF_STUDENTS);
+
         this.tasks = tasks;
 
         this.hasTags = hasTags;
@@ -215,43 +198,26 @@ public class BaseProject implements Project {
      * @param numberOfTasks
      * @param tags
      * @param tasks
-     * @throws IllegalNumberOfParticipantType
      */
     public BaseProject(String name, String description, int numberOfParticipants, int numberOfPartners,
-            int numberOfFacilitators, int numberOfStudents, int numberOfTasks, String[] tags, Task[] tasks)
-            throws IllegalNumberOfParticipantType {
+            int numberOfFacilitators, int numberOfStudents, int numberOfTasks, String[] tags, Task[] tasks) {
         this.name = name;
         this.description = description;
 
-        // Check if the number of participants exceeds the maximum limit
-        if (numberOfParticipants > MAXIMUM_NUMBER_OF_PARTICIPANTS) {
-            throw new IllegalNumberOfParticipantType("Illegal Number Of Participants");
-        }
-        this.numberOfParticipants = numberOfParticipants;
+        // Check and limit the number of participants
+        this.numberOfParticipants = Math.min(numberOfParticipants, MAXIMUM_NUMBER_OF_PARTICIPANTS);
 
-        // Check if the number of partners exceeds the maximum limit
-        if (numberOfPartners > MAXIMUM_NUMBER_OF_PARTNERS) {
-            throw new IllegalNumberOfParticipantType("Illegal Number Of Partners");
-        }
-        this.numberOfPartners = numberOfPartners;
+        // Check and limit the number of partners
+        this.numberOfPartners = Math.min(numberOfPartners, MAXIMUM_NUMBER_OF_PARTNERS);
 
-        // Check if the number of facilitators exceeds the maximum limit
-        if (numberOfFacilitators > MAXIMUM_NUMBER_OF_FACILITATORS) {
-            throw new IllegalNumberOfParticipantType("Illegal Number Of Facilitators");
-        }
-        this.numberOfFacilitators = numberOfFacilitators;
+        // Check and limit the number of facilitators
+        this.numberOfFacilitators = Math.min(numberOfFacilitators, MAXIMUM_NUMBER_OF_FACILITATORS);
 
-        // Check if the number of students exceeds the maximum limit
-        if (numberOfStudents > MAXIMUM_NUMBER_OF_STUDENTS) {
-            throw new IllegalNumberOfParticipantType("Illegal Number Of Students");
-        }
-        this.numberOfStudents = numberOfStudents;
+        // Check and limit the number of students
+        this.numberOfStudents = Math.min(numberOfStudents, MAXIMUM_NUMBER_OF_STUDENTS);
 
-        // Check if the number of tasks exceeds the maximum limit
-        if (numberOfTasks > MAXIMUM_NUMBER_OF_TASKS) {
-            throw new IllegalNumberOfParticipantType("Illegal Number Of Tasks");
-        }
-        this.numberOfTasks = numberOfTasks;
+        // Check and limit the number of tasks
+        this.numberOfTasks = Math.min(numberOfTasks, MAXIMUM_NUMBER_OF_TASKS);
 
         this.tags = tags;
 
@@ -333,6 +299,11 @@ public class BaseProject implements Project {
     @Override
     public void addParticipant(Participant p) throws IllegalNumberOfParticipantType, ParticipantAlreadyInProject {
         try {
+            // check if the array participants has sufficient space
+            if (getNumberOfParticipants() == MAXIMUM_NUMBER_OF_PARTICIPANTS) {
+                throw new ArrayIndexOutOfBoundsException("This project has reached its maximum number of participants");
+            }
+
             // Check if the participant is already in the project
             if (getParticipant(p.getName()) != null) {
                 throw new ParticipantAlreadyInProject("That participant already exists in this project!");
@@ -362,14 +333,8 @@ public class BaseProject implements Project {
 
             numberOfParticipants++;
 
-        } catch (ArrayIndexOutOfBoundsException aiofbe) {
-            throw new ArrayIndexOutOfBoundsException(aiofbe + " in addParticipant method");
-        } catch (NullPointerException npe) {
-            throw new NullPointerException(npe + " in addParticipant method");
-        } catch (ParticipantAlreadyInProject paip) {
-            paip.printStackTrace();
-        } catch (IllegalNumberOfParticipantType inopt) {
-            inopt.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException("An error occurred in remove Add Participant method");
         }
     }
 
@@ -389,7 +354,7 @@ public class BaseProject implements Project {
             // Verify the existance of the participant
             int index = searchByName(string);
             if (index < 0) {
-                throw new ParticipantDoesntExistException();
+                return null;
             }
 
             // save the participant that will be removed
@@ -417,13 +382,9 @@ public class BaseProject implements Project {
 
             return removedParticipant;
 
-        } catch (ArrayIndexOutOfBoundsException aioobe) {
-            throw new ArrayIndexOutOfBoundsException(aioobe + " in addParticipant method");
-        } catch (ParticipantDoesntExistException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException("An error occurred in removeParticipant method");
         }
-
-        return null;
     }
 
     /**
@@ -520,10 +481,8 @@ public class BaseProject implements Project {
 
             // Increment the task counter
             this.numberOfTasks++;
-        } catch (IllegalNumberOfTasks inot) {
-            inot.printStackTrace();
-        } catch (TaskAlreadyInProject taip) {
-            taip.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException("An error occurred in addTask method");
         }
     }
 
@@ -608,7 +567,6 @@ public class BaseProject implements Project {
         return true;
     }
 
-    
     @Override
     public String toString() {
         String string = "Name: " + name + "\n"

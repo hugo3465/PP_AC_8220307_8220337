@@ -196,13 +196,9 @@ public class BaseEdition implements Edition {
             this.numberOfProjects++;
 
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new IOException("An I/O error occurred while reading the file", e);
         } catch (org.json.simple.parser.ParseException e) {
-            e.printStackTrace();
-        } catch (NullPointerException | ArrayIndexOutOfBoundsException eAgain) {
-            eAgain.printStackTrace();
-        } catch (IllegalNumberOfParticipantType e) {
-            e.printStackTrace();
+            throw new ParseException("Error parsing the JSON file at offset " + e.getPosition(), e.getPosition());
         }
 
     }
@@ -234,10 +230,8 @@ public class BaseEdition implements Edition {
             // Update the number of projects and set the last element to null
             this.numberOfProjects--;
             this.projects[numberOfProjects] = null;
-        } catch (ArrayIndexOutOfBoundsException aioobe) {
-            aioobe.printStackTrace();
-        } catch (ProjectDoesntExistException pdee) {
-            pdee.printStackTrace();
+        } catch (Exception e) {
+            throw new RuntimeException("An error occurredo in remove Project method");
         }
     }
 

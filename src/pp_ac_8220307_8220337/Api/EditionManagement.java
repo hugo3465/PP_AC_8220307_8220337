@@ -265,10 +265,14 @@ public class EditionManagement implements IEditionManagement {
         return string;
     }
 
+    /**
+     * @return
+     */
     @Override
     public Participant[] getAllStudents() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getAllStudents'");
+        return null;
     }
 
     @Override

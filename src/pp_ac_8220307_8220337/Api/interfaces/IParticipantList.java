@@ -6,6 +6,7 @@ import ma02_resources.participants.Partner;
 import ma02_resources.participants.Student;
 
 public interface IParticipantList {
+    public Participant[] getAllParticipantsFromEdition(String editionName);
     public Participant[] getAllStudents();
     public Participant[] getAllFacilitators();
     public Participant[] getAllPartners();

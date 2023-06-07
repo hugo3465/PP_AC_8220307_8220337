@@ -27,12 +27,12 @@ public class BaseTask implements Task {
     /**
      * Constructs a BaseTask.
      * 
-     * @param start
-     * @param end
-     * @param duration
-     * @param title
-     * @param description
-     * @param submissions
+     * @param start       the start date of the task
+     * @param end         the end date of the task
+     * @param duration    the duration of the task in days
+     * @param title       the title of the task
+     * @param description the description of the task
+     * @param submissions the array of submissions for the task
      */
     public BaseTask(LocalDate start, LocalDate end, int duration, String title, String description,
             BaseSubmission[] submissions) {
@@ -48,20 +48,59 @@ public class BaseTask implements Task {
     /**
      * Constructs a BaseTask.
      * 
-     * This constructor is mostly used in the addTask in the BaseProject Class
+     * This constructor is mostly used in the addProject in the BaseEdition Class.
      * 
-     * @param title
-     * @param description
-     * @param startAt
-     * @param duration
+     * When a new project is added, the tasks will have a default number of
+     * submissions,
+     * defined by {@code DEFAULT_NUMBER_SUBMISSIONS}.
+     * 
+     * @param title       the title of the task
+     * @param description the description of the task
+     * @param startAt     the start date of the task in the format YYYYMMDD
+     * @param duration    the duration of the task in days
      */
     public BaseTask(String title, String description, int startAt, int duration) {
-        this.start = LocalDate.of(startAt, LocalDate.now().getMonth(), LocalDate.now().getYear());
-        this.end = start.plusDays(duration);
+        int year = startAt / 10000; // Extract the year from the integer
+        int month = (startAt / 100) % 100; // Extract the month from the integer
+        int day = startAt % 100; // Extract the day from the integer
+
+        this.start = LocalDate.of(day, month, year);
+
+        this.end = start.plusDays(duration); // Calculate the end date based on start and duration
+
         this.duration = duration;
         this.title = title;
         this.description = description;
         this.submissions = new BaseSubmission[DEFAULT_NUMBER_SUBMISSIONS];
+        this.numberOfSubmissions = 0;
+    }
+
+    /**
+     * Constructs a BaseTask.
+     * 
+     * This constructor is mostly used in the addTask in the BaseProject Class.
+     * 
+     * @param title                 the title of the task
+     * @param description           the description of the task
+     * @param startAt               the start date of the task in the format
+     *                              YYYYMMDD
+     * @param duration              the duration of the task in days
+     * @param maxNumberOfSubmission the maximum number of submissions allowed for
+     *                              the task
+     */
+    public BaseTask(String title, String description, int startAt, int duration, int maxNumberOfSubmission) {
+        int year = startAt / 10000; // Extract the year from the integer
+        int month = (startAt / 100) % 100; // Extract the month from the integer
+        int day = startAt % 100; // Extract the day from the integer
+
+        this.start = LocalDate.of(day, month, year);
+
+        this.end = start.plusDays(duration); // Calculate the end date based on start and duration
+
+        this.duration = duration;
+        this.title = title;
+        this.description = description;
+        this.submissions = new BaseSubmission[maxNumberOfSubmission];
         this.numberOfSubmissions = 0;
     }
 
@@ -95,15 +134,30 @@ public class BaseTask implements Task {
         // estudantes pertencentes aos projetos respetivos.
     }
 
+    /**
+     * Extends the deadline of the task by a specified number of days.
+     * 
+     * @param days The number of days by which to extend the deadline.
+     */
     @Override
     public void extendDeadline(int arg0) {
         this.end = end.plusDays(arg0);
     }
 
+    /**
+     * Compares this task with another task based on their end dates.
+     * 
+     * @param otherTask The task to compare with.
+     * @return A negative integer if this task's end date is earlier than the other
+     *         task's end date,
+     *         a positive integer if this task's end date is later than the other
+     *         task's end date,
+     *         or zero if both tasks have the same end date.
+     */
     @Override
     public int compareTo(Task arg0) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'compareTo'");
+        // Comparar as tarefas com base na data de término
+        return this.getEnd().compareTo(arg0.getEnd());
     }
 
     /**

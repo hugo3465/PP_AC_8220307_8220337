@@ -308,4 +308,10 @@ public class EditionManagement implements IEditionManagement {
         throw new UnsupportedOperationException("Unimplemented method 'getPartner'");
     }
 
+    @Override
+    public Participant[] getAllParticipantsFromEdition(String EditionName) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getAllParticipants'");
+    }
+
 }

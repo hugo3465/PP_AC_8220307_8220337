@@ -26,6 +26,7 @@ public class BaseSubmission implements Submission {
 
     @Override
     public int compareTo(Submission sbmsn) {
+        //TODO fazer compareTo
         throw new UnsupportedOperationException("Not supported yet."); // Generated from
                                                                        // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }

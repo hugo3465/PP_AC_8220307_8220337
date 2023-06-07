@@ -23,13 +23,23 @@ public class AdminMenu implements IMenu {
         IMenu menuAdmin = new AdminMenu();
         boolean isRunning = true;
 
+        String editionName;
+
         do {
             switch (menuManager.diplayMenu(menuAdmin)) {
                 case 1:
                     EditionMenu.display(menuManager);
                     break;
                 case 2:
-                    ProjectMenu.display(menuManager);
+                    try {
+                        editionName = menuManager.getUserInputString("Enter the name of the edition you want to enter: ");
+
+                        ProjectMenu projectMenu = new ProjectMenu(menuManager.getEditions().getEdition(editionName));
+
+                        projectMenu.display(menuManager);
+                    } catch (NullPointerException e) {
+                        System.out.println("Invalid edition name!");
+                    }
                     break;
                 case 3:
                     break;

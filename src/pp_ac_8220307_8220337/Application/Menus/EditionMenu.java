@@ -47,9 +47,14 @@ public class EditionMenu implements IMenu {
                     menuManager.getEditions().addEdition(new BaseEdition(name, projectTemplate, start, end));
                     break;
                 case 2:
-                    name = menuManager.getUserInputString("Inser the name of the edition you want to remove: ");
+                    try {
+                        name = menuManager.getUserInputString("Inser the name of the edition you want to remove: ");
 
-                    menuManager.getEditions().removeEdition(name);
+                        menuManager.getEditions().removeEdition(name);
+                    } catch(NullPointerException | ArrayIndexOutOfBoundsException e) {
+                        System.out.println("Edition not found.");
+                    }
+                   
                     break;
                 case 3:
                     System.out.println(

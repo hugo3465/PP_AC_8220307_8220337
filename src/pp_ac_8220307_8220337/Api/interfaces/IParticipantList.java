@@ -14,4 +14,6 @@ public interface IParticipantList {
     public Participant getStudent(String name);
     public Participant getFacilitator(String name);
     public Participant getPartner(String name);
+
+    
 }

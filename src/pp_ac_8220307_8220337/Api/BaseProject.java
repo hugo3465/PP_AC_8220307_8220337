@@ -422,15 +422,6 @@ public class BaseProject implements Project {
         return null;
     }
 
-    /**
-     * Retrieves the participants of the project
-     * 
-     * @return all participants in the current project
-     */
-    public Participant[] getParticipants() {
-        return this.participants;
-    }
-
     @Override
     public String[] getTags() {
         return hasTags ? tags : null;
@@ -487,42 +478,6 @@ public class BaseProject implements Project {
     }
 
     /**
-     * 
-     * Retrieves the progress of the project as a percentage.
-     * 
-     * The method calculates the progress of the project by counting the number of
-     * completed tasks
-     * 
-     * and expressing it as a percentage of the total number of tasks in the
-     * project. The progress
-     * 
-     * A task is marked as completed, if it has 1 or more submissions
-     * 
-     * @return a string representation of the project progress in percentage
-     */
-    public String projectProgress() {
-        int completedTasks = 0;
-        int totalTasks = getTasks().length;
-
-        // Iterate through each task in the project
-        for (Task task : getTasks()) {
-            // The Task is marked as completed, if it has 1 or more submissions
-            if (task.getNumberOfSubmissions() == task.getSubmissions().length) {
-                completedTasks++;
-            }
-        }
-
-        // Calculate the progress percentage by dividing the completed tasks by the
-        // total tasks
-        double progressPercentage = (double) completedTasks / totalTasks * 100;
-
-        // Format the progress percentage as a string with two decimal places
-        String progress = String.format("%.2f", progressPercentage) + "%";
-
-        return progress;
-    }
-
-    /**
      * Retrieves a Task object based on its title.
      * 
      * @param string the title of the task to retrieve
@@ -566,6 +521,16 @@ public class BaseProject implements Project {
 
         return true;
     }
+
+    /**
+     * Retrieves the participants of the project, this mehtod is only used in the
+     * toString method
+     * 
+     * @return all participants in the current project
+     */
+    public Participant[] getParticipants() {
+        return this.participants;
+    } //TODO VERIFICAR SE ESTE MÉTODO DEVE SER PRIVATE
 
     @Override
     public String toString() {

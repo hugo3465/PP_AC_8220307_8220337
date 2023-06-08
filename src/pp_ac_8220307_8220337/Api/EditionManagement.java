@@ -9,6 +9,7 @@ import ma02_resources.participants.Student;
 import ma02_resources.project.Edition;
 import ma02_resources.project.Project;
 import ma02_resources.project.Status;
+import ma02_resources.project.Task;
 import pp_ac_8220307_8220337.Api.interfaces.IEditionManagement;
 
 /**
@@ -272,7 +273,6 @@ public class EditionManagement implements IEditionManagement {
     public Participant[] getAllStudents() {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getAllStudents'");
-        return null;
     }
 
     @Override
@@ -289,9 +289,9 @@ public class EditionManagement implements IEditionManagement {
 
     @Override
     public Participant getStudent(String name) {
-        for(int i = 0; i < numEditions; i++) {
-            for(int j = 0; j < editions[i].getNumberOfProjects(); i++) {
-                if(editions[i].getProjects()[j].getParticipant(name) != null) {
+        for (int i = 0; i < numEditions; i++) {
+            for (int j = 0; j < editions[i].getNumberOfProjects(); i++) {
+                if (editions[i].getProjects()[j].getParticipant(name) != null) {
                     return editions[i].getProjects()[j].getParticipant(name);
                 }
             }
@@ -316,6 +316,142 @@ public class EditionManagement implements IEditionManagement {
     public Participant[] getAllParticipantsFromEdition(String EditionName) {
         // TODO Auto-generated method stub
         throw new UnsupportedOperationException("Unimplemented method 'getAllParticipants'");
+    }
+
+    /**
+     * Retrieves an array of projects with the unfinished projects of an edition.
+     *
+     * The method iterates through each project in the specified edition and checks
+     * if any of the tasks within the project
+     * have at least one submission. If a task has one or more submissions, the
+     * project is considered unfinished and is added
+     * to the array of unfinished projects.
+     *
+     * @param edition the edition from which to retrieve the unfinished projects
+     * @return an array of projects containing the unfinished projects of the
+     *         edition
+     */
+    @Override
+    public Project[] getUnfinishedProjects(Edition edition) {
+        Project[] unfinishedProjects = new BaseProject[edition.getNumberOfProjects()];
+        int countUnfinishedProjects = 0;
+
+        // Iterate through each project in the edition
+        for (int i = 0; i < edition.getNumberOfProjects(); i++) {
+
+            Project curretnProject = edition.getProjects()[i];
+            // Check each task within the project for the presence of submissions
+            for (Task task : curretnProject.getTasks()) {
+                // If a task has at least one submission, add the project to the
+                // unfinishedProjects array
+                if (task.getNumberOfSubmissions() > 0) {
+                    unfinishedProjects[countUnfinishedProjects] = curretnProject;
+                    countUnfinishedProjects++;
+                }
+
+            }
+        }
+
+        // Create a new array to hold only the unfinished Projects
+        Project[] onlyUnfinishedProjects = new BaseProject[countUnfinishedProjects];
+        System.arraycopy(unfinishedProjects, 0, onlyUnfinishedProjects, 0, countUnfinishedProjects);
+
+        return onlyUnfinishedProjects;
+    }
+
+    /**
+     * Retrieves a project based on its tags from a given edition.
+     *
+     * The method iterates through each project in the specified edition and checks
+     * if the tags of the project match the
+     * provided TagString. If a project with matching tags is found, it is returned.
+     * If no matching project is found, null
+     * is returned.
+     *
+     * @param TagString the string representing the tags to search for
+     * @param edition   the edition from which to retrieve the project
+     * @return the project with matching tags, or null if no match is found
+     */
+    @Override
+    public Project getProjectByTags(String TagString, Edition edition) {
+
+        for (Project project : edition.getProjects()) {
+            if (project.getTags().equals(TagString)) {
+                return project;
+            }
+        }
+
+        return null;
+    }
+
+    /**
+     *
+     * Retrieves the progress of the edition as a percentage.
+     *
+     * The progress is calculated based on the completion status of the projects
+     *
+     * in the edition. The completed projects are counted, and the progress is
+     *
+     * expressed as a percentage of the total number of projects.
+     *
+     * @param edition the edition for which the progress is calculated
+     * @return a string representation of the edition progress in percentage
+     */
+    @Override
+    public String editionProgress(Edition edition) {
+        int completedProjects = 0;
+        int totalProjects = edition.getNumberOfProjects();
+
+        for (Project project : edition.getProjects()) {
+            if (project.isCompleted()) {
+                completedProjects++;
+            }
+        }
+
+        double progressPercentage = (double) completedProjects / totalProjects * 100;
+        String progress = String.format("%.2f", progressPercentage) + "%";
+
+        return progress;
+    }
+
+    /**
+     * 
+     * Retrieves the progress of the project as a percentage.
+     * 
+     * The method calculates the progress of the project by counting the number of
+     * completed tasks
+     * 
+     * and expressing it as a percentage of the total number of tasks in the
+     * project. The progress
+     * 
+     * A task is marked as completed, if it the number of submissions in equal to
+     * the the lenght of the submisisons array inside the taks
+     * 
+     * @param project the project for which the progress is calculated
+     * @return a string representation of the project progress in percentage
+     */
+    @Override
+    public String projectProgress(Project project) {
+        int completedTasks = 0;
+        int totalTasks = project.getTasks().length;
+
+        // Iterate through each task in the project
+        for (Task task : project.getTasks()) {
+            // A task is marked as completed, if it the number of submissions in equal tothe
+            // the lenght of the submisisons array inside the taks
+            if (task.getNumberOfSubmissions() == task.getSubmissions().length) {
+                completedTasks++;
+            }
+        }
+
+        // Calculate the progress percentage by dividing the completed tasks by the
+        // total tasks
+        double progressPercentage = (double) completedTasks / totalTasks * 100;
+
+        // Format the progress percentage as a string with two decimal places
+        String progress = String.format("%.2f", progressPercentage) + "%";
+
+        return progress;
     }
 
 }

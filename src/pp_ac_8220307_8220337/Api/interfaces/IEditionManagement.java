@@ -12,7 +12,7 @@ import ma02_resources.project.Edition;
  * Número: 8220337
  * Turma: LEIT2
  */
-public interface IEditionManagement extends IParticipantList {
+public interface IEditionManagement extends IParticipantList, IProjectList {
     public void addEdition(Edition edition);
     public void removeEdition(String editionName);
 

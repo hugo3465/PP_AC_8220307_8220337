@@ -333,32 +333,6 @@ public class BaseEdition implements Edition {
         return onlyMatchingProjects;
     }
 
-    /**
-     * Retrieves an array of projects with the unfinished projects of an
-     * edition.
-     *
-     * @return array of projects with the unfinished projects of an edition
-     */
-    public Project[] getUnfinishedProjects() {
-        Project[] unfinishedProjects = new BaseProject[numberOfProjects];
-        int countUnfinishedProjects = 0;
-
-        for (int i = 0; i < numberOfProjects; i++) {
-            for (Task task : this.projects[i].getTasks()) {
-                if (task.getNumberOfSubmissions() > 0) {
-                    unfinishedProjects[countUnfinishedProjects] = projects[i];
-                    countUnfinishedProjects++;
-                }
-
-            }
-        }
-
-        // Create a new array to hold only the unfinished Projects
-        Project[] onlyUnfinishedProjects = new BaseProject[countUnfinishedProjects];
-        System.arraycopy(unfinishedProjects, 0, onlyUnfinishedProjects, 0, countUnfinishedProjects);
-
-        return onlyUnfinishedProjects;
-    }
 
     /**
      * Retrieves the number of projects in the edition.
@@ -411,45 +385,6 @@ public class BaseEdition implements Edition {
 
         return i;
 
-    }
-
-    /**
-     *
-     * Retrieves the progress of the edition as a percentage.
-     *
-     * The progress is calculated based on the completion status of the projects
-     *
-     * in the edition. The completed projects are counted, and the progress is
-     *
-     * expressed as a percentage of the total number of projects.
-     *
-     * @return a string representation of the edition progress in percentage
-     */
-    public String editionProgress() {
-        int completedProjects = 0;
-        int totalProjects = getNumberOfProjects();
-
-        for (Project project : getProjects()) {
-            if (project.isCompleted()) {
-                completedProjects++;
-            }
-        }
-
-        double progressPercentage = (double) completedProjects / totalProjects * 100;
-        String progress = String.format("%.2f", progressPercentage) + "%";
-
-        return progress;
-    }
-
-    public Project getProjectByTags(String TagString) {
-
-        for (Project project : this.projects) {
-            if (project.getTags().equals(TagString)) {
-                return project;
-            }
-        }
-
-        return null;
     }
 
     @Override

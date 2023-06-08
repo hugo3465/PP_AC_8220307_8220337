@@ -11,9 +11,9 @@ public interface IParticipantList {
     public Participant[] getAllFacilitators();
     public Participant[] getAllPartners();
 
-    public Participant getStudent(String name);
-    public Participant getFacilitator(String name);
-    public Participant getPartner(String name);
+    public Student getStudent(String name);
+    public Facilitator getFacilitator(String name);
+    public Partner getPartner(String name);
 
     
 }

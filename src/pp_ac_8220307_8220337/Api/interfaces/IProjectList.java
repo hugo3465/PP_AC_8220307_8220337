@@ -9,7 +9,9 @@ public interface IProjectList {
     public Project getProjectByTags(String TagString, Edition edition);
 
     // TODO Quando houver mais listagens de edições, criar uma interface só para as edições
-    public String projectProgress(Project project);
+    public String getProjectProgress(Project project);
 
-    public String editionProgress(Edition edition);
+    public String getEditionProgress(Edition edition);
+
+    public Edition getActivEdition();
 }

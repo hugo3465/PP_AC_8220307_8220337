@@ -1,5 +1,10 @@
 package pp_ac_8220307_8220337.Application.Menus;
 
+import ma02_resources.participants.Participant;
+import ma02_resources.participants.Student;
+import ma02_resources.project.Edition;
+import ma02_resources.project.Project;
+
 /**
  * Nome: Pedro Marcelo Santos Pinho
  * Número: 8220307
@@ -23,9 +28,8 @@ public class StartMenu implements IMenu {
         IMenu menuStartManagement = new StartMenu();
         boolean isRunning = true;
 
-        String editionName; // = menuManager.getUserInputString("Enter the name of the edition you want to
-                            // work on: ");
-        String participantName; // = menuManager.getUserInputString("Enter the your name to login: ");
+        String editionName, participantName, projectName; 
+        Edition activeEdition = menuManager.getEditions().getActivEdition();
 
         do {
             switch (menuManager.diplayMenu(menuStartManagement)) {
@@ -33,10 +37,15 @@ public class StartMenu implements IMenu {
                     AdminMenu.display(menuManager);
                     break;
                 case 2:
+                    // A student can only acces active editions
                     try {
                         participantName = menuManager.getUserInputString("Enter the your name to login: ");
+                        projectName = menuManager.getUserInputString("Enter the name of your project: ");
 
-                        StudentMenu startMenu = new StudentMenu(menuManager.getEditions().getStudent(participantName));
+                        Student participant = menuManager.getEditions().getStudent(participantName);
+                        Project project = activeEdition.getProject(projectName);
+
+                        StudentMenu startMenu = new StudentMenu(participant, activeEdition, project);
 
                         startMenu.display(menuManager);
                     } catch (NullPointerException e) {

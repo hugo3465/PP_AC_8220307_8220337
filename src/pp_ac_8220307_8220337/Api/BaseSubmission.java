@@ -24,6 +24,16 @@ public class BaseSubmission implements Submission {
         this.text = text;
     }
 
+    
+    public BaseSubmission(Student student, String text) {
+        this.student = student;
+        this.text = text;
+
+        this.date = LocalDateTime.now();
+    }
+
+
+
     @Override
     public int compareTo(Submission sbmsn) {
         //TODO fazer compareTo

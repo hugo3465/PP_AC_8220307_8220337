@@ -288,11 +288,11 @@ public class EditionManagement implements IEditionManagement {
     }
 
     @Override
-    public Participant getStudent(String name) {
+    public Student getStudent(String name) {
         for (int i = 0; i < numEditions; i++) {
             for (int j = 0; j < editions[i].getNumberOfProjects(); i++) {
-                if (editions[i].getProjects()[j].getParticipant(name) != null) {
-                    return editions[i].getProjects()[j].getParticipant(name);
+                if (editions[i].getProjects()[j].getParticipant(name) instanceof Student) {
+                    return (Student) editions[i].getProjects()[j].getParticipant(name);
                 }
             }
         }
@@ -301,15 +301,29 @@ public class EditionManagement implements IEditionManagement {
     }
 
     @Override
-    public Participant getFacilitator(String name) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getFacilitator'");
+    public Facilitator getFacilitator(String name) {
+        for (int i = 0; i < numEditions; i++) {
+            for (int j = 0; j < editions[i].getNumberOfProjects(); i++) {
+                if (editions[i].getProjects()[j].getParticipant(name) instanceof Facilitator) {
+                    return (Facilitator) editions[i].getProjects()[j].getParticipant(name);
+                }
+            }
+        }
+
+        return null;
     }
 
     @Override
-    public Participant getPartner(String name) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPartner'");
+    public Partner getPartner(String name) {
+        for (int i = 0; i < numEditions; i++) {
+            for (int j = 0; j < editions[i].getNumberOfProjects(); i++) {
+                if (editions[i].getProjects()[j].getParticipant(name) instanceof Partner) {
+                    return (Partner) editions[i].getProjects()[j].getParticipant(name);
+                }
+            }
+        }
+
+        return null;
     }
 
     @Override
@@ -398,7 +412,7 @@ public class EditionManagement implements IEditionManagement {
      * @return a string representation of the edition progress in percentage
      */
     @Override
-    public String editionProgress(Edition edition) {
+    public String getEditionProgress(Edition edition) {
         int completedProjects = 0;
         int totalProjects = edition.getNumberOfProjects();
 
@@ -431,14 +445,14 @@ public class EditionManagement implements IEditionManagement {
      * @return a string representation of the project progress in percentage
      */
     @Override
-    public String projectProgress(Project project) {
+    public String getProjectProgress(Project project) {
         int completedTasks = 0;
         int totalTasks = project.getTasks().length;
 
         // Iterate through each task in the project
         for (Task task : project.getTasks()) {
-            // A task is marked as completed, if it the number of submissions in equal tothe
-            // the lenght of the submisisons array inside the taks
+            // A task is considered completed if the number of submissions is equal to the
+            // length of the submissions array inside the task
             if (task.getNumberOfSubmissions() == task.getSubmissions().length) {
                 completedTasks++;
             }
@@ -451,7 +465,29 @@ public class EditionManagement implements IEditionManagement {
         // Format the progress percentage as a string with two decimal places
         String progress = String.format("%.2f", progressPercentage) + "%";
 
-        return progress;
+        return "O projeto está com " + progress + " de progresso, com " + completedTasks + " tarefas concluídas.";
+        // TODO: Incluir o número total de tarefas para fornecer uma visão completa do
+        // progresso do projeto
+    }
+
+    /**
+     * Retrieves the active edition from the list of editions.
+     *
+     * The method iterates through each edition in the list of editions and checks
+     * if the status of the edition is set to
+     * "ACTIVE". If an active edition is found, it is returned. If no active edition
+     * is found, null is returned.
+     *
+     * @return the active edition, or null if no active edition is found
+     */
+    @Override
+    public Edition getActivEdition() {
+        for (Edition edition : editions) {
+            if (edition.getStatus() == Status.ACTIVE) {
+                return edition;
+            }
+        }
+        return null;
     }
 
 }

@@ -66,7 +66,7 @@ public class EditionMenu implements IMenu {
                     break;
                 case 4:
                     name = menuManager
-                            .getUserInputString("Inser the name of the edition you want to set as inactive: ");
+                            .getUserInputString("Insert the name of the edition you want to set as inactive: ");
 
                     menuManager.getEditions().defineAsInactive(name);
                     break;
@@ -80,7 +80,6 @@ public class EditionMenu implements IMenu {
                             .getUserInputString("Inser the name of the edition you want to set as Canceled: ");
 
                     menuManager.getEditions().defineAsCanceled(name);
-                    ;
                     break;
                 case 7:
                     System.out.println(menuManager.getEditions().toString());

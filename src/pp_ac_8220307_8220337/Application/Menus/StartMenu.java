@@ -29,7 +29,7 @@ public class StartMenu implements IMenu {
         boolean isRunning = true;
 
         String editionName, participantName, projectName; 
-        Edition activeEdition = menuManager.getEditions().getActivEdition();
+        
 
         do {
             switch (menuManager.diplayMenu(menuStartManagement)) {
@@ -40,16 +40,19 @@ public class StartMenu implements IMenu {
                     // A student can only acces active editions
                     try {
                         participantName = menuManager.getUserInputString("Enter the your name to login: ");
+                        editionName = menuManager.getUserInputString("Enter the edition name: ");
                         projectName = menuManager.getUserInputString("Enter the name of your project: ");
-
+                        
+                        
+                        Edition edition = menuManager.getEditions().getActivEdition();
                         Student participant = menuManager.getEditions().getStudent(participantName);
-                        Project project = activeEdition.getProject(projectName);
+                        Project project = edition.getProject(projectName);
 
-                        StudentMenu startMenu = new StudentMenu(participant, activeEdition, project);
+                        StudentMenu startMenu = new StudentMenu(participant, edition, project);
 
                         startMenu.display(menuManager);
                     } catch (NullPointerException e) {
-                        System.out.println("Invalid name");
+                        System.out.println("No active projects at the moment");
                     }
 
                     break;

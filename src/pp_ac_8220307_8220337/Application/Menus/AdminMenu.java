@@ -12,10 +12,10 @@ public class AdminMenu implements IMenu {
         System.out.println("\n\t--- Admin ---");
         System.out.println("\t1 - Edition Management");
         System.out.println("\t2 - Project Management");
-        System.out.println("\t3 - Lists of Projects");
+        /*System.out.println("\t3 - Lists of Projects");
         System.out.println("\t4 - Lists of Tasks");
-        System.out.println("\t5 - Lists of Submissions");
-        System.out.println("\t6 - Distinct Lists");
+        System.out.println("\t5 - Lists of Submissions");*/
+        System.out.println("\t3 - Distinct Lists");
         System.out.println("\t0 - Back\n");
     }
 
@@ -42,12 +42,6 @@ public class AdminMenu implements IMenu {
                     }
                     break;
                 case 3:
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    break;
-                case 6:
                     break;
                 case 0:
                     isRunning = false;

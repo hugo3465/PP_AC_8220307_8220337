@@ -110,7 +110,7 @@ public class ProjectMenu implements IMenu {
                     }
                     break;
                 case 6:
-                //TODO
+                    // TODO
                     break;
                 case 7:
                     for (Participant participant : menuManager.getEditions()
@@ -123,8 +123,19 @@ public class ProjectMenu implements IMenu {
                         System.out.println(project.toString() + '\n');
                     }
                     break;
-                case 9:
-                // TODO
+                case 9: // Get progress from a Project
+                    try {
+                        projectTitle = menuManager
+                                .getUserInputString(
+                                        "Inser the title of the project you want to remove the participant: ");
+
+                        Project searchedProject = menuManager.getEditions().getEdition(edition.getName())
+                                .getProject(projectTitle);
+
+                        System.out.println(menuManager.getEditions().getProjectProgress(searchedProject));
+                    } catch (Exception e) {
+                        System.out.println("An error has occured: " + e.getMessage());
+                    }
                     break;
                 case 0:
                     isRunning = false;

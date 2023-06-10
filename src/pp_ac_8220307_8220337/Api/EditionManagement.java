@@ -1,14 +1,25 @@
 package pp_ac_8220307_8220337.Api;
 
-import java.util.Arrays;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
+import ma02_resources.participants.Contact;
 import ma02_resources.participants.Facilitator;
+import ma02_resources.participants.Instituition;
 import ma02_resources.participants.Participant;
 import ma02_resources.participants.Partner;
 import ma02_resources.participants.Student;
 import ma02_resources.project.Edition;
 import ma02_resources.project.Project;
 import ma02_resources.project.Status;
+import ma02_resources.project.Submission;
 import ma02_resources.project.Task;
 import pp_ac_8220307_8220337.Api.interfaces.IEditionManagement;
 
@@ -23,9 +34,17 @@ import pp_ac_8220307_8220337.Api.interfaces.IEditionManagement;
  */
 public class EditionManagement implements IEditionManagement {
 
-    private final int DEFALUT_NUMBER_EDITION;
-    private Edition[] editions;
-    private int numEditions;
+    /**
+     * The EditionManagement class represents a management system for editions.
+     *
+     * It contains fields for the default number of editions, the editions array,
+     * and the number of editions.
+     *
+     * This class provides methods to access and modify the editions in the system.
+     */
+    private final int DEFALUT_NUMBER_EDITION; // The default number of editions.
+    private Edition[] editions; // The array of editions.
+    private int numEditions; // The number of editions.
 
     /**
      * Default constructor for EditionManagement class.
@@ -86,7 +105,9 @@ public class EditionManagement implements IEditionManagement {
 
             this.numEditions++;
         } catch (NullPointerException e) {
-            e.printStackTrace();
+            throw new NullPointerException("An error has occured in addEdition" + e.getMessage());
+        } catch (ArrayIndexOutOfBoundsException e) {
+            throw new ArrayIndexOutOfBoundsException("Resize edition has failed in addEdition");
         }
 
     }
@@ -107,10 +128,8 @@ public class EditionManagement implements IEditionManagement {
 
             this.numEditions--;
             this.editions[this.numEditions] = null;
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        } catch (ArrayIndexOutOfBoundsException e) {
-            e.printStackTrace();
+        } catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
+            throw new NullPointerException("Edition not found!");
         }
 
     }
@@ -185,10 +204,8 @@ public class EditionManagement implements IEditionManagement {
             int index = getEditionIndex(editionName);
 
             editions[index].setStatus(Status.INACTIVE);
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        } catch (ArrayIndexOutOfBoundsException e) {
-            e.printStackTrace();
+        } catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
+            throw new NullPointerException("Edition not found");
         }
 
     }
@@ -204,10 +221,8 @@ public class EditionManagement implements IEditionManagement {
             int index = getEditionIndex(editionName);
 
             editions[index].setStatus(Status.CANCELED);
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        } catch (ArrayIndexOutOfBoundsException e) {
-            e.printStackTrace();
+        } catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
+            throw new NullPointerException("Edition not found!");
         }
     }
 
@@ -222,10 +237,8 @@ public class EditionManagement implements IEditionManagement {
             int index = getEditionIndex(editionName);
 
             editions[index].setStatus(Status.CLOSED);
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        } catch (ArrayIndexOutOfBoundsException e) {
-            e.printStackTrace();
+        } catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
+            throw new NullPointerException("Edition not found!");
         }
     }
 
@@ -255,81 +268,86 @@ public class EditionManagement implements IEditionManagement {
         return onlyunfinishedEditions;
     }
 
-    @Override
-    public String toString() {
-        String string = "";
-
-        for (int i = 0; i < numEditions; i++) {
-            string += "\n" + editions[i].toString();
-        }
-
-        return string;
-    }
-
     /**
-     * @return
+     * Retrieves a student with the specified name from the project management
+     * system.
+     * 
+     * @param name The name of the student to retrieve.
+     * @return The student with the specified name, or null if not found.
+     * @throws NullPointerException If the Student is not found.
      */
-    @Override
-    public Participant[] getAllStudents() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllStudents'");
-    }
-
-    @Override
-    public Participant[] getAllFacilitators() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllFacilitators'");
-    }
-
-    @Override
-    public Participant[] getAllPartners() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllPartners'");
-    }
-
     @Override
     public Student getStudent(String name) {
         for (int i = 0; i < numEditions; i++) {
             for (int j = 0; j < editions[i].getNumberOfProjects(); i++) {
                 if (editions[i].getProjects()[j].getParticipant(name) instanceof Student) {
-                    return (Student) editions[i].getProjects()[j].getParticipant(name);
+                    return ((Student) editions[i].getProjects()[j].getParticipant(name));
                 }
             }
         }
 
-        return null;
+        throw new NullPointerException("Student not found!");
     }
 
+    /**
+     * Retrieves a facilitator with the specified name from the project management
+     * system.
+     * 
+     * @param name The name of the facilitator to retrieve.
+     * @return The facilitator with the specified name, or null if not found.
+     * @throws NullPointerException If the Facilitator is not found.
+     */
     @Override
     public Facilitator getFacilitator(String name) {
         for (int i = 0; i < numEditions; i++) {
             for (int j = 0; j < editions[i].getNumberOfProjects(); i++) {
                 if (editions[i].getProjects()[j].getParticipant(name) instanceof Facilitator) {
-                    return (Facilitator) editions[i].getProjects()[j].getParticipant(name);
+                    return ((Facilitator) editions[i].getProjects()[j].getParticipant(name));
                 }
             }
         }
 
-        return null;
+        throw new NullPointerException("Facilitator not found!");
     }
 
+    /**
+     * Retrieves a partner with the specified name from the project management
+     * system.
+     * 
+     * @param name The name of the partner to retrieve.
+     * @return The partner with the specified name, or null if not found.
+     * @throws NullPointerException If the Partner is not found.
+     */
     @Override
     public Partner getPartner(String name) {
         for (int i = 0; i < numEditions; i++) {
             for (int j = 0; j < editions[i].getNumberOfProjects(); i++) {
                 if (editions[i].getProjects()[j].getParticipant(name) instanceof Partner) {
-                    return (Partner) editions[i].getProjects()[j].getParticipant(name);
+                    return ((Partner) editions[i].getProjects()[j].getParticipant(name));
                 }
             }
         }
 
-        return null;
+        throw new NullPointerException("Partner not found!");
     }
 
+    /**
+     * Retrieves a participant with the specified name from the project management
+     * system.
+     * 
+     * @param name The name of the participant to retrieve.
+     * @return The participant with the specified name.
+     * @throws NullPointerException If the participant is not found.
+     */
     @Override
-    public Participant[] getAllParticipantsFromEdition(String EditionName) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllParticipants'");
+    public Participant getParticipant(String name) {
+        for (int i = 0; i < numEditions; i++) {
+            for (int j = 0; j < editions[i].getNumberOfProjects(); i++) {
+                return editions[i].getProjects()[j].getParticipant(name);
+            }
+        }
+
+        throw new NullPointerException("Participant not found!");
     }
 
     /**
@@ -374,28 +392,112 @@ public class EditionManagement implements IEditionManagement {
     }
 
     /**
-     * Retrieves a project based on its tags from a given edition.
-     *
-     * The method iterates through each project in the specified edition and checks
-     * if the tags of the project match the
-     * provided TagString. If a project with matching tags is found, it is returned.
-     * If no matching project is found, null
-     * is returned.
-     *
-     * @param TagString the string representing the tags to search for
-     * @param edition   the edition from which to retrieve the project
-     * @return the project with matching tags, or null if no match is found
+     * 
+     * Retrieves an array of projects based on the specified tag string and edition.
+     * 
+     * @param tagString The tag string used to filter the projects.
+     * 
+     * @param edition   The edition object representing the edition of the projects.
+     * 
+     * @return An array of projects that have the specified tag and belong to the
+     *         given edition.
      */
     @Override
-    public Project getProjectByTags(String TagString, Edition edition) {
+    public Project[] getProjectByTags(String tagString, Edition edition) {
+        Project[] matchProjects = new Project[edition.getNumberOfProjects()];
+        int countMatchProjects = 0;
 
         for (Project project : edition.getProjects()) {
-            if (project.getTags().equals(TagString)) {
-                return project;
+            String[] projectTags = project.getTags();
+            for (String tag : projectTags) {
+                if (tag.equalsIgnoreCase(tagString)) {
+                    matchProjects[countMatchProjects] = project;
+                    countMatchProjects++;
+                    break; // Exit the inner loop since a match is found
+                }
             }
         }
 
-        return null;
+        Project[] onlyProjects = new Project[countMatchProjects];
+        System.arraycopy(matchProjects, 0, onlyProjects, 0, countMatchProjects);
+
+        return onlyProjects;
+    }
+
+    /**
+     * Retrieves a string containing the names of students with more submissions,
+     * sorted in ascending order based on the number of submissions.
+     * 
+     * @param edition The edition of the project.
+     * @param project The project to retrieve the student submissions from.
+     * @return A string containing the names of students with more submissions,
+     *         separated by commas and sorted in ascending order.
+     */
+    @Override
+    public String getSudentsWithMoreSubmissions(Edition edition, Project project) {
+        String[] students = new String[project.getNumberOfStudents()];
+        int[] studentSubmissions = new int[students.length];
+        int studentsCount = 0;
+        int indexOfStudent;
+
+        for (Task task : project.getTasks()) {
+            for (Submission submission : task.getSubmissions()) {
+                indexOfStudent = confereRepetitioninStudentsSubmissions(students,
+                        submission.getStudent().getName(), studentsCount);
+
+                if (indexOfStudent != -1) {
+                    // If the student is already in the array, increment their submission count
+                    studentSubmissions[indexOfStudent]++;
+                } else {
+                    // Add the student to the array
+                    students[studentsCount] = submission.getStudent().getName();
+                    studentSubmissions[studentsCount]++;
+                    studentsCount++;
+                }
+            }
+        }
+
+        // Sort students and studentSubmissions arrays based on submission count
+        for (int i = 0; i < studentsCount - 1; i++) {
+            for (int j = i + 1; j < studentsCount; j++) {
+                if (studentSubmissions[i] > studentSubmissions[j]) {
+                    // Swap students
+                    String tempStudent = students[i];
+                    students[i] = students[j];
+                    students[j] = tempStudent;
+
+                    // Swap submission counts
+                    int tempSubmissions = studentSubmissions[i];
+                    studentSubmissions[i] = studentSubmissions[j];
+                    studentSubmissions[j] = tempSubmissions;
+                }
+            }
+        }
+
+        // Build the result string in ascending order
+        String result = "";
+        for (int i = 0; i < studentsCount; i++) {
+            result += students[i] + "-->" + studentSubmissions[i] + '\n';
+        }
+
+        return result;
+    }
+
+    /**
+     * Checks if the given student name already exists in the students array.
+     * 
+     * @param students      The array of students' names.
+     * @param name          The name to check for repetition.
+     * @param studentsCount The current count of students in the array.
+     * @return The index of the repeated student, or -1 if not found.
+     */
+    private int confereRepetitioninStudentsSubmissions(String[] students, String name, int studentsCount) {
+        for (int i = 0; i < studentsCount; i++) {
+            if (students[i].equals(name)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     /**
@@ -466,8 +568,6 @@ public class EditionManagement implements IEditionManagement {
         String progress = String.format("%.2f", progressPercentage) + "%";
 
         return "O projeto está com " + progress + " de progresso, com " + completedTasks + " tarefas concluídas.";
-        // TODO: Incluir o número total de tarefas para fornecer uma visão completa do
-        // progresso do projeto
     }
 
     /**
@@ -481,13 +581,176 @@ public class EditionManagement implements IEditionManagement {
      * @return the active edition, or null if no active edition is found
      */
     @Override
-    public Edition getActivEdition() {
+    public Edition getActiveEdition() {
         for (Edition edition : editions) {
             if (edition.getStatus() == Status.ACTIVE) {
                 return edition;
             }
         }
         return null;
+    }
+
+    // Method to save editions to a binary file
+    @Override
+    public void saveEditionsToJsonFile(String filePath) throws IOException {
+        JSONArray arr = new JSONArray();
+        for (Edition f : this.editions) {
+            if (f != null) {
+                JSONObject obj = new JSONObject();
+                obj.put("Name", f.getName());
+                obj.put("Project Template", f.getProjectTemplate());
+                obj.put("Status", f.getStatus());
+                obj.put("number of Projects", f.getNumberOfProjects());
+                obj.put("start", f.getStart());
+                obj.put("end", f.getEnd());
+                obj.put("Project", f.getProjects());
+
+                arr.add(obj);
+            }
+        }
+        FileWriter out = new FileWriter(filePath);
+        // String ar = arr.toJSONString();
+        out.write(arr.toJSONString());
+        out.flush();
+        out.close();
+    }
+
+    // Method to read editions from a binary file
+    @Override
+    public void readEditionsFromJsonFile(String filePath) throws IOException, org.json.simple.parser.ParseException {
+        JSONParser parser = new JSONParser();
+        try (FileReader fileReader = new FileReader(filePath)) {
+            JSONArray jsonArray = (JSONArray) parser.parse(fileReader);
+
+            editions = new Edition[jsonArray.size()];
+            numEditions = 0;
+
+            for (int i = 0; i < jsonArray.size(); i++) {
+                JSONObject jsonObject = (JSONObject) jsonArray.get(i);
+
+                String name = (String) jsonObject.get("Name");
+                String projectTemplate = (String) jsonObject.get("Project Template");
+                Status status = (Status) jsonObject.get("Status");
+                int numberOfProjects = ((Long) jsonObject.get("number of Projects")).intValue();
+                LocalDate start = LocalDate.parse((String) jsonObject.get("start"));
+                LocalDate end = LocalDate.parse((String) jsonObject.get("end"));
+
+                // Projects
+                JSONArray projectsArray = (JSONArray) jsonObject.get("Project");
+                Project[] projects = new Project[projectsArray.size()];
+                for (int j = 0; j < projectsArray.size(); j++) {
+                    JSONObject projectObject = (JSONObject) projectsArray.get(j);
+                    String projectName = (String) projectObject.get("Name");
+                    String projectDescription = (String) projectObject.get("Description");
+                    int numberOfParticipants = ((Long) projectObject.get("Number Of Participants")).intValue();
+                    int numberOfPartners = ((Long) projectObject.get("Number Of Partners")).intValue();
+                    int numberOfFacilitators = ((Long) projectObject.get("Number Of Facilitators")).intValue();
+                    int numberOfStudents = ((Long) projectObject.get("Number Of Students")).intValue();
+                    int numberOfTasks = ((Long) projectObject.get("Number Of Tasks")).intValue();
+
+                    // read Participants inside Project
+                    JSONArray participantsArray = (JSONArray) jsonObject.get("Participants");
+                    Participant[] participants = new Participant[participantsArray.size()];
+                    for (int k = 0; k < participantsArray.size(); k++) {
+                        JSONObject participantObject = (JSONObject) participantsArray.get(k);
+                        String participantName = (String) participantObject.get("Name");
+                        String participantEmail = (String) participantObject.get("Email");
+                        Contact participantContact = (Contact) participantObject.get("Contact");
+                        Instituition participantInstitution = (Instituition) participantObject.get("Institution");
+
+                        if (participantObject instanceof Partner) {
+                            String partnerVat = (String) participantObject.get("Vat");
+                            String partnerWebsite = (String) participantObject.get("Website");
+
+                            participants[k] = new BasePartner(partnerVat, partnerWebsite, participantName,
+                                    participantEmail, participantContact,
+                                    participantInstitution);
+                        } else if (participantObject instanceof Student) {
+                            int studentNumber = ((Long) projectObject.get("Number")).intValue();
+
+                            participants[k] = new BaseStudent(studentNumber, participantName, participantEmail,
+                                    participantContact, participantInstitution);
+                        } else if (participantObject instanceof Facilitator) {
+                            String facilitatorAreaOfExpertise = (String) participantObject.get("Area of Expertise");
+
+                            participants[k] = new BaseFacilitator(facilitatorAreaOfExpertise, participantName,
+                                    participantEmail, participantContact, participantInstitution);
+                        }
+
+                    }
+
+                    // read tags inside Project
+                    JSONArray tagsArray = (JSONArray) jsonObject.get("Tags");
+                    String[] tags = new String[tagsArray.size()];
+                    for (int l = 0; l < tagsArray.size(); l++) {
+                        tags[l] = (String) tagsArray.get(l);
+                    }
+
+                    // read Tasks inside Project
+                    JSONArray tasksArray = (JSONArray) jsonObject.get("Tasks");
+                    Task[] tasks = new Task[tasksArray.size()];
+                    for (int m = 0; m < tasksArray.size(); m++) {
+                        JSONObject taskObject = (JSONObject) tasksArray.get(m);
+                        LocalDate taskStart = LocalDate.parse((String) taskObject.get("Start"));
+                        LocalDate taskEnd = LocalDate.parse((String) taskObject.get("End"));
+                        int taskDuration = ((Long) taskObject.get("Duration")).intValue();
+                        String taskTitle = (String) taskObject.get("Title");
+                        String taskDescription = (String) taskObject.get("Description");
+
+                        // read Submissions inside Task
+                        JSONArray submissionsArray = (JSONArray) taskObject.get("Submissions");
+                        Submission[] submissions = new Submission[submissionsArray.size()];
+                        for (int n = 0; n < submissionsArray.size(); n++) {
+                            JSONObject submissionObject = (JSONObject) submissionsArray.get(n);
+                            int studentNumber = ((Long) submissionObject.get("Number")).intValue();
+                            String studentName = (String) submissionObject.get("Name");
+                            String studentEmail = (String) submissionObject.get("Email");
+                            Contact studentContact = ((Contact) submissionObject.get("Contact"));
+                            Instituition studentInstitution = ((Instituition) submissionObject.get("Institution"));
+
+                            Student student = new BaseStudent(studentNumber, studentName, studentEmail, studentContact,
+                                    studentInstitution);
+                            LocalDateTime submissionDate = LocalDateTime.parse((String) submissionObject.get("Date"));
+                            String submissionText = (String) submissionObject.get("Text");
+
+                            Submission submission = new BaseSubmission(student, submissionDate, submissionText);
+                            submissions[n] = submission;
+                        }
+
+                        Task task = new BaseTask(taskStart, taskEnd, taskDuration, taskTitle, taskDescription,
+                                submissions);
+                        tasks[m] = task;
+                    }
+
+                    Project project = new BaseProject(projectName, projectDescription, numberOfParticipants,
+                            numberOfPartners, numberOfFacilitators, numberOfStudents, numberOfTasks, participants, tags,
+                            tasks);
+                    projects[j] = project;
+                }
+
+                Edition edition = new BaseEdition(name, projectTemplate, status, projects, numberOfProjects, start,
+                        end);
+                editions[numEditions] = edition;
+                numEditions++;
+            }
+
+        }
+    }
+
+    /**
+     * Returns a string representation of the project management system.
+     * 
+     * @return A string representation of the project management system.
+     */
+    @Override
+    public String toString() {
+        String string = "";
+
+        for (int i = 0; i < numEditions; i++) {
+            string += "\n" + editions[i].toString();
+        }
+
+        return string;
     }
 
 }

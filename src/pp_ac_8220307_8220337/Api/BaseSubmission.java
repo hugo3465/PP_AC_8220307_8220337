@@ -14,29 +14,50 @@ import ma02_resources.project.Submission;
  * Turma: LEIT2
  */
 public class BaseSubmission implements Submission {
-    private Student student;
-    private LocalDateTime date;
-    private String text;
+    /**
+     * The BaseSubmission class represents a basic implementation of the Submission
+     * interface.
+     *
+     * It contains fields for student, date, and text.
+     *
+     * This class provides constructors to create a submission with student, date,
+     * and text,
+     * or with student and text (in which case the current date is used).
+     */
+    private Student student; // The student who submitted the submission.
+    private LocalDateTime date; // The date and time of the submission.
+    private String text; // The text content of the submission.
 
+    /**
+     * Constructs a BaseSubmission object with the specified student, date, and
+     * text.
+     *
+     * @param student the student who submitted the submission
+     * @param date    the date and time of the submission
+     * @param text    the text content of the submission
+     */
     public BaseSubmission(Student student, LocalDateTime date, String text) {
         this.student = student;
         this.date = date;
         this.text = text;
     }
 
-    
+    /**
+     * Constructs a BaseSubmission object with the specified student, text, and the
+     * current date and time.
+     *
+     * @param student the student who submitted the submission
+     * @param text    the text content of the submission
+     */
     public BaseSubmission(Student student, String text) {
         this.student = student;
         this.text = text;
-
         this.date = LocalDateTime.now();
     }
 
-
-
     @Override
     public int compareTo(Submission sbmsn) {
-        //TODO fazer compareTo
+        // TODO fazer compareTo
         throw new UnsupportedOperationException("Not supported yet."); // Generated from
                                                                        // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }

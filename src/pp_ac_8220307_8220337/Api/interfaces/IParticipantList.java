@@ -4,16 +4,18 @@ import ma02_resources.participants.Facilitator;
 import ma02_resources.participants.Participant;
 import ma02_resources.participants.Partner;
 import ma02_resources.participants.Student;
+import ma02_resources.project.Edition;
+import ma02_resources.project.Project;
 
 public interface IParticipantList {
-    public Participant[] getAllParticipantsFromEdition(String editionName);
-    public Participant[] getAllStudents();
-    public Participant[] getAllFacilitators();
-    public Participant[] getAllPartners();
+    public Participant getParticipant(String name);
 
     public Student getStudent(String name);
+
     public Facilitator getFacilitator(String name);
+
     public Partner getPartner(String name);
 
-    
+    public String getSudentsWithMoreSubmissions(Edition edition, Project project);
+
 }

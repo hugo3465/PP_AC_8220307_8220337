@@ -1,12 +1,5 @@
 package pp_ac_8220307_8220337.Api;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Arrays;
-
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-
 import ma02_resources.participants.Facilitator;
 import ma02_resources.participants.Participant;
 import ma02_resources.participants.Partner;
@@ -17,7 +10,6 @@ import ma02_resources.project.exceptions.IllegalNumberOfParticipantType;
 import ma02_resources.project.exceptions.IllegalNumberOfTasks;
 import ma02_resources.project.exceptions.ParticipantAlreadyInProject;
 import ma02_resources.project.exceptions.TaskAlreadyInProject;
-import pp_ac_8220307_8220337.Api.Exceptions.ParticipantDoesntExistException;
 
 /**
  * Nome: Pedro Marcelo Santos Pinho
@@ -124,14 +116,14 @@ public class BaseProject implements Project {
      *                             project
      * @param numberOfTasks        the current number of tasks in the
      *                             project
-     * @param hasTags              indicates if the project has tags
+     * @param participants         the array of participants with the project
      * @param tags                 the array of tags associated with the
      *                             project
      * @param tasks                the array of tasks in the project
      */
     public BaseProject(String name, String description,
             int numberOfParticipants, int numberOfPartners, int numberOfFacilitators, int numberOfStudents,
-            int numberOfTasks, boolean hasTags, String[] tags, Task[] tasks) {
+            int numberOfTasks, Participant[] participants, String[] tags, Task[] tasks) {
 
         this.name = name;
         this.description = description;
@@ -150,11 +142,12 @@ public class BaseProject implements Project {
 
         this.tasks = tasks;
 
-        this.hasTags = hasTags;
+        this.tags = tags;
 
-        if (this.hasTags) {
-            this.tags = tags;
-        }
+        /**
+         * If the tags array is null, the hasTas atribute will be false
+         */
+        this.hasTags = (tags == null) ? false : true;
     }
 
     /**
@@ -231,61 +224,121 @@ public class BaseProject implements Project {
         this.participants = new Participant[numberOfParticipants];
     }
 
+    /**
+     * Retrieves the name of the project.
+     *
+     * @return The name of the project.
+     */
     @Override
     public String getName() {
         return name;
     }
 
+    /**
+     * Retrieves the description of the project.
+     *
+     * @return The description of the project.
+     */
     @Override
     public String getDescription() {
         return description;
     }
 
+    /**
+     * Retrieves the number of participants in the project.
+     *
+     * @return The number of participants in the project.
+     */
     @Override
     public int getNumberOfParticipants() {
         return numberOfParticipants;
     }
 
+    /**
+     * Retrieves the number of students in the project.
+     *
+     * @return The number of students in the project.
+     */
     @Override
     public int getNumberOfStudents() {
         return numberOfStudents;
     }
 
+    /**
+     * Retrieves the number of partners in the project.
+     *
+     * @return The number of partners in the project.
+     */
     @Override
     public int getNumberOfPartners() {
         return numberOfPartners;
     }
 
+    /**
+     * Retrieves the number of facilitators in the project.
+     *
+     * @return The number of facilitators in the project.
+     */
     @Override
     public int getNumberOfFacilitators() {
         return numberOfFacilitators;
     }
 
+    /**
+     * Retrieves the number of tasks in the project.
+     *
+     * @return The number of tasks in the project.
+     */
     @Override
     public int getNumberOfTasks() {
         return numberOfTasks;
     }
 
+    /**
+     * Retrieves the maximum number of tasks allowed in the project.
+     *
+     * @return The maximum number of tasks allowed in the project.
+     */
     @Override
     public int getMaximumNumberOfTasks() {
         return MAXIMUM_NUMBER_OF_TASKS;
     }
 
+    /**
+     * Retrieves the maximum number of participants allowed in the project.
+     *
+     * @return The maximum number of participants allowed in the project.
+     */
     @Override
     public long getMaximumNumberOfParticipants() {
         return MAXIMUM_NUMBER_OF_PARTICIPANTS;
     }
 
+    /**
+     * Retrieves the maximum number of students allowed in the project.
+     *
+     * @return The maximum number of students allowed in the project.
+     */
     @Override
     public int getMaximumNumberOfStudents() {
         return MAXIMUM_NUMBER_OF_STUDENTS;
     }
 
+    /**
+     * Retrieves the maximum number of partners allowed in the project.
+     *
+     * @return The maximum number of partners allowed in the project.
+     */
     @Override
     public int getMaximumNumberOfPartners() {
         return MAXIMUM_NUMBER_OF_PARTNERS;
     }
 
+    /**
+     * Retrieves the maximum number of facilitators allowed in the project.
+     *
+     * @return The maximum number of facilitators allowed in the project.
+     */
     @Override
     public int getMaximumNumberOfFacilitators() {
         return MAXIMUM_NUMBER_OF_FACILITATORS;
@@ -382,6 +435,8 @@ public class BaseProject implements Project {
 
             return removedParticipant;
 
+        } catch (NullPointerException e) {
+            throw new NullPointerException("Participant not found!");
         } catch (Exception e) {
             throw new RuntimeException("An error occurred in removeParticipant method");
         }
@@ -408,6 +463,7 @@ public class BaseProject implements Project {
      * 
      * @param string he name of the participant to search for
      * @return the participant if found, -1 otherwise
+     * @throws NullPointerException if the participant is not found
      */
     @Override
     public Participant getParticipant(String string) {
@@ -418,8 +474,8 @@ public class BaseProject implements Project {
             }
         }
 
-        // Return null if the participant is not found
-        return null;
+        // throw newPointerException if the participant is not found
+        throw new NullPointerException("Participant not found!");
     }
 
     @Override
@@ -483,6 +539,7 @@ public class BaseProject implements Project {
      * @param string the title of the task to retrieve
      * @return the Task object with the specified title, or null if no such task
      *         exists
+     * @throws NullPointerException if the task is not found
      */
     @Override
     public Task getTask(String string) {
@@ -492,7 +549,8 @@ public class BaseProject implements Project {
             }
         }
 
-        return null;
+        // throw newPointerException if the Task is not found
+        throw new NullPointerException("Task not found!");
     }
 
     /**
@@ -524,13 +582,13 @@ public class BaseProject implements Project {
 
     /**
      * Retrieves the participants of the project, this mehtod is only used in the
-     * toString method
+     * toString method, only the toString method from this class uses this mehtod
      * 
      * @return all participants in the current project
      */
-    public Participant[] getParticipants() {
+    private Participant[] getParticipants() {
         return this.participants;
-    } //TODO VERIFICAR SE ESTE MÉTODO DEVE SER PRIVATE
+    }
 
     @Override
     public String toString() {

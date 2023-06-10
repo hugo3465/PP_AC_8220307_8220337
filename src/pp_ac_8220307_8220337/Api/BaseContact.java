@@ -25,12 +25,12 @@ public class BaseContact implements Contact {
      * </ul>
      */
 
-    private String street;
-    private String city;
-    private String state;
-    private String zipCode;
-    private String country;
-    private String phone;
+    private String street; // The street address of the contact.
+    private String city; // The city of the contact.
+    private String state; // The state or province of the contact.
+    private String zipCode; // The ZIP code or postal code of the contact.
+    private String country; // The country of the contact.
+    private String phone; // The phone number of the contact.
 
     /**
      * Constructs a 'BaseContact' object with the specified contact details.

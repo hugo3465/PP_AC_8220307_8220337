@@ -26,12 +26,12 @@ public class BasePartner implements Partner {
      * This class provides methods to access these Partner details, but only
      * has method to modify Contact and Institution details.
      */
-    private String vat;
-    private String website;
-    private String name;
-    private String email;
-    private Contact contact;
-    private Instituition instituition;
+    private String vat; // The VAT (Value Added Tax) number of the partner.
+    private String website; // The website URL of the partner.
+    private String name; // The name of the partner.
+    private String email; // The email address of the partner.
+    private Contact contact; // The contact details of the partner.
+    private Instituition instituition; // The institution to which the partner belongs.
 
     /**
      * Constructs a BaseFacilitators object with the specified Partner details.

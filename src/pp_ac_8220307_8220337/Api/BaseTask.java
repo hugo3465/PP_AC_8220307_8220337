@@ -15,14 +15,22 @@ import ma02_resources.project.Task;
  * Turma: LEIT2
  */
 public class BaseTask implements Task {
-    private final int DEFAULT_NUMBER_SUBMISSIONS = 1;
-    private LocalDate start;
-    private LocalDate end;
-    private int duration;
-    private String title;
-    private String description;
-    private Submission[] submissions;
-    private int numberOfSubmissions;
+    /**
+     * The BaseTask class represents a basic implementation of the Task interface.
+     *
+     * It contains fields for start date, end date, duration, title, description,
+     * submissions, and the number of submissions.
+     *
+     * This class provides methods to access and modify these task details.
+     */
+    private final int DEFAULT_NUMBER_SUBMISSIONS = 1; // The default number of submissions for a task.
+    private LocalDate start; // The start date of the task.
+    private LocalDate end; // The end date of the task.
+    private int duration; // The duration of the task in days.
+    private String title; // The title of the task.
+    private String description; // The description of the task.
+    private Submission[] submissions; // The submissions for the task.
+    private int numberOfSubmissions; // The number of submissions for the task.
 
     /**
      * Constructs a BaseTask.
@@ -35,7 +43,7 @@ public class BaseTask implements Task {
      * @param submissions the array of submissions for the task
      */
     public BaseTask(LocalDate start, LocalDate end, int duration, String title, String description,
-            BaseSubmission[] submissions) {
+            Submission[] submissions) {
         this.start = start;
         this.end = end;
         this.duration = duration;
@@ -129,9 +137,6 @@ public class BaseTask implements Task {
         } catch (NullPointerException npe) {
             throw new NullPointerException(npe + " in addSubmission");
         }
-
-        // TODO Adicionar submissões a projetos de uma edição ativa apenas por
-        // estudantes pertencentes aos projetos respetivos.
     }
 
     /**

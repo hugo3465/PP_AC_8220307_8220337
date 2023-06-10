@@ -12,13 +12,16 @@ import pp_ac_8220307_8220337.Api.BaseContact;
 import pp_ac_8220307_8220337.Api.BaseInstitution;
 import pp_ac_8220307_8220337.Api.BaseStudent;
 import pp_ac_8220307_8220337.Api.BaseTask;
-import pp_ac_8220307_8220337.Api.EditionManagement;
 import pp_ac_8220307_8220337.Api.interfaces.IEditionManagement;
 
 /**
- * Nome: Pedro Marcelo Santos Pinho Número: 8220307 Turma: LEIT2
+ * Nome: Pedro Marcelo Santos Pinho
+ * Número: 8220307
+ * Turma: LEIT2
  *
- * Nome: Hugo Ricardo Almeida Guimarães Número: 8220337 Turma: LEIT2
+ * Nome: Hugo Ricardo Almeida Guimarães
+ * Número: 8220337
+ * Turma: LEIT2
  */
 public class MenuManager {
 
@@ -27,34 +30,38 @@ public class MenuManager {
      * MenuManager class provides getSharedVariable() and setSharedVariable()
      * methods to access and modify the variable.
      */
-    private IMenu[] menus;
-    private int menuCount;
+    // private IMenu[] menus;
+    // private int menuCount;
     private Scanner scanner;
 
-    private IEditionManagement Editions;
+    private IEditionManagement editions;
 
     public MenuManager(int maxMenus) {
-        menus = new IMenu[maxMenus];
-        menuCount = 0;
+        //menus = new IMenu[maxMenus];
+        //menuCount = 0;
         scanner = new Scanner(System.in);
-
-        Editions = new EditionManagement();
+        
+        
     }
 
-    public void addMenu(IMenu menu) {
-        if (menuCount < menus.length) {
-            menus[menuCount] = menu;
-            menuCount++;
-        } else {
-            System.out.println("Maximum menu count reached.");
-        }
-    }
+    /*
+     * public void addMenu(IMenu menu) {
+     * if (menuCount < menus.length) {
+     * menus[menuCount] = menu;
+     * menuCount++;
+     * } else {
+     * System.out.println("Maximum menu count reached.");
+     * }
+     * }
+     */
 
     public int diplayMenu(IMenu menu) {
-        if (menuCount == menus.length) {
-            System.out.println("Menu not found.");
-            return -1;
-        }
+        /*
+         * if (menuCount == menus.length) {
+         * System.out.println("Menu not found.");
+         * return -1;
+         * }
+         */
 
         int choice;
         menu.display();
@@ -148,6 +155,7 @@ public class MenuManager {
     }
 
     public Student getStudentInputInfo() {
+        int number = getUserInputInteger("Enter student number", Integer.MAX_VALUE);
         String name = getUserInputString("Enter student's first name: ");
         String email = getUserInputString("Enter student's email: ");
         System.out.println("Contact Information:");
@@ -155,7 +163,7 @@ public class MenuManager {
         System.out.println("Instituiton Information:");
         Instituition instituition = geInstituitionInputInfo();
 
-        return new BaseStudent(menuCount, name, email, contact, instituition);
+        return new BaseStudent(number, name, email, contact, instituition);
 
     }
 
@@ -169,11 +177,13 @@ public class MenuManager {
         return new BaseTask(title, description, start, duration, maxSubmissions);
     }
 
-    public IMenu getCurrentMenu() {
-        return this.menus[menuCount];
-    }
+    /*
+     * public IMenu getCurrentMenu() {
+     * return this.menus[menuCount];
+     * }
+     */
 
     public IEditionManagement getEditions() {
-        return Editions;
+        return editions;
     }
 }

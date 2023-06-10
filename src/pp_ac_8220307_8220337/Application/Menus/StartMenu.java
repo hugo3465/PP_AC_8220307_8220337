@@ -1,6 +1,7 @@
 package pp_ac_8220307_8220337.Application.Menus;
 
-import ma02_resources.participants.Participant;
+import java.io.IOException;
+
 import ma02_resources.participants.Student;
 import ma02_resources.project.Edition;
 import ma02_resources.project.Project;
@@ -24,12 +25,11 @@ public class StartMenu implements IMenu {
         System.out.println("\t0 - Sair\n");
     }
 
-    public static void display(MenuManager menuManager) {
+    public static void display(MenuManager menuManager) throws IOException {
         IMenu menuStartManagement = new StartMenu();
         boolean isRunning = true;
 
-        String editionName, participantName, projectName; 
-        
+        String editionName, participantName, projectName;
 
         do {
             switch (menuManager.diplayMenu(menuStartManagement)) {
@@ -37,14 +37,12 @@ public class StartMenu implements IMenu {
                     AdminMenu.display(menuManager);
                     break;
                 case 2:
-                    // A student can only acces active editions
                     try {
                         participantName = menuManager.getUserInputString("Enter the your name to login: ");
                         editionName = menuManager.getUserInputString("Enter the edition name: ");
                         projectName = menuManager.getUserInputString("Enter the name of your project: ");
-                        
-                        
-                        Edition edition = menuManager.getEditions().getActivEdition();
+
+                        Edition edition = menuManager.getEditions().getEdition(editionName);
                         Student participant = menuManager.getEditions().getStudent(participantName);
                         Project project = edition.getProject(projectName);
 

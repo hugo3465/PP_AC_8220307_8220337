@@ -1,9 +1,9 @@
 package pp_ac_8220307_8220337.Application.Menus;
 
-import ma02_resources.participants.Participant;
 import ma02_resources.participants.Student;
 import ma02_resources.project.Edition;
 import ma02_resources.project.Project;
+import ma02_resources.project.Status;
 import ma02_resources.project.Task;
 import pp_ac_8220307_8220337.Api.BaseSubmission;
 
@@ -45,26 +45,38 @@ public class StudentMenu implements IMenu {
 
         do {
             switch (menuManager.diplayMenu(this)) {
+
                 case 1: // add Submission
+                    // A student can acces all editions, but can only add submissions to the active
+                    // one
+                    if (edition.getStatus() != Status.ACTIVE) {
+                        System.out.println("This edition is not active, you can't add any submissions");
+                        break;
+                    }
+                    
                     try {
 
-                        taskTitle = menuManager.getUserInputString("Insert the title of the task you want to make a submission: ");
+                        taskTitle = menuManager
+                                .getUserInputString("Insert the title of the task you want to make a submission: ");
                         submissionText = menuManager.getUserInputString("Insert a text in your submission: ");
 
-                        menuManager.getEditions().getEdition(edition.getName()).getProject(project.getName()).getTask(taskTitle)
+                        menuManager.getEditions().getEdition(edition.getName()).getProject(project.getName())
+                                .getTask(taskTitle)
                                 .addSubmission(new BaseSubmission(student, submissionText));
                     } catch (Exception e) {
                         System.out.println("An error has occured: " + e.getMessage());
                     }
 
                     break;
-                case 2: //Get Task
+                case 2: // Get Task
                     try {
-                        taskTitle = menuManager.getUserInputString("Insert the title of the task you are looking for: ");
+                        taskTitle = menuManager
+                                .getUserInputString("Insert the title of the task you are looking for: ");
 
-                        System.out.println(menuManager.getEditions().getEdition(edition.getName()).getProject(project.getName()).getTask(taskTitle).toString());
+                        System.out.println(menuManager.getEditions().getEdition(edition.getName())
+                                .getProject(project.getName()).getTask(taskTitle).toString());
                     } catch (Exception e) {
-                       System.out.println("An error has occured: " + e.getMessage());
+                        System.out.println("An error has occured: " + e.getMessage());
                     }
                     break;
                 case 3: // List all Tasks

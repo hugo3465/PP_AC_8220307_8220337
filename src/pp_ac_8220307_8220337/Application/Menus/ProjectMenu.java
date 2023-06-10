@@ -1,6 +1,5 @@
 package pp_ac_8220307_8220337.Application.Menus;
 
-import ma02_resources.participants.Participant;
 import ma02_resources.project.Edition;
 import ma02_resources.project.Project;
 import ma02_resources.project.Task;
@@ -26,10 +25,8 @@ public class ProjectMenu implements IMenu {
         System.out.println("\t4 - Remove Participant from a Project");
         System.out.println("\t5 - Add Task to a Project");
         System.out.println("\t6 - Get Participant");
-        System.out.println("\t7 - List all Participants");
-        // System.out.println("\t8 - List all Participants from Project");
-        System.out.println("\t8 - List all Projects");
-        System.out.println("\t9 - Get progress from a Project");
+        System.out.println("\t7 - List all Projects");
+        System.out.println("\t8 - Get progress from a Project");
         System.out.println("\t0 - Back\n");
     }
 
@@ -109,21 +106,22 @@ public class ProjectMenu implements IMenu {
                         System.out.println("An error has ocurred!: " + e.getMessage());
                     }
                     break;
-                case 6:
-                    // TODO
-                    break;
-                case 7:
-                    for (Participant participant : menuManager.getEditions()
-                            .getAllParticipantsFromEdition(edition.getName())) {
-                        System.out.println(participant.toString());
+                case 6: // Get Participant
+                    try {
+                        participantName = menuManager.getUserInputString("Insert the name of the participant you are looking for: ");
+                        menuManager.getEditions().getParticipant(participantName);
+                    } catch(NullPointerException e) {
+
+                    } catch(Exception e) {
+                        System.out.println("An error has occured: " + e.getMessage());
                     }
                     break;
-                case 8:
+                case 7:
                     for (Project project : menuManager.getEditions().getEdition(this.edition.getName()).getProjects()) {
                         System.out.println(project.toString() + '\n');
                     }
                     break;
-                case 9: // Get progress from a Project
+                case 8: // Get progress from a Project
                     try {
                         projectTitle = menuManager
                                 .getUserInputString(

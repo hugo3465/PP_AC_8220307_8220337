@@ -4,8 +4,6 @@ import ma02_resources.participants.Contact;
 import ma02_resources.participants.Instituition;
 import ma02_resources.participants.InstituitionType;
 
-
-
 /**
  * Nome: Pedro Marcelo Santos Pinho
  * Número: 8220307
@@ -24,15 +22,16 @@ public class BaseInstitution implements Instituition {
      * It contains fields for name, email, institution type, contact information,
      * website, and description.
      * 
-     * This class provides methods to access and modify these institution details, 
-     * but only has methods to modify Type, Contact, Website and Description Details.
+     * This class provides methods to access and modify these institution details,
+     * but only has methods to modify Type, Contact, Website and Description
+     * Details.
      */
-    private String name;
-    private String email;
-    private InstituitionType type;
-    private Contact contact;
-    private String website;
-    private String description;
+    private String name; // The name of the institution.
+    private String email; // The email of the institution.
+    private InstituitionType type; // The type of the institution.
+    private Contact contact; // The contact information of the institution.
+    private String website; // The website of the institution.
+    private String description; // The description of the institution.
 
     /**
      * Constructs a BaseInstitution object with the specified institution details.

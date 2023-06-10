@@ -1,9 +1,13 @@
 package pp_ac_8220307_8220337.Application.Menus;
 
 /**
- * Nome: Pedro Marcelo Santos Pinho Número: 8220307 Turma: LEIT2
+ * Nome: Pedro Marcelo Santos Pinho
+ * Número: 8220307
+ * Turma: LEIT2
  *
- * Nome: Hugo Ricardo Almeida Guimarães Número: 8220337 Turma: LEIT2
+ * Nome: Hugo Ricardo Almeida Guimarães
+ * Número: 8220337
+ * Turma: LEIT2
  */
 public class AdminMenu implements IMenu {
 
@@ -42,6 +46,7 @@ public class AdminMenu implements IMenu {
                     }
                     break;
                 case 3:
+                    DistinctListsMenu.display(menuManager);
                     break;
                 case 0:
                     isRunning = false;

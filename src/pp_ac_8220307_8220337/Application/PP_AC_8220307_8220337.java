@@ -12,13 +12,10 @@ package pp_ac_8220307_8220337.Application;
 
 import java.io.IOException;
 import java.text.ParseException;
-import java.time.LocalDate;
 
 
-import pp_ac_8220307_8220337.Api.BaseEdition;
-import pp_ac_8220307_8220337.Api.EditionManagement;
-import pp_ac_8220307_8220337.Api.interfaces.IEditionManagement;
 import pp_ac_8220307_8220337.Application.Menus.MenuManager;
+import pp_ac_8220307_8220337.Application.Menus.StartMenu;
 
 
 public class PP_AC_8220307_8220337 {
@@ -32,13 +29,13 @@ public class PP_AC_8220307_8220337 {
 
         MenuManager menu = new MenuManager(5);
 
-        //StartMenu.display(menu);
+        StartMenu.display(menu);
 
 
 
 
         // Testes para ver se o write está a funcionar
-        String name = menu.getUserInputString("Inser the name of the edition: ");
+        /*String name = menu.getUserInputString("Inser the name of the edition: ");
         String projectTemplate = menu.getUserInputString("Insert project template: ");
         LocalDate start = menu.getUserInputLocalDate("Insert stat date: ");
         LocalDate end = menu.getUserInputLocalDate("Insert end date: ");
@@ -46,7 +43,7 @@ public class PP_AC_8220307_8220337 {
         IEditionManagement teste = new EditionManagement();
         teste.addEdition(new BaseEdition(name, projectTemplate, start, end));
 
-        teste.saveEditionsToJsonFile("teste.bin");
+        teste.saveEditionsToJsonFile("teste.bin");*/
 
     }
 

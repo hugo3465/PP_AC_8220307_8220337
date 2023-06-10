@@ -34,9 +34,17 @@ import pp_ac_8220307_8220337.Api.interfaces.IEditionManagement;
  */
 public class EditionManagement implements IEditionManagement {
 
-    private final int DEFALUT_NUMBER_EDITION;
-    private Edition[] editions;
-    private int numEditions;
+    /**
+     * The EditionManagement class represents a management system for editions.
+     *
+     * It contains fields for the default number of editions, the editions array,
+     * and the number of editions.
+     *
+     * This class provides methods to access and modify the editions in the system.
+     */
+    private final int DEFALUT_NUMBER_EDITION; // The default number of editions.
+    private Edition[] editions; // The array of editions.
+    private int numEditions; // The number of editions.
 
     /**
      * Default constructor for EditionManagement class.
@@ -97,7 +105,9 @@ public class EditionManagement implements IEditionManagement {
 
             this.numEditions++;
         } catch (NullPointerException e) {
-            e.printStackTrace();
+            throw new NullPointerException("An error has occured in addEdition" + e.getMessage());
+        } catch (ArrayIndexOutOfBoundsException e) {
+            throw new ArrayIndexOutOfBoundsException("Resize edition has failed in addEdition");
         }
 
     }
@@ -118,10 +128,8 @@ public class EditionManagement implements IEditionManagement {
 
             this.numEditions--;
             this.editions[this.numEditions] = null;
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        } catch (ArrayIndexOutOfBoundsException e) {
-            e.printStackTrace();
+        } catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
+            throw new NullPointerException("Edition not found!");
         }
 
     }
@@ -196,10 +204,8 @@ public class EditionManagement implements IEditionManagement {
             int index = getEditionIndex(editionName);
 
             editions[index].setStatus(Status.INACTIVE);
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        } catch (ArrayIndexOutOfBoundsException e) {
-            e.printStackTrace();
+        } catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
+            throw new NullPointerException("Edition not found");
         }
 
     }
@@ -215,10 +221,8 @@ public class EditionManagement implements IEditionManagement {
             int index = getEditionIndex(editionName);
 
             editions[index].setStatus(Status.CANCELED);
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        } catch (ArrayIndexOutOfBoundsException e) {
-            e.printStackTrace();
+        } catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
+            throw new NullPointerException("Edition not found!");
         }
     }
 
@@ -233,10 +237,8 @@ public class EditionManagement implements IEditionManagement {
             int index = getEditionIndex(editionName);
 
             editions[index].setStatus(Status.CLOSED);
-        } catch (NullPointerException e) {
-            e.printStackTrace();
-        } catch (ArrayIndexOutOfBoundsException e) {
-            e.printStackTrace();
+        } catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
+            throw new NullPointerException("Edition not found!");
         }
     }
 
@@ -266,60 +268,86 @@ public class EditionManagement implements IEditionManagement {
         return onlyunfinishedEditions;
     }
 
-    @Override
-    public String toString() {
-        String string = "";
-
-        for (int i = 0; i < numEditions; i++) {
-            string += "\n" + editions[i].toString();
-        }
-
-        return string;
-    }
-
+    /**
+     * Retrieves a student with the specified name from the project management
+     * system.
+     * 
+     * @param name The name of the student to retrieve.
+     * @return The student with the specified name, or null if not found.
+     * @throws NullPointerException If the Student is not found.
+     */
     @Override
     public Student getStudent(String name) {
         for (int i = 0; i < numEditions; i++) {
             for (int j = 0; j < editions[i].getNumberOfProjects(); i++) {
                 if (editions[i].getProjects()[j].getParticipant(name) instanceof Student) {
-                    return (Student) editions[i].getProjects()[j].getParticipant(name);
+                    return ((Student) editions[i].getProjects()[j].getParticipant(name));
                 }
             }
         }
 
-        return null;
+        throw new NullPointerException("Student not found!");
     }
 
+    /**
+     * Retrieves a facilitator with the specified name from the project management
+     * system.
+     * 
+     * @param name The name of the facilitator to retrieve.
+     * @return The facilitator with the specified name, or null if not found.
+     * @throws NullPointerException If the Facilitator is not found.
+     */
     @Override
     public Facilitator getFacilitator(String name) {
         for (int i = 0; i < numEditions; i++) {
             for (int j = 0; j < editions[i].getNumberOfProjects(); i++) {
                 if (editions[i].getProjects()[j].getParticipant(name) instanceof Facilitator) {
-                    return (Facilitator) editions[i].getProjects()[j].getParticipant(name);
+                    return ((Facilitator) editions[i].getProjects()[j].getParticipant(name));
                 }
             }
         }
 
-        return null;
+        throw new NullPointerException("Facilitator not found!");
     }
 
+    /**
+     * Retrieves a partner with the specified name from the project management
+     * system.
+     * 
+     * @param name The name of the partner to retrieve.
+     * @return The partner with the specified name, or null if not found.
+     * @throws NullPointerException If the Partner is not found.
+     */
     @Override
     public Partner getPartner(String name) {
         for (int i = 0; i < numEditions; i++) {
             for (int j = 0; j < editions[i].getNumberOfProjects(); i++) {
                 if (editions[i].getProjects()[j].getParticipant(name) instanceof Partner) {
-                    return (Partner) editions[i].getProjects()[j].getParticipant(name);
+                    return ((Partner) editions[i].getProjects()[j].getParticipant(name));
                 }
             }
         }
 
-        return null;
+        throw new NullPointerException("Partner not found!");
     }
 
+    /**
+     * Retrieves a participant with the specified name from the project management
+     * system.
+     * 
+     * @param name The name of the participant to retrieve.
+     * @return The participant with the specified name.
+     * @throws NullPointerException If the participant is not found.
+     */
     @Override
-    public Participant[] getAllParticipantsFromEdition(String EditionName) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllParticipants'");
+    public Participant getParticipant(String name) {
+        for (int i = 0; i < numEditions; i++) {
+            for (int j = 0; j < editions[i].getNumberOfProjects(); i++) {
+                return editions[i].getProjects()[j].getParticipant(name);
+            }
+        }
+
+        throw new NullPointerException("Participant not found!");
     }
 
     /**
@@ -707,6 +735,22 @@ public class EditionManagement implements IEditionManagement {
             }
 
         }
+    }
+
+    /**
+     * Returns a string representation of the project management system.
+     * 
+     * @return A string representation of the project management system.
+     */
+    @Override
+    public String toString() {
+        String string = "";
+
+        for (int i = 0; i < numEditions; i++) {
+            string += "\n" + editions[i].toString();
+        }
+
+        return string;
     }
 
 }

@@ -14,24 +14,34 @@ import ma02_resources.project.Project;
 import ma02_resources.project.Status;
 import ma02_resources.project.Task;
 
-
 /**
- * Nome: Pedro Marcelo Santos Pinho Número: 8220307 Turma: LEIT2
+ * Nome: Pedro Marcelo Santos Pinho
+ * Número: 8220307
+ * Turma: LEIT2
  *
- * Nome: Hugo Ricardo Almeida Guimarães Número: 8220337 Turma: LEIT2
+ * Nome: Hugo Ricardo Almeida Guimarães
+ * Número: 8220337
+ * Turma: LEIT2
  */
 public class BaseEdition implements Edition {
-
-    private final int DEFAULT_NUMBER_PROJECTS = 5;
-    private String name;
-    private String projectTemplate;
-    private Status status;
-    private Project[] projects;
-    private int numberOfProjects;
-    private LocalDate start;
-    private LocalDate end;
-
-    
+    /**
+     * The BaseEdition class represents a basic implementation of the Edition
+     * interface.
+     *
+     * It contains fields for the default number of projects, name, project
+     * template, status,
+     * projects, number of projects, start date, and end date.
+     *
+     * This class provides methods to access and modify these edition details.
+     */
+    private final int DEFAULT_NUMBER_PROJECTS = 5; // The default number of projects.
+    private String name; // The name of the edition.
+    private String projectTemplate; // The project template of the edition.
+    private Status status; // The status of the edition.
+    private Project[] projects; // The projects associated with the edition.
+    private int numberOfProjects; // The number of projects in the edition.
+    private LocalDate start; // The start date of the edition.
+    private LocalDate end; // The end date of the edition.
 
     public BaseEdition(String name, String projectTemplate, Status status, Project[] projects, int numberOfProjects,
             LocalDate start, LocalDate end) {
@@ -241,8 +251,10 @@ public class BaseEdition implements Edition {
             // Update the number of projects and set the last element to null
             this.numberOfProjects--;
             this.projects[numberOfProjects] = null;
+        } catch (NullPointerException e) {
+            throw new NullPointerException("Project not found!");
         } catch (Exception e) {
-            throw new RuntimeException("An error occurredo in remove Project method");
+            throw new RuntimeException("An error occurred in remove Project method");
         }
     }
 
@@ -252,6 +264,7 @@ public class BaseEdition implements Edition {
      * @param name the name of the project to retrieve
      * @return the Project object matching the specified name, or null if not
      *         found
+     * @throws NullPointerException if the Project is not found
      */
     @Override
     public Project getProject(String string) {
@@ -260,7 +273,8 @@ public class BaseEdition implements Edition {
                 return getProjects()[i];
             }
         }
-        return null;
+
+        throw new NullPointerException("Project not found!");
     }
 
     /**
@@ -343,7 +357,6 @@ public class BaseEdition implements Edition {
 
         return onlyMatchingProjects;
     }
-
 
     /**
      * Retrieves the number of projects in the edition.

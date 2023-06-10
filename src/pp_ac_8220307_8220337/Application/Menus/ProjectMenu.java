@@ -5,17 +5,39 @@ import ma02_resources.project.Project;
 import ma02_resources.project.Task;
 
 /**
- * Nome: Pedro Marcelo Santos Pinho Número: 8220307 Turma: LEIT2
+ * Nome: Pedro Marcelo Santos Pinho
+ * Número: 8220307
+ * Turma: LEIT2
  *
- * Nome: Hugo Ricardo Almeida Guimarães Número: 8220337 Turma: LEIT2
+ * Nome: Hugo Ricardo Almeida Guimarães
+ * Número: 8220337
+ * Turma: LEIT2
+ */
+
+/**
+ * The ProjectMenu class represents the menu for project management.
+ * 
+ * It provides options to add, remove, and modify projects, as well as manage
+ * project participants and tasks.
  */
 public class ProjectMenu implements IMenu {
+    /**
+     * The edition associated with the menu.
+     */
     private Edition edition;
 
+    /**
+     * Constructs a ProjectMenu object with the specified edition.
+     *
+     * @param edition the edition to associate with the menu
+     */
     public ProjectMenu(Edition edition) {
         this.edition = edition;
     }
 
+    /**
+     * Displays the menu options for project management.
+     */
     @Override
     public void display() {
         System.out.println("\n\t--- Admin / Projects ---");
@@ -30,6 +52,11 @@ public class ProjectMenu implements IMenu {
         System.out.println("\t0 - Back\n");
     }
 
+    /**
+     * Displays the project management menu and handles user input.
+     *
+     * @param menuManager the menu manager
+     */
     public void display(MenuManager menuManager) {
         // IMenu menuEdition = new ProjectMenu();
         boolean isRunning = true;
@@ -39,7 +66,7 @@ public class ProjectMenu implements IMenu {
 
         do {
             switch (menuManager.diplayMenu(this)) {
-                case 1:
+                case 1: // Add Project
                     try {
                         System.out.println(
                                 "Most of a project's attributes are passed from a json file, which has to be at the root of the project folder.\n");
@@ -53,33 +80,39 @@ public class ProjectMenu implements IMenu {
                         menuManager.getEditions().getEdition(this.edition.getName()).addProject(projectTitle,
                                 projectDescription, projectTags);
 
-                    } catch (Exception e) {
+                    } catch (NullPointerException e) {
+                        System.out.println(e.getMessage());
+                    }catch (Exception e) {
                         System.out.println("An error has ocurred!: " + e.getMessage());
                     }
                     break;
-                case 2:
+                case 2: // Remove Project
                     try {
                         projectTitle = menuManager
                                 .getUserInputString("Inser the title of the project you want to remove: ");
 
                         menuManager.getEditions().getEdition(this.edition.getName()).removeProject(projectTitle);
-                    } catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
+                    } catch (NullPointerException e) {
                         System.out.println("Edition not found.");
+                    } catch (Exception e) {
+                        System.out.println("An error has ocurred!: " + e.getMessage());
                     }
                     break;
-                case 3:
+                case 3: // Add Participant to a Project
                     try {
                         projectTitle = menuManager
                                 .getUserInputString("Inser the title of the project you want to add participant to: ");
 
                         menuManager.getEditions().getEdition(this.edition.getName()).getProject(projectTitle)
                                 .addParticipant(menuManager.getStudentInputInfo());
+                    } catch (NullPointerException e) {
+                        System.out.println(e.getMessage());
                     } catch (Exception e) {
                         System.out.println("An error has ocurred!: " + e.getMessage());
                     }
 
                     break;
-                case 4:
+                case 4: // Remove Participant from a Project
                     try {
                         projectTitle = menuManager
                                 .getUserInputString(
@@ -90,11 +123,13 @@ public class ProjectMenu implements IMenu {
 
                         menuManager.getEditions().getEdition(this.edition.getName()).getProject(projectTitle)
                                 .removeParticipant(participantName);
+                    } catch (NullPointerException e) {
+                        System.out.println(e.getMessage());
                     } catch (Exception e) {
                         System.out.println("An error has ocurred!: " + e.getMessage());
                     }
                     break;
-                case 5:
+                case 5: // Add Task to a Project
                     try {
                         projectTitle = menuManager
                                 .getUserInputString("Inser the title of the project you want to add a task: ");
@@ -102,21 +137,24 @@ public class ProjectMenu implements IMenu {
                         Task task = menuManager.getTasktInputInfo();
 
                         menuManager.getEditions().getEdition(edition.getName()).getProject(projectTitle).addTask(task);
+                    } catch (NullPointerException e) {
+                        System.out.println(e.getMessage());
                     } catch (Exception e) {
                         System.out.println("An error has ocurred!: " + e.getMessage());
                     }
                     break;
                 case 6: // Get Participant
                     try {
-                        participantName = menuManager.getUserInputString("Insert the name of the participant you are looking for: ");
+                        participantName = menuManager
+                                .getUserInputString("Insert the name of the participant you are looking for: ");
                         menuManager.getEditions().getParticipant(participantName);
-                    } catch(NullPointerException e) {
-
-                    } catch(Exception e) {
+                    } catch (NullPointerException e) {
+                        System.out.println(e.getMessage());
+                    } catch (Exception e) {
                         System.out.println("An error has occured: " + e.getMessage());
                     }
                     break;
-                case 7:
+                case 7: // List all Projects
                     for (Project project : menuManager.getEditions().getEdition(this.edition.getName()).getProjects()) {
                         System.out.println(project.toString() + '\n');
                     }
@@ -131,6 +169,8 @@ public class ProjectMenu implements IMenu {
                                 .getProject(projectTitle);
 
                         System.out.println(menuManager.getEditions().getProjectProgress(searchedProject));
+                    } catch (NullPointerException e) {
+                        System.out.println(e.getMessage());
                     } catch (Exception e) {
                         System.out.println("An error has occured: " + e.getMessage());
                     }

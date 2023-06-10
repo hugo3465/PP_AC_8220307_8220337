@@ -16,17 +16,44 @@ import pp_ac_8220307_8220337.Api.BaseSubmission;
  * Número: 8220337
  * Turma: LEIT2
  */
+
+/**
+ * The StudentMenu class represents the menu for a student user.
+ * 
+ * It provides options for a student to interact with their project and tasks.
+ */
 public class StudentMenu implements IMenu {
+    /**
+     * The student associated with the menu.
+     */
     private Student student;
+
+    /**
+     * The edition associated with the menu.
+     */
     private Edition edition;
+
+    /**
+     * The project associated with the menu.
+     */
     private Project project;
 
+    /**
+     * Creates a new instance of the StudentMenu class.
+     *
+     * @param student the student
+     * @param edition the edition
+     * @param project the project
+     */
     public StudentMenu(Student student, Edition edition, Project project) {
         this.student = student;
         this.edition = edition;
         this.project = project;
     }
 
+    /**
+     * Displays the options of the student menu.
+     */
     @Override
     public void display() {
         System.out.println("\n\t--- Hello " + student.getName() + " ---");
@@ -37,6 +64,11 @@ public class StudentMenu implements IMenu {
         System.out.println("\t0 - Back\n");
     }
 
+    /**
+     * Displays the student menu and handles user input.
+     *
+     * @param menuManager the menu manager
+     */
     public void display(MenuManager menuManager) {
         // Menu menuEdition = new StudentMenu(student);
         boolean isRunning = true;
@@ -53,7 +85,7 @@ public class StudentMenu implements IMenu {
                         System.out.println("This edition is not active, you can't add any submissions");
                         break;
                     }
-                    
+
                     try {
 
                         taskTitle = menuManager
@@ -63,6 +95,8 @@ public class StudentMenu implements IMenu {
                         menuManager.getEditions().getEdition(edition.getName()).getProject(project.getName())
                                 .getTask(taskTitle)
                                 .addSubmission(new BaseSubmission(student, submissionText));
+                    } catch (NullPointerException e) {
+                        System.out.println(e.getMessage());
                     } catch (Exception e) {
                         System.out.println("An error has occured: " + e.getMessage());
                     }
@@ -75,6 +109,8 @@ public class StudentMenu implements IMenu {
 
                         System.out.println(menuManager.getEditions().getEdition(edition.getName())
                                 .getProject(project.getName()).getTask(taskTitle).toString());
+                    } catch (NullPointerException e) {
+                        System.out.println(e.getMessage());
                     } catch (Exception e) {
                         System.out.println("An error has occured: " + e.getMessage());
                     }

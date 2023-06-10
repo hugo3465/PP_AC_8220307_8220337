@@ -28,11 +28,30 @@ public class BaseFacilitator implements Facilitator {
      * details.
      */
 
-    private String name; // The name of the facilitator.
-    private String email; // The email of the facilitator.
-    private Contact contact; // The contact information of the facilitator.
-    private Instituition instituition; // The institution of the facilitator.
-    private String areaOfExpertise; // The area of expertise of the facilitator.
+    /**
+     * The name of the facilitator.
+     */
+    private String name;
+
+    /**
+     * The email of the facilitator.
+     */
+    private String email;
+
+    /**
+     * The contact information of the facilitator.
+     */
+    private Contact contact;
+
+    /**
+     * The instituition of the facilitator.
+     */
+    private Instituition instituition;
+
+    /**
+     * The area of expertise of the facilitator.
+     */
+    private String areaOfExpertise;
 
     /**
      * Constructs a BaseFacilitators object with the specified Facilitator

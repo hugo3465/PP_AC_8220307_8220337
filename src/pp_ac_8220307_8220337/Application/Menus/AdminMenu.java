@@ -9,20 +9,32 @@ package pp_ac_8220307_8220337.Application.Menus;
  * Número: 8220337
  * Turma: LEIT2
  */
+
+/**
+ * The AdminMenu class represents the menu for the administrator.
+ *
+ * It provides options for edition management, project management, and distinct
+ * lists.
+ */
 public class AdminMenu implements IMenu {
 
+    /**
+     * Displays the menu options for the administrator.
+     */
     @Override
     public void display() {
         System.out.println("\n\t--- Admin ---");
         System.out.println("\t1 - Edition Management");
         System.out.println("\t2 - Project Management");
-        /*System.out.println("\t3 - Lists of Projects");
-        System.out.println("\t4 - Lists of Tasks");
-        System.out.println("\t5 - Lists of Submissions");*/
         System.out.println("\t3 - Distinct Lists");
         System.out.println("\t0 - Back\n");
     }
 
+    /**
+     * Displays the admin menu and handles user input.
+     *
+     * @param menuManager the menu manager
+     */
     public static void display(MenuManager menuManager) {
         IMenu menuAdmin = new AdminMenu();
         boolean isRunning = true;
@@ -36,7 +48,8 @@ public class AdminMenu implements IMenu {
                     break;
                 case 2:
                     try {
-                        editionName = menuManager.getUserInputString("Enter the name of the edition you want to enter: ");
+                        editionName = menuManager
+                                .getUserInputString("Enter the name of the edition you want to enter: ");
 
                         ProjectMenu projectMenu = new ProjectMenu(menuManager.getEditions().getEdition(editionName));
 

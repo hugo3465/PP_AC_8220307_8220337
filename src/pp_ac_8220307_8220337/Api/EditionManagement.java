@@ -42,9 +42,21 @@ public class EditionManagement implements IEditionManagement {
      *
      * This class provides methods to access and modify the editions in the system.
      */
-    private final int DEFALUT_NUMBER_EDITION; // The default number of editions.
-    private Edition[] editions; // The array of editions.
-    private int numEditions; // The number of editions.
+    
+    /**
+     * The default number of editions.
+     */
+    private final int DEFALUT_NUMBER_EDITION;
+
+    /**
+     * The array of editions.
+     */
+    private Edition[] editions;
+
+    /**
+     * The number of editions.
+     */
+    private int numEditions;
 
     /**
      * Default constructor for EditionManagement class.
@@ -158,7 +170,7 @@ public class EditionManagement implements IEditionManagement {
             }
         }
 
-        return null;
+        throw new NullPointerException("Edition not found!");
     }
 
     /**
@@ -587,7 +599,8 @@ public class EditionManagement implements IEditionManagement {
                 return edition;
             }
         }
-        return null;
+
+        throw new NullPointerException("No active editions");
     }
 
     // Method to save editions to a binary file

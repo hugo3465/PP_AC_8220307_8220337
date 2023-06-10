@@ -26,12 +26,36 @@ public class BaseInstitution implements Instituition {
      * but only has methods to modify Type, Contact, Website and Description
      * Details.
      */
-    private String name; // The name of the institution.
-    private String email; // The email of the institution.
-    private InstituitionType type; // The type of the institution.
-    private Contact contact; // The contact information of the institution.
-    private String website; // The website of the institution.
-    private String description; // The description of the institution.
+
+    /**
+     * The name of the institution.
+     */
+    private String name;
+
+    /**
+     * The email of the institution.
+     */
+    private String email;
+
+    /**
+     * The type of the institution.
+     */
+    private InstituitionType type;
+
+    /**
+     * The contact information of the institution.
+     */
+    private Contact contact;
+
+    /**
+     * The website of the institution.
+     */
+    private String website;
+
+    /**
+     * The description of the institution.
+     */
+    private String description;
 
     /**
      * Constructs a BaseInstitution object with the specified institution details.

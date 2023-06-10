@@ -23,14 +23,46 @@ public class BaseTask implements Task {
      *
      * This class provides methods to access and modify these task details.
      */
-    private final int DEFAULT_NUMBER_SUBMISSIONS = 1; // The default number of submissions for a task.
-    private LocalDate start; // The start date of the task.
-    private LocalDate end; // The end date of the task.
-    private int duration; // The duration of the task in days.
-    private String title; // The title of the task.
-    private String description; // The description of the task.
-    private Submission[] submissions; // The submissions for the task.
-    private int numberOfSubmissions; // The number of submissions for the task.
+    
+    /**
+     * The default number of submissions for a task.
+     */
+    private final int DEFAULT_NUMBER_SUBMISSIONS = 1;
+
+    /**
+     * The start date of the task.
+     */
+    private LocalDate start;
+
+    /**
+     * The end date of the task.
+     */
+    private LocalDate end;
+
+    /**
+     * The duration of the task in days.
+     */
+    private int duration;
+
+    /**
+     * The title of the task.
+     */
+    private String title;
+
+    /**
+     * The description of the task.
+     */
+    private String description;
+
+    /**
+     * The submissions for the task.
+     */
+    private Submission[] submissions;
+
+    /**
+     * The number of submissions for the task.
+     */
+    private int numberOfSubmissions;
 
     /**
      * Constructs a BaseTask.

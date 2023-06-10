@@ -25,12 +25,33 @@ public class BaseStudent implements Student {
      * This class provides methods to access these Student details, but only has
      * methods to modify Institution and Contact details.
      */
-    private int number; // The student number.
-    private String name; // The name of the student.
-    private String email; // The email of the student.
-    private Contact contact; // The contact information of the student.
-    private Instituition instituition; // The institution of the student.
 
+    /**
+     * The student number.
+     */
+    private int number;
+
+    /**
+     * The name of the student.
+     */
+    private String name;
+
+    /**
+     * The email of the student.
+     */
+    private String email;
+
+    /**
+     * The contact information of the student.
+     */
+    private Contact contact;
+
+    /**
+     * The institution of the student.
+     */
+    private Instituition instituition;
+
+    
     /**
      * Constructs a BaseStudent object with the specified Student details.
      *

@@ -24,9 +24,21 @@ public class BaseSubmission implements Submission {
      * and text,
      * or with student and text (in which case the current date is used).
      */
-    private Student student; // The student who submitted the submission.
-    private LocalDateTime date; // The date and time of the submission.
-    private String text; // The text content of the submission.
+    
+    /**
+     * The student who submitted the submission.
+     */
+    private Student student;
+
+    /**
+     * The date and time of the submission.
+     */
+    private LocalDateTime date;
+
+    /**
+     * The text content of the submission.
+     */
+    private String text;
 
     /**
      * Constructs a BaseSubmission object with the specified student, date, and

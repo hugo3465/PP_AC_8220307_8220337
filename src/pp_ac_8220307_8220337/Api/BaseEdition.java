@@ -34,14 +34,46 @@ public class BaseEdition implements Edition {
      *
      * This class provides methods to access and modify these edition details.
      */
-    private final int DEFAULT_NUMBER_PROJECTS = 5; // The default number of projects.
-    private String name; // The name of the edition.
-    private String projectTemplate; // The project template of the edition.
-    private Status status; // The status of the edition.
-    private Project[] projects; // The projects associated with the edition.
-    private int numberOfProjects; // The number of projects in the edition.
-    private LocalDate start; // The start date of the edition.
-    private LocalDate end; // The end date of the edition.
+
+    /**
+     * The default number of projects.
+     */
+    private final int DEFAULT_NUMBER_PROJECTS = 5;
+
+    /**
+     * The name of the edition.
+     */
+    private String name;
+
+    /**
+     * The project template of the edition.
+     */
+    private String projectTemplate;
+
+    /**
+     * The status of the edition.
+     */
+    private Status status;
+
+    /**
+     * The projects associated with the edition.
+     */
+    private Project[] projects;
+
+    /**
+     * The number of projects in the edition.
+     */
+    private int numberOfProjects;
+
+    /**
+     * The start date of the edition.
+     */
+    private LocalDate start;
+
+    /**
+     * The end date of the edition.
+     */
+    private LocalDate end;
 
     public BaseEdition(String name, String projectTemplate, Status status, Project[] projects, int numberOfProjects,
             LocalDate start, LocalDate end) {

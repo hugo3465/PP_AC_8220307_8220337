@@ -13,8 +13,18 @@ import pp_ac_8220307_8220337.Api.BaseEdition;
  * Número: 8220337
  * Turma: LEIT2
  */
+
+/**
+ * The DistinctListsMenu class represents the menu for accessing distinct lists.
+ *
+ * It provides options to get students with more submissions and projects by
+ * tags.
+ */
 public class EditionMenu implements IMenu {
 
+    /**
+     * Displays the menu options for accessing distinct lists.
+     */
     @Override
     public void display() {
         System.out.println("\n\t--- Admin / Editions ---");
@@ -28,6 +38,11 @@ public class EditionMenu implements IMenu {
         System.out.println("\t0 - Back\n");
     }
 
+    /**
+     * Displays the distinct lists menu and handles user input.
+     *
+     * @param menuManager the menu manager
+     */
     public static void display(MenuManager menuManager) {
         IMenu menuEdition = new EditionMenu();
         boolean isRunning = true;
@@ -51,35 +66,65 @@ public class EditionMenu implements IMenu {
                         name = menuManager.getUserInputString("Inser the name of the edition you want to remove: ");
 
                         menuManager.getEditions().removeEdition(name);
-                    } catch(NullPointerException | ArrayIndexOutOfBoundsException e) {
+                    } catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
                         System.out.println("Edition not found.");
+                    } catch (Exception e) {
+                        System.out.println("An error has occured: " + e.getMessage());
                     }
-                   
+
                     break;
                 case 3:
-                    System.out.println(
-                            "only one edition can be set to active, if there is an active edition it will be put as inactive!");
+                    try {
+                        System.out.println(
+                                "only one edition can be set to active, if there is an active edition it will be put as inactive!");
 
-                    name = menuManager.getUserInputString("Inser the name of the edition you want to set as active: ");
+                        name = menuManager
+                                .getUserInputString("Inser the name of the edition you want to set as active: ");
 
-                    menuManager.getEditions().defineAsActive(name);
+                        menuManager.getEditions().defineAsActive(name);
+                    } catch (NullPointerException e) {
+                        System.out.println(e.getMessage());
+                    } catch (Exception e) {
+                        System.out.println("An error has occured: " + e.getMessage());
+                    }
                     break;
                 case 4:
-                    name = menuManager
-                            .getUserInputString("Insert the name of the edition you want to set as inactive: ");
+                    try {
+                        name = menuManager
+                                .getUserInputString("Insert the name of the edition you want to set as inactive: ");
 
-                    menuManager.getEditions().defineAsInactive(name);
+                        menuManager.getEditions().defineAsInactive(name);
+
+                    } catch (NullPointerException e) {
+                        System.out.println(e.getMessage());
+                    } catch (Exception e) {
+                        System.out.println("An error has occured: " + e.getMessage());
+                    }
+
                     break;
                 case 5:
-                    name = menuManager.getUserInputString("Inser the name of the edition you want to set as closed: ");
+                    try {
+                        name = menuManager
+                                .getUserInputString("Inser the name of the edition you want to set as closed: ");
 
-                    menuManager.getEditions().defineAsClosed(name);
+                        menuManager.getEditions().defineAsClosed(name);
+                    } catch (NullPointerException e) {
+                        System.out.println(e.getMessage());
+                    } catch (Exception e) {
+                        System.out.println("An error has occured: " + e.getMessage());
+                    }
                     break;
                 case 6:
-                    name = menuManager
-                            .getUserInputString("Inser the name of the edition you want to set as Canceled: ");
+                    try {
+                        name = menuManager
+                                .getUserInputString("Inser the name of the edition you want to set as Canceled: ");
 
-                    menuManager.getEditions().defineAsCanceled(name);
+                        menuManager.getEditions().defineAsCanceled(name);
+                    } catch (NullPointerException e) {
+                        System.out.println(e.getMessage());
+                    } catch (Exception e) {
+                        System.out.println("An error has occured: " + e.getMessage());
+                    }
                     break;
                 case 7:
                     System.out.println(menuManager.getEditions().toString());

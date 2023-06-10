@@ -31,6 +31,19 @@ public class BaseEdition implements Edition {
     private LocalDate start;
     private LocalDate end;
 
+    
+
+    public BaseEdition(String name, String projectTemplate, Status status, Project[] projects, int numberOfProjects,
+            LocalDate start, LocalDate end) {
+        this.name = name;
+        this.projectTemplate = projectTemplate;
+        this.status = status;
+        this.projects = projects;
+        this.numberOfProjects = numberOfProjects;
+        this.start = start;
+        this.end = end;
+    }
+
     /**
      * By default the atribute {@code status} is set as INACTIVE
      *

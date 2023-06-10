@@ -1,6 +1,8 @@
 
 package pp_ac_8220307_8220337.Api.interfaces;
 
+import java.io.IOException;
+
 import ma02_resources.project.Edition;
 
 /**
@@ -26,8 +28,7 @@ public interface IEditionManagement extends IParticipantList, IProjectList {
     public void defineAsClosed(String editionName);
 
 
-     public void saveEditionsToFile(String filename);
-     public void readEditionsFromFile(String filename);
+    public void saveEditionsToJsonFile(String filename) throws IOException;
+    public void readEditionsFromJsonFile(String filename) throws IOException, org.json.simple.parser.ParseException;
 
-    // TODO ler e escrever para fichieros externos para poder salvar os dados
 }

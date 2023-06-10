@@ -1,14 +1,18 @@
 package pp_ac_8220307_8220337.Api;
 
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
-import java.util.Arrays;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
+import ma02_resources.participants.Contact;
 import ma02_resources.participants.Facilitator;
+import ma02_resources.participants.Instituition;
 import ma02_resources.participants.Participant;
 import ma02_resources.participants.Partner;
 import ma02_resources.participants.Student;
@@ -28,7 +32,7 @@ import pp_ac_8220307_8220337.Api.interfaces.IEditionManagement;
  * Número: 8220337
  * Turma: LEIT2
  */
-public class EditionManagement implements IEditionManagement, Serializable {
+public class EditionManagement implements IEditionManagement {
 
     private final int DEFALUT_NUMBER_EDITION;
     private Edition[] editions;
@@ -549,7 +553,7 @@ public class EditionManagement implements IEditionManagement, Serializable {
      * @return the active edition, or null if no active edition is found
      */
     @Override
-    public Edition getActivEdition() {
+    public Edition getActiveEdition() {
         for (Edition edition : editions) {
             if (edition.getStatus() == Status.ACTIVE) {
                 return edition;
@@ -560,58 +564,148 @@ public class EditionManagement implements IEditionManagement, Serializable {
 
     // Method to save editions to a binary file
     @Override
-    public void saveEditionsToFile(String filename) {
-        /*
-         * try (ObjectOutputStream oos = new ObjectOutputStream(new
-         * FileOutputStream(filename))) {
-         * // Create an ObjectOutputStream called 'oos' and initialize it with a new
-         * // FileOutputStream that writes to the specified 'filename' file
-         * 
-         * // está a dar erro no primeiro, vou ter de serializar isto
-         * oos.writeObject(editions); // Write the 'editions' array to the file
-         * oos.writeInt(numEditions); // Write the 'numOfEditions' value to the file
-         * 
-         * System.out.println("Editions have been saved to " + filename); // Print a
-         * success message
-         * } catch (IOException e) {
-         * System.out.println("Error occurred while saving editions to file: " +
-         * e.getMessage()); // Print an error
-         * // message if an
-         * // IOException occurs
-         * }
-         */
+    public void saveEditionsToJsonFile(String filePath) throws IOException {
+        JSONArray arr = new JSONArray();
+        for (Edition f : this.editions) {
+            if (f != null) {
+                JSONObject obj = new JSONObject();
+                obj.put("Name", f.getName());
+                obj.put("Project Template", f.getProjectTemplate());
+                obj.put("Status", f.getStatus());
+                obj.put("number of Projects", f.getNumberOfProjects());
+                obj.put("start", f.getStart());
+                obj.put("end", f.getEnd());
+                obj.put("Project", f.getProjects());
 
-        try {
-            FileOutputStream fileOut = new FileOutputStream("teste.bin");
-            ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
-            objectOut.writeObject(this);
-            objectOut.close();
-            fileOut.close();
-            System.out.println("Objects have been written to the file.");
-        } catch (IOException e) {
-            e.printStackTrace();
+                arr.add(obj);
+            }
         }
+        FileWriter out = new FileWriter(filePath);
+        // String ar = arr.toJSONString();
+        out.write(arr.toJSONString());
+        out.flush();
+        out.close();
     }
 
     // Method to read editions from a binary file
     @Override
-    public void readEditionsFromFile(String filename) {
-        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
-            // Create an ObjectInputStream called 'ois' and initialize it with a new
-            // FileInputStream that reads from the specified 'filename' file
+    public void readEditionsFromJsonFile(String filePath) throws IOException, org.json.simple.parser.ParseException {
+        JSONParser parser = new JSONParser();
+        try (FileReader fileReader = new FileReader(filePath)) {
+            JSONArray jsonArray = (JSONArray) parser.parse(fileReader);
 
-            editions = (Edition[]) ois.readObject(); // Read the serialized 'editions' array from the file and assign it
-                                                     // to the 'editions' variable
-            numEditions = ois.readInt(); // Read the 'numOfEditions' value from the file and assign it to the
-                                         // 'numOfEditions' variable
+            editions = new Edition[jsonArray.size()];
+            numEditions = 0;
 
-            System.out.println("Editions have been loaded from " + filename); // Print a success message
-        } catch (IOException | ClassNotFoundException e) {
-            System.out.println("Error occurred while reading editions from file: " + e.getMessage()); // Print an error
-                                                                                                      // message if an
-                                                                                                      // IOException or
-                                                                                                      // ClassNotFoundException
-                                                                                                      // occurs
+            for (int i = 0; i < jsonArray.size(); i++) {
+                JSONObject jsonObject = (JSONObject) jsonArray.get(i);
+
+                String name = (String) jsonObject.get("Name");
+                String projectTemplate = (String) jsonObject.get("Project Template");
+                Status status = (Status) jsonObject.get("Status");
+                int numberOfProjects = ((Long) jsonObject.get("number of Projects")).intValue();
+                LocalDate start = LocalDate.parse((String) jsonObject.get("start"));
+                LocalDate end = LocalDate.parse((String) jsonObject.get("end"));
+
+                // Projects
+                JSONArray projectsArray = (JSONArray) jsonObject.get("Project");
+                Project[] projects = new Project[projectsArray.size()];
+                for (int j = 0; j < projectsArray.size(); j++) {
+                    JSONObject projectObject = (JSONObject) projectsArray.get(j);
+                    String projectName = (String) projectObject.get("Name");
+                    String projectDescription = (String) projectObject.get("Description");
+                    int numberOfParticipants = ((Long) projectObject.get("Number Of Participants")).intValue();
+                    int numberOfPartners = ((Long) projectObject.get("Number Of Partners")).intValue();
+                    int numberOfFacilitators = ((Long) projectObject.get("Number Of Facilitators")).intValue();
+                    int numberOfStudents = ((Long) projectObject.get("Number Of Students")).intValue();
+                    int numberOfTasks = ((Long) projectObject.get("Number Of Tasks")).intValue();
+
+                    // read Participants inside Project
+                    JSONArray participantsArray = (JSONArray) jsonObject.get("Participants");
+                    Participant[] participants = new Participant[participantsArray.size()];
+                    for (int k = 0; k < participantsArray.size(); k++) {
+                        JSONObject participantObject = (JSONObject) participantsArray.get(k);
+                        String participantName = (String) participantObject.get("Name");
+                        String participantEmail = (String) participantObject.get("Email");
+                        Contact participantContact = (Contact) participantObject.get("Contact");
+                        Instituition participantInstitution = (Instituition) participantObject.get("Institution");
+
+                        if (participantObject instanceof Partner) {
+                            String partnerVat = (String) participantObject.get("Vat");
+                            String partnerWebsite = (String) participantObject.get("Website");
+
+                            participants[k] = new BasePartner(partnerVat, partnerWebsite, participantName,
+                                    participantEmail, participantContact,
+                                    participantInstitution);
+                        } else if (participantObject instanceof Student) {
+                            int studentNumber = ((Long) projectObject.get("Number")).intValue();
+
+                            participants[k] = new BaseStudent(studentNumber, participantName, participantEmail,
+                                    participantContact, participantInstitution);
+                        } else if (participantObject instanceof Facilitator) {
+                            String facilitatorAreaOfExpertise = (String) participantObject.get("Area of Expertise");
+
+                            participants[k] = new BaseFacilitator(facilitatorAreaOfExpertise, participantName,
+                                    participantEmail, participantContact, participantInstitution);
+                        }
+
+                    }
+
+                    // read tags inside Project
+                    JSONArray tagsArray = (JSONArray) jsonObject.get("Tags");
+                    String[] tags = new String[tagsArray.size()];
+                    for (int l = 0; l < tagsArray.size(); l++) {
+                        tags[l] = (String) tagsArray.get(l);
+                    }
+
+                    // read Tasks inside Project
+                    JSONArray tasksArray = (JSONArray) jsonObject.get("Tasks");
+                    Task[] tasks = new Task[tasksArray.size()];
+                    for (int m = 0; m < tasksArray.size(); m++) {
+                        JSONObject taskObject = (JSONObject) tasksArray.get(m);
+                        LocalDate taskStart = LocalDate.parse((String) taskObject.get("Start"));
+                        LocalDate taskEnd = LocalDate.parse((String) taskObject.get("End"));
+                        int taskDuration = ((Long) taskObject.get("Duration")).intValue();
+                        String taskTitle = (String) taskObject.get("Title");
+                        String taskDescription = (String) taskObject.get("Description");
+
+                        // read Submissions inside Task
+                        JSONArray submissionsArray = (JSONArray) taskObject.get("Submissions");
+                        Submission[] submissions = new Submission[submissionsArray.size()];
+                        for (int n = 0; n < submissionsArray.size(); n++) {
+                            JSONObject submissionObject = (JSONObject) submissionsArray.get(n);
+                            int studentNumber = ((Long) submissionObject.get("Number")).intValue();
+                            String studentName = (String) submissionObject.get("Name");
+                            String studentEmail = (String) submissionObject.get("Email");
+                            Contact studentContact = ((Contact) submissionObject.get("Contact"));
+                            Instituition studentInstitution = ((Instituition) submissionObject.get("Institution"));
+
+                            Student student = new BaseStudent(studentNumber, studentName, studentEmail, studentContact,
+                                    studentInstitution);
+                            LocalDateTime submissionDate = LocalDateTime.parse((String) submissionObject.get("Date"));
+                            String submissionText = (String) submissionObject.get("Text");
+
+                            Submission submission = new BaseSubmission(student, submissionDate, submissionText);
+                            submissions[n] = submission;
+                        }
+
+                        Task task = new BaseTask(taskStart, taskEnd, taskDuration, taskTitle, taskDescription,
+                                submissions);
+                        tasks[m] = task;
+                    }
+
+                    Project project = new BaseProject(projectName, projectDescription, numberOfParticipants,
+                            numberOfPartners, numberOfFacilitators, numberOfStudents, numberOfTasks, participants, tags,
+                            tasks);
+                    projects[j] = project;
+                }
+
+                Edition edition = new BaseEdition(name, projectTemplate, status, projects, numberOfProjects, start,
+                        end);
+                editions[numEditions] = edition;
+                numEditions++;
+            }
+
         }
     }
 

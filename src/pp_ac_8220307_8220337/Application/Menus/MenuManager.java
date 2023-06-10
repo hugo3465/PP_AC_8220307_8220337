@@ -12,13 +12,16 @@ import pp_ac_8220307_8220337.Api.BaseContact;
 import pp_ac_8220307_8220337.Api.BaseInstitution;
 import pp_ac_8220307_8220337.Api.BaseStudent;
 import pp_ac_8220307_8220337.Api.BaseTask;
-import pp_ac_8220307_8220337.Api.EditionManagement;
 import pp_ac_8220307_8220337.Api.interfaces.IEditionManagement;
 
 /**
- * Nome: Pedro Marcelo Santos Pinho Número: 8220307 Turma: LEIT2
+ * Nome: Pedro Marcelo Santos Pinho
+ * Número: 8220307
+ * Turma: LEIT2
  *
- * Nome: Hugo Ricardo Almeida Guimarães Número: 8220337 Turma: LEIT2
+ * Nome: Hugo Ricardo Almeida Guimarães
+ * Número: 8220337
+ * Turma: LEIT2
  */
 public class MenuManager {
 
@@ -37,12 +40,6 @@ public class MenuManager {
         //menus = new IMenu[maxMenus];
         //menuCount = 0;
         scanner = new Scanner(System.in);
-
-        try {
-            editions.readEditionsFromFile("teste.bin");
-        } catch (Exception e) {
-            editions = new EditionManagement();
-        }
         
         
     }

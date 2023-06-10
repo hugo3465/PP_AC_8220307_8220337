@@ -116,14 +116,14 @@ public class BaseProject implements Project {
      *                             project
      * @param numberOfTasks        the current number of tasks in the
      *                             project
-     * @param hasTags              indicates if the project has tags
+     * @param participants         the array of participants with the project
      * @param tags                 the array of tags associated with the
      *                             project
      * @param tasks                the array of tasks in the project
      */
     public BaseProject(String name, String description,
             int numberOfParticipants, int numberOfPartners, int numberOfFacilitators, int numberOfStudents,
-            int numberOfTasks, boolean hasTags, String[] tags, Task[] tasks) {
+            int numberOfTasks, Participant[] participants, String[] tags, Task[] tasks) {
 
         this.name = name;
         this.description = description;
@@ -142,11 +142,12 @@ public class BaseProject implements Project {
 
         this.tasks = tasks;
 
-        this.hasTags = hasTags;
-
-        if (this.hasTags) {
-            this.tags = tags;
-        }
+        this.tags = tags;
+        
+        /**
+         * If the tags array is null, the hasTas atribute will be false
+         */
+        this.hasTags = (tags == null) ? false : true;
     }
 
     /**

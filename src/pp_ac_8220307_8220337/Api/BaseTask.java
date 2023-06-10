@@ -35,7 +35,7 @@ public class BaseTask implements Task {
      * @param submissions the array of submissions for the task
      */
     public BaseTask(LocalDate start, LocalDate end, int duration, String title, String description,
-            BaseSubmission[] submissions) {
+            Submission[] submissions) {
         this.start = start;
         this.end = end;
         this.duration = duration;

@@ -13,5 +13,5 @@ public interface IProjectList {
 
     public String getEditionProgress(Edition edition);
 
-    public Edition getActivEdition();
+    public Edition getActiveEdition();
 }

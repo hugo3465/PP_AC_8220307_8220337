@@ -17,6 +17,7 @@ Projeto criado em java para a cadeira de Paradigmas da Programação, no segundo
  * getSudentsWithMoreSubmissions na classe EditionManagement;
  * getProjectByTags na classe EditionManagement;
  * Todos os menus na aplicação.
+ * saveEditionsToJsonFile e readEditionsFromJsonFile no EditionManagement, não a conseguimos fazer, mas gastamos muito tempo nelas
 
 ## Diagrama de Classe:
 <img title="ClassDiagram" alt="ClassDiagram" src="DiagramClasses.svg">

@@ -9,13 +9,11 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-import ma02_resources.participants.Participant;
 import ma02_resources.project.Edition;
 import ma02_resources.project.Project;
 import ma02_resources.project.Status;
 import ma02_resources.project.Task;
-import ma02_resources.project.exceptions.IllegalNumberOfParticipantType;
-import pp_ac_8220307_8220337.Api.Exceptions.ProjectDoesntExistException;
+
 
 /**
  * Nome: Pedro Marcelo Santos Pinho Número: 8220307 Turma: LEIT2
@@ -219,7 +217,7 @@ public class BaseEdition implements Edition {
             int index = searchByName(string);
             // Check if the project exists
             if (index < 0) {
-                throw new ProjectDoesntExistException();
+                throw new ArrayIndexOutOfBoundsException("Project doesn't");
             }
 
             // Shift the remaining projects in the array

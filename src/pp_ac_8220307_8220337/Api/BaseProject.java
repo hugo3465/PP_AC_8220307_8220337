@@ -1,12 +1,5 @@
 package pp_ac_8220307_8220337.Api;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Arrays;
-
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-
 import ma02_resources.participants.Facilitator;
 import ma02_resources.participants.Participant;
 import ma02_resources.participants.Partner;
@@ -17,7 +10,6 @@ import ma02_resources.project.exceptions.IllegalNumberOfParticipantType;
 import ma02_resources.project.exceptions.IllegalNumberOfTasks;
 import ma02_resources.project.exceptions.ParticipantAlreadyInProject;
 import ma02_resources.project.exceptions.TaskAlreadyInProject;
-import pp_ac_8220307_8220337.Api.Exceptions.ParticipantDoesntExistException;
 
 /**
  * Nome: Pedro Marcelo Santos Pinho

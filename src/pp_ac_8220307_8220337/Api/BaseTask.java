@@ -129,9 +129,6 @@ public class BaseTask implements Task {
         } catch (NullPointerException npe) {
             throw new NullPointerException(npe + " in addSubmission");
         }
-
-        // TODO Adicionar submissões a projetos de uma edição ativa apenas por
-        // estudantes pertencentes aos projetos respetivos.
     }
 
     /**

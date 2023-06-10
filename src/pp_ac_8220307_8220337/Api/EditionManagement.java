@@ -15,6 +15,7 @@ import ma02_resources.participants.Student;
 import ma02_resources.project.Edition;
 import ma02_resources.project.Project;
 import ma02_resources.project.Status;
+import ma02_resources.project.Submission;
 import ma02_resources.project.Task;
 import pp_ac_8220307_8220337.Api.interfaces.IEditionManagement;
 
@@ -272,27 +273,6 @@ public class EditionManagement implements IEditionManagement, Serializable {
         return string;
     }
 
-    /**
-     * @return
-     */
-    @Override
-    public Participant[] getAllStudents() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllStudents'");
-    }
-
-    @Override
-    public Participant[] getAllFacilitators() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllFacilitators'");
-    }
-
-    @Override
-    public Participant[] getAllPartners() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllPartners'");
-    }
-
     @Override
     public Student getStudent(String name) {
         for (int i = 0; i < numEditions; i++) {
@@ -380,28 +360,112 @@ public class EditionManagement implements IEditionManagement, Serializable {
     }
 
     /**
-     * Retrieves a project based on its tags from a given edition.
-     *
-     * The method iterates through each project in the specified edition and checks
-     * if the tags of the project match the
-     * provided TagString. If a project with matching tags is found, it is returned.
-     * If no matching project is found, null
-     * is returned.
-     *
-     * @param TagString the string representing the tags to search for
-     * @param edition   the edition from which to retrieve the project
-     * @return the project with matching tags, or null if no match is found
+     * 
+     * Retrieves an array of projects based on the specified tag string and edition.
+     * 
+     * @param tagString The tag string used to filter the projects.
+     * 
+     * @param edition   The edition object representing the edition of the projects.
+     * 
+     * @return An array of projects that have the specified tag and belong to the
+     *         given edition.
      */
     @Override
-    public Project getProjectByTags(String TagString, Edition edition) {
+    public Project[] getProjectByTags(String tagString, Edition edition) {
+        Project[] matchProjects = new Project[edition.getNumberOfProjects()];
+        int countMatchProjects = 0;
 
         for (Project project : edition.getProjects()) {
-            if (project.getTags().equals(TagString)) {
-                return project;
+            String[] projectTags = project.getTags();
+            for (String tag : projectTags) {
+                if (tag.equalsIgnoreCase(tagString)) {
+                    matchProjects[countMatchProjects] = project;
+                    countMatchProjects++;
+                    break; // Exit the inner loop since a match is found
+                }
             }
         }
 
-        return null;
+        Project[] onlyProjects = new Project[countMatchProjects];
+        System.arraycopy(matchProjects, 0, onlyProjects, 0, countMatchProjects);
+
+        return onlyProjects;
+    }
+
+    /**
+     * Retrieves a string containing the names of students with more submissions,
+     * sorted in ascending order based on the number of submissions.
+     * 
+     * @param edition The edition of the project.
+     * @param project The project to retrieve the student submissions from.
+     * @return A string containing the names of students with more submissions,
+     *         separated by commas and sorted in ascending order.
+     */
+    @Override
+    public String getSudentsWithMoreSubmissions(Edition edition, Project project) {
+        String[] students = new String[project.getNumberOfStudents()];
+        int[] studentSubmissions = new int[students.length];
+        int studentsCount = 0;
+        int indexOfStudent;
+
+        for (Task task : project.getTasks()) {
+            for (Submission submission : task.getSubmissions()) {
+                indexOfStudent = confereRepetitioninStudentsSubmissions(students,
+                        submission.getStudent().getName(), studentsCount);
+
+                if (indexOfStudent != -1) {
+                    // If the student is already in the array, increment their submission count
+                    studentSubmissions[indexOfStudent]++;
+                } else {
+                    // Add the student to the array
+                    students[studentsCount] = submission.getStudent().getName();
+                    studentSubmissions[studentsCount]++;
+                    studentsCount++;
+                }
+            }
+        }
+
+        // Sort students and studentSubmissions arrays based on submission count
+        for (int i = 0; i < studentsCount - 1; i++) {
+            for (int j = i + 1; j < studentsCount; j++) {
+                if (studentSubmissions[i] > studentSubmissions[j]) {
+                    // Swap students
+                    String tempStudent = students[i];
+                    students[i] = students[j];
+                    students[j] = tempStudent;
+
+                    // Swap submission counts
+                    int tempSubmissions = studentSubmissions[i];
+                    studentSubmissions[i] = studentSubmissions[j];
+                    studentSubmissions[j] = tempSubmissions;
+                }
+            }
+        }
+
+        // Build the result string in ascending order
+        String result = "";
+        for (int i = 0; i < studentsCount; i++) {
+            result += students[i] + "-->" + studentSubmissions[i] + '\n';
+        }
+
+        return result;
+    }
+
+    /**
+     * Checks if the given student name already exists in the students array.
+     * 
+     * @param students      The array of students' names.
+     * @param name          The name to check for repetition.
+     * @param studentsCount The current count of students in the array.
+     * @return The index of the repeated student, or -1 if not found.
+     */
+    private int confereRepetitioninStudentsSubmissions(String[] students, String name, int studentsCount) {
+        for (int i = 0; i < studentsCount; i++) {
+            if (students[i].equals(name)) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     /**
@@ -472,8 +536,6 @@ public class EditionManagement implements IEditionManagement, Serializable {
         String progress = String.format("%.2f", progressPercentage) + "%";
 
         return "O projeto está com " + progress + " de progresso, com " + completedTasks + " tarefas concluídas.";
-        // TODO: Incluir o número total de tarefas para fornecer uma visão completa do
-        // progresso do projeto
     }
 
     /**
@@ -499,20 +561,25 @@ public class EditionManagement implements IEditionManagement, Serializable {
     // Method to save editions to a binary file
     @Override
     public void saveEditionsToFile(String filename) {
-        /*try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {
-            // Create an ObjectOutputStream called 'oos' and initialize it with a new
-            // FileOutputStream that writes to the specified 'filename' file
-
-            // está a dar erro no primeiro, vou ter de serializar isto
-            oos.writeObject(editions); // Write the 'editions' array to the file
-            oos.writeInt(numEditions); // Write the 'numOfEditions' value to the file
-
-            System.out.println("Editions have been saved to " + filename); // Print a success message
-        } catch (IOException e) {
-            System.out.println("Error occurred while saving editions to file: " + e.getMessage()); // Print an error
-                                                                                                   // message if an
-                                                                                                   // IOException occurs
-        }*/
+        /*
+         * try (ObjectOutputStream oos = new ObjectOutputStream(new
+         * FileOutputStream(filename))) {
+         * // Create an ObjectOutputStream called 'oos' and initialize it with a new
+         * // FileOutputStream that writes to the specified 'filename' file
+         * 
+         * // está a dar erro no primeiro, vou ter de serializar isto
+         * oos.writeObject(editions); // Write the 'editions' array to the file
+         * oos.writeInt(numEditions); // Write the 'numOfEditions' value to the file
+         * 
+         * System.out.println("Editions have been saved to " + filename); // Print a
+         * success message
+         * } catch (IOException e) {
+         * System.out.println("Error occurred while saving editions to file: " +
+         * e.getMessage()); // Print an error
+         * // message if an
+         * // IOException occurs
+         * }
+         */
 
         try {
             FileOutputStream fileOut = new FileOutputStream("teste.bin");
@@ -536,7 +603,7 @@ public class EditionManagement implements IEditionManagement, Serializable {
             editions = (Edition[]) ois.readObject(); // Read the serialized 'editions' array from the file and assign it
                                                      // to the 'editions' variable
             numEditions = ois.readInt(); // Read the 'numOfEditions' value from the file and assign it to the
-                                           // 'numOfEditions' variable
+                                         // 'numOfEditions' variable
 
             System.out.println("Editions have been loaded from " + filename); // Print a success message
         } catch (IOException | ClassNotFoundException e) {

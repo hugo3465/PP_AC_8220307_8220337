@@ -1,5 +1,11 @@
 package pp_ac_8220307_8220337.Api;
 
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.util.Arrays;
 
 import ma02_resources.participants.Facilitator;
@@ -21,7 +27,7 @@ import pp_ac_8220307_8220337.Api.interfaces.IEditionManagement;
  * Número: 8220337
  * Turma: LEIT2
  */
-public class EditionManagement implements IEditionManagement {
+public class EditionManagement implements IEditionManagement, Serializable {
 
     private final int DEFALUT_NUMBER_EDITION;
     private Edition[] editions;
@@ -488,6 +494,58 @@ public class EditionManagement implements IEditionManagement {
             }
         }
         return null;
+    }
+
+    // Method to save editions to a binary file
+    @Override
+    public void saveEditionsToFile(String filename) {
+        /*try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(filename))) {
+            // Create an ObjectOutputStream called 'oos' and initialize it with a new
+            // FileOutputStream that writes to the specified 'filename' file
+
+            // está a dar erro no primeiro, vou ter de serializar isto
+            oos.writeObject(editions); // Write the 'editions' array to the file
+            oos.writeInt(numEditions); // Write the 'numOfEditions' value to the file
+
+            System.out.println("Editions have been saved to " + filename); // Print a success message
+        } catch (IOException e) {
+            System.out.println("Error occurred while saving editions to file: " + e.getMessage()); // Print an error
+                                                                                                   // message if an
+                                                                                                   // IOException occurs
+        }*/
+
+        try {
+            FileOutputStream fileOut = new FileOutputStream("teste.bin");
+            ObjectOutputStream objectOut = new ObjectOutputStream(fileOut);
+            objectOut.writeObject(this);
+            objectOut.close();
+            fileOut.close();
+            System.out.println("Objects have been written to the file.");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Method to read editions from a binary file
+    @Override
+    public void readEditionsFromFile(String filename) {
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(filename))) {
+            // Create an ObjectInputStream called 'ois' and initialize it with a new
+            // FileInputStream that reads from the specified 'filename' file
+
+            editions = (Edition[]) ois.readObject(); // Read the serialized 'editions' array from the file and assign it
+                                                     // to the 'editions' variable
+            numEditions = ois.readInt(); // Read the 'numOfEditions' value from the file and assign it to the
+                                           // 'numOfEditions' variable
+
+            System.out.println("Editions have been loaded from " + filename); // Print a success message
+        } catch (IOException | ClassNotFoundException e) {
+            System.out.println("Error occurred while reading editions from file: " + e.getMessage()); // Print an error
+                                                                                                      // message if an
+                                                                                                      // IOException or
+                                                                                                      // ClassNotFoundException
+                                                                                                      // occurs
+        }
     }
 
 }

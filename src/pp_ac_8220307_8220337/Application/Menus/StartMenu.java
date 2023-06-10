@@ -28,8 +28,7 @@ public class StartMenu implements IMenu {
         IMenu menuStartManagement = new StartMenu();
         boolean isRunning = true;
 
-        String editionName, participantName, projectName; 
-        
+        String editionName, participantName, projectName;
 
         do {
             switch (menuManager.diplayMenu(menuStartManagement)) {
@@ -42,8 +41,7 @@ public class StartMenu implements IMenu {
                         participantName = menuManager.getUserInputString("Enter the your name to login: ");
                         editionName = menuManager.getUserInputString("Enter the edition name: ");
                         projectName = menuManager.getUserInputString("Enter the name of your project: ");
-                        
-                        
+
                         Edition edition = menuManager.getEditions().getActivEdition();
                         Student participant = menuManager.getEditions().getStudent(participantName);
                         Project project = edition.getProject(projectName);
@@ -57,6 +55,7 @@ public class StartMenu implements IMenu {
 
                     break;
                 case 0:
+                    menuManager.getEditions().saveEditionsToFile("teste.bin");
                     isRunning = false;
                     break;
                 default:

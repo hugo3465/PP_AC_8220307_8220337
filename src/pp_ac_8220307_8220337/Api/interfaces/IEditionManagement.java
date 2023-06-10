@@ -25,5 +25,9 @@ public interface IEditionManagement extends IParticipantList, IProjectList {
     public void defineAsCanceled(String editionName);
     public void defineAsClosed(String editionName);
 
+
+     public void saveEditionsToFile(String filename);
+     public void readEditionsFromFile(String filename);
+
     // TODO ler e escrever para fichieros externos para poder salvar os dados
 }

@@ -259,7 +259,8 @@ public class EditionManagement implements IEditionManagement {
      * 
      * @return array of projects with the unfinished projects in all editions
      */
-    public Edition[] getunfinishedEditions() {
+    @Override
+    public Edition[] getUnfinishedEditions() {
         Edition[] unfinishedEditions = new BaseEdition[numEditions];
         int countUnfinishedEditions = 0;
 
@@ -583,6 +584,99 @@ public class EditionManagement implements IEditionManagement {
         String progress = String.format("%.2f", progressPercentage) + "%";
 
         return progress;
+    }
+
+    /**
+     * Retrieves all inactive editions.
+     *
+     * @return An array of inactive editions.
+     * @throws NullPointerException if there are no inactive editions.
+     */
+    @Override
+    public Edition[] getAllInactiveEditions() {
+        Edition[] matchedEditions = new Edition[numEditions];
+        int numMatchedEditions = 0;
+
+        if (this.numEditions > 0) {
+            for (Edition edition : editions) {
+                if (edition.getStatus() == (Status.INACTIVE)) {
+                    if (edition != null) {
+                        matchedEditions[numMatchedEditions] = edition;
+                        numMatchedEditions++;
+                    }
+                }
+            }
+
+        } else {
+            throw new NullPointerException("There are no inactive editions");
+        }
+
+        Edition[] onlyEditions = new Edition[numMatchedEditions];
+        System.arraycopy(matchedEditions, 0, onlyEditions, 0, numMatchedEditions);
+
+        return onlyEditions;
+    }
+
+    /**
+     * Retrieves all closed editions.
+     *
+     * @return An array of closed editions.
+     * @throws NullPointerException if there are no closed editions.
+     */
+    @Override
+    public Edition[] getAllClosedEditions() {
+        Edition[] matchedEditions = new Edition[numEditions];
+        int numMatchedEditions = 0;
+
+        if (this.numEditions > 0) {
+            for (Edition edition : editions) {
+                if (edition.getStatus() == (Status.CLOSED)) {
+                    if (edition != null) {
+                        matchedEditions[numMatchedEditions] = edition;
+                        numMatchedEditions++;
+                    }
+                }
+            }
+
+        } else {
+            throw new NullPointerException("There are no closed editions");
+        }
+
+        Edition[] onlyEditions = new Edition[numMatchedEditions];
+        System.arraycopy(matchedEditions, 0, onlyEditions, 0, numMatchedEditions);
+
+        return onlyEditions;
+    }
+
+    /**
+     * Retrieves all canceled editions.
+     *
+     * @return An array of canceled editions.
+     * @throws NullPointerException if there are no canceled editions.
+     */
+    @Override
+    public Edition[] getAllCanceledEditions() {
+        Edition[] matchedEditions = new Edition[numEditions];
+        int numMatchedEditions = 0;
+
+        if (this.numEditions > 0) {
+            for (Edition edition : editions) {
+                if (edition.getStatus() == (Status.CANCELED)) {
+                    if (edition != null) {
+                        matchedEditions[numMatchedEditions] = edition;
+                        numMatchedEditions++;
+                    }
+                }
+            }
+
+        } else {
+            throw new NullPointerException("There are no canceled editions");
+        }
+
+        Edition[] onlyEditions = new Edition[numMatchedEditions];
+        System.arraycopy(matchedEditions, 0, onlyEditions, 0, numMatchedEditions);
+
+        return onlyEditions;
     }
 
     /**

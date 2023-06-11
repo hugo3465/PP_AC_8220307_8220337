@@ -202,7 +202,6 @@ public class BaseEdition implements Edition {
         FileReader reader = null;
 
         try {
-
             reader = new FileReader("./project_template.json");
 
             // Parse the JSON file
@@ -222,8 +221,11 @@ public class BaseEdition implements Edition {
             Task[] tasks = new Task[tasksArray.size()];
 
             // Iterate over each task and create a Task object
-            for (int i = 0; i < tasksArray.size(); i++) {
-                JSONObject taskObject = (JSONObject) tasksArray.get(i);
+            // for (int i = 0; i < tasksArray.size(); i++) {
+            int i = 0;
+            for (Object taskObj : tasksArray) {
+                // JSONObject taskObject = (JSONObject) tasksArray.get(i);
+                JSONObject taskObject = (JSONObject) taskObj;
 
                 // Extract the attributes from the task object
                 String title = (String) taskObject.get("title");
@@ -232,10 +234,12 @@ public class BaseEdition implements Edition {
                 int duration = ((Long) taskObject.get("duration")).intValue();
 
                 // Create a new Task object with the extracted attributes
-                Task taskTemplate = new BaseTask(title, description, startAt, duration);
+                Task taskTemplate = new BaseTask(title, description, startAt, duration, start);
 
                 // Add the task to the tasks array
                 tasks[i] = taskTemplate;
+
+                i++;
             }
 
             // Set the number of tasks

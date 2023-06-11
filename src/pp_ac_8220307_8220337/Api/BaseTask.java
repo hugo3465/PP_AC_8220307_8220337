@@ -95,23 +95,15 @@ public class BaseTask implements Task {
      * submissions,
      * defined by {@code DEFAULT_NUMBER_SUBMISSIONS}.
      * 
-     * @param title       the title of the task
-     * @param description the description of the task
-     * @param startAt     the start date of the task in the format YYYYMMDD
-     * @param duration    the duration of the task in days
+     * @param title            the title of the task
+     * @param description      the description of the task
+     * @param startAt          the start date of the task in the format YYYYMMDD
+     * @param duration         the duration of the task in days
+     * @param editionStartDate the start date of the edition that the task is in
      */
-    public BaseTask(String title, String description, int startAt, int duration) {
-        /*
-         * int year = startAt / 10000; // Extract the year from the integer
-         * int month = (startAt / 100) % 100; // Extract the month from the integer
-         * int day = startAt % 100; // Extract the day from the integer
-         */
+    public BaseTask(String title, String description, int startAt, int duration, LocalDate editionStartDate) {
 
-        int year = startAt / 365; // Extract the year from the integer
-        int month = (startAt - year *365) / 30; // Extract the month from the integer
-        int day = (startAt - year * 365 - month * 30); // Extract the day from the integer
-
-        this.start = LocalDate.of(day, month, year);
+        this.start = editionStartDate.plusDays(startAt); // Calculate the end date based on start and duration
 
         this.end = start.plusDays(duration); // Calculate the end date based on start and duration
 

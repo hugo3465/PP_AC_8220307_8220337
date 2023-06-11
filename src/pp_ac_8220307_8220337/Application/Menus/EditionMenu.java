@@ -13,6 +13,7 @@ package pp_ac_8220307_8220337.Application.Menus;
 import java.time.LocalDate;
 
 import ma02_resources.project.Edition;
+import ma02_resources.project.Project;
 import pp_ac_8220307_8220337.Api.BaseEdition;
 
 /**
@@ -39,6 +40,11 @@ public class EditionMenu implements IMenu {
         System.out.println("\t||            7 - List all Editions          ||");
         System.out.println("\t||            8 - Get Edition                ||");
         System.out.println("\t||            9 - Get Progress from edition  ||");
+        System.out.println("\t||            10 - Get active edition        ||");
+        System.out.println("\t||            11 - Get inactive editions     ||");
+        System.out.println("\t||            12 - Get closed editions       ||");
+        System.out.println("\t||            13 - Get canceled editions     ||");
+        System.out.println("\t||            14 - Get unfinished editions   ||");
         System.out.println("\t||            0 - Back                       ||");
         System.out.println("\t================================================");
     }
@@ -165,7 +171,8 @@ public class EditionMenu implements IMenu {
                     break;
                 case 9: // Get progress from Edition
                     try {
-                        name = menuManager.getUserInputString("Insert the name of the edition you want display the progress: ");
+                        name = menuManager
+                                .getUserInputString("Insert the name of the edition you want display the progress: ");
                         edition = menuManager.getEditions().getEdition(name);
 
                         System.out.println(menuManager.getEditions().getEditionProgress(edition));
@@ -175,6 +182,60 @@ public class EditionMenu implements IMenu {
                         System.out.println("An error has occured: " + e.getMessage());
                     }
 
+                    break;
+                case 10: // Get pactive Edition
+                    try {
+                        System.out.println(menuManager.getEditions().getActiveEdition());
+                    } catch (NullPointerException e) {
+                        System.out.println("Edition not found!");
+                    } catch (Exception e) {
+                        System.out.println("An error has occured: " + e.getMessage());
+                    }
+
+                    break;
+                case 11:
+                    try {
+                        for (Edition editioni : menuManager.getEditions().getAllInactiveEditions()) {
+                            System.out.println(editioni.toString());
+                        }
+                    } catch (NullPointerException e) {
+                        System.out.println(e.getMessage());
+                    } catch (Exception e) {
+                        System.out.println("An error has occured: " + e.getMessage());
+                    }
+                    break;
+                case 12:
+                    try {
+                        for (Edition editioni : menuManager.getEditions().getAllClosedEditions()) {
+                            System.out.println(editioni.toString());
+                        }
+                    } catch (NullPointerException e) {
+                        System.out.println(e.getMessage());
+                    } catch (Exception e) {
+                        System.out.println("An error has occured: " + e.getMessage());
+                    }
+                    break;
+                case 13:
+                    try {
+                        for (Edition editioni : menuManager.getEditions().getAllCanceledEditions()) {
+                            System.out.println(editioni.toString());
+                        }
+                    } catch (NullPointerException e) {
+                        System.out.println(e.getMessage());
+                    } catch (Exception e) {
+                        System.out.println("An error has occured: " + e.getMessage());
+                    }
+                    break;
+                case 14:
+                    try {
+                        for (Edition editioni : menuManager.getEditions().getUnfinishedEditions()) {
+                            System.out.println(editioni.toString());
+                        }
+                    } catch (NullPointerException e) {
+                        System.out.println(e.getMessage());
+                    } catch (Exception e) {
+                        System.out.println("An error has occured: " + e.getMessage());
+                    }
                     break;
                 case 0:
                     isRunning = false;

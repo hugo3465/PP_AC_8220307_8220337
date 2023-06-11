@@ -53,6 +53,7 @@ public class ProjectMenu implements IMenu {
         System.out.println("\t||           7 - List all Projects                  ||");
         System.out.println("\t||           8 - Get progress from a Project        ||");
         System.out.println("\t||           9 - Get Project by Name                ||");
+        System.out.println("\t||           10 - Get Unfinished Projects           ||");
         System.out.println("\t||           0 - Back                               ||");
         System.out.println("\t======================================================");
     }
@@ -199,6 +200,17 @@ public class ProjectMenu implements IMenu {
                                 .getProject(projectTitle);
 
                         System.out.println(project.toString() + '\n');
+                    } catch (NullPointerException e) {
+                        System.out.println(e.getMessage());
+                    } catch (Exception e) {
+                        System.out.println("An error has occured: " + e.getMessage());
+                    }
+                    break;
+                case 10:
+                    try {
+                        for(Project projecti : menuManager.getEditions().getUnfinishedProjects(edition)) {
+                            System.out.println(projecti.toString());
+                        }
                     } catch (NullPointerException e) {
                         System.out.println(e.getMessage());
                     } catch (Exception e) {

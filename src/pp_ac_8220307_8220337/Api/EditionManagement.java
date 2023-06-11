@@ -521,6 +521,7 @@ public class EditionManagement implements IEditionManagement {
      */
     @Override
     public Task[] getTaksByDate(LocalDate date, Project project) {
+        System.out.println("Entreiiii");
         Task[] tasks = new Task[project.getMaximumNumberOfTasks()];
         int count = 0;
 

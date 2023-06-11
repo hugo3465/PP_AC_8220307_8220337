@@ -149,7 +149,7 @@ public class EditionMenu implements IMenu {
                     break;
                 case 8: // Get Edition
                     try {
-                        name = menuManager.getUserInputString("Inser the name of the edition you want to remove: ");
+                        name = menuManager.getUserInputString("Inser the name of the edition you want display: ");
 
                         System.out.println(menuManager.getEditions().getEdition(name));
 

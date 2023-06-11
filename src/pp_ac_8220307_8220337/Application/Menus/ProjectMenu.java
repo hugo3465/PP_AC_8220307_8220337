@@ -173,7 +173,7 @@ public class ProjectMenu implements IMenu {
                     try {
                         projectTitle = menuManager
                                 .getUserInputString(
-                                        "Inser the title of the project you want to remove the participant: ");
+                                        "Inser the title of the project you to see the progress: ");
 
                         Project searchedProject = menuManager.getEditions().getEdition(edition.getName())
                                 .getProject(projectTitle);

@@ -104,6 +104,7 @@ public class BaseProject implements Project {
 
     /**
      * Constructs a BaseProject object with the specified parameters.
+     * Used to initalize projects form variables or from other files.
      * 
      * @param name                 the name of the project
      * @param description          the description of the project
@@ -149,6 +150,8 @@ public class BaseProject implements Project {
          * If the tags array is null, the hasTas atribute will be false
          */
         this.hasTags = (tags == null) ? false : true;
+
+        this.participants = participants;
     }
 
     /**
@@ -591,18 +594,18 @@ public class BaseProject implements Project {
         return this.participants;
     }
 
+
     @Override
     public String toString() {
         String string = "Name: " + name + "\n"
                 + "\tDescription: " + description + "\n";
 
-        // This for is getting null pointer exception for some reason that we don't know
-        //TODO Resolver esse erro
+
         string += "\tParticipants: " + "\n";
         try {
             for (Participant participant : getParticipants()) {
                 if (participant != null) {
-                    string += "\tName: " + participant.getName() + "\n"
+                    string += "\t\tName: " + participant.getName() + "\n"
                             + "\t\tEmail: " + participant.getEmail() + "\n";
                 }
             }
@@ -624,7 +627,7 @@ public class BaseProject implements Project {
             }
         }
 
-        string += "\tIs Completed: " + isCompleted() + "\n\t --------------";
+        string += "\tIs Completed: " + isCompleted() + "\n\t --------------\n";
 
         return string;
     }

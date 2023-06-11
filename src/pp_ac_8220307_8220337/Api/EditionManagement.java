@@ -624,7 +624,7 @@ public class EditionManagement implements IEditionManagement {
         // Format the progress percentage as a string with two decimal places
         String progress = String.format("%.2f", progressPercentage) + "%";
 
-        return "O projeto está com " + progress + " de progresso, com " + completedTasks + " tarefas concluídas.";
+        return "The project is inm " + progress + " progress, with " + completedTasks + " tasks completed.";
     }
 
     /**

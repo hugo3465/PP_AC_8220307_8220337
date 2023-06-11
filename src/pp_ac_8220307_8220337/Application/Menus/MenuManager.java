@@ -57,7 +57,6 @@ public class MenuManager {
         // Testing values
         InitialTestingValues testingValues = new InitialTestingValues();
         editions.addEdition(testingValues.edition1);
-        System.out.println(testingValues.edition1.toString());
         editions.addEdition(testingValues.edition2);
         editions.addEdition(testingValues.edition3);
     }

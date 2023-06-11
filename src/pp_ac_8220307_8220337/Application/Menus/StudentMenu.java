@@ -56,14 +56,14 @@ public class StudentMenu implements IMenu {
      */
     @Override
     public void display() {
-        System.out.println("\t=============================================================");
-        System.out.println("\t||-------------- Hello " + student.getName() + " ------------||");
-        System.out.println("\t||               1 - Add Submission                        ||");
-        System.out.println("\t||               2 - Get Task                              ||");
-        System.out.println("\t||               3 - List all Tasks                        ||");
-        System.out.println("\t||               4 - Get progress from Project             ||");
-        System.out.println("\t||               0 - Back                                  ||");
-        System.out.println("\t=============================================================");
+        System.out.println("\t==============================================================");
+        System.out.println("\t||-------------- Hello " + student.getName() + " -------------||");
+        System.out.println("\t||                1 - Add Submission                        ||");
+        System.out.println("\t||                2 - Get Task                              ||");
+        System.out.println("\t||                3 - List all Tasks                        ||");
+        System.out.println("\t||                4 - Get progress from Project             ||");
+        System.out.println("\t||                0 - Back                                  ||");
+        System.out.println("\t==============================================================");
     }
 
     /**

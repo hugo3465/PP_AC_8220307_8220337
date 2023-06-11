@@ -14,6 +14,7 @@ import ma02_resources.participants.Student;
 import ma02_resources.project.Edition;
 import ma02_resources.project.Project;
 import ma02_resources.project.Status;
+import ma02_resources.project.Submission;
 import ma02_resources.project.Task;
 import pp_ac_8220307_8220337.Api.BaseSubmission;
 
@@ -62,6 +63,7 @@ public class StudentMenu implements IMenu {
         System.out.println("\t||                2 - Get Task                              ||");
         System.out.println("\t||                3 - List all Tasks                        ||");
         System.out.println("\t||                4 - Get progress from Project             ||");
+        System.out.println("\t||                5 - Get all Submissions                   ||");
         System.out.println("\t||                0 - Back                                  ||");
         System.out.println("\t==============================================================");
     }
@@ -132,6 +134,21 @@ public class StudentMenu implements IMenu {
                 case 4: // Get progress from Project
                     try {
                         System.out.println(menuManager.getEditions().getProjectProgress(project));
+                    } catch (NullPointerException e) {
+                        System.out.println(e.getMessage());
+                    } catch (Exception e) {
+                        System.out.println("An error has occured: " + e.getMessage());
+                    }
+
+                    break;
+                case 5: // get all Submissions
+                    try {
+                        for(Task task : project.getTasks()) {
+                            System.out.println("Task: " + task.getTitle());
+                            for(Submission submission : task.getSubmissions()) {
+                                System.out.println(submission.toString());
+                            }
+                        }
                     } catch (NullPointerException e) {
                         System.out.println(e.getMessage());
                     } catch (Exception e) {

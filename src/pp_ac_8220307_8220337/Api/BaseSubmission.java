@@ -144,4 +144,12 @@ public class BaseSubmission implements Submission {
     public void setText(String text) {
         this.text = text;
     }
+
+    @Override
+    public String toString() {
+        return "\tStudent: " + student.getName() + '\n'
+                + "\tDate: " + date.toString() + '\n'
+                + "\tText: " + text + '\n';
+    }
+
 }

@@ -24,7 +24,6 @@ import ma02_resources.project.Project;
 import ma02_resources.project.Status;
 import ma02_resources.project.Task;
 
-
 public class BaseEdition implements Edition {
     /**
      * The BaseEdition class represents a basic implementation of the Edition
@@ -200,7 +199,12 @@ public class BaseEdition implements Edition {
 
         JSONParser jsonParser = new JSONParser();
 
-        try (FileReader reader = new FileReader("./project_template.json")) {
+        FileReader reader = null;
+
+        try {
+
+            reader = new FileReader("./project_template.json");
+
             // Parse the JSON file
             JSONObject jsonObject = (JSONObject) jsonParser.parse(reader);
 
@@ -249,11 +253,14 @@ public class BaseEdition implements Edition {
                     numberOfFacilitators, numberOfStudents, numberOfTasks, strings, tasks);
 
             this.numberOfProjects++;
-
         } catch (IOException e) {
             throw new IOException("An I/O error occurred while reading the file", e);
         } catch (org.json.simple.parser.ParseException e) {
             throw new ParseException("Error parsing the JSON file at offset " + e.getPosition(), e.getPosition());
+        } finally {
+            if (reader != null) {
+                reader.close();
+            }
         }
 
     }
@@ -457,7 +464,7 @@ public class BaseEdition implements Edition {
         for (int i = 0; i < numberOfProjects; i++) {
             string += "\t" + projects[i].toString() + "\n";
         }
-        
+
         string += "\n\n";
 
         return string;

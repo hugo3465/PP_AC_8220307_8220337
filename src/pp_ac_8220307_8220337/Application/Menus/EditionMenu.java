@@ -170,7 +170,7 @@ public class EditionMenu implements IMenu {
 
                         System.out.println(menuManager.getEditions().getEditionProgress(edition));
                     } catch (NullPointerException e) {
-                        System.out.println(e.getMessage());
+                        System.out.println("Edition not found!");
                     } catch (Exception e) {
                         System.out.println("An error has occured: " + e.getMessage());
                     }

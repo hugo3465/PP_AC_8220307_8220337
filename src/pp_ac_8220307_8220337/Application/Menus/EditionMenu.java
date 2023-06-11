@@ -57,9 +57,9 @@ public class EditionMenu implements IMenu {
             switch (menuManager.diplayMenu(menuEdition)) {
                 case 1: // Add Edition
                     try {
-                        name = menuManager.getUserInputString("Inser the name of the edition: ");
+                        name = menuManager.getUserInputString("Insert the name of the edition: ");
                         projectTemplate = menuManager.getUserInputString("Insert project template: ");
-                        start = menuManager.getUserInputLocalDate("Insert stat date: ");
+                        start = menuManager.getUserInputLocalDate("Insert start date: ");
                         end = menuManager.getUserInputLocalDate("Insert end date: ");
 
                         menuManager.getEditions().addEdition(new BaseEdition(name, projectTemplate, start, end));
@@ -72,7 +72,7 @@ public class EditionMenu implements IMenu {
                     break;
                 case 2: // Remove Edition
                     try {
-                        name = menuManager.getUserInputString("Inser the name of the edition you want to remove: ");
+                        name = menuManager.getUserInputString("Insert the name of the edition you want to remove: ");
 
                         menuManager.getEditions().removeEdition(name);
                     } catch (NullPointerException | ArrayIndexOutOfBoundsException e) {
@@ -88,7 +88,7 @@ public class EditionMenu implements IMenu {
                                 "only one edition can be set to active, if there is an active edition it will be put as inactive!");
 
                         name = menuManager
-                                .getUserInputString("Inser the name of the edition you want to set as active: ");
+                                .getUserInputString("Insert the name of the edition you want to set as active: ");
 
                         menuManager.getEditions().defineAsActive(name);
                     } catch (NullPointerException e) {
@@ -114,7 +114,7 @@ public class EditionMenu implements IMenu {
                 case 5: // Set Edition as Closed
                     try {
                         name = menuManager
-                                .getUserInputString("Inser the name of the edition you want to set as closed: ");
+                                .getUserInputString("Insert the name of the edition you want to set as closed: ");
 
                         menuManager.getEditions().defineAsClosed(name);
                     } catch (NullPointerException e) {
@@ -126,7 +126,7 @@ public class EditionMenu implements IMenu {
                 case 6: // Set Edition as Canceled
                     try {
                         name = menuManager
-                                .getUserInputString("Inser the name of the edition you want to set as Canceled: ");
+                                .getUserInputString("Insert the name of the edition you want to set as Canceled: ");
 
                         menuManager.getEditions().defineAsCanceled(name);
                     } catch (NullPointerException e) {
@@ -147,7 +147,7 @@ public class EditionMenu implements IMenu {
                     break;
                 case 8: // Get Edition
                     try {
-                        name = menuManager.getUserInputString("Inser the name of the edition you want to remove: ");
+                        name = menuManager.getUserInputString("Insert the name of the edition: ");
 
                         System.out.println(menuManager.getEditions().getEdition(name));
 

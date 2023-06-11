@@ -68,11 +68,24 @@ public class BaseSubmission implements Submission {
         this.date = LocalDateTime.now();
     }
 
+    /**
+     * Compares this submission with the specified submission for order.
+     * 
+     * @param sbmsn The submission to be compared.
+     * @return A negative integer, zero, or a positive integer if this submission is
+     *         less than, equal to,
+     *         or greater than the specified submission, respectively.
+     */
     @Override
     public int compareTo(Submission sbmsn) {
-        // TODO fazer compareTo
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from
-                                                                       // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (this.date.isBefore(sbmsn.getDate())) {
+            return -1;
+        } else if (this.date.isAfter(sbmsn.getDate())) {
+            return 1;
+        } else {
+            // Compare by the name of the student if the dates are equal
+            return this.student.getName().compareTo(sbmsn.getStudent().getName());
+        }
     }
 
     /**

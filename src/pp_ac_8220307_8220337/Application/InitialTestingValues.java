@@ -132,21 +132,21 @@ public class InitialTestingValues {
     Task task5 = new BaseTask(start5, end5, 14, "Task 5", "Description 5", new Submission[] { submission5 });
 
     // Create Projects Objects
-    Project project1 = new BaseProject("Project 1", "Description for Project 1", 4, 1, 1, 2, 2,
+    Project project1 = new BaseProject("Project 1", "Description for Project 1", 1, 1, 2,
             new Participant[] { partner1, facilitator1, student1, student2 },
             tags1, new Task[] { task1, task2 });
 
-    Project project2 = new BaseProject("Project 2", "Description for Project 2", 3, 0, 1, 2, 2,
+    Project project2 = new BaseProject("Project 2", "Description for Project 2", 0, 1, 2,
             new Participant[] { facilitator2, student3, student4 }, tags2, new Task[] { task2, task3 });
 
-    Project project3 = new BaseProject("Project 3", "Description for Project 3", 4, 1, 1, 2, 2,
+    Project project3 = new BaseProject("Project 3", "Description for Project 3", 1, 1, 2,
             new Participant[] { partner4, facilitator5, student1, student5 }, tags3, new Task[] { task2, task3 });
 
-    Project project4 = new BaseProject("Project 4", "Description for Project 4", 5, 2, 1, 2, 3,
+    Project project4 = new BaseProject("Project 4", "Description for Project 4", 2, 1, 2,
             new Participant[] { partner4, partner3, facilitator4, student3, student4 }, tags4,
             new Task[] { task3, task4, task5 });
 
-    Project project5 = new BaseProject("Project 5", "Description for Project 5", 5, 0, 1, 4, 4,
+    Project project5 = new BaseProject("Project 5", "Description for Project 5", 0, 1, 4,
             new Participant[] { facilitator3, student1, student2, student3, student4 }, tags5,
             new Task[] { task1, task2, task3, task4 });
 

@@ -14,6 +14,7 @@ import java.time.LocalDate;
 
 import ma02_resources.project.Edition;
 import ma02_resources.project.Project;
+import ma02_resources.project.Task;
 
 /**
  * The DistinctListsMenu class represents the menu for accessing distinct lists.
@@ -53,24 +54,25 @@ public class DistinctListsMenu implements IMenu {
 
         do {
             switch (menuManager.diplayMenu(menuDistinctList)) {
-                case 1:
+                case 1: // Get Sudents With More Submissions
                     try {
                         editionName = menuManager
-                                .getUserInputString("Inser the name of the edition you want to search for students: ");
+                                .getUserInputString("Insert the name of the edition you want to search for students: ");
                         edition = menuManager.getEditions().getEdition(editionName);
 
                         projectName = menuManager
-                                .getUserInputString("Inser the name of the project you want to search for students: ");
+                                .getUserInputString("Insert the name of the project you want to search for students: ");
                         project = edition.getProject(projectName);
 
-                        menuManager.getEditions().getSudentsWithMoreSubmissions(edition, project);
+                        System.out.println(menuManager.getEditions().getSudentsWithMoreSubmissions(edition, project));
+                        
                     } catch (NullPointerException e) {
                         System.out.println("Name not found: " + e.getMessage());
                     } catch (Exception e) {
                         System.out.println("An error has occured: " + e.getMessage());
                     }
                     break;
-                case 2:
+                case 2: // Get Projects by Tags
                     try {
                         editionName = menuManager
                                 .getUserInputString("Inser the name of the edition you want to search for projects: ");
@@ -78,24 +80,34 @@ public class DistinctListsMenu implements IMenu {
 
                         tagString = menuManager
                                 .getUserInputString("Insert the tag for the projects that you are loking for: ");
-                        menuManager.getEditions().getProjectByTags(tagString, edition);
+
+                        System.out.println("\n----------------");
+                        for (Project projecti : menuManager.getEditions().getProjectByTags(tagString, edition)) {
+                            System.out.println("\t" + projecti.toString() + "\n");
+                        }
+
                     } catch (NullPointerException e) {
                         System.out.println("Edition not found: " + e.getMessage());
                     } catch (Exception e) {
                         System.out.println("An error has occured: " + e.getMessage());
                     }
                     break;
-                case 3:
+                case 3: // Get Tasks By Date
                     try {
-                        projectName = menuManager.getUserInputString("Enter the name of the project where the task you are looking for is located: ");
+                        projectName = menuManager.getUserInputString(
+                                "Enter the name of the project where the task you are looking for is located: ");
                         project = menuManager.getEditions().getProject(projectName);
 
                         date = menuManager.getUserInputLocalDate("Insert the date for the tasks you are looking at: ");
 
-                        menuManager.getEditions().getTaksByDate(date, project);
-                    }catch(NullPointerException e) {
+                        System.out.println("\n----------------");
+                        for (Task task : menuManager.getEditions().getTaksByDate(date, project)) {
+                            System.out.println("\t" + task.toString() + "\n");
+                        }
+
+                    } catch (NullPointerException e) {
                         System.out.println(e.getMessage());
-                    }catch(Exception e) {
+                    } catch (Exception e) {
                         System.out.println("An error has occured: " + e.getMessage());
                     }
                     break;

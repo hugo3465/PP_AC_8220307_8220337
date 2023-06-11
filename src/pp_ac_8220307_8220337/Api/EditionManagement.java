@@ -447,7 +447,7 @@ public class EditionManagement implements IEditionManagement {
      */
     @Override
     public String getSudentsWithMoreSubmissions(Edition edition, Project project) {
-        String[] students = new String[project.getNumberOfStudents()];
+        String[] students = new String[project.getMaximumNumberOfStudents()];
         int[] studentSubmissions = new int[students.length];
         int studentsCount = 0;
         int indexOfStudent;
@@ -487,9 +487,9 @@ public class EditionManagement implements IEditionManagement {
         }
 
         // Build the result string in ascending order
-        String result = "";
+        String result = "\n";
         for (int i = 0; i < studentsCount; i++) {
-            result += students[i] + "-->" + studentSubmissions[i] + '\n';
+            result += students[i] + " --> " + studentSubmissions[i] + " submissions \n";
         }
 
         return result;
@@ -524,12 +524,10 @@ public class EditionManagement implements IEditionManagement {
         Task[] tasks = new Task[project.getMaximumNumberOfTasks()];
         int count = 0;
 
-        for (int i = 0; i < project.getMaximumNumberOfTasks(); i++) {
-            for (Task task : project.getTasks()) {
-                if (task != null && task.getEnd().equals(date)) {
-                    tasks[count] = task;
-                    count++;
-                }
+        for (Task task : project.getTasks()) {
+            if (task != null && task.getStart().equals(date)) {
+                tasks[count] = task;
+                count++;
             }
         }
 
@@ -804,10 +802,10 @@ public class EditionManagement implements IEditionManagement {
         String string = "";
 
         for (int i = 0; i < this.numEditions; i++) {
-            if(this.editions[i] != null) {
+            if (this.editions[i] != null) {
                 string += "\n" + this.editions[i].toString();
             }
-            
+
         }
 
         return string;

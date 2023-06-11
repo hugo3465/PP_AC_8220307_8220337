@@ -18,4 +18,12 @@ public interface IEditionList {
     public Edition getEdition(String editionName);
 
     public Edition getActiveEdition();
+
+    public Edition[] getUnfinishedEditions();
+
+    public Edition[] getAllInactiveEditions();
+
+    public Edition[] getAllClosedEditions();
+
+    public Edition[] getAllCanceledEditions();
 }

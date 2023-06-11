@@ -202,7 +202,6 @@ public class BaseEdition implements Edition {
         FileReader reader = null;
 
         try {
-
             reader = new FileReader("./project_template.json");
 
             // Parse the JSON file
@@ -222,8 +221,11 @@ public class BaseEdition implements Edition {
             Task[] tasks = new Task[tasksArray.size()];
 
             // Iterate over each task and create a Task object
-            for (int i = 0; i < tasksArray.size(); i++) {
-                JSONObject taskObject = (JSONObject) tasksArray.get(i);
+            // for (int i = 0; i < tasksArray.size(); i++) {
+            int i = 0;
+            for (Object taskObj : tasksArray) {
+                // JSONObject taskObject = (JSONObject) tasksArray.get(i);
+                JSONObject taskObject = (JSONObject) taskObj;
 
                 // Extract the attributes from the task object
                 String title = (String) taskObject.get("title");
@@ -232,10 +234,12 @@ public class BaseEdition implements Edition {
                 int duration = ((Long) taskObject.get("duration")).intValue();
 
                 // Create a new Task object with the extracted attributes
-                Task taskTemplate = new BaseTask(title, description, startAt, duration);
+                Task taskTemplate = new BaseTask(title, description, startAt, duration, start);
 
                 // Add the task to the tasks array
                 tasks[i] = taskTemplate;
+
+                i++;
             }
 
             // Set the number of tasks
@@ -268,7 +272,7 @@ public class BaseEdition implements Edition {
     /**
      * Removes a project with the specified name from the projects array.
      *
-     * @param name the name of the project to be removed
+     * @param string the name of the project to be removed
      */
     @Override
     public void removeProject(String string) {
@@ -302,7 +306,7 @@ public class BaseEdition implements Edition {
     /**
      * Retrieves a project with the specified name from the projects array.
      *
-     * @param name the name of the project to retrieve
+     * @param string the name of the project to retrieve
      * @return the Project object matching the specified name, or null if not
      *         found
      * @throws NullPointerException if the Project is not found
@@ -332,7 +336,7 @@ public class BaseEdition implements Edition {
     /**
      * Retrieves an array of projects associated with a specific tag.
      *
-     * @param tag the tag to filter projects
+     * @param string the tag to filter projects
      * @return an array of projects associated with the specified tag
      */
     @Override

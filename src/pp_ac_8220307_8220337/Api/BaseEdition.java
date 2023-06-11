@@ -272,7 +272,7 @@ public class BaseEdition implements Edition {
     /**
      * Removes a project with the specified name from the projects array.
      *
-     * @param name the name of the project to be removed
+     * @param string the name of the project to be removed
      */
     @Override
     public void removeProject(String string) {
@@ -306,7 +306,7 @@ public class BaseEdition implements Edition {
     /**
      * Retrieves a project with the specified name from the projects array.
      *
-     * @param name the name of the project to retrieve
+     * @param string the name of the project to retrieve
      * @return the Project object matching the specified name, or null if not
      *         found
      * @throws NullPointerException if the Project is not found
@@ -336,7 +336,7 @@ public class BaseEdition implements Edition {
     /**
      * Retrieves an array of projects associated with a specific tag.
      *
-     * @param tag the tag to filter projects
+     * @param string the tag to filter projects
      * @return an array of projects associated with the specified tag
      */
     @Override

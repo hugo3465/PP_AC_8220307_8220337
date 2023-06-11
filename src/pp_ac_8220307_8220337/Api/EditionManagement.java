@@ -661,7 +661,7 @@ public class EditionManagement implements IEditionManagement {
 
         if (this.numEditions > 0) {
             for (Edition edition : editions) {
-                if (edition.getStatus() == (Status.CANCELED)) {
+                if (edition.getStatus() == Status.CANCELED) {
                     if (edition != null) {
                         matchedEditions[numMatchedEditions] = edition;
                         numMatchedEditions++;

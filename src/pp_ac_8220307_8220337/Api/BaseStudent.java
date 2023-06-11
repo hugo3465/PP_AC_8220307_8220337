@@ -54,7 +54,7 @@ public class BaseStudent implements Student {
     /**
      * Constructs a BaseStudent object with the specified Student details.
      *
-     * @param vatNumber
+     * @param number
      * @param name
      * @param email
      * @param contact
@@ -91,7 +91,7 @@ public class BaseStudent implements Student {
     /**
      * Access method to the email of the student
      * 
-     * @return {@coode email}
+     * @return email
      */
     @Override
     public String getEmail() {

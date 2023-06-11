@@ -12,7 +12,6 @@ package pp_ac_8220307_8220337.Application;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.Month;
 
 import ma02_resources.participants.Contact;
 import ma02_resources.participants.Instituition;

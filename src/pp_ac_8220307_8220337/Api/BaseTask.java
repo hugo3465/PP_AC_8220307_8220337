@@ -147,7 +147,7 @@ public class BaseTask implements Task {
      * 
      * Adds a submission to the task.
      * 
-     * @param submission The submission to be added.
+     * @param arg0 The submission to be added.
      * 
      * @throws IllegalArgumentException       if the provided submission is not an
      *                                        instance of BaseSubmission.
@@ -173,7 +173,7 @@ public class BaseTask implements Task {
     /**
      * Extends the deadline of the task by a specified number of days.
      * 
-     * @param days The number of days by which to extend the deadline.
+     * @param arg0 The number of days by which to extend the deadline.
      */
     @Override
     public void extendDeadline(int arg0) {
@@ -183,7 +183,7 @@ public class BaseTask implements Task {
     /**
      * Compares this task with another task based on their end dates.
      * 
-     * @param otherTask The task to compare with.
+     * @param arg0 The task to compare with.
      * @return A negative integer if this task's end date is earlier than the other
      *         task's end date,
      *         a positive integer if this task's end date is later than the other

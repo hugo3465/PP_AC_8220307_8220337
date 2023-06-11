@@ -27,16 +27,18 @@ public class EditionMenu implements IMenu {
      */
     @Override
     public void display() {
-        System.out.println("\n\t--- Admin / Editions ---");
-        System.out.println("\t1 - Add Edition");
-        System.out.println("\t2 - Remove Edition");
-        System.out.println("\t3 - Set Edition as Active");
-        System.out.println("\t4 - Set Edition as Inactive");
-        System.out.println("\t5 - Set Edition as Closed");
-        System.out.println("\t6 - Set Edition as Canceled");
-        System.out.println("\t7 - List all Editions");
-        System.out.println("\t8 - Get Edition");
-        System.out.println("\t0 - Back\n");
+        System.out.println("\t================================================");
+        System.out.println("\t||------------- Admin / Editions -------------||");
+        System.out.println("\t||             1 - Add Edition                ||");
+        System.out.println("\t||             2 - Remove Edition             ||");
+        System.out.println("\t||             3 - Set Edition as Active      ||");
+        System.out.println("\t||             4 - Set Edition as Inactive    ||");
+        System.out.println("\t||             5 - Set Edition as Closed      ||");
+        System.out.println("\t||             6 - Set Edition as Canceled    ||");
+        System.out.println("\t||             7 - List all Editions          ||");
+        System.out.println("\t||             8 - Get Edition                ||");
+        System.out.println("\t||             0 - Back                       ||");
+        System.out.println("\t================================================");
     }
 
     /**

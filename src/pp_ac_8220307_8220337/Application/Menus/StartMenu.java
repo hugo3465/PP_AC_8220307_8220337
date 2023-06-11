@@ -30,7 +30,7 @@ public class StartMenu implements IMenu {
     @Override
     public void display() {
         System.out.println("\t===========================");
-        System.out.println("\t||    Welcome to CBL     ||");
+        System.out.println("\t||--- Welcome to CBL ----||");
         System.out.println("\t||      1 - Admin        ||");
         System.out.println("\t||      2 - Student      ||");
         System.out.println("\t||      0 - Sair         ||");

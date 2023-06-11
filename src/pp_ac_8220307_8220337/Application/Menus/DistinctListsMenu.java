@@ -28,11 +28,13 @@ public class DistinctListsMenu implements IMenu {
      */
     @Override
     public void display() {
-        System.out.println("\n\t--- Distinct Lists --- ");
-        System.out.println("\t1 - Get Sudents With More Submissions");
-        System.out.println("\t2 - Get Projects by Tags");
-        System.out.println("\t3 - ");
-        System.out.println("\t0 - Back\n");
+        System.out.println("\t================================================");
+        System.out.println("\t||-------------- Distinct Lists --------------||");
+        System.out.println("\t||      1 - Get Sudents With More Submissions ||");
+        System.out.println("\t||      2 - Get Projects by Tags              ||");
+        System.out.println("\t||      3 - Get Tasks By Date                 ||");
+        System.out.println("\t||      0 - Back                              ||");
+        System.out.println("\t================================================");
     }
 
     /**

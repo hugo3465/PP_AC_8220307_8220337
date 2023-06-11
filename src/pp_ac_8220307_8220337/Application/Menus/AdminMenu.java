@@ -23,11 +23,13 @@ public class AdminMenu implements IMenu {
      */
     @Override
     public void display() {
-        System.out.println("\n\t--- Admin ---");
-        System.out.println("\t1 - Edition Management");
-        System.out.println("\t2 - Project Management");
-        System.out.println("\t3 - Distinct Lists");
-        System.out.println("\t0 - Back\n");
+        System.out.println("\t===============================");
+        System.out.println("\t||----------- Admin ---------||");
+        System.out.println("\t||    1 - Edition Management ||");
+        System.out.println("\t||    2 - Project Management ||");
+        System.out.println("\t||    3 - Distinct Lists     ||");
+        System.out.println("\t||    0 - Back               ||");
+        System.out.println("\t===============================");
     }
 
     /**

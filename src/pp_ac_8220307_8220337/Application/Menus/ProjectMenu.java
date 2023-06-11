@@ -40,16 +40,18 @@ public class ProjectMenu implements IMenu {
      */
     @Override
     public void display() {
-        System.out.println("\n\t--- Admin / Projects ---");
-        System.out.println("\t1 - Add Project");
-        System.out.println("\t2 - Remove Project");
-        System.out.println("\t3 - Add Participant to a Project");
-        System.out.println("\t4 - Remove Participant from a Project");
-        System.out.println("\t5 - Add Task to a Project");
-        System.out.println("\t6 - Get Participant");
-        System.out.println("\t7 - List all Projects");
-        System.out.println("\t8 - Get progress from a Project");
-        System.out.println("\t0 - Back\n");
+        System.out.println("\t======================================================");
+        System.out.println("\t|| --------------- Admin / Projects ----------------||");
+        System.out.println("\t||           1 - Add Project                        ||");
+        System.out.println("\t||           2 - Remove Project                     ||");
+        System.out.println("\t||           3 - Add Participant to a Project       ||");
+        System.out.println("\t||           4 - Remove Participant from a Project  ||");
+        System.out.println("\t||           5 - Add Task to a Project              ||");
+        System.out.println("\t||           6 - Get Participant                    ||");
+        System.out.println("\t||           7 - List all Projects                  ||");
+        System.out.println("\t||           8 - Get progress from a Project        ||");
+        System.out.println("\t||           0 - Back                               ||");
+        System.out.println("\t======================================================");
     }
 
     /**

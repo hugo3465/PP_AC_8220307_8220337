@@ -42,7 +42,7 @@ public class EditionManagement implements IEditionManagement {
      *
      * This class provides methods to access and modify the editions in the system.
      */
-    
+
     /**
      * The default number of editions.
      */
@@ -510,6 +510,29 @@ public class EditionManagement implements IEditionManagement {
             }
         }
         return -1;
+    }
+
+    /**
+     * 
+     * @param date
+     * @param project
+     * @return
+     */
+    public Task[] getTaks(LocalDate date, Project project) {
+        Task[] tasks = new Task[project.getMaximumNumberOfTasks()];
+        int count = 0;
+
+        for (int i = 0; i < project.getMaximumNumberOfTasks(); i++) {
+            Task task = project.getTask(Integer.toString(i)); // Obtenha a tarefa do projeto usando um método adequado, como getTask(i)
+            if (task != null && task.getEnd().equals(date)) {
+                tasks[count] = task;
+                count++;
+            }
+        }
+
+        Task[] result = new Task[count];
+        System.arraycopy(tasks, 0, result, 0, count);
+        return result;
     }
 
     /**

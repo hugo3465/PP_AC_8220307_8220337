@@ -229,6 +229,42 @@ public class BaseProject implements Project {
     }
 
     /**
+     * 
+     * Constructor for the BaseProject class.
+     * Mostly use in {@code InitialTestingValues} class
+     * 
+     * @param name                 
+     * @param description         
+     * @param numberOfPartners     
+     * @param numberOfFacilitators 
+     * @param numberOfStudents    
+     * @param participants         
+     * @param tags                 
+     * @param tasks                
+     */
+
+    public BaseProject(String name, String description, int numberOfPartners, int numberOfFacilitators,
+            int numberOfStudents, Participant[] participants, String[] tags, Task[] tasks) {
+        this.name = name;
+        this.description = description;
+        this.numberOfPartners = numberOfPartners;
+        this.numberOfFacilitators = numberOfFacilitators;
+        this.numberOfStudents = numberOfStudents;
+        this.participants = participants;
+        this.tags = tags;
+        this.tasks = tasks;
+
+        /**
+         * If the tags array is null, the hasTas atribute will be false
+         */
+        this.hasTags = (tags == null) ? false : true;
+
+        this.numberOfTasks = tasks.length;
+
+        this.numberOfParticipants = participants.length;
+    }
+
+    /**
      * Retrieves the name of the project.
      *
      * @return The name of the project.
@@ -594,12 +630,10 @@ public class BaseProject implements Project {
         return this.participants;
     }
 
-
     @Override
     public String toString() {
         String string = "Name: " + name + "\n"
                 + "\tDescription: " + description + "\n";
-
 
         string += "\tParticipants: " + "\n";
         try {

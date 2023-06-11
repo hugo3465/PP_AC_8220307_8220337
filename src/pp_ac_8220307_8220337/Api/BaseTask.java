@@ -101,9 +101,15 @@ public class BaseTask implements Task {
      * @param duration    the duration of the task in days
      */
     public BaseTask(String title, String description, int startAt, int duration) {
-        int year = startAt / 10000; // Extract the year from the integer
-        int month = (startAt / 100) % 100; // Extract the month from the integer
-        int day = startAt % 100; // Extract the day from the integer
+        /*
+         * int year = startAt / 10000; // Extract the year from the integer
+         * int month = (startAt / 100) % 100; // Extract the month from the integer
+         * int day = startAt % 100; // Extract the day from the integer
+         */
+
+        int year = startAt / 365; // Extract the year from the integer
+        int month = (startAt - year *365) / 30; // Extract the month from the integer
+        int day = (startAt - year * 365 - month * 30); // Extract the day from the integer
 
         this.start = LocalDate.of(day, month, year);
 

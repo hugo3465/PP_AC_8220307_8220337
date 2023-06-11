@@ -12,7 +12,7 @@ Projeto criado em java para a cadeira de Paradigmas da Programação, no segundo
  * Listar os Alunos mais ativos de um projeto em uma edição, tendo como contabilizador o número de submissões;
  * Listagem das tasks para uma determinada data, em um projeto.
 
-## Métodos que deram muito trabalho, e gostariamos que tivessem em consideração, por favor:
+## Métodos que deram muito trabalho, e gostariamos que se tivesse em consideração, por favor:
  * AddProject na classe baseEdition;
  * getSudentsWithMoreSubmissions na classe EditionManagement;
  * getProjectByTags na classe EditionManagement;

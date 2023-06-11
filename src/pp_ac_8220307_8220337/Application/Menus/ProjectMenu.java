@@ -10,6 +10,8 @@
 
 package pp_ac_8220307_8220337.Application.Menus;
 
+import java.util.concurrent.CountDownLatch;
+
 import ma02_resources.project.Edition;
 import ma02_resources.project.Project;
 import ma02_resources.project.Task;
@@ -50,6 +52,7 @@ public class ProjectMenu implements IMenu {
         System.out.println("\t||           6 - Get Participant                    ||");
         System.out.println("\t||           7 - List all Projects                  ||");
         System.out.println("\t||           8 - Get progress from a Project        ||");
+        System.out.println("\t||           9 - Get Project by Name                ||");
         System.out.println("\t||           0 - Back                               ||");
         System.out.println("\t======================================================");
     }
@@ -65,6 +68,7 @@ public class ProjectMenu implements IMenu {
 
         String projectTitle, projectDescription, participantName;
         String[] projectTags;
+        Project project;
 
         do {
             switch (menuManager.diplayMenu(this)) {
@@ -158,9 +162,9 @@ public class ProjectMenu implements IMenu {
                     break;
                 case 7: // List all Projects
                     try {
-                        for (Project project : menuManager.getEditions().getEdition(this.edition.getName())
+                        for (Project projecti : menuManager.getEditions().getEdition(this.edition.getName())
                                 .getProjects()) {
-                            System.out.println(project.toString() + '\n');
+                            System.out.println(projecti.toString() + '\n');
                         }
                     } catch (NullPointerException e) {
                         System.out.println(e.getMessage());
@@ -179,6 +183,22 @@ public class ProjectMenu implements IMenu {
                                 .getProject(projectTitle);
 
                         System.out.println(menuManager.getEditions().getProjectProgress(searchedProject));
+                    } catch (NullPointerException e) {
+                        System.out.println(e.getMessage());
+                    } catch (Exception e) {
+                        System.out.println("An error has occured: " + e.getMessage());
+                    }
+                    break;
+                case 9:
+                    try {
+                        projectTitle = menuManager
+                                .getUserInputString(
+                                        "Inser the title of the project you want to search for: ");
+
+                        project = menuManager.getEditions().getEdition(edition.getName())
+                                .getProject(projectTitle);
+
+                        System.out.println(project.toString() + '\n');
                     } catch (NullPointerException e) {
                         System.out.println(e.getMessage());
                     } catch (Exception e) {

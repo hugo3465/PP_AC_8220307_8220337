@@ -65,6 +65,7 @@ public class AdminMenu implements IMenu {
                     break;
                 case 0:
                     isRunning = false;
+                    break;
                 default:
                     System.out.println("Invalid Option");
             }

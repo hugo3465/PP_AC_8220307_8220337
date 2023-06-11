@@ -154,12 +154,12 @@ public class InitialTestingValues {
      * Editions Test Values
      */
     public Edition edition1 = new BaseEdition("Edition 1", "Template 1", Status.ACTIVE,
-            new Project[] { project1, project2 }, 2, start1, end1);
+            new Project[] { project1, project2 }, start1, end1);
 
     public Edition edition2 = new BaseEdition("Edition 2", "Template 2", Status.INACTIVE,
-            new Project[] { project3, project4 }, 2, start2, end2);
+            new Project[] { project3, project4 }, start2, end2);
 
     public Edition edition3 = new BaseEdition("Edition 3", "Template 3", Status.CLOSED,
-            new Project[] { project3, project4, project5 }, 4, start3, end3);
+            new Project[] { project3, project4, project5 }, start3, end3);
 
 }

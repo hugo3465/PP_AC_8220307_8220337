@@ -77,13 +77,13 @@ public class BaseEdition implements Edition {
      */
     private LocalDate end;
 
-    public BaseEdition(String name, String projectTemplate, Status status, Project[] projects, int numberOfProjects,
+    public BaseEdition(String name, String projectTemplate, Status status, Project[] projects,
             LocalDate start, LocalDate end) {
         this.name = name;
         this.projectTemplate = projectTemplate;
         this.status = status;
         this.projects = projects;
-        this.numberOfProjects = numberOfProjects;
+        this.numberOfProjects = projects.length;
         this.start = start;
         this.end = end;
     }

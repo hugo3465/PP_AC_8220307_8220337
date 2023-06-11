@@ -12,6 +12,7 @@ package pp_ac_8220307_8220337.Application.Menus;
 
 import java.time.LocalDate;
 
+import ma02_resources.project.Edition;
 import pp_ac_8220307_8220337.Api.BaseEdition;
 
 /**
@@ -28,16 +29,17 @@ public class EditionMenu implements IMenu {
     @Override
     public void display() {
         System.out.println("\t================================================");
-        System.out.println("\t||------------- Admin / Editions -------------||");
-        System.out.println("\t||             1 - Add Edition                ||");
-        System.out.println("\t||             2 - Remove Edition             ||");
-        System.out.println("\t||             3 - Set Edition as Active      ||");
-        System.out.println("\t||             4 - Set Edition as Inactive    ||");
-        System.out.println("\t||             5 - Set Edition as Closed      ||");
-        System.out.println("\t||             6 - Set Edition as Canceled    ||");
-        System.out.println("\t||             7 - List all Editions          ||");
-        System.out.println("\t||             8 - Get Edition                ||");
-        System.out.println("\t||             0 - Back                       ||");
+        System.out.println("\t||------------- Admin / Editions ------------||");
+        System.out.println("\t||            1 - Add Edition                ||");
+        System.out.println("\t||            2 - Remove Edition             ||");
+        System.out.println("\t||            3 - Set Edition as Active      ||");
+        System.out.println("\t||            4 - Set Edition as Inactive    ||");
+        System.out.println("\t||            5 - Set Edition as Closed      ||");
+        System.out.println("\t||            6 - Set Edition as Canceled    ||");
+        System.out.println("\t||            7 - List all Editions          ||");
+        System.out.println("\t||            8 - Get Edition                ||");
+        System.out.println("\t||            9 - Get Progress from edition  ||");
+        System.out.println("\t||            0 - Back                       ||");
         System.out.println("\t================================================");
     }
 
@@ -53,9 +55,9 @@ public class EditionMenu implements IMenu {
         String projectTemplate;
         LocalDate start;
         LocalDate end;
+        Edition edition;
 
         do {
-            System.out.println("\n\n\n\t" + menuManager.getEditions().getNumberOfCBLEditions() + "\n\n");
             switch (menuManager.diplayMenu(menuEdition)) {
                 case 1: // Add Edition
                     try {
@@ -139,6 +141,8 @@ public class EditionMenu implements IMenu {
                     break;
                 case 7: // List all Editions
                     try {
+                        System.out
+                                .println("\n\n\n\n" + menuManager.getEditions().getNumberOfCBLEditions() + "\n\n\n\n");
                         System.out.println(menuManager.getEditions().toString());
                     } catch (NullPointerException e) {
                         System.out.println(e.getMessage());
@@ -149,11 +153,7 @@ public class EditionMenu implements IMenu {
                     break;
                 case 8: // Get Edition
                     try {
-<<<<<<< HEAD
-                        name = menuManager.getUserInputString("Inser the name of the edition you want display: ");
-=======
-                        name = menuManager.getUserInputString("Insert the name of the edition: ");
->>>>>>> 1138a95a369f38ac1f649672d35aeb44a17d52e9
+                        name = menuManager.getUserInputString("Insert the name of the edition you want display: ");
 
                         System.out.println(menuManager.getEditions().getEdition(name));
 
@@ -163,8 +163,22 @@ public class EditionMenu implements IMenu {
                         System.out.println("An error has occured: " + e.getMessage());
                     }
                     break;
+                case 9: // Get progress from Edition
+                    try {
+                        name = menuManager.getUserInputString("Insert the name of the edition you want display the progress: ");
+                        edition = menuManager.getEditions().getEdition(name);
+
+                        System.out.println(menuManager.getEditions().getEditionProgress(edition));
+                    } catch (NullPointerException e) {
+                        System.out.println(e.getMessage());
+                    } catch (Exception e) {
+                        System.out.println("An error has occured: " + e.getMessage());
+                    }
+
+                    break;
                 case 0:
                     isRunning = false;
+                    break;
                 default:
                     System.out.println("Invalid Option");
             }

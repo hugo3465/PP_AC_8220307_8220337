@@ -57,7 +57,7 @@ public class StudentMenu implements IMenu {
     @Override
     public void display() {
         System.out.println("\t==============================================================");
-        System.out.println("\t||-------------- Hello " + student.getName() + " -------------||");
+        System.out.println("\t                 Hello " + student.getName() + "");
         System.out.println("\t||                1 - Add Submission                        ||");
         System.out.println("\t||                2 - Get Task                              ||");
         System.out.println("\t||                3 - List all Tasks                        ||");
@@ -141,6 +141,7 @@ public class StudentMenu implements IMenu {
                     break;
                 case 0:
                     isRunning = false;
+                    break;
                 default:
                     System.out.println("Invalid Option");
             }

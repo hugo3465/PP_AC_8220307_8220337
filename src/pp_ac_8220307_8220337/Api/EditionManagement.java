@@ -689,7 +689,6 @@ public class EditionManagement implements IEditionManagement {
                 String name = (String) jsonObject.get("Name");
                 String projectTemplate = (String) jsonObject.get("Project Template");
                 Status status = (Status) jsonObject.get("Status");
-                int numberOfProjects = ((Long) jsonObject.get("number of Projects")).intValue();
                 LocalDate start = LocalDate.parse((String) jsonObject.get("start"));
                 LocalDate end = LocalDate.parse((String) jsonObject.get("end"));
 
@@ -786,7 +785,7 @@ public class EditionManagement implements IEditionManagement {
                     projects[j] = project;
                 }
 
-                Edition edition = new BaseEdition(name, projectTemplate, status, projects, numberOfProjects, start,
+                Edition edition = new BaseEdition(name, projectTemplate, status, projects, start,
                         end);
                 editions[numEditions] = edition;
                 numEditions++;
@@ -804,8 +803,11 @@ public class EditionManagement implements IEditionManagement {
     public String toString() {
         String string = "";
 
-        for (int i = 0; i < numEditions; i++) {
-            string += "\n" + editions[i].toString();
+        for (int i = 0; i < this.numEditions; i++) {
+            if(this.editions[i] != null) {
+                string += "\n" + this.editions[i].toString();
+            }
+            
         }
 
         return string;

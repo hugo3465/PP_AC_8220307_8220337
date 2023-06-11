@@ -1,9 +1,3 @@
-package pp_ac_8220307_8220337.Api;
-
-import ma02_resources.participants.Contact;
-import ma02_resources.participants.Instituition;
-import ma02_resources.participants.Partner;
-
 /**
  * Nome: Pedro Marcelo Santos Pinho
  * Número: 8220307
@@ -14,18 +8,23 @@ import ma02_resources.participants.Partner;
  * Turma: LEIT2
  */
 
-public class BasePartner implements Partner {
+package pp_ac_8220307_8220337.Api;
 
-    /**
-     *
-     * The BasePartners class represents a basic implementation of the Partner
-     * interface.
-     *
-     * It contains fields for vat, website, name, email, contact, institution.
-     *
-     * This class provides methods to access these Partner details, but only
-     * has method to modify Contact and Institution details.
-     */
+import ma02_resources.participants.Contact;
+import ma02_resources.participants.Instituition;
+import ma02_resources.participants.Partner;
+
+/**
+ *
+ * The BasePartners class represents a basic implementation of the Partner
+ * interface.
+ *
+ * It contains fields for vat, website, name, email, contact, institution.
+ *
+ * This class provides methods to access these Partner details, but only
+ * has method to modify Contact and Institution details.
+ */
+public class BasePartner implements Partner {
 
     /**
      * The VAT (Value Added Tax) number of the partner.

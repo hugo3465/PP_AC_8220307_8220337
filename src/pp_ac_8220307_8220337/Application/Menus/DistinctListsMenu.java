@@ -1,8 +1,3 @@
-package pp_ac_8220307_8220337.Application.Menus;
-
-import ma02_resources.project.Edition;
-import ma02_resources.project.Project;
-
 /**
  * Nome: Pedro Marcelo Santos Pinho
  * Número: 8220307
@@ -12,6 +7,11 @@ import ma02_resources.project.Project;
  * Número: 8220337
  * Turma: LEIT2
  */
+
+package pp_ac_8220307_8220337.Application.Menus;
+
+import ma02_resources.project.Edition;
+import ma02_resources.project.Project;
 
 /**
  * The DistinctListsMenu class represents the menu for accessing distinct lists.
@@ -80,7 +80,7 @@ public class DistinctListsMenu implements IMenu {
                     }
                     break;
                 case 3:
-                //TODO
+                    // TODO
                     break;
                 case 0:
                     isRunning = false;

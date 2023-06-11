@@ -1,9 +1,3 @@
-package pp_ac_8220307_8220337.Application.Menus;
-
-import ma02_resources.project.Edition;
-import ma02_resources.project.Project;
-import ma02_resources.project.Task;
-
 /**
  * Nome: Pedro Marcelo Santos Pinho
  * Número: 8220307
@@ -13,6 +7,12 @@ import ma02_resources.project.Task;
  * Número: 8220337
  * Turma: LEIT2
  */
+
+package pp_ac_8220307_8220337.Application.Menus;
+
+import ma02_resources.project.Edition;
+import ma02_resources.project.Project;
+import ma02_resources.project.Task;
 
 /**
  * The ProjectMenu class represents the menu for project management.
@@ -82,7 +82,7 @@ public class ProjectMenu implements IMenu {
 
                     } catch (NullPointerException e) {
                         System.out.println(e.getMessage());
-                    }catch (Exception e) {
+                    } catch (Exception e) {
                         System.out.println("An error has ocurred!: " + e.getMessage());
                     }
                     break;
@@ -155,9 +155,17 @@ public class ProjectMenu implements IMenu {
                     }
                     break;
                 case 7: // List all Projects
-                    for (Project project : menuManager.getEditions().getEdition(this.edition.getName()).getProjects()) {
-                        System.out.println(project.toString() + '\n');
+                    try {
+                        for (Project project : menuManager.getEditions().getEdition(this.edition.getName())
+                                .getProjects()) {
+                            System.out.println(project.toString() + '\n');
+                        }
+                    } catch (NullPointerException e) {
+                        System.out.println(e.getMessage());
+                    } catch (Exception e) {
+                        System.out.println("An error has occured: " + e.getMessage());
                     }
+
                     break;
                 case 8: // Get progress from a Project
                     try {

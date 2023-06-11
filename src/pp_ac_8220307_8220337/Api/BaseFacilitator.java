@@ -1,9 +1,3 @@
-package pp_ac_8220307_8220337.Api;
-
-import ma02_resources.participants.Contact;
-import ma02_resources.participants.Facilitator;
-import ma02_resources.participants.Instituition;
-
 /**
  * Nome: Pedro Marcelo Santos Pinho
  * Número: 8220307
@@ -14,19 +8,24 @@ import ma02_resources.participants.Instituition;
  * Turma: LEIT2
  */
 
-public class BaseFacilitator implements Facilitator {
+package pp_ac_8220307_8220337.Api;
 
-    /**
-     *
-     * The BaseFacilitators class represents a basic implementation of the
-     * Facilitator interface.
-     *
-     * It contains fields for areaOfExpertise, name, email, contact,
-     * institution.
-     *
-     * This class provides methods to access and modify these Facilitator
-     * details.
-     */
+import ma02_resources.participants.Contact;
+import ma02_resources.participants.Facilitator;
+import ma02_resources.participants.Instituition;
+
+/**
+ *
+ * The BaseFacilitators class represents a basic implementation of the
+ * Facilitator interface.
+ *
+ * It contains fields for areaOfExpertise, name, email, contact,
+ * institution.
+ *
+ * This class provides methods to access and modify these Facilitator
+ * details.
+ */
+public class BaseFacilitator implements Facilitator {
 
     /**
      * The name of the facilitator.

@@ -1,9 +1,3 @@
-package pp_ac_8220307_8220337.Api;
-
-import ma02_resources.participants.Contact;
-import ma02_resources.participants.Instituition;
-import ma02_resources.participants.Student;
-
 /**
  * Nome: Pedro Marcelo Santos Pinho
  * Número: 8220307
@@ -13,18 +7,24 @@ import ma02_resources.participants.Student;
  * Número: 8220337
  * Turma: LEIT2
  */
-public class BaseStudent implements Student {
+package pp_ac_8220307_8220337.Api;
 
-    /**
-     *
-     * The BaseStudent class represents a basic implementation of the Student
-     * interface.
-     *
-     * It contains fields for vatNumber, name, email, contact, institution.
-     *
-     * This class provides methods to access these Student details, but only has
-     * methods to modify Institution and Contact details.
-     */
+import ma02_resources.participants.Contact;
+import ma02_resources.participants.Instituition;
+import ma02_resources.participants.Student;
+
+/**
+ *
+ * The BaseStudent class represents a basic implementation of the Student
+ * interface.
+ *
+ * It contains fields for vatNumber, name, email, contact, institution.
+ *
+ * This class provides methods to access these Student details, but only has
+ * methods to modify Institution and Contact details.
+ */
+
+public class BaseStudent implements Student {
 
     /**
      * The student number.
@@ -51,7 +51,6 @@ public class BaseStudent implements Student {
      */
     private Instituition instituition;
 
-    
     /**
      * Constructs a BaseStudent object with the specified Student details.
      *

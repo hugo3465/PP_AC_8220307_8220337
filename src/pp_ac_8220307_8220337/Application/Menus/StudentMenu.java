@@ -1,12 +1,3 @@
-package pp_ac_8220307_8220337.Application.Menus;
-
-import ma02_resources.participants.Student;
-import ma02_resources.project.Edition;
-import ma02_resources.project.Project;
-import ma02_resources.project.Status;
-import ma02_resources.project.Task;
-import pp_ac_8220307_8220337.Api.BaseSubmission;
-
 /**
  * Nome: Pedro Marcelo Santos Pinho
  * Número: 8220307
@@ -16,6 +7,15 @@ import pp_ac_8220307_8220337.Api.BaseSubmission;
  * Número: 8220337
  * Turma: LEIT2
  */
+
+package pp_ac_8220307_8220337.Application.Menus;
+
+import ma02_resources.participants.Student;
+import ma02_resources.project.Edition;
+import ma02_resources.project.Project;
+import ma02_resources.project.Status;
+import ma02_resources.project.Task;
+import pp_ac_8220307_8220337.Api.BaseSubmission;
 
 /**
  * The StudentMenu class represents the menu for a student user.
@@ -116,12 +116,26 @@ public class StudentMenu implements IMenu {
                     }
                     break;
                 case 3: // List all Tasks
-                    for (Task task : project.getTasks()) {
-                        System.out.println(task.toString());
+                    try {
+                        for (Task task : project.getTasks()) {
+                            System.out.println(task.toString());
+                        }
+                    } catch (NullPointerException e) {
+                        System.out.println(e.getMessage());
+                    } catch (Exception e) {
+                        System.out.println("An error has occured: " + e.getMessage());
                     }
+
                     break;
                 case 4: // Get progress from Project
-                    System.out.println(menuManager.getEditions().getProjectProgress(project));
+                    try {
+                        System.out.println(menuManager.getEditions().getProjectProgress(project));
+                    } catch (NullPointerException e) {
+                        System.out.println(e.getMessage());
+                    } catch (Exception e) {
+                        System.out.println("An error has occured: " + e.getMessage());
+                    }
+
                     break;
                 case 0:
                     isRunning = false;

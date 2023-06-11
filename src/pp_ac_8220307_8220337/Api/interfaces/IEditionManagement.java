@@ -1,8 +1,3 @@
-
-package pp_ac_8220307_8220337.Api.interfaces;
-
-import java.io.IOException;
-
 /**
  * Nome: Pedro Marcelo Santos Pinho
  * Número: 8220307
@@ -12,6 +7,11 @@ import java.io.IOException;
  * Número: 8220337
  * Turma: LEIT2
  */
+
+package pp_ac_8220307_8220337.Api.interfaces;
+
+import java.io.IOException;
+
 public interface IEditionManagement extends ICrudEdition, IEditionList, IParticipantList, IProjectList {
 
     public int getNumberOfCBLEditions();

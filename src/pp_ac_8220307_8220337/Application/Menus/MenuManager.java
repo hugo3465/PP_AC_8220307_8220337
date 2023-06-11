@@ -1,3 +1,13 @@
+/**
+ * Nome: Pedro Marcelo Santos Pinho
+ * Número: 8220307
+ * Turma: LEIT2
+ *
+ * Nome: Hugo Ricardo Almeida Guimarães
+ * Número: 8220337
+ * Turma: LEIT2
+ */
+
 package pp_ac_8220307_8220337.Application.Menus;
 
 import java.time.LocalDate;
@@ -12,56 +22,53 @@ import pp_ac_8220307_8220337.Api.BaseContact;
 import pp_ac_8220307_8220337.Api.BaseInstitution;
 import pp_ac_8220307_8220337.Api.BaseStudent;
 import pp_ac_8220307_8220337.Api.BaseTask;
+import pp_ac_8220307_8220337.Api.EditionManagement;
 import pp_ac_8220307_8220337.Api.interfaces.IEditionManagement;
+import pp_ac_8220307_8220337.Application.InitialTestingValues;
+
+
 
 /**
- * Nome: Pedro Marcelo Santos Pinho
- * Número: 8220307
- * Turma: LEIT2
- *
- * Nome: Hugo Ricardo Almeida Guimarães
- * Número: 8220337
- * Turma: LEIT2
+ * This class represents a menu manager that handles user input and menu
+ * navigation.
+ * It provides methods for displaying menus, getting user input, and creating
+ * various objects.
  */
 public class MenuManager {
-
     /**
-     * MenuManager class, representing the variable that wants to update. The
-     * MenuManager class provides getSharedVariable() and setSharedVariable()
-     * methods to access and modify the variable.
+     * Scanner object to read user input
      */
-    // private IMenu[] menus;
-    // private int menuCount;
     private Scanner scanner;
 
+    /**
+     * Edition management object
+     */
     private IEditionManagement editions;
 
-    public MenuManager(int maxMenus) {
-        //menus = new IMenu[maxMenus];
-        //menuCount = 0;
+    /**
+     * Constructor for the MenuManager class.
+     * Initializes the scanner and adds some initial testing values to the editions.
+     */
+    public MenuManager() {
         scanner = new Scanner(System.in);
-        
-        
+
+        editions = new EditionManagement();
+
+        // Testing values
+        InitialTestingValues testingValues = new InitialTestingValues();
+        editions.addEdition(testingValues.edition1);
+        System.out.println(testingValues.edition1.toString());
+        editions.addEdition(testingValues.edition2);
+        editions.addEdition(testingValues.edition3);
     }
 
-    /*
-     * public void addMenu(IMenu menu) {
-     * if (menuCount < menus.length) {
-     * menus[menuCount] = menu;
-     * menuCount++;
-     * } else {
-     * System.out.println("Maximum menu count reached.");
-     * }
-     * }
+    /**
+     * Displays the provided menu and gets the user's choice.
+     *
+     * @param menu the menu to be displayed
+     * @return the user's choice
      */
-
     public int diplayMenu(IMenu menu) {
-        /*
-         * if (menuCount == menus.length) {
-         * System.out.println("Menu not found.");
-         * return -1;
-         * }
-         */
 
         int choice;
         menu.display();
@@ -70,6 +77,12 @@ public class MenuManager {
         return choice;
     }
 
+    /**
+     * Gets a string input from the user with the specified message.
+     *
+     * @param msg the message to be displayed to the user
+     * @return the user's input string
+     */
     public String getUserInputString(String msg) {
         System.out.print(msg);
 
@@ -78,6 +91,12 @@ public class MenuManager {
         return input;
     }
 
+    /**
+     * Gets a LocalDate input from the user with the specified message.
+     *
+     * @param msg the message to be displayed to the user
+     * @return the user's input LocalDate
+     */
     public LocalDate getUserInputLocalDate(String msg) {
         System.out.print(msg + " in the format (YYYY-MM-DD): ");
 
@@ -88,6 +107,11 @@ public class MenuManager {
         return date;
     }
 
+    /**
+     * Private method to get the user's choice as an integer.
+     *
+     * @return the user's choice
+     */
     private int getUserChoice() {
         System.out.print("Enter your choice: ");
 
@@ -106,6 +130,14 @@ public class MenuManager {
         return choice;
     }
 
+    /**
+     * Gets an integer input from the user with the specified message and maximum
+     * value.
+     *
+     * @param msg the message to be displayed to the user
+     * @param max the maximum value for the input
+     * @return the user's input integer
+     */
     public int getUserInputInteger(String msg, int max) {
         int choice = -1;
         while (choice < 0 || choice >= max) {
@@ -122,6 +154,11 @@ public class MenuManager {
         return choice;
     }
 
+    /**
+     * Gets the contact input information from the user.
+     *
+     * @return the Contact object representing the user's input
+     */
     public Contact getContactInputInfo() {
         String street = getUserInputString("Enter street: ");
         String city = getUserInputString("Enter city: ");
@@ -133,6 +170,11 @@ public class MenuManager {
         return new BaseContact(street, city, state, zipCode, country, phone);
     }
 
+    /**
+     * Gets the institution type information from the user.
+     *
+     * @return the selected InstituitionType
+     */
     public InstituitionType getInstituitionTypeInfo() {
         System.out.println("Institution Types:");
         for (InstituitionType type : InstituitionType.values()) {
@@ -143,6 +185,11 @@ public class MenuManager {
         return InstituitionType.values()[choice];
     }
 
+    /**
+     * Gets the institution input information from the user.
+     *
+     * @return the Instituition object representing the user's input
+     */
     public Instituition geInstituitionInputInfo() {
         String name = getUserInputString("Enter the name of the intituiton: ");
         String email = getUserInputString("Enter the email of the intituiton: ");
@@ -154,6 +201,11 @@ public class MenuManager {
         return new BaseInstitution(name, email, type, contact, website, description);
     }
 
+    /**
+     * Gets the student input information from the user.
+     *
+     * @return the Student object representing the user's input
+     */
     public Student getStudentInputInfo() {
         int number = getUserInputInteger("Enter student number", Integer.MAX_VALUE);
         String name = getUserInputString("Enter student's first name: ");
@@ -167,6 +219,11 @@ public class MenuManager {
 
     }
 
+    /**
+     * Gets the task input information from the user.
+     *
+     * @return the Task object representing the user's input
+     */
     public Task getTasktInputInfo() {
         String title = getUserInputString("Enter task title: ");
         String description = getUserInputString("Enter task description: ");
@@ -177,12 +234,11 @@ public class MenuManager {
         return new BaseTask(title, description, start, duration, maxSubmissions);
     }
 
-    /*
-     * public IMenu getCurrentMenu() {
-     * return this.menus[menuCount];
-     * }
+    /**
+     * Gets the edition management object.
+     *
+     * @return the IEditionManagement object
      */
-
     public IEditionManagement getEditions() {
         return editions;
     }

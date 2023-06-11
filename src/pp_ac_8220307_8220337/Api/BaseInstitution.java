@@ -1,9 +1,3 @@
-package pp_ac_8220307_8220337.Api;
-
-import ma02_resources.participants.Contact;
-import ma02_resources.participants.Instituition;
-import ma02_resources.participants.InstituitionType;
-
 /**
  * Nome: Pedro Marcelo Santos Pinho
  * Número: 8220307
@@ -13,19 +7,26 @@ import ma02_resources.participants.InstituitionType;
  * Número: 8220337
  * Turma: LEIT2
  */
+
+package pp_ac_8220307_8220337.Api;
+
+import ma02_resources.participants.Contact;
+import ma02_resources.participants.Instituition;
+import ma02_resources.participants.InstituitionType;
+
+/**
+ * 
+ * The BaseInstitution class represents a basic implementation of the
+ * Instituition interface.
+ * 
+ * It contains fields for name, email, institution type, contact information,
+ * website, and description.
+ * 
+ * This class provides methods to access and modify these institution details,
+ * but only has methods to modify Type, Contact, Website and Description
+ * Details.
+ */
 public class BaseInstitution implements Instituition {
-    /**
-     * 
-     * The BaseInstitution class represents a basic implementation of the
-     * Instituition interface.
-     * 
-     * It contains fields for name, email, institution type, contact information,
-     * website, and description.
-     * 
-     * This class provides methods to access and modify these institution details,
-     * but only has methods to modify Type, Contact, Website and Description
-     * Details.
-     */
 
     /**
      * The name of the institution.

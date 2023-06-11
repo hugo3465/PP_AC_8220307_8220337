@@ -1,3 +1,13 @@
+/**
+ * Nome: Pedro Marcelo Santos Pinho
+ * Número: 8220307
+ * Turma: LEIT2
+ *
+ * Nome: Hugo Ricardo Almeida Guimarães
+ * Número: 8220337
+ * Turma: LEIT2
+ */
+
 package pp_ac_8220307_8220337.Api;
 
 import java.io.FileReader;
@@ -14,15 +24,7 @@ import ma02_resources.project.Project;
 import ma02_resources.project.Status;
 import ma02_resources.project.Task;
 
-/**
- * Nome: Pedro Marcelo Santos Pinho
- * Número: 8220307
- * Turma: LEIT2
- *
- * Nome: Hugo Ricardo Almeida Guimarães
- * Número: 8220337
- * Turma: LEIT2
- */
+
 public class BaseEdition implements Edition {
     /**
      * The BaseEdition class represents a basic implementation of the Edition
@@ -453,8 +455,10 @@ public class BaseEdition implements Edition {
 
         string += "Projects:\n";
         for (int i = 0; i < numberOfProjects; i++) {
-            string += "\t" + projects[i] + "\n";
+            string += "\t" + projects[i].toString() + "\n";
         }
+        
+        string += "\n\n";
 
         return string;
     }

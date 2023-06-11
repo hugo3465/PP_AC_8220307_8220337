@@ -1,3 +1,13 @@
+/**
+ * Nome: Pedro Marcelo Santos Pinho
+ * Número: 8220307
+ * Turma: LEIT2
+ *
+ * Nome: Hugo Ricardo Almeida Guimarães
+ * Número: 8220337
+ * Turma: LEIT2
+ */
+
 package pp_ac_8220307_8220337.Api;
 
 import java.io.FileReader;
@@ -24,24 +34,14 @@ import ma02_resources.project.Task;
 import pp_ac_8220307_8220337.Api.interfaces.IEditionManagement;
 
 /**
- * Nome: Pedro Marcelo Santos Pinho
- * Número: 8220307
- * Turma: LEIT2
+ * The EditionManagement class represents a management system for editions.
  *
- * Nome: Hugo Ricardo Almeida Guimarães
- * Número: 8220337
- * Turma: LEIT2
+ * It contains fields for the default number of editions, the editions array,
+ * and the number of editions.
+ *
+ * This class provides methods to access and modify the editions in the system.
  */
 public class EditionManagement implements IEditionManagement {
-
-    /**
-     * The EditionManagement class represents a management system for editions.
-     *
-     * It contains fields for the default number of editions, the editions array,
-     * and the number of editions.
-     *
-     * This class provides methods to access and modify the editions in the system.
-     */
 
     /**
      * The default number of editions.
@@ -354,7 +354,7 @@ public class EditionManagement implements IEditionManagement {
     @Override
     public Participant getParticipant(String name) {
         for (int i = 0; i < numEditions; i++) {
-            for (int j = 0; j < editions[i].getNumberOfProjects(); i++) {
+            for (int j = 0; j < editions[i].getNumberOfProjects(); j++) {
                 return editions[i].getProjects()[j].getParticipant(name);
             }
         }
@@ -523,7 +523,8 @@ public class EditionManagement implements IEditionManagement {
         int count = 0;
 
         for (int i = 0; i < project.getMaximumNumberOfTasks(); i++) {
-            Task task = project.getTask(Integer.toString(i)); // Obtenha a tarefa do projeto usando um método adequado, como getTask(i)
+            Task task = project.getTask(Integer.toString(i)); // Obtenha a tarefa do projeto usando um método adequado,
+                                                              // como getTask(i)
             if (task != null && task.getEnd().equals(date)) {
                 tasks[count] = task;
                 count++;

@@ -1,3 +1,13 @@
+/**
+ * Nome: Pedro Marcelo Santos Pinho
+ * Número: 8220307
+ * Turma: LEIT2
+ *
+ * Nome: Hugo Ricardo Almeida Guimarães
+ * Número: 8220337
+ * Turma: LEIT2
+*/
+
 package pp_ac_8220307_8220337.Api;
 
 import ma02_resources.participants.Facilitator;
@@ -11,15 +21,6 @@ import ma02_resources.project.exceptions.IllegalNumberOfTasks;
 import ma02_resources.project.exceptions.ParticipantAlreadyInProject;
 import ma02_resources.project.exceptions.TaskAlreadyInProject;
 
-/**
- * Nome: Pedro Marcelo Santos Pinho
- * Número: 8220307
- * Turma: LEIT2
- *
- * Nome: Hugo Ricardo Almeida Guimarães
- * Número: 8220337
- * Turma: LEIT2
- */
 public class BaseProject implements Project {
     /**
      * the maximum number of tasks allowed in the project
@@ -593,32 +594,37 @@ public class BaseProject implements Project {
     @Override
     public String toString() {
         String string = "Name: " + name + "\n"
-                + "Description: " + description + "\n"
-                + "Participants: " + "\n";
+                + "\tDescription: " + description + "\n";
 
-        for (Participant i : getParticipants()) {
-            if (i != null) {
-                string += i.toString() + "\n";
+        // This for is getting null pointer exception for some reason that we don't know
+        //TODO Resolver esse erro
+        string += "\tParticipants: " + "\n";
+        try {
+            for (Participant participant : getParticipants()) {
+                if (participant != null) {
+                    string += "\tName: " + participant.getName() + "\n"
+                            + "\t\tEmail: " + participant.getEmail() + "\n";
+                }
             }
+        } catch (NullPointerException e) {
 
         }
 
-        string += "Tags: " + "\n";
-
-        for (String i : tags) {
-            string += "\t" + i + "\n";
-        }
-
-        string += "Tasks: " + "\n";
-
-        for (Task i : tasks) {
-            if (i != null) {
-                string += i.toString() + "\n";
+        string += "\tTags: " + "\n";
+        for (String tag : tags) {
+            if (tag != null) {
+                string += "\t\t" + tag + "\n";
             }
-
         }
 
-        string += "Is Completed: " + isCompleted();
+        string += "\tTasks: " + "\n";
+        for (Task task : tasks) {
+            if (task != null) {
+                string += "\t\t" + task.toString() + "\n";
+            }
+        }
+
+        string += "\tIs Completed: " + isCompleted() + "\n\t --------------";
 
         return string;
     }

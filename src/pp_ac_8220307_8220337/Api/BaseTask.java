@@ -1,10 +1,3 @@
-package pp_ac_8220307_8220337.Api;
-
-import java.time.LocalDate;
-
-import ma02_resources.project.Submission;
-import ma02_resources.project.Task;
-
 /**
  * Nome: Pedro Marcelo Santos Pinho
  * Número: 8220307
@@ -14,16 +7,24 @@ import ma02_resources.project.Task;
  * Número: 8220337
  * Turma: LEIT2
  */
+
+package pp_ac_8220307_8220337.Api;
+
+import java.time.LocalDate;
+
+import ma02_resources.project.Submission;
+import ma02_resources.project.Task;
+
+/**
+ * The BaseTask class represents a basic implementation of the Task interface.
+ *
+ * It contains fields for start date, end date, duration, title, description,
+ * submissions, and the number of submissions.
+ *
+ * This class provides methods to access and modify these task details.
+ */
 public class BaseTask implements Task {
-    /**
-     * The BaseTask class represents a basic implementation of the Task interface.
-     *
-     * It contains fields for start date, end date, duration, title, description,
-     * submissions, and the number of submissions.
-     *
-     * This class provides methods to access and modify these task details.
-     */
-    
+
     /**
      * The default number of submissions for a task.
      */
@@ -269,10 +270,10 @@ public class BaseTask implements Task {
 
     @Override
     public String toString() {
-        return "\tTitle: " + title + "\n"
-                + "\tStart: " + start + "\n"
-                + "\tEnd: " + end + "\n"
-                + "\tDuration: " + duration + "\n";
+        return "Title: " + title + "\n"
+                + "\t\tStart: " + start + "\n"
+                + "\t\tEnd: " + end + "\n"
+                + "\t\tDuration: " + duration + "\n";
 
         // It was chosen that the description will not be shown because it takes up a
         // lot of space on the console.

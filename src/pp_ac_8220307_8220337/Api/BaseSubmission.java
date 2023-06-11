@@ -1,9 +1,3 @@
-package pp_ac_8220307_8220337.Api;
-
-import java.time.LocalDateTime;
-import ma02_resources.participants.Student;
-import ma02_resources.project.Submission;
-
 /**
  * Nome: Pedro Marcelo Santos Pinho
  * Número: 8220307
@@ -13,18 +7,25 @@ import ma02_resources.project.Submission;
  * Número: 8220337
  * Turma: LEIT2
  */
+
+package pp_ac_8220307_8220337.Api;
+
+import java.time.LocalDateTime;
+import ma02_resources.participants.Student;
+import ma02_resources.project.Submission;
+
+/**
+ * The BaseSubmission class represents a basic implementation of the Submission
+ * interface.
+ *
+ * It contains fields for student, date, and text.
+ *
+ * This class provides constructors to create a submission with student, date,
+ * and text,
+ * or with student and text (in which case the current date is used).
+ */
 public class BaseSubmission implements Submission {
-    /**
-     * The BaseSubmission class represents a basic implementation of the Submission
-     * interface.
-     *
-     * It contains fields for student, date, and text.
-     *
-     * This class provides constructors to create a submission with student, date,
-     * and text,
-     * or with student and text (in which case the current date is used).
-     */
-    
+
     /**
      * The student who submitted the submission.
      */

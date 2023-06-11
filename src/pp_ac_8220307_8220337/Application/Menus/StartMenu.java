@@ -1,11 +1,3 @@
-package pp_ac_8220307_8220337.Application.Menus;
-
-import java.io.IOException;
-
-import ma02_resources.participants.Student;
-import ma02_resources.project.Edition;
-import ma02_resources.project.Project;
-
 /**
  * Nome: Pedro Marcelo Santos Pinho
  * Número: 8220307
@@ -15,6 +7,14 @@ import ma02_resources.project.Project;
  * Número: 8220337
  * Turma: LEIT2
  */
+
+package pp_ac_8220307_8220337.Application.Menus;
+
+import java.io.IOException;
+
+import ma02_resources.participants.Student;
+import ma02_resources.project.Edition;
+import ma02_resources.project.Project;
 
 /**
  * The StartMenu class represents the initial menu of the application.
@@ -29,10 +29,12 @@ public class StartMenu implements IMenu {
      */
     @Override
     public void display() {
-        System.out.println("\n\tWelcome to CBL ");
-        System.out.println("\t1 - Admin");
-        System.out.println("\t2 - Student");
-        System.out.println("\t0 - Sair\n");
+        System.out.println("\t===========================");
+        System.out.println("\t||    Welcome to CBL     ||");
+        System.out.println("\t||      1 - Admin        ||");
+        System.out.println("\t||      2 - Student      ||");
+        System.out.println("\t||      0 - Sair         ||");
+        System.out.println("\t===========================");
     }
 
     /**

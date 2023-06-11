@@ -513,27 +513,48 @@ public class EditionManagement implements IEditionManagement {
     }
 
     /**
-     * 
-     * @param date
-     * @param project
-     * @return
+     * Returns an array of tasks from a project that have the specified end date.
+     *
+     * @param date    the end date to match
+     * @param project the project to search for tasks
+     * @return an array of tasks that match the specified end date
      */
-    public Task[] getTaks(LocalDate date, Project project) {
+    @Override
+    public Task[] getTaksByDate(LocalDate date, Project project) {
         Task[] tasks = new Task[project.getMaximumNumberOfTasks()];
         int count = 0;
 
         for (int i = 0; i < project.getMaximumNumberOfTasks(); i++) {
-            Task task = project.getTask(Integer.toString(i)); // Obtenha a tarefa do projeto usando um método adequado,
-                                                              // como getTask(i)
-            if (task != null && task.getEnd().equals(date)) {
-                tasks[count] = task;
-                count++;
+            for (Task task : project.getTasks()) {
+                if (task != null && task.getEnd().equals(date)) {
+                    tasks[count] = task;
+                    count++;
+                }
             }
         }
 
         Task[] result = new Task[count];
         System.arraycopy(tasks, 0, result, 0, count);
+
         return result;
+    }
+
+    /**
+     * Returns the project with the specified name.
+     *
+     * @param projectName the name of the project to retrieve
+     * @return the project with the specified name
+     * @throws NullPointerException if the project is not found
+     */
+    @Override
+    public Project getProject(String projectName) {
+        for (int i = 0; i < numEditions; i++) {
+            if (editions[i].getProject(projectName) != null) {
+                return editions[i].getProject(projectName);
+            }
+        }
+
+        throw new NullPointerException("Project not found!");
     }
 
     /**

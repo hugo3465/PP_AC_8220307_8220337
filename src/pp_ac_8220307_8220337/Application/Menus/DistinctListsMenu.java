@@ -10,6 +10,8 @@
 
 package pp_ac_8220307_8220337.Application.Menus;
 
+import java.time.LocalDate;
+
 import ma02_resources.project.Edition;
 import ma02_resources.project.Project;
 
@@ -45,6 +47,7 @@ public class DistinctListsMenu implements IMenu {
         String editionName, projectName, tagString;
         Edition edition;
         Project project;
+        LocalDate date;
 
         do {
             switch (menuManager.diplayMenu(menuDistinctList)) {
@@ -70,6 +73,7 @@ public class DistinctListsMenu implements IMenu {
                         editionName = menuManager
                                 .getUserInputString("Inser the name of the edition you want to search for projects: ");
                         edition = menuManager.getEditions().getEdition(editionName);
+
                         tagString = menuManager
                                 .getUserInputString("Insert the tag for the projects that you are loking for: ");
                         menuManager.getEditions().getProjectByTags(tagString, edition);
@@ -80,7 +84,18 @@ public class DistinctListsMenu implements IMenu {
                     }
                     break;
                 case 3:
-                    // TODO
+                    try {
+                        projectName = menuManager.getUserInputString("Enter the name of the project where the task you are looking for is located: ");
+                        project = menuManager.getEditions().getProject(projectName);
+
+                        date = menuManager.getUserInputLocalDate("Insert the date for the tasks you are looking at: ");
+
+                        menuManager.getEditions().getTaksByDate(date, project);
+                    }catch(NullPointerException e) {
+                        System.out.println(e.getMessage());
+                    }catch(Exception e) {
+                        System.out.println("An error has occured: " + e.getMessage());
+                    }
                     break;
                 case 0:
                     isRunning = false;

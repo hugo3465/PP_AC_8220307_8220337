@@ -12,7 +12,7 @@ package pp_ac_8220307_8220337.Api.interfaces;
 
 import java.io.IOException;
 
-public interface IEditionManagement extends ICrudEdition, IEditionList, IParticipantList, IProjectList {
+public interface IEditionManagement extends ICrudEdition, IEditionList, IParticipantList, IProjectList, ITasklist {
 
     public int getNumberOfCBLEditions();
 

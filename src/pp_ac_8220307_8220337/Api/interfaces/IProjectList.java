@@ -18,6 +18,8 @@ public interface IProjectList {
 
     public Project[] getProjectByTags(String TagString, Edition edition);
 
+    public Project getProject(String projectName);
+
     public String getProjectProgress(Project project);
 
     public String getEditionProgress(Edition edition);

@@ -356,7 +356,10 @@ public class EditionManagement implements IEditionManagement {
     public Participant getParticipant(String name) {
         for (int i = 0; i < numEditions; i++) {
             for (int j = 0; j < editions[i].getNumberOfProjects(); j++) {
-                return editions[i].getProjects()[j].getParticipant(name);
+                if(editions[i].getProjects()[j].getParticipant(name) != null) {
+                    return editions[i].getProjects()[j].getParticipant(name);
+                }
+                
             }
         }
 

@@ -154,7 +154,7 @@ public class ProjectMenu implements IMenu {
                     try {
                         participantName = menuManager
                                 .getUserInputString("Insert the name of the participant you are looking for: ");
-                        menuManager.getEditions().getParticipant(participantName);
+                        System.out.println(menuManager.getEditions().getParticipant(participantName).toString());
                     } catch (NullPointerException e) {
                         System.out.println(e.getMessage());
                     } catch (Exception e) {

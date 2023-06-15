@@ -7,7 +7,6 @@
  * Número: 8220337
  * Turma: LEIT2
  */
-
 package pp_ac_8220307_8220337.Api;
 
 import java.io.FileReader;
@@ -25,17 +24,16 @@ import ma02_resources.project.Status;
 import ma02_resources.project.Task;
 
 public class BaseEdition implements Edition {
+
     /**
      * The BaseEdition class represents a basic implementation of the Edition
      * interface.
      *
      * It contains fields for the default number of projects, name, project
-     * template, status,
-     * projects, number of projects, start date, and end date.
+     * template, status, projects, number of projects, start date, and end date.
      *
      * This class provides methods to access and modify these edition details.
      */
-
     /**
      * The default number of projects.
      */
@@ -178,24 +176,64 @@ public class BaseEdition implements Edition {
     }
 
     /**
+     * Checks if a string value is null or empty.
+     *
+     * @param value the string value to check
+     * @return {@code true} if the value is null or empty, {@code false}
+     * otherwise
+     */
+    private boolean isNullOrEmpty(String value) {
+        if (value == null || value == "") {
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Validates the inputs for adding a project.
+     *
+     * @param name the name of the project
+     * @param description the description of the project
+     * @param tags an array of strings representing tags associated with the
+     * project
+     * @throws IllegalArgumentException if the name, description, or tags are
+     * null or empty
+     */
+    private void validateInputs(String name, String description, String[] tags) {
+        if (isNullOrEmpty(name)) {
+            throw new IllegalArgumentException("Name cannot be null or empty");
+        }
+
+        if (isNullOrEmpty(description)) {
+            throw new IllegalArgumentException("Description cannot be null or empty");
+        }
+
+        if (tags == null || tags.length == 0) {
+            throw new IllegalArgumentException("Tags cannot be null or empty");
+        }
+    }
+
+    /**
      * Adds a project based on the information provided in a JSON file.
      *
      * The JSON file should contain details such as the number of facilitators,
      * students, partners, and tasks for the project.
      *
-     * @param string  the name of the project
+     * @param string the name of the project
      *
      * @param string1 the description of the project
      *
      * @param strings an array of strings representing tags associated with the
-     *                project
+     * project
      *
-     * @throws IOException    if an I/O error occurs while reading the JSON file
+     * @throws IOException if an I/O error occurs while reading the JSON file
      *
      * @throws ParseException if there is an error while parsing the JSON file
      */
     @Override
-    public void addProject(String string, String string1, String[] strings) throws IOException, ParseException {
+    public void addProject(String name, String description, String[] tags) throws IOException, ParseException {
+
+        validateInputs(name, description, tags);
 
         JSONParser jsonParser = new JSONParser();
 
@@ -217,33 +255,11 @@ public class BaseEdition implements Edition {
             // Extract the tasks array from the JSON object
             JSONArray tasksArray = (JSONArray) jsonObject.get("tasks");
 
-            // Create an array to store the tasks
-            Task[] tasks = new Task[tasksArray.size()];
-
-            // Iterate over each task and create a Task object
-            // for (int i = 0; i < tasksArray.size(); i++) {
-            int i = 0;
-            for (Object taskObj : tasksArray) {
-                // JSONObject taskObject = (JSONObject) tasksArray.get(i);
-                JSONObject taskObject = (JSONObject) taskObj;
-
-                // Extract the attributes from the task object
-                String title = (String) taskObject.get("title");
-                String description = (String) taskObject.get("description");
-                int startAt = ((Long) taskObject.get("start_at")).intValue();
-                int duration = ((Long) taskObject.get("duration")).intValue();
-
-                // Create a new Task object with the extracted attributes
-                Task taskTemplate = new BaseTask(title, description, startAt, duration, start);
-
-                // Add the task to the tasks array
-                tasks[i] = taskTemplate;
-
-                i++;
-            }
-
             // Set the number of tasks
             int numberOfTasks = tasksArray.size();
+
+            // Get taks from getTasksFromJSON
+            Task[] tasks = getTasksFromJSON(jsonObject, tasksArray);
 
             /**
              * Checks if the number of projects has reached the maximum capacity
@@ -253,8 +269,8 @@ public class BaseEdition implements Edition {
                 resizeProjects();
             }
 
-            this.projects[numberOfProjects] = new BaseProject(string, string1, numberOfParticipants, numberOfPartners,
-                    numberOfFacilitators, numberOfStudents, numberOfTasks, strings, tasks);
+            this.projects[numberOfProjects] = new BaseProject(name, description, numberOfParticipants, numberOfPartners,
+                    numberOfFacilitators, numberOfStudents, numberOfTasks, tags, tasks);
 
             this.numberOfProjects++;
         } catch (IOException e) {
@@ -267,6 +283,44 @@ public class BaseEdition implements Edition {
             }
         }
 
+    }
+
+    /**
+     * Extracts task details from a JSON object and creates an array of Task
+     * objects.
+     *
+     * @param jsonObject the JSON object containing the tasks
+     * @param tasksArray the JSON array of tasks
+     * @return an array of Task objects
+     */
+    private Task[] getTasksFromJSON(JSONObject jsonObject, JSONArray tasksArray) {
+
+        // Create an array to store the tasks
+        Task[] tasks = new Task[tasksArray.size()];
+
+        // Iterate over each task and create a Task object
+        // for (int i = 0; i < tasksArray.size(); i++) {
+        int i = 0;
+        for (Object taskObj : tasksArray) {
+            // JSONObject taskObject = (JSONObject) tasksArray.get(i);
+            JSONObject taskObject = (JSONObject) taskObj;
+
+            // Extract the attributes from the task object
+            String title = (String) taskObject.get("title");
+            String taskDescription = (String) taskObject.get("description");
+            int startAt = ((Long) taskObject.get("start_at")).intValue();
+            int duration = ((Long) taskObject.get("duration")).intValue();
+
+            // Create a new Task object with the extracted attributes
+            Task taskTemplate = new BaseTask(title, taskDescription, startAt, duration, start);
+
+            // Add the task to the tasks array
+            tasks[i] = taskTemplate;
+
+            i++;
+        }
+
+        return tasks;
     }
 
     /**
@@ -308,7 +362,7 @@ public class BaseEdition implements Edition {
      *
      * @param string the name of the project to retrieve
      * @return the Project object matching the specified name, or null if not
-     *         found
+     * found
      * @throws NullPointerException if the Project is not found
      */
     @Override
@@ -326,7 +380,7 @@ public class BaseEdition implements Edition {
      * Retrieves all projects stored in the Edition.
      *
      * @return an array of Project objects representing all the projects in the
-     *         Edition
+     * Edition
      */
     @Override
     public Project[] getProjects() {
@@ -363,7 +417,7 @@ public class BaseEdition implements Edition {
     /**
      * Verifies if a given tag is present in an array of tags.
      *
-     * @param tag  the tag to search for
+     * @param tag the tag to search for
      * @param tags the array of tags to check
      * @return true if the tag is found, false otherwise
      */
@@ -382,7 +436,7 @@ public class BaseEdition implements Edition {
      *
      * @param string the name of the participant to filter projects
      * @return an array of projects associated with the specified participant
-     *         name
+     * name
      */
     @Override
     public Project[] getProjectsOf(String string) {

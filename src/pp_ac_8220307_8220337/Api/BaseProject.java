@@ -427,7 +427,7 @@ public class BaseProject implements Project {
             numberOfParticipants++;
 
         } catch (Exception e) {
-            throw new RuntimeException("An error occurred in remove Add Participant method");
+            throw new RuntimeException("An error occurred in remove Add Participant method: " + e.getMessage());
         }
     }
 
